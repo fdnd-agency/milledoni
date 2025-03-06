@@ -1,10 +1,19 @@
 <img width="269" alt="image" src="https://github.com/user-attachments/assets/674feda3-fbd8-4da3-93d5-fea07251b454" />
 
-**Team Sprint 8**  
-Nadia, Viresh, Akiko, Senne, Sebas, Luuk
+## Studentenwerk
+**Sprint 8: Server-Side Rendering**  
 
 
-# Studentenwerk 
+|  |  |  | 
+| :--------------- | :--------------- | :--------------- |
+| Nadia |	[repository](...)  |	[live site](...) |
+| Viresh |	[repository](...)  |	[live site](...) |
+| Akiko |	[repository](...)  |	[live site](...) |
+| Senne |	[repository](...)  |	[live site](...) |
+| Sebas |	[repository](...)  |	[live site](...) |
+| Luuk |	[repository](...)  |	[live site](...) |
+
+ 
 **Sprint 6: The startup**  
 
 |  |  |  | 
