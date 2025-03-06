@@ -5,8 +5,8 @@
 
 ## Resources
 
-[Design]()
-[Products Api Endpoint](https://fdnd-agency.directus.app/items/milledoni_products)
+[FigmaDesign](https://www.figma.com/design/tHCHwBm3Ujv7wR28VU2BSu/Milledoni)  
+[Milledoni Products API Endpoint](https://fdnd-agency.directus.app/items/milledoni_products)
 
 
 ## Studentenwerk
