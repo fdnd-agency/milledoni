@@ -1,0 +1,69 @@
+body {
+    /* Spacing and roundings */
+    --border-radius-xs: 0.25rem;
+    --border-radius-sm: 0.5rem;
+    --border-radius-md: 1rem;
+    --border-radius-lg: 2rem;
+  
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-lgx: 3rem;
+    --spacing-xl: 4rem;
+    --spacing-xlx: 6rem;
+    --spacing-xxl: 8rem;
+    --spacing-xxxl: 16rem;
+
+    /* Typography */
+    font-family: 'Parkinsans', sans-serif;
+
+    --font-size-card-title: 1.5rem;
+    --font-size-card-details: 1rem;
+    --font-size-chat-body: 1.0625rem;
+  
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /* Colors */
+    /* Neutrals */
+    --black-true: #121211;
+    --black: #212121;
+    --white-true: #ffffff;
+    --white: #fefcfa;
+    --gray: #888a8d;
+    --gray-light: #ededed;
+    --gray-medium: #d9d9d9;
+    --gray-medium-light: #e2e2e2;
+
+    /* Color set 0  */
+    --color-0-white: #F6F5F5;
+    --color-0-black: var(--black);
+    --color-0-pink: #FEB3D2;
+    --color-0-purple: #882B7D;
+    --color-0-orange: #F6760E;
+    --color-0-brown: #602B00;
+    --color-0-aqua: #6EE8ED;
+    --color-0-blue: #086387;
+    --color-0-yellow: #FFD683;
+    --color-0-dyellow: #CC9119;
+    --color-0-green: #48DC75;
+
+    /* Color Set 1 */
+    --color-1-yellow: #f4f49a;
+    --color-1-green: #86d4af;
+    --color-1-orange: #f9ae78;
+    --color-1-violet: #dab8f3;
+    --color-1-pink: #f7bbdd;
+    --color-1-blue: #b8ccec;
+
+    /* Color Set 2 */
+    --color-2-yellow: #ffff00;
+    --color-2-green: #48dc75;
+    --color-2-orange: #f78445;
+    --color-2-violet: #d78fff;
+    --color-2-pink: #ff8ba4;
+    --color-2-blue: #4ec3fe;
+
+}
