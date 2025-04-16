@@ -2,7 +2,68 @@
     export let data;
 </script>
 
-{#each data.products as product}
+<div class="product-list">
+    {#each data.products as product}
+        <a href="{product.shop_url}" class="product-card" target="_blank" rel="noopener noreferrer">
+            <img src="{product.image}" alt="{product.name}" class="product-image">
+            <article class="product-info">
+                <h2 class="product-title">{product.name}</h2>
+                <!-- <p class="product-amount">{product.amount}</p> -->
+            </article>
+        </a>
+    {/each}
+</div>
+
+<style>
+    .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .product-card {
+        display: block;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .product-info {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .product-title {
+        margin: 0;
+        font-size: 1.2rem;
+        color: #333;
+    }
+
+    /* .product-amount {
+        margin: 10px 0 0;
+        font-size: 1rem;
+        color: #555;
+    } */
+</style>
+
+<!-- OLD CODE -->
+<!-- {#each data.products as product}
     <ul>
         <li>SORT: {product.sort}</li>
         <li>ID: {product.id}</li>
@@ -18,5 +79,4 @@
         <li>AMOUNT: {product.amount}</li>
     </ul>
     <hr>
-{/each}
-
+{/each} -->

@@ -8,11 +8,11 @@
     <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
     <h2>Users</h2>
     {#each data.users as user}
-        <ul>
+        <!-- <ul>
             <li>ID: {user.id}</li>
             <li>NAME: {user.name}</li>
             <li>SAVED PRODUCTS: {user.saved_products}</li>
-        </ul>
+        </ul> -->
         <hr>
     {/each}
 
