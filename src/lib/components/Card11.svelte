@@ -17,16 +17,18 @@
 <style>
     .product-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
         padding: 20px;
     }
 
     .product-card {
         display: block;
+        width: 17rem;
+        height: 20rem;
         text-decoration: none;
         border: 1px solid #ddd;
-        border-radius: 8px;
+        padding: 0.2rem 0.2rem 0.4rem 0.2rem;
         overflow: hidden;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         background-color: #fff;
@@ -40,7 +42,7 @@
 
     .product-image {
         width: 100%;
-        height: auto;
+        height: 70%;
         object-fit: cover;
     }
 
