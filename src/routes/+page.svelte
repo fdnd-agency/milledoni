@@ -1,7 +1,10 @@
 <script>
     import Card11 from '$lib/components/Card11.svelte';
+    import Menu from '$lib/components/menu.svelte';
     export let data;
 </script>
+
+<Menu></Menu>
 
 <main>
     <h1>Welcome to SvelteKit</h1>
@@ -12,8 +15,8 @@
             <li>ID: {user.id}</li>
             <li>NAME: {user.name}</li>
             <li>SAVED PRODUCTS: {user.saved_products}</li>
-        </ul> -->
-        <hr>
+        </ul>
+        <hr> -->
     {/each}
 
     <h2>Products</h2>
