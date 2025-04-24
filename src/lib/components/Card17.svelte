@@ -1,4 +1,7 @@
 <script>
+    // import PurpleCard from '$lib/atoms/purpleCard.svelte';
+    // import BrownCard from '$lib/atoms/brownCard.svelte';
+    // import BlueCard from '$lib/atoms/blueCard.svelte';
     export let data;
 </script>
 

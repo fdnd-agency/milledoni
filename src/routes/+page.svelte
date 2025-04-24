@@ -1,7 +1,4 @@
 <script>
-    // import PurpleCard from '$lib/atoms/purpleCard.svelte';
-    // import BrownCard from '$lib/atoms/brownCard.svelte';
-    // import BlueCard from '$lib/atoms/blueCard.svelte';
     import Card11 from '$lib/components/Card11.svelte';
     import Menu from '$lib/components/menu.svelte';
     export let data;
