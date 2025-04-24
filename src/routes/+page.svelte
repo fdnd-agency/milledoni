@@ -1,5 +1,5 @@
 <script>
-    import Card11 from '$lib/components/Card11.svelte';
+    import Card17 from '$lib/components/Card17.svelte';
     import Menu from '$lib/components/menu.svelte';
     export let data;
 </script>
@@ -21,7 +21,7 @@
 
     <h2>Products</h2>
         <main> 
-            <Card11 data={data}></Card11>
+            <Card17 data={data}></Card17>
         </main>
 
 
