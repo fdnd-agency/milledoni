@@ -14,12 +14,14 @@
             target="_blank"
             rel="noopener noreferrer"
         >
-            <div class="product-card_wrapper">
-                <PurpleCard></PurpleCard>
-            </div>
-
-            <article class="product-info">
-                <p>{product.slug}</p>
+            <article class="product-card_container">
+                <div class="product-card_wrapper">
+                    <PurpleCard></PurpleCard>
+                </div>
+                <!-- <div class="product-card_info">
+                    <h3>{product.name}</h3>
+                    <p>{product.description}</p>
+                </div> -->
             </article>
         </a>
     {/each}
@@ -72,21 +74,36 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .product-info {
-        padding: 15px;
-        text-align: center;
-        z-index: 1;
+    .product-card_container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden
     }
 
     .product-card_wrapper {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
     }
 
-    .product-card_wrapper > :global(svg), 
-    .product-card_wrapper > :global(div) {
+    /* .product-card_info {
+        position: absolute;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        z-index: 1;
+    } */
+
+
+
+    .product-card_container > :global(svg), 
+    .product-card_container > :global(div) {
         width: 100%;
         height: 100%;
     }
