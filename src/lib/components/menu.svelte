@@ -177,6 +177,8 @@
 
                 ul {
                     gap: 1em;
+                    width: 31.666vw;
+                    justify-content: flex-end;
 
                     li:nth-of-type(1), li:nth-of-type(2) {
                         display: none;
@@ -211,6 +213,7 @@
             
             picture {
                 display: block;
+                width: 31.666vw;
                 svg {
                     width: 19.6vw
                 }
@@ -224,7 +227,7 @@
             }
 
             .search-container {
-                width: 32.77vw;
+                width: 31.666vw;
                 display: flex;
                 align-items: center;
                 gap: 0.5rem;
