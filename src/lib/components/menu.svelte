@@ -2,13 +2,6 @@
     import { page } from '$app/stores';
 
     $: currentPath = $page.url.pathname;
-
-    // Search
-    let search = '';
-    function handleSubmit(event) {
-        event.preventDefault();
-        console.log('Searching for:', search);
-    }
 </script>
 
 <header>
@@ -36,7 +29,7 @@
             </svg>                
         </picture>
         <div class="search-wrapper">
-            <form class="search-container" on:submit={handleSubmit} role="search" aria-label="Search for a gift">
+            <form class="search-container" role="search" aria-label="Search for a gift">
                 <button type="button" class="icon-button" aria-label="Add">
                     <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20.218 13.1454H12.4837V20.8796C12.4837 21.2899 12.3208 21.6834 12.0307 21.9734C11.7406 22.2635 11.3471 22.4265 10.9369 22.4265C10.5266 22.4265 10.1332 22.2635 9.84309 21.9734C9.553 21.6834 9.39003 21.2899 9.39003 20.8796V13.1454H1.65574C1.24549 13.1454 0.852043 12.9824 0.561951 12.6923C0.271859 12.4022 0.108887 12.0088 0.108887 11.5985C0.108887 11.1883 0.271859 10.7948 0.561951 10.5047C0.852043 10.2146 1.24549 10.0517 1.65574 10.0517H9.39003V2.31736C9.39003 1.90711 9.553 1.51366 9.84309 1.22357C10.1332 0.933479 10.5266 0.770508 10.9369 0.770508C11.3471 0.770508 11.7406 0.933479 12.0307 1.22357C12.3208 1.51366 12.4837 1.90711 12.4837 2.31736V10.0517H20.218C20.6283 10.0517 21.0217 10.2146 21.3118 10.5047C21.6019 10.7948 21.7649 11.1883 21.7649 11.5985C21.7649 12.0088 21.6019 12.4022 21.3118 12.6923C21.0217 12.9824 20.6283 13.1454 20.218 13.1454Z" fill="#A3A3A3"/>
@@ -51,7 +44,6 @@
             
                 <input
                 type="search"
-                bind:value={search}
                 placeholder="I search a gift for a Dreamer"
                 aria-label="Search input"
                 />
@@ -103,11 +95,13 @@
 <style>
     header {
         height: 4.375em;
-        width: 100vw;
+        width: 100%;
+        max-width: 100vw;
         position: fixed;
         background-color: var(--white);
         overflow: hidden;
         bottom: 0;
+        z-index: 9999;
 
         border-top: 1px solid #0000005b;
 
