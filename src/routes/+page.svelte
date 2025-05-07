@@ -7,22 +7,51 @@
 <Menu></Menu>
 
 <main>
-    <h1>Welcome to SvelteKit</h1>
-    <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
-    <h2>Users</h2>
+    <!-- <h2>Users</h2>
     {#each data.users as user}
-        <!-- <ul>
+        <ul>
             <li>ID: {user.id}</li>
             <li>NAME: {user.name}</li>
             <li>SAVED PRODUCTS: {user.saved_products}</li>
         </ul>
-        <hr> -->
-    {/each}
+        <hr>
+    {/each} -->
 
-    <h2>Products</h2>
-        <main> 
+    <section class="main-content">
+
+        <article class="chat-box">
+            <h2>Chat</h2>
+            <p>Chat content goes here...</p>
+        </article>
+
+        <article class="product-card_container"> 
             <Card17 data={data}></Card17>
-        </main>
+        </article>
+
+    </section>
 
 
 </main>
+
+<style>
+    
+    .main-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+    }
+
+    .chat-box {
+        background-color: #f9f9f9; /* Optional: Add a background color */
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+    }
+
+    .product-card_container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+</style>
