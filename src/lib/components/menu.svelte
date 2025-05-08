@@ -98,7 +98,6 @@
         width: 100%;
         max-width: 100vw;
         position: fixed;
-        background-color: var(--white);
         overflow: hidden;
         bottom: 0;
         z-index: 9999;
@@ -160,8 +159,6 @@
             /* height: 8.625em; */
             height: 7em;
             border-top: unset;
-            border-bottom: 1px solid #0000005b;
-
             nav {
                 display: flex;
                 align-items: center;

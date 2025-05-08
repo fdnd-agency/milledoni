@@ -18,14 +18,13 @@
     .product-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 20px;
+        gap: 15px;
+        padding: 10px 20px 20px 20px;
     }
 
     .product-card {
         display: block;
-        width: 17rem;
-        height: 20rem;
+        height: 23rem;
         text-decoration: none;
         border: 1px solid #ddd;
         padding: 0.2rem 0.2rem 0.4rem 0.2rem;
