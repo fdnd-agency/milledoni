@@ -20,6 +20,8 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 15px;
         padding: 10px 20px 20px 20px;
+        height: 100vh;
+        overflow-y: auto;
     }
 
     .product-card {
@@ -54,6 +56,8 @@
         margin: 0;
         font-size: 1.2rem;
         color: #333;
+        text-align: left;
+        max-width: 25ch;
     }
 
     /* .product-amount {
