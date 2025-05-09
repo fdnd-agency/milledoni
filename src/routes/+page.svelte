@@ -53,14 +53,14 @@
     }
 
     .product-card_container {
-        background-color: var(--gray-light);
+        background-color: var(--bg-color);
         border-radius: 10px;
         display: flex;
         flex-direction: column;
     }
 
     .filter-button {
-        background-color: var(--gray-light);
+        background-color: var(--bg-color);
         display: flex;
         flex-direction: row;
         align-items: center;

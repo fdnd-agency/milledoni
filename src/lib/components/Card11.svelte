@@ -32,7 +32,7 @@
         padding: 0.2rem 0.2rem 0.4rem 0.2rem;
         overflow: hidden;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
+        background-color: var(--bg-card-color);
         transition: transform 0.2s, box-shadow 0.2s;
     }
 
@@ -55,7 +55,7 @@
     .product-title {
         margin: 0;
         font-size: 1.2rem;
-        color: #333;
+        color: var(--icon-color);
         text-align: left;
         max-width: 25ch;
     }

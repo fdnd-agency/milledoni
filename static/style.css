@@ -84,43 +84,30 @@ body {
     --font-weight-medium: 500;
     --font-weight-bold: 700;
 
-    /* Colors */
-    /* Neutrals */
-    --black-true: #121211;
-    --black: #212121;
-    --white-true: #ffffff;
-    --white: #fefcfa;
-    --gray: #888a8d;
-    --gray-light: #ededed;
-    --gray-medium: #d9d9d9;
-    --gray-medium-light: #e2e2e2;
+    /* Colors v2 */
+    --bg-color: #ededed;
+    --bg-card-color: #F6F5F5;
+    --txt-color: #212121;
+    --txt-ph-color: #888;
 
-    /* Color set 0  */
-    --color-0-white: #F6F5F5;
-    --color-0-black: var(--black);
-    --color-0-pink: #FEB3D2;
-    --color-0-purple: #882B7D;
-    --color-0-orange: #F6760E;
-    --color-0-brown: #602B00;
-    --color-0-aqua: #6EE8ED;
-    --color-0-blue: #086387;
-    --color-0-yellow: #FFD683;
-    --color-0-dyellow: #CC9119;
-    --color-0-green: #48DC75;
+    --icon-color: #333;
+    
+    /* Tag/Card pink/purple */
+    --pp-color: #FEB3D2;
+    --pp-accent-color: #882B7D;
 
-    /* Color Set 1 */
-    --color-1-yellow: #f4f49a;
-    --color-1-green: #86d4af;
-    --color-1-orange: #f9ae78;
-    --color-1-violet: #dab8f3;
-    --color-1-pink: #f7bbdd;
-    --color-1-blue: #b8ccec;
+    /* Tag/Card orange/brown */
+    --ob-color: #F6760E;
+    --ob-accent-color: #602B00;
 
-    /* Color Set 2 */
-    --color-2-yellow: #ffff00;
-    --color-2-green: #48dc75;
-    --color-2-orange: #f78445;
-    --color-2-violet: #d78fff;
-    --color-2-pink: #ff8ba4;
-    --color-2-blue: #4ec3fe;
+    /* Tag/Card cyan/blue */
+    --cb-color: #6EE8ED;
+    --cb-accent-color: #086387;
+
+    /* Tag/Card yellow/sand */
+    --ys-color: #FFD683;
+    --ys-accent-color: #CC9119;
+
+    /* Tag second hand */
+    --sh-color: #48dc75;
 }
