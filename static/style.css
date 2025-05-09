@@ -85,8 +85,9 @@ body {
     --font-weight-bold: 700;
 
     /* Colors v2 */
-    --bg-color: #ededed;
-    --bg-card-color: #F6F5F5;
+    --bg-color: #F6F5F5;
+    --bg-cs-color: #EDEDED;
+    --bg-card-color: #fefcfa;
     --txt-color: #212121;
     --txt-ph-color: #888;
 
@@ -110,4 +111,6 @@ body {
 
     /* Tag second hand */
     --sh-color: #48dc75;
+
+    background-color: var(--bg-color);
 }

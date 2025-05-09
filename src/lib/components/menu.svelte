@@ -102,7 +102,7 @@
         bottom: 0;
         z-index: 9999;
 
-        background-color: var(--bg-card-color);
+        background-color: var(--bg-color);
         border-top: 1px solid #0000005b;
 
         picture, .search-wrapper {
