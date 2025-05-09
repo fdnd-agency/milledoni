@@ -98,11 +98,11 @@
         width: 100%;
         max-width: 100vw;
         position: fixed;
-        background-color: var(--white);
         overflow: hidden;
         bottom: 0;
         z-index: 9999;
 
+        background-color: var(--bg-color);
         border-top: 1px solid #0000005b;
 
         picture, .search-wrapper {
@@ -134,7 +134,7 @@
 
                 span{
                     font-weight: var(--font-weight-medium);
-                    color: var(--black);
+                    color: var(--txt-color);
                     font-size: var(--font-size-card-details);
                 }
             }
@@ -160,8 +160,8 @@
             /* height: 8.625em; */
             height: 7em;
             border-top: unset;
-            border-bottom: 1px solid #0000005b;
-
+            margin-bottom: 1.5em;
+            
             nav {
                 display: flex;
                 align-items: center;
@@ -180,7 +180,7 @@
 
                     
                     li:nth-of-type(3) {
-                        background-color: var(--white-true);
+                        background-color: var(--bg-card-color);
                         box-shadow: 0px 2px 8px 0px #0000001A;
                         padding: .8em 1.6em .8em 1.6em;
                         border-radius: 6.75em;
@@ -192,7 +192,7 @@
                     }
 
                     li:nth-of-type(4) {
-                        background-color: var(--white-true);
+                        background-color: var(--bg-card-color);
                         box-shadow: 0px 2px 8px 0px #0000001A;
                         padding: .8em;
                         border-radius: 6.75em;
@@ -241,7 +241,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: #333;
+                    color: var(--icon-color);
                 }
 
                 .search-button {
@@ -256,12 +256,12 @@
                     outline: none;
                     flex: 1;
                     font-size: 1rem;
-                    color: #333;
+                    color: var(--icon-color);
                     background: transparent;
                 }
 
                 input::placeholder {
-                    color: #888;
+                    color: var(--txt-ph-color);
                 }
 
                 svg {

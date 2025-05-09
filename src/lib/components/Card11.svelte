@@ -18,20 +18,21 @@
     .product-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 20px;
+        gap: 15px;
+        padding: 10px 20px 20px 20px;
+        height: 100vh;
+        overflow-y: auto;
     }
 
     .product-card {
         display: block;
-        width: 17rem;
-        height: 20rem;
+        height: 23rem;
         text-decoration: none;
         border: 1px solid #ddd;
         padding: 0.2rem 0.2rem 0.4rem 0.2rem;
         overflow: hidden;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
+        background-color: var(--bg-card-color);
         transition: transform 0.2s, box-shadow 0.2s;
     }
 
@@ -54,7 +55,9 @@
     .product-title {
         margin: 0;
         font-size: 1.2rem;
-        color: #333;
+        color: var(--icon-color);
+        text-align: left;
+        max-width: 25ch;
     }
 
     /* .product-amount {
