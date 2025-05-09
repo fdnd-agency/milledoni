@@ -102,6 +102,7 @@
         bottom: 0;
         z-index: 9999;
 
+        background-color: var(--white-true);
         border-top: 1px solid #0000005b;
 
         picture, .search-wrapper {
@@ -159,6 +160,8 @@
             /* height: 8.625em; */
             height: 7em;
             border-top: unset;
+            margin-bottom: 1.5em;
+            
             nav {
                 display: flex;
                 align-items: center;
