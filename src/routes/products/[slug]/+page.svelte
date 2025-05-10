@@ -3,7 +3,7 @@
 </script>
 
 <main>
-    <h1>Product Details</h1>
+    <h1>Product Details for {data.slug}</h1> <!-- Display the slug -->
     {#if data.product}
         <h2>{data.product.name}</h2>
         <p>{data.product.description}</p>
