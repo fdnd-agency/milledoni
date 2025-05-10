@@ -4,11 +4,10 @@
 
 <div class="product-list">
     {#each data.products as product}
-        <a href="{product.url}" class="product-card" target="_blank" rel="noopener noreferrer">
+        <a href={`/products/${product.slug}`} class="product-card">
             <img src="{product.image}" alt="{product.name}" class="product-image">
             <article class="product-info">
                 <h2 class="product-title">{product.name}</h2>
-                <!-- <p class="product-amount">{product.amount}</p> -->
             </article>
         </a>
     {/each}
