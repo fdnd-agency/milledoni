@@ -28,6 +28,10 @@
     main {
         margin: 3rem;
     }
+
+    h1 {
+        margin-bottom: 3rem;
+    }
     .product-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
