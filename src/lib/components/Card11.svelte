@@ -25,7 +25,8 @@
 
     .product-card {
         display: block;
-        height: 23rem;
+        height: 25rem;
+        width: 21rem;
         text-decoration: none;
         border: 1px solid #ddd;
         padding: 0.2rem 0.2rem 0.4rem 0.2rem;
