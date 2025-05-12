@@ -1,10 +1,9 @@
-import { json } from '@sveltejs/kit'
-import { OPENAI_API_KEY } from '$env/static/private'
+import { OPENAI_API_KEY } from '$env/static/private';
 
 export async function POST({ request }) {
-	const { message } = await request.json()
+	const { messages } = await request.json();
 
-	const response = await fetch('https://api.openai.com/v1/chat/completions', {
+	const res = await fetch('https://api.openai.com/v1/chat/completions', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -12,10 +11,12 @@ export async function POST({ request }) {
 		},
 		body: JSON.stringify({
 			model: 'gpt-4o',
-			messages: [{ role: 'user', content: message }]
+			messages,
+			temperature: 0.7
 		})
-	})
+	});
 
-	const data = await response.json()
-	return json({ reply: data.choices[0].message.content })
+	const data = await res.json();
+	const reply = data.choices?.[0]?.message?.content || 'Sorry, er ging iets mis.';
+	return new Response(JSON.stringify({ reply }));
 }

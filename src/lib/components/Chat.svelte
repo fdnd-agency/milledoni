@@ -1,17 +1,32 @@
 <script>
+	import { onMount } from 'svelte';
+
 	let userInput = ''
-    /** @type {{ role: 'user' | 'assistant', content: string }[]} */
-	let messages = []
+	let messages = [
+		{
+			role: 'system',
+			content: `Je bent een behulpzame en vriendelijke assistent van Milledoni — een website waar gebruikers door duizenden cadeaus kunnen bladeren om het perfecte cadeau te vinden voor een familielid, vriend, collega of iemand anders. Jij helpt de gebruiker altijd met het kiezen van een passend cadeau. Vanaf dit bericht ziet de gebruiker wat er gestuurd wordt. Vanaf nu begin je met een eerste bericht zoals Hallo, kan ik je helpen met het zoeken van een cadeautje? Je zou het nog iets leuker mogen maken.`
+		}
+	]
+
+	onMount(async () => {
+		const res = await fetch('/api/chat', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ messages })
+		})
+		const { reply } = await res.json()
+		messages = [...messages, { role: 'assistant', content: reply }]
+	})
 
 	async function sendMessage() {
 		if (!userInput.trim()) return
-
 		messages = [...messages, { role: 'user', content: userInput }]
 
 		const res = await fetch('/api/chat', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ message: userInput })
+			body: JSON.stringify({ messages })
 		})
 
 		const { reply } = await res.json()
@@ -23,8 +38,10 @@
 <article class="chat-box">
 	<h2>Chat met AI</h2>
 	<div class="messages">
-		{#each messages as msg}
-			<p><strong>{msg.role}:</strong> {msg.content}</p>
+		{#each messages as msg (msg.content)}
+			{#if msg.role !== 'system'}
+				<p><strong>{msg.role}:</strong> {msg.content}</p>
+			{/if}
 		{/each}
 	</div>
 
