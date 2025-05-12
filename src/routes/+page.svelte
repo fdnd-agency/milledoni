@@ -2,6 +2,7 @@
     import Card11 from "$lib/components/Card11.svelte";
     // import Card17 from "$lib/components/Card17.svelte";
     import Menu from "$lib/components/menu.svelte";
+    import Chat from '$lib/components/Chat.svelte'
     export let data;
 </script>
 
@@ -22,6 +23,7 @@
         <article class="chat-box">
             <h2>Chat</h2>
             <p>Chat content goes here...</p>
+            <Chat />
         </article>
 
         <article class="product-card_container">
