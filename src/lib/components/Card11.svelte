@@ -25,7 +25,7 @@
 
     .product-card {
         display: block;
-        height: 35rem;
+        height: 30rem;
         width: 100%;
         text-decoration: none;
         border: 1px solid #ddd;
