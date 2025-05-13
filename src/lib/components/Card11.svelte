@@ -1,18 +1,29 @@
 <script>
-    export let data;
+	export let data;
+	export let selectedTags = [];
+
+	$: filteredProducts = selectedTags.length === 0
+		? data.products
+		: data.products.filter(product => {
+			const productTags = typeof product.tags === 'string'
+				? product.tags.split(',').map(t => t.trim().toLowerCase().replace(/^'+|'+$/g, ''))
+				: [];
+
+			return productTags.some(tag => selectedTags.includes(tag));
+		});
 </script>
 
 <div class="product-list">
-    {#each data.products as product}
-        <a href="{product.url}" class="product-card" target="_blank" rel="noopener noreferrer">
-            <img src="{product.image}" alt="{product.name}" class="product-image">
-            <article class="product-info">
-                <h2 class="product-title">{product.name}</h2>
-                <!-- <p class="product-amount">{product.amount}</p> -->
-            </article>
-        </a>
-    {/each}
+	{#each filteredProducts as product}
+		<a href="{product.url}" class="product-card" target="_blank" rel="noopener noreferrer">
+			<img src="{product.image}" alt="{product.name}" class="product-image">
+			<article class="product-info">
+				<h2 class="product-title">{product.name}</h2>
+			</article>
+		</a>
+	{/each}
 </div>
+
 
 <style>
     .product-list {

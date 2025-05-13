@@ -12,21 +12,34 @@ export async function POST({ request }) {
 			},
 			body: JSON.stringify({
 				model: 'gpt-4o',
-				messages: messages.slice(0, 1).concat(messages.slice(-10)), // system + laatste 10
+				messages: messages.slice(0, 1).concat(messages.slice(-10)),
 				temperature: 0.7
 			})
 		});
 
 		if (!res.ok) {
 			console.error(`OpenAI API fout: ${res.status} - ${await res.text()}`);
-			return new Response(JSON.stringify({ reply: 'Er ging iets mis bij het ophalen van het antwoord.' }), { status: 500 });
+			return new Response(JSON.stringify({ reply: 'Er ging iets mis bij het ophalen van het antwoord.', tags: [] }), { status: 500 });
 		}
 
 		const data = await res.json();
-		const reply = data.choices?.[0]?.message?.content || 'Sorry, er ging iets mis.';
-		return new Response(JSON.stringify({ reply }));
+		let raw = data.choices?.[0]?.message?.content;
+
+		let reply = 'Sorry, er ging iets mis.';
+		let tags = [];
+
+		try {
+			const parsed = JSON.parse(raw);
+			reply = parsed.reply || reply;
+			tags = parsed.tags || [];
+		} catch (e) {
+			console.warn("Kon geen JSON parsen uit AI-response:", raw);
+			reply = raw;
+		}
+
+		return new Response(JSON.stringify({ reply, tags }));
 	} catch (err) {
 		console.error('Interne fout:', err);
-		return new Response(JSON.stringify({ reply: 'Er is een onverwachte fout opgetreden.' }), { status: 500 });
+		return new Response(JSON.stringify({ reply: 'Er is een onverwachte fout opgetreden.', tags: [] }), { status: 500 });
 	}
 }

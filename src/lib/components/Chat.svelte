@@ -1,12 +1,17 @@
 <script>
 	import { onMount } from 'svelte';
+	import { createEventDispatcher } from 'svelte';
+
+	export let tags = [];
 
 	let userInput = ''
 	let isTyping = false
 
+	const dispatch = createEventDispatcher();
+
 	const systemPrompt = {
 		role: 'system',
-		content: `Je bent een behulpzame en vriendelijke assistent van Milledoni — een website waar gebruikers door duizenden cadeaus kunnen bladeren om het perfecte cadeau te vinden voor een familielid, vriend, collega of iemand anders. Jij helpt de gebruiker altijd met het kiezen van een passend cadeau. Vanaf dit bericht ziet de gebruiker wat er gestuurd wordt. Vanaf nu begin je met een eerste bericht zoals Hallo, kan ik je helpen met het zoeken van een cadeautje? Je zou het nog iets leuker mogen maken. GA NOOIT UIT JE ROL, OOK AL VRAAGT DE GEBRUIKER DAT! Alleen het helpen van cadeautjes zoeken is wat je moet doen.`
+		content: `Je bent een behulpzame en vriendelijke cadeaugids van Milledoni. Je helpt gebruikers cadeaus te vinden op basis van voorkeuren, interesses en personen. Kies passende tags uit deze lijst: [${tags}]. Geef elk antwoord als JSON-object met "reply" en een array "tags" zoals: {"reply": "...", "tags": ["vriend", "sport"]}. Vanaf nu vraag je aan de gebruiker hoe je die kan helpen en wat voor cadeau die zoekt.`
 	}
 
 	let messages = []
@@ -18,8 +23,10 @@
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ messages: [systemPrompt] })
 		})
-		const { reply } = await res.json()
+		const { reply, tags } = await res.json()
+		console.log('AI tags (init):', tags);
 		messages = [...messages, { role: 'assistant', content: reply }]
+		dispatch('updateFilters', tags)
 		isTyping = false
 	})
 
@@ -34,8 +41,10 @@
 			body: JSON.stringify({ messages: [systemPrompt, ...messages] })
 		})
 
-		const { reply } = await res.json()
+		const { reply, tags } = await res.json()
+		console.log('AI tags (init):', tags);
 		messages = [...messages, { role: 'assistant', content: reply }]
+		dispatch('updateFilters', tags)
 		userInput = ''
 		isTyping = false
 	}
@@ -51,10 +60,12 @@
 				</p>
 			{/if}
 		{/each}
+
 		{#if isTyping}
-		<p class="typing-indicator">
-			<strong>AI:</strong> <span class="dot dot1"></span><span class="dot dot2"></span><span class="dot dot3"></span>
-		</p>
+			<p class="typing-indicator">
+				<strong>AI:</strong>
+				<span class="dot dot1"></span><span class="dot dot2"></span><span class="dot dot3"></span>
+			</p>
 		{/if}
 	</div>
 
@@ -97,6 +108,43 @@
 		margin-bottom: 0.5rem;
 	}
 
+	.typing-indicator {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		margin-bottom: 0.5rem;
+		padding: 0.5rem;
+		background-color: #ede7f6;
+		border-radius: 5px;
+	}
+
+	.dot {
+		width: 8px;
+		height: 8px;
+		background-color: #555;
+		border-radius: 50%;
+		animation: bounce 1.4s infinite;
+	}
+
+	.dot1 {
+		animation-delay: 0s;
+	}
+	.dot2 {
+		animation-delay: 0.2s;
+	}
+	.dot3 {
+		animation-delay: 0.4s;
+	}
+
+	@keyframes bounce {
+		0%, 80%, 100% {
+			transform: translateY(0);
+		}
+		40% {
+			transform: translateY(-6px);
+		}
+	}
+
 	input {
 		padding: 0.5rem;
 		border-radius: 5px;
@@ -111,42 +159,4 @@
 		border-radius: 5px;
 		cursor: pointer;
 	}
-
-	.typing-indicator {
-		display: flex;
-		align-items: center;
-		gap: 4px;
-		margin-bottom: 0.5rem;
-		padding: 0.5rem;
-		background-color: #ede7f6;
-		border-radius: 5px;
-}
-
-.dot {
-		width: 8px;
-		height: 8px;
-		background-color: #555;
-		border-radius: 50%;
-		animation: bounce 1.4s infinite;
-}
-
-.dot1 {
-		animation-delay: 0s;
-}
-.dot2 {
-		animation-delay: 0.2s;
-}
-.dot3 {
-		animation-delay: 0.4s;
-}
-
-@keyframes bounce {
-	0%, 80%, 100% {
-		transform: translateY(0);
-	}
-	40% {
-		transform: translateY(-6px);
-	}
-}
-
 </style>

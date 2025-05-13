@@ -3,22 +3,21 @@
     import { Chat } from "$lib/index.js";
     import { Icons } from "$lib/index.js";
     export let data;
+
+    let selectedTags = [];
 </script>
 
 <main>
-    <section class="main-content">
-        <article class="chat-box">
-            <Chat />
-        </article>
+	<section class="main-content">
+		<article class="chat-box">
+			<Chat tags={data.tags} on:updateFilters={(e) => selectedTags = e.detail} />
+		</article>
 
-        <article class="product-card_container">
-            <button class="filter-button">
-                <Icons name="filter" width="47px" height="47px"></Icons>
-                FILTER
-            </button>
-            <Card11 {data}></Card11>
-        </article>
-    </section>
+		<article class="product-card_container">
+			<button class="filter-button">FILTER</button>
+			<Card11 data={data} selectedTags={selectedTags} />
+		</article>
+	</section>
 </main>
 
 <style>
