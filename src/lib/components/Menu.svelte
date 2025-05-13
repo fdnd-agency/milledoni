@@ -8,7 +8,9 @@
 <header>
     <nav>
         <picture>
-            <Icons name="logo" width="19.6vw" height="auto"></Icons>
+            <a href="/">
+                <Icons name="logo" width="19.6vw" height="auto"></Icons>
+            </a>
         </picture>
         <div class="search-wrapper">
             <form class="search-container" role="search" aria-label="Search for a gift">
@@ -154,7 +156,6 @@
                         box-shadow: 0px 2px 8px 0px #0000001A;
                         padding: .8em 1.6em .8em 1.6em;
                         border-radius: 6.75em;
-                        width: 10.7vw;
 
                         a {
                             flex-direction: row-reverse;
@@ -166,7 +167,7 @@
                         box-shadow: 0px 2px 8px 0px #0000001A;
                         padding: .8em;
                         border-radius: 6.75em;
-                        width: 3.24;
+                        width: 3.24vw;
                         
                         span {
                             display: none;
