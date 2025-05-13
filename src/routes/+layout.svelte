@@ -4,6 +4,6 @@
     export let data;
 </script>
 
-<Menu />
+<Menu {data} />
 
-<slot /> <!-- This is where the +page.svelte content will render -->
+<slot />

@@ -1,8 +1,7 @@
 <script>
-    import { page } from '$app/stores';
     import { Icons } from "$lib/index.js";
-
-    $: currentPath = $page.url.pathname;
+    export let data;
+    const currentPath = data.currentPath;
 </script>
 
 <header>
