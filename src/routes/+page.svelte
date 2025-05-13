@@ -21,8 +21,6 @@
 
     <section class="main-content">
         <article class="chat-box">
-            <h2>Chat</h2>
-            <p>Chat content goes here...</p>
             <Chat />
         </article>
 
