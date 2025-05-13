@@ -1,5 +1,6 @@
 <script>
     import { Card11 } from "$lib/index.js";
+    import { Chat } from "$lib/index.js";
     import { Icons } from "$lib/index.js";
     export let data;
 </script>
