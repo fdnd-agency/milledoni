@@ -1,29 +1,57 @@
 <script>
-	export let data;
-	export let selectedTags = [];
+    export let data;
+    export let selectedTags = [];
 
-	$: filteredProducts = selectedTags.length === 0
-		? data.products
-		: data.products.filter(product => {
-			const productTags = typeof product.tags === 'string'
-				? product.tags.split(',').map(t => t.trim().toLowerCase().replace(/^'+|'+$/g, ''))
-				: [];
+$: filteredProducts = data.products
+	.map(product => {
+		const rawTags = product.tags ?? '';
+		const productTags = rawTags
+			.split(',')
+			.map(t => t.trim().toLowerCase().replace(/^'+|'+$/g, ''));
 
-			return productTags.some(tag => selectedTags.includes(tag));
-		});
+		const matchCount = selectedTags.reduce((count, tag) =>
+			productTags.includes(tag) ? count + 1 : count, 0
+		);
+
+		return { ...product, matchCount };
+	})
+	.sort((a, b) => b.matchCount - a.matchCount);
 </script>
 
 <div class="product-list">
-	{#each filteredProducts as product}
-		<a href="{product.url}" class="product-card" target="_blank" rel="noopener noreferrer">
-			<img src="{product.image}" alt="{product.name}" class="product-image">
-			<article class="product-info">
-				<h2 class="product-title">{product.name}</h2>
-			</article>
-		</a>
-	{/each}
+    {#each filteredProducts as product}
+        <a
+            href={product.url}
+            class="product-card"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <img src={product.image} alt={product.name} class="product-image" />
+            <article class="product-info">
+                <h2 class="product-title">{product.name}</h2>
+            </article>
+        </a>
+    {/each}
 </div>
 
+<!-- OLD CODE -->
+<!-- {#each data.products as product}
+    <ul>
+        <li>SORT: {product.sort}</li>
+        <li>ID: {product.id}</li>
+        <li>IMAGE: <img src="{product.image}" alt=""></li>
+        <li>SHOP URL: <a href="{product.shop_url}">{product.shop_url}</a></li>
+        <li>DESCRIPTION: {product.description}</li>
+        <li>TAGS: {product.tags}</li>
+        <li>NAME: {product.name}</li>
+        <li>SPOTTER: {product.spotter}</li>
+        <li>SHOP_NAME: {product.shop_name}</li>
+        <li>SLUG: {product.slug}</li>
+        <li>URL: {product.url}</li>
+        <li>AMOUNT: {product.amount}</li>
+    </ul>
+    <hr>
+{/each} -->
 
 <style>
     .product-list {
@@ -44,7 +72,9 @@
         overflow: hidden;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         background-color: var(--bg-card-color);
-        transition: transform 0.2s, box-shadow 0.2s;
+        transition:
+            transform 0.2s,
+            box-shadow 0.2s;
     }
 
     .product-card:hover {
@@ -77,22 +107,3 @@
         color: #555;
     } */
 </style>
-
-<!-- OLD CODE -->
-<!-- {#each data.products as product}
-    <ul>
-        <li>SORT: {product.sort}</li>
-        <li>ID: {product.id}</li>
-        <li>IMAGE: <img src="{product.image}" alt=""></li>
-        <li>SHOP URL: <a href="{product.shop_url}">{product.shop_url}</a></li>
-        <li>DESCRIPTION: {product.description}</li>
-        <li>TAGS: {product.tags}</li>
-        <li>NAME: {product.name}</li>
-        <li>SPOTTER: {product.spotter}</li>
-        <li>SHOP_NAME: {product.shop_name}</li>
-        <li>SLUG: {product.slug}</li>
-        <li>URL: {product.url}</li>
-        <li>AMOUNT: {product.amount}</li>
-    </ul>
-    <hr>
-{/each} -->

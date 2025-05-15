@@ -1,52 +1,52 @@
 <script>
-	import { onMount } from 'svelte';
-	import { createEventDispatcher } from 'svelte';
+	import { onMount } from "svelte";
+	import { createEventDispatcher } from "svelte";
 
 	export let tags = [];
 
-	let userInput = ''
-	let isTyping = false
+	let userInput = "";
+	let isTyping = false;
 
 	const dispatch = createEventDispatcher();
 
 	const systemPrompt = {
-		role: 'system',
-		content: `Je bent een behulpzame en vriendelijke cadeaugids van Milledoni. Je helpt gebruikers cadeaus te vinden op basis van voorkeuren, interesses en personen. Kies passende tags uit deze lijst: [${tags}]. Geef elk antwoord als JSON-object met "reply" en een array "tags" zoals: {"reply": "...", "tags": ["vriend", "sport"]}. Vanaf nu vraag je aan de gebruiker hoe je die kan helpen en wat voor cadeau die zoekt.`
-	}
+		role: "system",
+		content: `Je bent een behulpzame en vriendelijke cadeaugids van Milledoni. Je helpt gebruikers cadeaus te vinden op basis van voorkeuren, interesses en personen. Kies passende tags uit deze lijst: [${tags}]. Geef elk antwoord als JSON-object met een "reply" (normale tekst voor gebruiker) en een array "tags" (interne data voor filtering). Zet de tags nooit in de tekst van "reply", alleen in het JSON-object. Begin nu door te vragen waar de gebruiker hulp bij nodig heeft.`,
+	};
 
-	let messages = []
+	let messages = [];
 
 	onMount(async () => {
-		isTyping = true
-		const res = await fetch('/api/chat', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ messages: [systemPrompt] })
-		})
-		const { reply, tags } = await res.json()
-		console.log('AI tags (init):', tags);
-		messages = [...messages, { role: 'assistant', content: reply }]
-		dispatch('updateFilters', tags)
-		isTyping = false
-	})
+		isTyping = true;
+		const res = await fetch("/api/chat", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ messages: [systemPrompt] }),
+		});
+		const { reply, tags } = await res.json();
+		console.log("AI tags (init):", tags);
+		messages = [...messages, { role: "assistant", content: reply }];
+		dispatch("updateFilters", tags);
+		isTyping = false;
+	});
 
 	async function sendMessage() {
-		if (!userInput.trim()) return
-		messages = [...messages, { role: 'user', content: userInput }]
-		isTyping = true
+		if (!userInput.trim()) return;
+		messages = [...messages, { role: "user", content: userInput }];
+		isTyping = true;
 
-		const res = await fetch('/api/chat', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ messages: [systemPrompt, ...messages] })
-		})
+		const res = await fetch("/api/chat", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ messages: [systemPrompt, ...messages] }),
+		});
 
-		const { reply, tags } = await res.json()
-		console.log('AI tags (init):', tags);
-		messages = [...messages, { role: 'assistant', content: reply }]
-		dispatch('updateFilters', tags)
-		userInput = ''
-		isTyping = false
+		const { reply, tags } = await res.json();
+		console.log("AI tags (init):", tags);
+		messages = [...messages, { role: "assistant", content: reply }];
+		dispatch("updateFilters", tags);
+		userInput = "";
+		isTyping = false;
 	}
 </script>
 
@@ -54,9 +54,10 @@
 	<h2>Chat met AI</h2>
 	<div class="messages">
 		{#each messages as msg (msg.content)}
-			{#if msg.role !== 'system'}
-				<p class={msg.role === 'user' ? 'user-msg' : 'assistant-msg'}>
-					<strong>{msg.role === 'user' ? 'Jij' : 'AI'}:</strong> {msg.content}
+			{#if msg.role !== "system"}
+				<p class={msg.role === "user" ? "user-msg" : "assistant-msg"}>
+					<strong>{msg.role === "user" ? "Jij" : "AI"}:</strong>
+					{msg.content}
 				</p>
 			{/if}
 		{/each}
@@ -64,7 +65,8 @@
 		{#if isTyping}
 			<p class="typing-indicator">
 				<strong>AI:</strong>
-				<span class="dot dot1"></span><span class="dot dot2"></span><span class="dot dot3"></span>
+				<span class="dot dot1"></span><span class="dot dot2"
+				></span><span class="dot dot3"></span>
 			</p>
 		{/if}
 	</div>
@@ -73,7 +75,7 @@
 		type="text"
 		bind:value={userInput}
 		placeholder="Typ je vraag..."
-		on:keydown={(e) => e.key === 'Enter' && sendMessage()}
+		on:keydown={(e) => e.key === "Enter" && sendMessage()}
 	/>
 	<button on:click={sendMessage}>Stuur</button>
 </article>
@@ -137,7 +139,9 @@
 	}
 
 	@keyframes bounce {
-		0%, 80%, 100% {
+		0%,
+		80%,
+		100% {
 			transform: translateY(0);
 		}
 		40% {

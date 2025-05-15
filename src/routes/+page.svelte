@@ -8,16 +8,20 @@
 </script>
 
 <main>
-	<section class="main-content">
-		<article class="chat-box">
-			<Chat tags={data.tags} on:updateFilters={(e) => selectedTags = e.detail} />
-		</article>
+    <section class="main-content">
+        <article class="chat-box">
+            <Chat
+                tags={data.tags}
+                on:updateFilters={(e) =>
+                    (selectedTags = e.detail.map((tag) => tag.toLowerCase()))}
+            />
+        </article>
 
-		<article class="product-card_container">
-			<button class="filter-button">FILTER</button>
-			<Card11 data={data} selectedTags={selectedTags} />
-		</article>
-	</section>
+        <article class="product-card_container">
+            <button class="filter-button">FILTER</button>
+            <Card11 {data} {selectedTags} />
+        </article>
+    </section>
 </main>
 
 <style>
