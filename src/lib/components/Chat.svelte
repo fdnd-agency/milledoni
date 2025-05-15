@@ -69,7 +69,7 @@ Zet de tags nooit in de tekst van "reply", en voeg GEEN markdown, geen codeblokk
 		{/each}
 
 		{#if isTyping}
-			<p class="typing-indicator">
+            <p class="typing-indicator" aria-live="polite">
 				<strong>AI:</strong>
 				<span class="dot dot1"></span><span class="dot dot2"
 				></span><span class="dot dot3"></span>
@@ -93,6 +93,7 @@ Zet de tags nooit in de tekst van "reply", en voeg GEEN markdown, geen codeblokk
 			sendMessage();
 			userInput = ""; 
 		}}
+		aria-label="Stuur je vraag"
 	>
 		Stuur
 	</button>
