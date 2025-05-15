@@ -81,9 +81,21 @@ Zet de tags nooit in de tekst van "reply", en voeg GEEN markdown, geen codeblokk
 		type="text"
 		bind:value={userInput}
 		placeholder="Typ je vraag..."
-		on:keydown={(e) => e.key === "Enter" && sendMessage()}
+		on:keydown={(e) => {
+			if (e.key === "Enter") {
+				sendMessage();
+				userInput = ""; 
+			}
+		}}
 	/>
-	<button on:click={sendMessage}>Stuur</button>
+	<button
+		on:click={() => {
+			sendMessage();
+			userInput = ""; 
+		}}
+	>
+		Stuur
+	</button>
 </article>
 
 <style>
