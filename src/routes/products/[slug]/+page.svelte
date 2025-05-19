@@ -21,7 +21,7 @@
 
         <!-- Placeholder for future content -->
         <div class="product-extra">
-            <!-- Future content like reviews, specs, etc. goes here -->
+            <h2> Hier staat content</h2>>
         </div>
     </section>
 </main>
@@ -29,18 +29,18 @@
 <style>
 
     main {
-        margin: 3rem;
+        margin: 5rem 7rem 0rem 7rem;
     }
 
     h2 {
-        font-size: var(--font-size-card-title);
-        font-weight: var(--font-weight-bold);
+        font-size: 4rem;
+        font-weight: 2.5rem;
     }
     .product-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        grid-template-columns: 5fr 4fr;
         margin-top: 1rem;
+        gap: 2rem;
         align-items: start;
     }
 
@@ -49,16 +49,19 @@
     }
 
     .product-image img {
-        width: 90%;
-        height: 35rem;
+        width: 100svh;
+        height: 70svh;
         border-radius: 0.5rem;
+        padding-right: 4rem;
         display: block;
+        object-fit: cover;
     }
 
     .product-info {
         display: flex;
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 2rem;
+        padding-right: 5rem;
     }
 
     .product-grid .product-extra {
