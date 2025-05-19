@@ -31,6 +31,11 @@
     main {
         margin: 3rem;
     }
+
+    h2 {
+        font-size: var(--font-size-card-title);
+        font-weight: var(--font-weight-bold);
+    }
     .product-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
