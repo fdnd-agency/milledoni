@@ -7,6 +7,7 @@
 <header>
     <nav>
         <picture>
+            <a href="/" aria-label="Milledoni Logo - Click to go back to Home">
             <svg viewBox="0 0 342 71" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_2147_14700)">
                 <path d="M45.037 29.4473L37.8932 35.1456L36.4761 36.284L27.3911 43.5282L18.2025 36.2387L16.7724 35.1003L9.64807 29.4473H0.304199V69.1999H9.68689V41.536L15.1094 45.5786L16.8048 46.8398L25.1392 53.0492H29.6494L37.7962 46.9757L39.485 45.7209L45.1017 41.536V69.1999H54.4779V29.4473H45.037Z" fill="#212121"/>
@@ -26,7 +27,8 @@
                 <rect width="54.4779" height="69.2016" fill="white"/>
                 </clipPath>
                 </defs>
-            </svg>                
+            </svg>  
+            </a>              
         </picture>
         <div class="search-wrapper">
             <form class="search-container" role="search" aria-label="Search for a gift">
