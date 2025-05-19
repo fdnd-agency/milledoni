@@ -34,7 +34,12 @@
 
     h2 {
         font-size: 4rem;
-        font-weight: 2.5rem;
+        font-weight: var(--font-weight-bold);
+    }
+
+    .product-info p {
+        font-size: 1.1rem;
+        font-weight: var(--font-weight-regular);
     }
     .product-grid {
         display: grid;
