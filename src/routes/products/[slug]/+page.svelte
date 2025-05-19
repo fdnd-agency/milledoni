@@ -16,7 +16,7 @@
         <article class="product-info">
             <h2>{data.product.name}</h2>
             <p>{data.product.description}</p>
-            <p><strong>Price:</strong> ${data.product.price}</p>
+            <p><strong>Price:</strong> ${data.product.amount}</p>
         </article>
 
         <!-- Placeholder for future content -->
