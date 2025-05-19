@@ -1,19 +1,22 @@
 <script>
+    import Menu from "$lib/components/menu.svelte";
+
     export let data;
 </script>
 
+<Menu/>
+
 <main>
-    <h1>Product Details for {data.slug}</h1>
 
     <section class="product-grid">
         <figure class="product-image">
-            <img src={data.product[0].image} alt={data.product[0].name} />
+            <img src={data.product.image} alt={data.product.name} />
         </figure>
 
         <article class="product-info">
-            <h2>{data.product[0].name}</h2>
-            <p>{data.product[0].description}</p>
-            <p><strong>Price:</strong> ${data.product[0].price}</p>
+            <h2>{data.product.name}</h2>
+            <p>{data.product.description}</p>
+            <p><strong>Price:</strong> ${data.product.price}</p>
         </article>
 
         <!-- Placeholder for future content -->
@@ -27,10 +30,6 @@
 
     main {
         margin: 3rem;
-    }
-
-    h1 {
-        margin-bottom: 3rem;
     }
     .product-grid {
         display: grid;
