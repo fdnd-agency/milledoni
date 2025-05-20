@@ -16,7 +16,7 @@
             <article class="product-info">
                 <h2>{data.product.name}</h2>
                 <p>{data.product.description}</p>
-                <p><strong>Price:</strong> ${data.product.amount}</p>
+                <p>Price: ${data.product.amount}</p>
             </article>
 
             <div class="product-extra">
@@ -57,6 +57,11 @@
     .product-info p {
         font-size: 1.1rem;
         font-weight: var(--font-weight-regular);
+    }
+
+    .product-info p:nth-child(3) {
+        font-size: 2rem;
+        font-weight: var(--font-weight-bold);
     }
     .product-grid {
         display: grid;
