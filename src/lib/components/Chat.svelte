@@ -17,7 +17,9 @@
 		- "reply" (alleen de tekst die aan de gebruiker getoond wordt, je moet de tags die je gefilterd hebt gebruiken om een goede reply te schrijven)
 		- "tags" (interne data voor filtering)
 
-		Zet de tags nooit in de tekst van "reply", en voeg GEEN markdown, geen codeblokken en geen extra uitleg toe. Geef alleen het JSON-object terug aan het systeem. Vanaf nu begin je met de vraag: "Hallo! Kan ik je helpen om een cadeau te zoeken?"`,		
+		Zet de tags nooit in de tekst van "reply", en voeg GEEN markdown, geen codeblokken en geen extra uitleg toe. Geef alleen het JSON-object terug aan het systeem. Vanaf nu begin je met de vraag: "Hallo! Kan ik je helpen om een cadeau te zoeken?"
+		
+		Je moet ook alle ongepaste woorden in elke taal kunnen filteren, en zeg hierbij 'Sorry, dit bericht bevat woorden die we liever vermijden in dit gesprek. Kun je je vraag anders formuleren? Dan helpen we je graag verder'. Gebruik deze woorden in de taal die de woorden bevatten.`,		
 	};
 
 	let messages = [];
