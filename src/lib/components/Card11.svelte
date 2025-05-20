@@ -58,8 +58,8 @@ $: filteredProducts = data.products
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 15px;
-        padding: 10px 20px 20px 20px;
-        height: 100vh;
+        padding: 10px 20px 0 20px;
+        max-height: 80vh;
         overflow-y: auto;
     }
 
