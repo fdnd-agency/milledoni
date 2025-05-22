@@ -1,7 +1,19 @@
 <script>
-    import { Card11 } from "$lib/index.js";
+	import { Card11 } from "$lib/index.js";
     import { Icons } from "$lib/index.js";
-    export let data;
+
+	export let data;
+	let { products, search } = data;
+	let filteredProducts = [...products];
+
+	if (typeof window !== 'undefined') {
+		window.addEventListener('searchupdate', (e) => {
+			const q = e.detail.toLowerCase();
+			filteredProducts = products.filter(product =>
+				product.name.toLowerCase().includes(q)
+			);
+		});
+	}
 </script>
 
 <main>
@@ -16,7 +28,7 @@
                 <Icons name="filter" width="47px" height="47px"></Icons>
                 FILTER
             </button>
-            <Card11 {data}></Card11>
+            <Card11 data={{ products: filteredProducts }} />
         </article>
     </section>
 </main>

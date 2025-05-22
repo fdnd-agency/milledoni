@@ -1,7 +1,16 @@
 <script>
     import { Icons } from "$lib/index.js";
-    export let data;
-    const currentPath = data.currentPath;
+    export let currentPath;
+	export let search = '';
+	let jsSearch = search;
+
+	function handleInput(event) {
+		jsSearch = event.target.value;
+		const url = new URL(window.location.href);
+		url.searchParams.set('search', jsSearch);
+		window.history.replaceState({}, '', url);
+		window.dispatchEvent(new CustomEvent('searchupdate', { detail: jsSearch }));
+	}
 </script>
 
 <header>
@@ -12,7 +21,7 @@
             </a>
         </picture>
         <div class="search-wrapper">
-            <form class="search-container" role="search" aria-label="Search for a gift">
+            <form class="search-container" role="search" aria-label="Search for a gift" method="GET" action="">
                 <button type="button" class="icon-button" aria-label="Add">
                     <Icons name="plus" width="20px" height="20px"></Icons>
                 </button>
@@ -22,9 +31,13 @@
                 </button>
             
                 <input
+                id="product-search"
+                name="search"
                 type="search"
-                placeholder="I search a gift for a Dreamer"
+                placeholder="I search a gift for a ..."
                 aria-label="Search input"
+                bind:value={jsSearch}
+                on:input={typeof window !== 'undefined' ? handleInput : null}
                 />
             
                 <button type="submit" class="icon-button search-button" aria-label="Search">
