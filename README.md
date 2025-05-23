@@ -14,5 +14,5 @@
 [API endpoint USERS](https://fdnd-agency.directus.app/items/milledoni_users)  
 [API endpoint TAGS](https://fdnd-agency.directus.app/items/milledoni_tags)  
 [API endpoint LISTS](https://fdnd-agency.directus.app/items/milledoni_lists)  
-[API endpoint USERS/LISTS](https://fdnd-agency.directus.app/items/milledoni_users_lists)
-[API endpoint USERS/LIKES](https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1)
+[API endpoint USERS/LISTS](https://fdnd-agency.directus.app/items/milledoni_users_lists)  
+[API endpoint USERS/LIKES](https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1)  

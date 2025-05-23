@@ -1,9 +1,9 @@
 <script>
     import { Icons } from "$lib/index.js";
-	export let currentPath;
-	
+    export let currentPath;
+
     export let search = '';
-	let jsSearch = search;
+    let jsSearch = search;
 
     import { replaceState } from '$app/navigation';
 
@@ -50,7 +50,7 @@
                 <button type="submit" class="icon-button search-button" aria-label="Search">
                     <Icons name="search" width="20px" height="20px"></Icons>
                 </button>
-			</form>
+			      </form>
         </div>
         <ul>
             <li class:active={currentPath === '/'}>
@@ -82,16 +82,16 @@
 </header>
 
 <style>
-    .visually-hidden {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		padding: 0;
-		margin: -1px;
-		overflow: hidden;
-		clip: rect(0, 0, 0, 0);
-		white-space: nowrap;
-		border: 0;
+        .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
 	}
 
     header {

@@ -1,26 +1,31 @@
 <script>
-	import { Card11 } from "$lib/index.js";
+    import { Card11 } from "$lib/index.js";
     import { Icons } from "$lib/index.js";
+    import { Chat } from "$lib/index.js";
 
-	export let data;
-	let { products, search } = data;
-	let filteredProducts = [...products];
+    export let data;
+    let { products, search } = data;
+    let filteredProducts = [...products];
+    let selectedTags = [];
 
-	if (typeof window !== 'undefined') {
-		window.addEventListener('searchupdate', (e) => {
-			const q = e.detail.toLowerCase();
-			filteredProducts = products.filter(product =>
-				product.name.toLowerCase().includes(q)
-			);
-		});
-	}
+    if (typeof window !== 'undefined') {
+      window.addEventListener('searchupdate', (e) => {
+        const q = e.detail.toLowerCase();
+        filteredProducts = products.filter(product =>
+          product.name.toLowerCase().includes(q)
+        );
+      });
+    }
 </script>
 
 <main>
     <section class="main-content">
         <article class="chat-box">
-            <h2>Chat</h2>
-            <p>Chat content goes here...</p>
+            <Chat
+                tags={data.tags}
+                on:updateFilters={(e) =>
+                    (selectedTags = e.detail.map((tag) => tag.toLowerCase()))}
+            />
         </article>
 
         <article class="product-card_container">
@@ -29,6 +34,7 @@
                 FILTER
             </button>
             <Card11 data={{ products: filteredProducts }} />
+            <!-- <Card11 {data} {selectedTags} /> -->
         </article>
     </section>
 </main>
