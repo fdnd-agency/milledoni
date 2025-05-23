@@ -1,36 +1,56 @@
 <script>
     import { Icons } from "$lib/index.js";
-    export let data;
-    const currentPath = data.currentPath;
+	export let currentPath;
+	
+    export let search = '';
+	let jsSearch = search;
+
+    import { replaceState } from '$app/navigation';
+
+    let timeout;
+    function handleInput(event) {
+        clearTimeout(timeout);
+        const value = event.target.value;
+        timeout = setTimeout(() => {
+            jsSearch = value;
+            const url = new URL(window.location.href);
+            url.searchParams.set('search', jsSearch);
+            replaceState(url.pathname + url.search);
+            window.dispatchEvent(new CustomEvent('searchupdate', { detail: jsSearch }));
+        }, 250);
+    }
+
 </script>
 
 <header>
     <nav>
         <picture>
             <a href="/">
-                <Icons name="logo" width="19.6vw" height="auto"></Icons>
+                <Icons name="logo" width="19.6vw" height="100%"></Icons>
             </a>
         </picture>
         <div class="search-wrapper">
-            <form class="search-container" role="search" aria-label="Search for a gift">
+            <form class="search-container" method="GET" role="search" aria-label="Search for a gift">
+                <label for="product-search" class="visually-hidden">Zoek</label>
                 <button type="button" class="icon-button" aria-label="Add">
                     <Icons name="plus" width="20px" height="20px"></Icons>
                 </button>
-            
                 <button type="button" class="icon-button" aria-label="Voice Search">
                     <Icons name="mic" width="20px" height="20px"></Icons>
                 </button>
-            
                 <input
-                type="search"
-                placeholder="I search a gift for a Dreamer"
-                aria-label="Search input"
+                    id="product-search"
+                    name="search"
+                    type="search"
+                    placeholder="I search a gift for a ..."
+                    aria-label="Search input"
+                    bind:value={jsSearch}
+                    on:input={handleInput}
                 />
-            
                 <button type="submit" class="icon-button search-button" aria-label="Search">
                     <Icons name="search" width="20px" height="20px"></Icons>
                 </button>
-            </form>
+			</form>
         </div>
         <ul>
             <li class:active={currentPath === '/'}>
@@ -62,6 +82,18 @@
 </header>
 
 <style>
+    .visually-hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
     header {
         height: 4.375em;
         width: 100%;
