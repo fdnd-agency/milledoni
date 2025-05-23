@@ -1,9 +1,10 @@
 <script>
-    import { Menu } from "$lib/index.js";
+	import { Menu } from "$lib/index.js";
 
-    export let data;
+	export let data;
+	let { search, currentPath } = data;
 </script>
 
-<Menu {data} />
+<Menu {search} {currentPath} />
 
 <slot />
