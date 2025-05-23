@@ -104,10 +104,13 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		background-color: #f5f5f5;
+		background-color: #FFFFFF;
 		padding: 1rem;
 		border-radius: 10px;
 		height: 100%;
+		width: 30.61vw;
+		max-width: 30.61vw;
+		margin: auto;
 	}
 
 	.messages {

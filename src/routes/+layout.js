@@ -1,5 +1,8 @@
 export function load({ url }) {
-    return {
-        currentPath: url.pathname
-    };
+	const loggedIn = true; // or false for testing
+
+	return {
+		currentPath: url.pathname,
+		loggedIn
+	};
 }

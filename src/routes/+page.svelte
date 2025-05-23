@@ -1,10 +1,9 @@
 <script>
     import { Card11 } from "$lib/index.js";
     import { Icons } from "$lib/index.js";
-    import { Chat } from "$lib/index.js";
 
     export let data;
-    let { products, search } = data;
+    let { products, search, loggedIn } = data;
     let filteredProducts = [...products];
     let selectedTags = [];
 
@@ -20,29 +19,27 @@
 
 <main>
     <section class="main-content">
-        <article class="chat-box">
-            <Chat
-                tags={data.tags}
-                on:updateFilters={(e) =>
-                    (selectedTags = e.detail.map((tag) => tag.toLowerCase()))}
-            />
-        </article>
-
-        <article class="product-card_container">
+        <article class={`product-card_container ${!loggedIn ? 'full-width' : ''}`}>
             <button class="filter-button">
                 <Icons name="filter" width="47px" height="47px"></Icons>
                 FILTER
             </button>
             <Card11 data={{ products: filteredProducts }} />
-            <!-- <Card11 {data} {selectedTags} /> -->
         </article>
     </section>
 </main>
 
 <style>
+    .full-width {
+		width: 100vw;
+		max-width: none;
+	}
+
     .main-content {
+        max-width: 65.28vw;
+        width: 65.28vw;
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        /* grid-template-columns: 1fr 2fr; */
         gap: 20px;
     }
 
