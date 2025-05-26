@@ -1,6 +1,7 @@
 <script>
     export let data;
     export let selectedTags = [];
+     export let shuffling = false;
 
 $: filteredProducts = data.products
 	.map(product => {
@@ -18,7 +19,7 @@ $: filteredProducts = data.products
 	.sort((a, b) => b.matchCount - a.matchCount);
 </script>
 
-<div class="product-list">
+<div class="product-list" class:shuffling={shuffling}>
     {#each filteredProducts as product}
         <a
             href={product.url}
@@ -100,6 +101,19 @@ $: filteredProducts = data.products
         text-align: left;
         max-width: 25ch;
     }
+
+    .product-list.shuffling {
+    animation: shuffle-shake 0.4s;
+}
+
+    @keyframes shuffle-shake {
+        0% { transform: translateX(0); }
+        20% { transform: translateX(-10px); }
+        40% { transform: translateX(10px); }
+        60% { transform: translateX(-10px); }
+        80% { transform: translateX(10px); }
+        100% { transform: translateX(0); }
+}
 
     /* .product-amount {
         margin: 10px 0 0;

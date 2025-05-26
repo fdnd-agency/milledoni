@@ -6,6 +6,27 @@
     let { products, search, loggedIn } = data;
     let filteredProducts = [...products];
     let selectedTags = [];
+    let shuffling = false;
+
+    // Shuffle function (Fisher-Yates)
+    function shuffle(array) {
+        let currentIndex = array.length, randomIndex;
+        while (currentIndex !== 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+        }
+        return array;
+    }
+
+    function randomizeProducts() {
+        shuffling = true; 
+        filteredProducts = shuffle([...filteredProducts]);
+        setTimeout(() => {
+            shuffling = false; 
+        }, 400);
+    }
 
     if (typeof window !== 'undefined') {
       window.addEventListener('searchupdate', (e) => {
@@ -20,11 +41,11 @@
 <main>
     <section class="main-content">
         <article class={`product-card_container ${!loggedIn ? 'full-width' : ''}`}>
-            <button class="filter-button">
+            <button class="filter-button" on:click={randomizeProducts}>
                 <Icons name="filter" width="47px" height="47px"></Icons>
                 FILTER
             </button>
-            <Card11 data={{ products: filteredProducts }} />
+            <Card11 data={{ products: filteredProducts }} shuffling={shuffling} />
         </article>
     </section>
 </main>
