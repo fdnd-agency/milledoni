@@ -1,31 +1,34 @@
 <script>
+    import { flip } from 'svelte/animate'; // Add this import
+
     export let data;
     export let selectedTags = [];
-     export let shuffling = false;
+    export let shuffling = false;
 
-$: filteredProducts = data.products
-	.map(product => {
-		const rawTags = product.tags ?? '';
-		const productTags = rawTags
-			.split(',')
-			.map(t => t.trim().toLowerCase().replace(/^'+|'+$/g, ''));
+    $: filteredProducts = data.products
+        .map(product => {
+            const rawTags = product.tags ?? '';
+            const productTags = rawTags
+                .split(',')
+                .map(t => t.trim().toLowerCase().replace(/^'+|'+$/g, ''));
 
-		const matchCount = selectedTags.reduce((count, tag) =>
-			productTags.includes(tag) ? count + 1 : count, 0
-		);
+            const matchCount = selectedTags.reduce((count, tag) =>
+                productTags.includes(tag) ? count + 1 : count, 0
+            );
 
-		return { ...product, matchCount };
-	})
-	.sort((a, b) => b.matchCount - a.matchCount);
+            return { ...product, matchCount };
+        })
+        .sort((a, b) => b.matchCount - a.matchCount);
 </script>
 
 <div class="product-list" class:shuffling={shuffling}>
-    {#each filteredProducts as product}
+    {#each filteredProducts as product (product.id)} <!-- Add key for flip to work -->
         <a
             href={product.url}
             class="product-card"
             target="_blank"
             rel="noopener noreferrer"
+            animate:flip={{ duration: 1000 }}
         >
             <img src={product.image} alt={product.name} class="product-image" />
             <article class="product-info">
