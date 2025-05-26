@@ -2,8 +2,6 @@
     import { Icons } from "$lib/index.js";
     export let currentPath;
 
-    export let loggedIn = false;
-
     export let search = '';
     let jsSearch = search;
 
@@ -31,31 +29,29 @@
                 <Icons name="logo" width="19.6vw" height="100%"></Icons>
             </a>
         </picture>
-        {#if !loggedIn}
-            <div class="search-wrapper">
-                <form class="search-container" method="GET" role="search" aria-label="Search for a gift">
-                    <label for="product-search" class="visually-hidden">Zoek</label>
-                    <button type="button" class="icon-button" aria-label="Add">
-                        <Icons name="plus" width="20px" height="20px"></Icons>
-                    </button>
-                    <button type="button" class="icon-button" aria-label="Voice Search">
-                        <Icons name="mic" width="20px" height="20px"></Icons>
-                    </button>
-                    <input
-                        id="product-search"
-                        name="search"
-                        type="search"
-                        placeholder="I search a gift for a ..."
-                        aria-label="Search input"
-                        bind:value={jsSearch}
-                        on:input={handleInput}
-                    />
-                    <button type="submit" class="icon-button search-button" aria-label="Search">
-                        <Icons name="search" width="20px" height="20px"></Icons>
-                    </button>
-                </form>
-            </div>
-        {/if}
+        <div class="search-wrapper">
+            <form class="search-container" method="GET" role="search" aria-label="Search for a gift">
+                <label for="product-search" class="visually-hidden">Zoek</label>
+                <button type="button" class="icon-button" aria-label="Add">
+                    <Icons name="plus" width="20px" height="20px"></Icons>
+                </button>
+                <button type="button" class="icon-button" aria-label="Voice Search">
+                    <Icons name="mic" width="20px" height="20px"></Icons>
+                </button>
+                <input
+                    id="product-search"
+                    name="search"
+                    type="search"
+                    placeholder="I search a gift for a ..."
+                    aria-label="Search input"
+                    bind:value={jsSearch}
+                    on:input={handleInput}
+                />
+                <button type="submit" class="icon-button search-button" aria-label="Search">
+                    <Icons name="search" width="20px" height="20px"></Icons>
+                </button>
+			      </form>
+        </div>
         <ul>
             <li class:active={currentPath === '/'}>
                 <a href="./">
@@ -86,7 +82,7 @@
 </header>
 
 <style>
-    .visually-hidden {
+        .visually-hidden {
         position: absolute;
         width: 1px;
         height: 1px;
@@ -214,7 +210,6 @@
             picture {
                 display: block;
                 width: 31.666vw;
-                z-index: 9999;
             }
 
             .search-wrapper {

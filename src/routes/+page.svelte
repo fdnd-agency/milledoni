@@ -1,32 +1,12 @@
 <script>
     import { Card11 } from "$lib/index.js";
     import { Icons } from "$lib/index.js";
+    import { Chat } from "$lib/index.js";
 
     export let data;
-    let { products, search, loggedIn } = data;
+    let { products, search } = data;
     let filteredProducts = [...products];
     let selectedTags = [];
-    let shuffling = false;
-
-    // Shuffle function (Fisher-Yates)
-    function shuffle(array) {
-        let currentIndex = array.length, randomIndex;
-        while (currentIndex !== 0) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex--;
-            [array[currentIndex], array[randomIndex]] = [
-                array[randomIndex], array[currentIndex]];
-        }
-        return array;
-    }
-
-    function randomizeProducts() {
-        shuffling = true; 
-        filteredProducts = shuffle([...filteredProducts]);
-        setTimeout(() => {
-            shuffling = false; 
-        }, 400);
-    }
 
     if (typeof window !== 'undefined') {
       window.addEventListener('searchupdate', (e) => {
@@ -40,27 +20,29 @@
 
 <main>
     <section class="main-content">
-        <article class={`product-card_container ${!loggedIn ? 'full-width' : ''}`}>
-            <button class="filter-button" on:click={randomizeProducts}>
+        <article class="chat-box">
+            <Chat
+                tags={data.tags}
+                on:updateFilters={(e) =>
+                    (selectedTags = e.detail.map((tag) => tag.toLowerCase()))}
+            />
+        </article>
+
+        <article class="product-card_container">
+            <button class="filter-button">
                 <Icons name="filter" width="47px" height="47px"></Icons>
                 FILTER
             </button>
-            <Card11 data={{ products: filteredProducts }} shuffling={shuffling} />
+            <Card11 data={{ products: filteredProducts }} />
+            <!-- <Card11 {data} {selectedTags} /> -->
         </article>
     </section>
 </main>
 
 <style>
-    .full-width {
-		width: 100vw;
-		max-width: none;
-	}
-
     .main-content {
-        max-width: 65.28vw;
-        width: 65.28vw;
         display: grid;
-        /* grid-template-columns: 1fr 2fr; */
+        grid-template-columns: 1fr 2fr;
         gap: 20px;
     }
 
