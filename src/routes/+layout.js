@@ -1,7 +1,7 @@
 import fetchJson from '$lib/fetch-json.js';
 
 export async function load({ url }) {
-	const loggedIn = false; // toggle for testing
+	const loggedIn = true; // toggle for testing
 
 	const productsResponse = await fetchJson('https://fdnd-agency.directus.app/items/milledoni_products');
 
