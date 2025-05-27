@@ -27,10 +27,12 @@
     max-width: none;
   }
 
-  main.with-chat {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
-    align-items: start;
+  @media (min-width: 1024px) {
+    main.with-chat {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      align-items: start;
+    }
   }
 </style>

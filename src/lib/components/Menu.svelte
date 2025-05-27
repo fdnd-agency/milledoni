@@ -227,7 +227,7 @@
       }
 
       .search-wrapper {
-        padding: 2px; /* Dikte van de border */
+        padding: 2px;
         border-radius: 9999px;
         background: linear-gradient(
           to right,
@@ -247,10 +247,6 @@
         padding: 0.5rem 1rem;
         border-radius: 9999px;
         background: white;
-        /* background-clip: padding-box;
-                border: 2px solid transparent;
-                background-origin: border-box;
-                position: relative; */
 
         .icon-button {
           background: none;

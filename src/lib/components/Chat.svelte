@@ -121,122 +121,128 @@
 
 <style>
   .chat-box {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background-color: #ffffff;
-    padding: 1rem;
-    border-radius: 10px;
-    height: 100%;
-    width: 30.61vw;
-    max-width: 30.61vw;
-    margin-left: auto;
-    margin-top: 6.98vh;
-    height: 77.8vh;
-    max-height: 77.8vh;
+    display: none;
   }
-
-  .messages {
-    flex-grow: 1;
-    max-height: 100svh;
-    overflow-y: auto;
-  }
-
-  .user-msg {
-    background-color: var(--bg-color);
-    padding: 0.5rem;
-    border-radius: 5px;
-    margin-bottom: 0.5rem;
-    margin-left: 25%;
-  }
-
-  .assistant-msg {
-    background-color: var(--bg-color);
-    padding: 0.5rem;
-    border-radius: 5px;
-    margin-bottom: 0.5rem;
-    width: 75%
-  }
-
-  .typing-indicator {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin-bottom: 0.5rem;
-    padding: 0.5rem;
-    background-color: var(--bg-color);
-    border-radius: 5px;
-    height: 3em;
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-    background-color: #555;
-    border-radius: 50%;
-    animation: bounce 1.4s infinite;
-  }
-
-  .dot1 {
-    animation-delay: 0s;
-  }
-  .dot2 {
-    animation-delay: 0.2s;
-  }
-  .dot3 {
-    animation-delay: 0.4s;
-  }
-
-  @keyframes bounce {
-    0%,
-    80%,
-    100% {
-      transform: translateY(0);
+  
+  @media (min-width: 1024px) {
+    .chat-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 10px;
+      height: 100%;
+      width: 30.61vw;
+      max-width: 30.61vw;
+      margin-left: auto;
+      margin-top: 6.98vh;
+      height: 77.8vh;
+      max-height: 77.8vh;
     }
-    40% {
-      transform: translateY(-6px);
+
+    .messages {
+      flex-grow: 1;
+      max-height: 100svh;
+      overflow-y: auto;
     }
-  }
 
-  .search-container {
-    border: 1px solid #A3A3A3;
-    width: auto;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    background: white;
+    .user-msg {
+      background-color: var(--bg-color);
+      padding: 0.5rem;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+      margin-left: 25%;
+    }
 
-    .icon-button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.25rem;
+    .assistant-msg {
+      background-color: var(--bg-color);
+      padding: 0.5rem;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+      width: 75%
+    }
+
+    .typing-indicator {
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: var(--icon-color);
-    }
-
-    .search-button {
-      width: 3em;
+      gap: 4px;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      background-color: var(--bg-color);
+      border-radius: 5px;
       height: 3em;
-      background: black;
-      border-radius: 100%;
     }
 
-    input[type="text"] {
-      border: none;
-      outline: none;
-      flex: 1;
-      font-size: 1rem;
-      color: var(--icon-color);
-      background: transparent;
+    .dot {
+      width: 8px;
+      height: 8px;
+      background-color: #555;
+      border-radius: 50%;
+      animation: bounce 1.4s infinite;
     }
 
-    input::placeholder {
-      color: var(--txt-ph-color);
+    .dot1 {
+      animation-delay: 0s;
+    }
+    .dot2 {
+      animation-delay: 0.2s;
+    }
+    .dot3 {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      0%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .search-container {
+      border: 1px solid #A3A3A3;
+      width: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      background: white;
+
+      .icon-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--icon-color);
+      }
+
+      .search-button {
+        width: 3em;
+        height: 3em;
+        background: black;
+        border-radius: 100%;
+      }
+
+      input[type="text"] {
+        border: none;
+        outline: none;
+        flex: 1;
+        font-size: 1rem;
+        color: var(--icon-color);
+        background: transparent;
+      }
+
+      input::placeholder {
+        color: var(--txt-ph-color);
+      }
     }
   }
 </style>

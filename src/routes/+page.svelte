@@ -64,12 +64,13 @@
     max-width: none;
   }
 
+  @media (min-width: 1024px) {
   .main-content {
     max-width: 65.28vw;
     width: 65.28vw;
     display: grid;
-    /* grid-template-columns: 1fr 2fr; */
     gap: 20px;
+  }
   }
 
   .product-card_container {
