@@ -58,12 +58,15 @@
 </script>
 
 <article class="chat-box">
-  <h2>Chat met AI</h2>
   <div class="messages">
     {#each messages as msg (msg.content)}
       {#if msg.role !== "system"}
         <p class={msg.role === "user" ? "user-msg" : "assistant-msg"}>
-          <strong>{msg.role === "user" ? "Jij" : "AI"}:</strong>
+        {#if msg.role === "user"}
+          <Icons name="profile" width="25px" height="25px"></Icons>
+        {:else}
+          <Icons name="logo-small" width="23.5px" height="25px"></Icons>
+        {/if}
           {msg.content}
         </p>
       {/if}
@@ -71,7 +74,6 @@
 
     {#if isTyping}
       <p class="typing-indicator" aria-live="polite">
-        <strong>AI:</strong>
         <span class="dot dot1"></span><span class="dot dot2"></span><span
           class="dot dot3"
         ></span>
@@ -79,44 +81,42 @@
     {/if}
   </div>
 
-  <div class="search-wrapper">
-    <form
-      class="search-container"
-      method="GET"
-      role="search"
-      aria-label="Search for a gift"
-    >
-      <label for="product-search" class="visually-hidden">Zoek</label>
-      <button type="button" class="icon-button" aria-label="Add">
-        <Icons name="plus" width="20px" height="20px"></Icons>
-      </button>
-      <button type="button" class="icon-button" aria-label="Voice Search">
-        <Icons name="mic" width="20px" height="20px"></Icons>
-      </button>
-      <input
-        type="text"
-        bind:value={userInput}
-        placeholder="I search a gift for a ..."
-        on:keydown={(e) => {
-          if (e.key === "Enter") {
-            sendMessage();
-            userInput = "";
-          }
-        }}
-      />
-      <button
-        type="submit"
-        class="icon-button search-button"
-        aria-label="Search"
-        on:click={() => {
+  <form
+    class="search-container"
+    method="GET"
+    role="search"
+    aria-label="Search for a gift"
+  >
+    <label for="product-search" class="visually-hidden">Zoek</label>
+    <button type="button" class="icon-button" aria-label="Add">
+      <Icons name="plus" width="20px" height="20px"></Icons>
+    </button>
+    <button type="button" class="icon-button" aria-label="Voice Search">
+      <Icons name="mic" width="20px" height="20px"></Icons>
+    </button>
+    <input
+      type="text"
+      bind:value={userInput}
+      placeholder="I search a gift for a ..."
+      on:keydown={(e) => {
+        if (e.key === "Enter") {
           sendMessage();
           userInput = "";
-        }}
-      >
-        <Icons name="search" width="20px" height="20px"></Icons>
-      </button>
-    </form>
-  </div>
+        }
+      }}
+    />
+    <button
+      type="submit"
+      class="icon-button search-button"
+      aria-label="Search"
+      on:click={() => {
+        sendMessage();
+        userInput = "";
+      }}
+    >
+      <Icons name="search" width="20px" height="20px"></Icons>
+    </button>
+  </form>
 </article>
 
 <style>
@@ -130,7 +130,10 @@
     height: 100%;
     width: 30.61vw;
     max-width: 30.61vw;
-    margin: auto;
+    margin-left: auto;
+    margin-top: 6.98vh;
+    height: 77.8vh;
+    max-height: 77.8vh;
   }
 
   .messages {
@@ -140,17 +143,19 @@
   }
 
   .user-msg {
-    background-color: #e0f7fa;
+    background-color: var(--bg-color);
     padding: 0.5rem;
     border-radius: 5px;
     margin-bottom: 0.5rem;
+    margin-left: 25%;
   }
 
   .assistant-msg {
-    background-color: #ede7f6;
+    background-color: var(--bg-color);
     padding: 0.5rem;
     border-radius: 5px;
     margin-bottom: 0.5rem;
+    width: 75%
   }
 
   .typing-indicator {
@@ -159,8 +164,9 @@
     gap: 4px;
     margin-bottom: 0.5rem;
     padding: 0.5rem;
-    background-color: #ede7f6;
+    background-color: var(--bg-color);
     border-radius: 5px;
+    height: 3em;
   }
 
   .dot {
@@ -192,14 +198,8 @@
     }
   }
 
-  .search-wrapper {
-    padding: 2px; /* Dikte van de border */
-    border-radius: 9999px;
-    background: linear-gradient(to right, #84c7df, #ce89b5, #f0b743, #82c7e1);
-    display: inline-block;
-  }
-
   .search-container {
+    border: 1px solid #A3A3A3;
     width: auto;
     display: flex;
     align-items: center;

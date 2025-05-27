@@ -175,10 +175,8 @@
       position: sticky;
       display: flex;
       align-items: center;
-      /* height: 8.625em; */
-      height: 7em;
+      height: 12.53vh;
       border-top: unset;
-      margin-bottom: 1.5em;
 
       nav {
         display: flex;

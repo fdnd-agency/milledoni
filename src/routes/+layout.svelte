@@ -8,8 +8,8 @@
 
 <Menu {search} {currentPath} {loggedIn} />
 
-<main class:logged-out={!loggedIn} class:with-chat={loggedIn}>
-  {#if loggedIn}
+<main class:logged-out={!loggedIn} class:with-chat={loggedIn && currentPath === "/"}> <!-- Disabled chat on all other pages -->
+  {#if loggedIn && currentPath === "/"} <!-- Disabled chat on all other pages -->
     <Chat
       {tags}
       on:updateFilters={(e) =>

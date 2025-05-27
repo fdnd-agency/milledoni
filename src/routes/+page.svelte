@@ -48,17 +48,15 @@
   }
 </script>
 
-<main>
-  <section class="main-content">
-    <article class={`product-card_container ${!loggedIn ? "full-width" : ""}`}>
-      <button class="filter-button">
-        <Icons name="filter" width="47px" height="47px"></Icons>
-        FILTER
-      </button>
-      <Card11 data={{ products: filteredProducts }} />
-    </article>
-  </section>
-</main>
+<section class="main-content">
+  <article class={`product-card_container ${!loggedIn ? "full-width" : ""}`}>
+    <button class="filter-button">
+      <Icons name="filter" width="47px" height="47px"></Icons>
+      FILTER
+    </button>
+    <Card11 data={{ products: filteredProducts }} />
+  </article>
+</section>
 
 <style>
   .full-width {
