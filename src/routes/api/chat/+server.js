@@ -1,7 +1,20 @@
 import { OPENAI_API_KEY } from '$env/static/private';
+import { containsBlockedTerm } from '$lib/utils/blocklist.js';
 
 export async function POST({ request }) {
 	const { messages } = await request.json();
+	
+	const userMessage = messages[messages.length - 1]?.content || '';
+
+	if (containsBlockedTerm(userMessage)) {
+		return new Response(
+			JSON.stringify({
+				reply: 'Je bericht bevat ongepaste woorden. Probeer het op een andere manier.',
+				tags: []
+			}),
+			{ status: 400 }
+		);
+	}
 
 	try {
 		const res = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -19,7 +32,10 @@ export async function POST({ request }) {
 
 		if (!res.ok) {
 			console.error(`OpenAI API fout: ${res.status} - ${await res.text()}`);
-			return new Response(JSON.stringify({ reply: 'Er ging iets mis bij het ophalen van het antwoord.', tags: [] }), { status: 500 });
+			return new Response(
+				JSON.stringify({ reply: 'Er ging iets mis bij het ophalen van het antwoord.', tags: [] }),
+				{ status: 500 }
+			);
 		}
 
 		const data = await res.json();
@@ -40,6 +56,9 @@ export async function POST({ request }) {
 		return new Response(JSON.stringify({ reply, tags }));
 	} catch (err) {
 		console.error('Interne fout:', err);
-		return new Response(JSON.stringify({ reply: 'Er is een onverwachte fout opgetreden.', tags: [] }), { status: 500 });
+		return new Response(
+			JSON.stringify({ reply: 'Er is een onverwachte fout opgetreden.', tags: [] }),
+			{ status: 500 }
+		);
 	}
 }
