@@ -1,27 +1,24 @@
 import fetchJson from "$lib/fetch-json.js";
 
-export async function load() {
-	const users = await fetchJson('https://fdnd-agency.directus.app/items/milledoni_users');
-	const products = await fetchJson('https://fdnd-agency.directus.app/items/milledoni_products');
+export async function load({ url }) {
+	const search = url.searchParams.get('search')?.toLowerCase() || '';
+	const milledoniUsers = 'https://fdnd-agency.directus.app/items/milledoni_users';
+	const milledoniProducts = 'https://fdnd-agency.directus.app/items/milledoni_products';
 
-	const tagSet = new Set();
+	const users = await fetchJson(milledoniUsers);
+	const productsData = await fetchJson(milledoniProducts);
 
-	for (const product of products.data) {
-		if (typeof product.tags === 'string') {
-			const tags = product.tags.split(',').map(t =>
-				t.trim().toLowerCase().replace(/^'+|'+$/g, '')
-			);
-			for (const tag of tags) {
-				if (tag) tagSet.add(tag);
-			}
-		}
+	let products = productsData.data;
+
+	if (search) {
+		products = products.filter(product =>
+			product.name.toLowerCase().includes(search)
+		);
 	}
-
-	const tags = Array.from(tagSet);
 
 	return {
 		users: users.data,
-		products: products.data,
-		tags
+		products,
+		search
 	};
 }
