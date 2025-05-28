@@ -32,7 +32,9 @@
     const res = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ messages: [systemPrompt] }),
+      body: JSON.stringify({
+        messages: [systemPrompt, { role: "user", content: "start" }],
+      }),
     });
     const { reply, tags } = await res.json();
     console.log("AI tags (init):", tags);
@@ -59,7 +61,6 @@
     userInput = "";
     isTyping = false;
   }
-  
 </script>
 
 <article class="chat-box">
@@ -67,11 +68,11 @@
     {#each messages as msg (msg.content)}
       {#if msg.role !== "system"}
         <p class={msg.role === "user" ? "user-msg" : "assistant-msg"}>
-        {#if msg.role === "user"}
-          <Icons name="profile" width="25px" height="25px"></Icons>
-        {:else}
-          <Icons name="logo-small" width="23.5px" height="25px"></Icons>
-        {/if}
+          {#if msg.role === "user"}
+            <Icons name="profile" width="25px" height="25px"></Icons>
+          {:else}
+            <Icons name="logo-small" width="23.5px" height="25px"></Icons>
+          {/if}
           {msg.content}
         </p>
       {/if}
@@ -128,7 +129,7 @@
   .chat-box {
     display: none;
   }
-  
+
   @media (min-width: 1024px) {
     .chat-box {
       display: flex;
@@ -165,7 +166,7 @@
       padding: 0.5rem;
       border-radius: 5px;
       margin-bottom: 0.5rem;
-      width: 75%
+      width: 75%;
     }
 
     .typing-indicator {
@@ -209,7 +210,7 @@
     }
 
     .search-container {
-      border: 1px solid #A3A3A3;
+      border: 1px solid #a3a3a3;
       width: auto;
       display: flex;
       align-items: center;
