@@ -27,11 +27,9 @@
 
 <header>
   <nav>
-    <picture>
-      <a href="/">
-        <Icons name="logo" width="19.6vw" height="100%"></Icons>
-      </a>
-    </picture>
+    <a href="/" class="logo">
+      <Icons name="logo" width="19.6vw" height="100%"></Icons>
+    </a>
     {#if !loggedIn}
       <div class="search-wrapper">
         <form
@@ -120,7 +118,7 @@
     background-color: var(--bg-color);
     border-top: 1px solid #0000005b;
 
-    picture,
+    a.logo,
     .search-wrapper {
       display: none;
     }
@@ -220,7 +218,7 @@
         }
       }
 
-      picture {
+      a.logo {
         display: block;
         width: 31.666vw;
         z-index: 9999;

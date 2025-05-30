@@ -93,7 +93,7 @@
     role="search"
     aria-label="Search for a gift"
   >
-    <label for="product-search" class="visually-hidden">Zoek</label>
+    <label for="chat-search" class="visually-hidden">Zoek</label>
     <button type="button" class="icon-button" aria-label="Add">
       <Icons name="plus" width="20px" height="20px"></Icons>
     </button>
@@ -101,6 +101,7 @@
       <Icons name="mic" width="20px" height="20px"></Icons>
     </button>
     <input
+      id="chat-search"
       type="text"
       bind:value={userInput}
       placeholder="I search a gift for a ..."
