@@ -27,7 +27,7 @@
 
 <header>
   <nav>
-    <a href="/" class="logo">
+    <a href="/" class="logo" aria-label="Go to home page">
       <Icons name="logo" width="19.6vw" height="100%"></Icons>
     </a>
     {#if !loggedIn}
@@ -66,14 +66,14 @@
     {/if}
     <ul>
       <li class:active={currentPath === "/"}>
-        <a href="./">
+        <a href="./" aria-label="Go to home page">
           <Icons name="home" width="38px" height="39px" color="var(--nav-color)"
           ></Icons>
           <span>Home</span>
         </a>
       </li>
       <li class:active={currentPath === "/ideas"}>
-        <a href="./ideas">
+        <a href="./ideas" aria-label="Go to ideas page">
           <Icons
             name="light"
             width="32px"
@@ -84,14 +84,14 @@
         </a>
       </li>
       <li class:active={currentPath === "/lists"}>
-        <a href="./lists">
+        <a href="./lists" aria-label="Go to lists page">
           <Icons name="list" width="40px" height="40px" color="var(--nav-color)"
           ></Icons>
           <span>My Lists</span>
         </a>
       </li>
       <li class:active={currentPath === "/profile"}>
-        <a href="./profile">
+        <a href="./profile" aria-label="Go to profile page">
           <Icons
             name="profile"
             width="35px"
