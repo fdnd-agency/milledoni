@@ -30,7 +30,11 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src={product.image} alt={product.name} class="product-image" />
+      <img
+        src={product.image}
+        alt="Product {product.name}"
+        class="product-image"
+      />
       <article class="product-info">
         <h2 class="product-title">{product.name}</h2>
       </article>
