@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, tick } from "svelte";
   import { Icons } from "$lib/index.js";
   import { createEventDispatcher } from "svelte";
 
@@ -7,6 +7,9 @@
 
   let userInput = "";
   let isTyping = false;
+  let lastMessageEl;
+  let lastMessageIndex;
+  let currentItemRef;
 
   const dispatch = createEventDispatcher();
 
@@ -39,6 +42,9 @@
     const { reply, tags } = await res.json();
     console.log("AI tags (init):", tags);
     messages = [...messages, { role: "assistant", content: reply }];
+    lastMessageIndex = messages.length - 1;
+    await tick();
+    lastMessageEl?.focus();
     dispatch("updateFilters", tags);
     isTyping = false;
   });
@@ -57,6 +63,9 @@
     const { reply, tags } = await res.json();
     console.log("AI tags (init):", tags);
     messages = [...messages, { role: "assistant", content: reply }];
+    lastMessageIndex = messages.length - 1;
+    await tick();
+    lastMessageEl?.focus();
     dispatch("updateFilters", tags);
     userInput = "";
     isTyping = false;
@@ -65,18 +74,40 @@
 
 <article class="chat-box">
   <div class="messages">
-    {#each messages as msg (msg.content)}
-      {#if msg.role !== "system"}
-        <p class={msg.role === "user" ? "user-msg" : "assistant-msg"}>
-          {#if msg.role === "user"}
-            <Icons name="profile" width="25px" height="25px"></Icons>
+    <ul>
+      {#each messages as msg, index (msg.content)}
+        {#if msg.role !== "system"}
+          {#if index === lastMessageIndex}
+            <li
+              class={msg.role === "user" ? "user-msg" : "assistant-msg"}
+              tabindex="-1"
+              aria-live="polite"
+              bind:this={lastMessageEl}
+            >
+              {#if msg.role === "user"}
+                <Icons name="profile" width="25px" height="25px" />
+              {:else}
+                <Icons name="logo-small" width="23.5px" height="25px" />
+              {/if}
+              {msg.content}
+            </li>
           {:else}
-            <Icons name="logo-small" width="23.5px" height="25px"></Icons>
+            <li
+              class={msg.role === "user" ? "user-msg" : "assistant-msg"}
+              tabindex="-1"
+              aria-live="polite"
+            >
+              {#if msg.role === "user"}
+                <Icons name="profile" width="25px" height="25px" />
+              {:else}
+                <Icons name="logo-small" width="23.5px" height="25px" />
+              {/if}
+              {msg.content}
+            </li>
           {/if}
-          {msg.content}
-        </p>
-      {/if}
-    {/each}
+        {/if}
+      {/each}
+    </ul>
 
     {#if isTyping}
       <p class="typing-indicator" aria-live="polite">
@@ -94,9 +125,6 @@
     aria-label="Search for a gift"
   >
     <label for="chat-search" class="visually-hidden">Zoek</label>
-    <button type="button" class="icon-button" aria-label="Add">
-      <Icons name="plus" width="20px" height="20px"></Icons>
-    </button>
     <button type="button" class="icon-button" aria-label="Voice Search">
       <Icons name="mic" width="20px" height="20px"></Icons>
     </button>
@@ -152,6 +180,14 @@
       flex-grow: 1;
       max-height: 100svh;
       overflow-y: auto;
+
+      ul,
+      li {
+        list-style: none;
+        padding: 0.5rem;
+        margin: unset;
+        margin-bottom: 0.5rem;
+      }
     }
 
     .user-msg {
