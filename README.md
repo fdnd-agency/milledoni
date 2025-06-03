@@ -42,6 +42,16 @@ OPENAI_API_KEY=[your-api-key-here]
 npm run build
 ```
 
+## Tools
+* Sveltekit
+* Directus
+* OpenAI
+
+## Sources
+* [Sveltekit documentation](https://svelte.dev/docs/kit/introduction)
+* [Directus documentation](https://directus.io/docs/)
+* [OpenAI API documentation](https://platform.openai.com/docs/overview)
+
 
 
 
