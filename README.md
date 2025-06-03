@@ -28,7 +28,7 @@ npm install
 ```
 
 ### 2. Add your API-key 
-This is needed, as it won't run with the right API-key
+This is needed, as it won't run without the right API-key
 
 1. Add .env file in your repository
 
