@@ -52,7 +52,7 @@ npm run build
 * [Directus documentation](https://directus.io/docs/)
 * [OpenAI API documentation](https://platform.openai.com/docs/overview)
 
-##Credits 
+## Credits 
 
 **Ilona van Oosbree**: <br> [Github](https://github.com/smolgeorgie) 
 
