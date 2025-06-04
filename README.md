@@ -1,18 +1,61 @@
 <img width="269" alt="image" src="https://github.com/user-attachments/assets/674feda3-fbd8-4da3-93d5-fea07251b454" />
 
-## Dev branche
+# Milledoni
+Welcome to the **Milledoni** project, built with [SvelteKit](https://kit.svelte.dev/). <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" height="40" alt="svelte logo"  />
 
-### Handige links
-[Figma design](https://www.figma.com/design/tHCHwBm3Ujv7wR28VU2BSu/Milledoni)  
-[Projectboard](https://github.com/orgs/fdnd-agency/projects/68)  
-[TeamCanvas](https://miro.com/app/board/uXjVICrzZtU=/?share_link_id=617795194380)  
-[Leertaak](https://github.com/fdnd-task/final-sprint-quality-assurance/blob/main/docs/INSTRUCTIONS.md)  
+## Description
+Milledoni is an AI-first based gift-finder website, that will present you the most relevant gifts for your wants depending on someone's hobbies and interests.
 
-#### Database/API
-[Directus](https://fdnd-agency.directus.app/admin/)  
-[API endpoint PRODUCTS](https://fdnd-agency.directus.app/items/milledoni_products)  
-[API endpoint USERS](https://fdnd-agency.directus.app/items/milledoni_users)  
-[API endpoint TAGS](https://fdnd-agency.directus.app/items/milledoni_tags)  
-[API endpoint LISTS](https://fdnd-agency.directus.app/items/milledoni_lists)  
-[API endpoint USERS/LISTS](https://fdnd-agency.directus.app/items/milledoni_users_lists)  
-[API endpoint USERS/LIKES](https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1)  
+![Arc_zk55GLXrk6](https://github.com/user-attachments/assets/03efa74a-9c1f-4aa0-b748-f200e0803b9d)
+
+
+<br> 
+  
+## 🧭 Getting Started
+
+To view or work on this project locally:
+
+### 1. Clone the repository
+
+1. Open your terminal in **Visual Studio Code** and run:
+
+```
+git clone https://github.com/fdnd-agency/milledoni.git
+```
+2. Install NPM packages
+```
+npm install
+```
+
+### 2. Add your API-key 
+This is needed, as it won't run without the right API-key
+
+1. Add .env file in your repository
+
+2. Add OpenAI API
+```
+OPENAI_API_KEY=[your-api-key-here]
+```
+
+### 3. Deploy 
+```
+npm run build
+```
+
+## Tools
+* Sveltekit
+* Directus
+* OpenAI
+
+## Sources
+* [Sveltekit documentation](https://svelte.dev/docs/kit/introduction)
+* [Directus documentation](https://directus.io/docs/)
+* [OpenAI API documentation](https://platform.openai.com/docs/overview)
+
+## Credits 
+
+**Ilona van Oosbree**: <br> [Github](https://github.com/smolgeorgie) 
+
+**Sosan Shirzai**: <br> [Github](https://github.com/Sooshva)
+
+**Jesse Kramer**: <br> [Github](https://github.com/Jesse-Kramer)
