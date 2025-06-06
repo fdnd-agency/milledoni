@@ -23,6 +23,9 @@ Dit document helpt je op weg als je verder gaat met het Milledoni project. Mille
 ---
 
 ## ⚠️ Aandachtspunten & uitdagingen
+### Belangrijkste punten
+- Het mobiele ontwerp voor de chat is op dit moment (eind mei 2025) nog niet gemaakt. Hier wordt op dit moment aan gewerkt.
+- Het design dat aangeleverd is wordt nog uitvoerig getest door @sooshva. Neem contact met haar op voor een volledig en beter uitgewerkt design
 
 ### 🔁 Algemeen
 - Contacteer Joost of Justus voor een nieuwe database structuur. Deze is al geleverd door de opdrachtgever, maar nog niet geimplementeerd.
