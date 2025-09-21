@@ -2,10 +2,9 @@
 
 # Milledoni
 
-[Design Challenge](https://github.com/fdnd-agency/milledoni/wiki/Design-Challenge)
-
-## Description
 Milledoni is an AI-first based gift-finder website, that will present you the most relevant gifts for your wants depending on someone's hobbies and interests.
+
+[Design Challenge](https://github.com/fdnd-agency/milledoni/wiki/Design-Challenge)
 
 
 ![Arc_zk55GLXrk6](https://github.com/user-attachments/assets/03efa74a-9c1f-4aa0-b748-f200e0803b9d)
