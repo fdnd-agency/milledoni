@@ -1,10 +1,11 @@
 <img width="269" alt="image" src="https://github.com/user-attachments/assets/674feda3-fbd8-4da3-93d5-fea07251b454" />
 
 # Milledoni
-Welcome to the **Milledoni** project, built with [SvelteKit](https://kit.svelte.dev/). <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" height="40" alt="svelte logo"  />
 
 ## Description
 Milledoni is an AI-first based gift-finder website, that will present you the most relevant gifts for your wants depending on someone's hobbies and interests.
+
+[Design Challenge](https://github.com/fdnd-agency/milledoni/wiki/Design-Challenge)
 
 ![Arc_zk55GLXrk6](https://github.com/user-attachments/assets/03efa74a-9c1f-4aa0-b748-f200e0803b9d)
 
