@@ -1,66 +1,38 @@
-<img width="269" alt="image" src="https://github.com/user-attachments/assets/674feda3-fbd8-4da3-93d5-fea07251b454" />
+# sv
 
-# Milledoni
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-Milledoni is an AI-first based gift-finder website, that will present you the most relevant gifts for your wants depending on someone's hobbies and interests.
+## Creating a project
 
-[Design Challenge](https://github.com/fdnd-agency/milledoni/wiki/Design-Challenge)
+If you're seeing this, you've probably already done this step. Congrats!
 
+```sh
+# create a new project in the current directory
+npx sv create
 
-![Arc_zk55GLXrk6](https://github.com/user-attachments/assets/03efa74a-9c1f-4aa0-b748-f200e0803b9d)
-
-
-<br> 
-  
-## 🧭 Getting Started
-
-To view or work on this project locally:
-
-### 1. Clone the repository
-
-1. Open your terminal in **Visual Studio Code** and run:
-
-```
-git clone https://github.com/fdnd-agency/milledoni.git
-```
-2. Install NPM packages
-```
-npm install
+# create a new project in my-app
+npx sv create my-app
 ```
 
-### 2. Add your API-key 
-This is needed, as it won't run without the right API-key
+## Developing
 
-1. Add .env file in your repository
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-2. Add OpenAI API
-```
-OPENAI_API_KEY=[your-api-key-here]
+```sh
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
 
-### 3. Deploy 
-```
+## Building
+
+To create a production version of your app:
+
+```sh
 npm run build
 ```
 
-## Tools
-* Sveltekit
-* Directus
-* OpenAI
+You can preview the production build with `npm run preview`.
 
-## Sources
-* [Sveltekit documentation](https://svelte.dev/docs/kit/introduction)
-* [Directus documentation](https://directus.io/docs/)
-* [OpenAI API documentation](https://platform.openai.com/docs/overview)
-
-## Credits 
-
-**Ilona van Oosbree**: <br> [Github](https://github.com/smolgeorgie) 
-
-**Sosan Shirzai**: <br> [Github](https://github.com/Sooshva)
-
-**Jesse Kramer**: <br> [Github](https://github.com/Jesse-Kramer)
-
-
-
-
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
