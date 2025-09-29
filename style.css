@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Parkisans";
+    src: url(fonts/Parkinsans-Medium.ttf);
+}
+
+body{
+    /* colors */
+    --main-text-color: #212121;
+    --backgroun-color: #FFFFFF; 
+    --item-main-background-color: #F6F5F5; 
+    --item-secondary-background-color: #F9F2D4;
+    --main-accent-color: #E2B100;
+    --chat-text-color: #898A8D;
+
+    /* theme accent colors */
+    /* change --main-accent-color into one of these */
+    --valentine: #AA2677;
+    --christmas:#B2291F;
+    --green: #20A687;
+    --blue: #466EBF;
+
+    .filter{
+        background-color: var(--item-main-background-color);
+        width: max-content;
+        padding-inline: 1.5em;
+        padding-block: .3em;
+        border-radius: 1em;
+    }
+}
