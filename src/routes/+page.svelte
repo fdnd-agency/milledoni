@@ -1,13 +1,18 @@
 <script>
-    export let data
+    let { data } = $props()
+
+    //import products component
+    import { Product } from '$lib'
+
     const products = data.product
-    //producten meegeven aan de page
+    
+    
 </script>
 
 <h1>dit is een test</h1>
 
 <ul>
     {#each products as product}
-        <li>{product.name}</li>
+        <Product {product}/>
     {/each}
 </ul>
