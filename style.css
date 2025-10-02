@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "Parkisans";
+    src: url(fonts/Parkinsans-Medium.ttf);
+}
+
+body{
+    /* colors */
+    --main-text-color: hsl(0, 0, 13);
+    --background-color: hsl(0, 0, 100); 
+
+    --background-icon-color:hsl(0, 0, 89);
+    --item-main-background-color: hsl(0, 0, 75); 
+    --chat-text-color: hsl(0, 0, 61);
+    --dark:hsl(0, 0, 48);
+    --extra-dark:hsl(0, 0, 24);
+
+    --accent-color-secondary: hsl(57, 100, 72);
+    --accent-color-main-hover: hsl(46, 100, 64);
+    --accent-color-main: hsl(47, 100, 44);
+    --accent-color-dark: hsl(45, 100, 37);
+    --accent-color-deep: hsl(37, 100, 24);
+
+    --product-filter-color: hsl(220, 49, 51);
+
+
+    /* theme accent colors */
+    /* change --accent-color-... into one of these */
+    --valentine-secondary: hsl(335, 97, 85);
+    --valentine-main-hover: hsl(326, 58, 56);
+    --valentine-main: hsl(323, 63, 41);
+    --valentine-dark: hsl(320, 100, 26);
+    --valentine-deep: hsl(324, 100, 19);
+
+    --christmas-secondary: hsl(6, 67, 55);
+    --christmas-main-hover: hsl(4, 70, 41);
+    --christmas-main: hsl(0, 100, 27);
+    --christmas-dark: hsl(0, 100, 20);
+    --christmas-deep: hsl(0, 100, 13);
+
+    --green-secondary: hsl(164, 53, 55);
+    --green-main-hover: hsl(166, 68, 39);
+    --green-main: hsl(167, 100, 26);
+    --green-dark: hsl(164, 100, 19);
+    --green-deep: hsl(159, 100, 13);
+
+    /* font sizes */
+    --h1-font-size: clamp(2rem, 5vw, 4rem);
+    --h2-font-size: clamp(1.5rem, 4vw, 3rem);
+    --h3-font-size: clamp(1.2rem, 3vw, 2rem);
+
+    .filter{
+        background-color: var(--item-main-background-color);
+        width: max-content;
+        padding-inline: 1.5em;
+        padding-block: .3em;
+        border-radius: 1em;
+    }
+
+    :focus{
+        outline: .15em solid var(--accent-color-main-hover);
+        outline-offset: .15em;
+    }
+}
+
+body[data-theme="valentine"] {
+    --accent-color-secondary: var(--valentine-secondary);
+    --accent-color-main-hover: var(--valentine-main-hover);
+    --accent-color-main: var(--valentine-main);
+    --accent-color-dark: var(--valentine-dark);
+    --accent-color-deep: var(--valentine-deep);
+}
+  
+body[data-theme="christmas"] {
+    --accent-color-secondary: var(--christmas-secondary);
+    --accent-color-main-hover: var(--christmas-main-hover);
+    --accent-color-main: var(--christmas-main);
+    --accent-color-dark: var(--christmas-dark);
+    --accent-color-deep: var(--christmas-deep);
+}
+  
+body[data-theme="green"] {
+    --accent-color-secondary: var(--green-secondary);
+    --accent-color-main-hover: var(--green-main-hover);
+    --accent-color-main: var(--green-main);
+    --accent-color-dark: var(--green-dark);
+    --accent-color-deep: var(--green-deep);
+}
