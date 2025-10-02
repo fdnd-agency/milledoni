@@ -16,5 +16,7 @@ We follow the conventions of FDND on https://docs.fdnd.nl/conventies.html
 - We work with the project-board: Milledoni 25/26 including the methode of MOSCOW, status, and start and end date
 - Comments will be added to the code to make everyone within and outside the team understand what you're working on
 
-### Braches
-- 
+Guidelines branch
+- Each branch should be created from the dev or another branch, but never the main
+- Each branch should be connected to an issue (when having an issue open, you can click on 'create a branch' beneath 'development')
+- When the branch is no longer in use, it should be deleted to avoid non-functioning branches
