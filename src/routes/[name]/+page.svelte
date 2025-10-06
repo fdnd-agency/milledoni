@@ -1,0 +1,1 @@
+<h1>detailpage</h1>
