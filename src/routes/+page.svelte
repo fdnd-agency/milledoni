@@ -16,3 +16,12 @@
         <Product {product}/>
     {/each}
 </ul>
+
+<style>
+    ul{
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 2em;
+    }
+</style>
