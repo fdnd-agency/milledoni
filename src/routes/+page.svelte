@@ -23,5 +23,7 @@
         display: flex;
         flex-flow: row wrap;
         gap: 2em;
+        padding: 0;
+        justify-content: center;
     }
 </style>
