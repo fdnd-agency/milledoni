@@ -2,28 +2,10 @@
     let { product } = $props()
 </script>
 
-
 <li>
-    <h3>{product.name}</h3>
-    <p>{product.description}</p>
+	<a href="/">
+		<img loading="lazy" src="{product.image}" alt="test" width="200px" height="200px">
+		<h3>{product.name}</h3>
+		<p>Bekijk product</p>
+	</a>
 </li>
-
-<style>
-
-			li{
-				border-radius: 5px;
-				width: 22%;
-                background-color: #f6f5f5;
-
-				h3{
-					
-					
-				}
-				
-				p{
-					
-				}
-		}
-		
-		
-</style>

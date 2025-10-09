@@ -6,7 +6,7 @@
 
     const products = data.product
     
-    
+
 </script>
 
 <h1>dit is een test</h1>
