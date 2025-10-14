@@ -8,6 +8,16 @@
 		<h3>{product.name}</h3>
 		Bekijk product
 	</a>
+	<form action="post" method="get" class="like-and-safe-form">
+        <div class="like-form">
+            <input type="button" name="like" id="likeBtn"/>
+            <label for="like">like</label>
+        </div>
+        <div class="safe-form">
+            <input type="button" name="safe" id="safeBtn"/>
+            <label for="safe">safe</label>
+        </div>
+    </form>
 </li>
 
 <style>
@@ -36,4 +46,8 @@
 				}
 			}
 		}
+
+		form {
+            display: flex;
+        }
 </style>
