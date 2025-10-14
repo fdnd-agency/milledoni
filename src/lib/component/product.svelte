@@ -6,17 +6,14 @@
 	<a href="/">
 		<img loading="lazy" src="{product.image}" alt="test" width="200px" height="200px">
 		<h3>{product.name}</h3>
-		<p>Bekijk product</p>
+		Bekijk product
 	</a>
 </li>
 
 <style>
-	a {
-		text-decoration: none;
-	}
-
 	li{
-		background-color: #f6f5f5;
+		background-color: var(--item-main-background-color);
+		background-color: #dedede;
     	display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -27,13 +24,16 @@
 		height: 100%;
 		text-align: center;
 
-			h3{
-				color: var(--main-text-color);
-				font-size: var(--h3-font-size);
-			}
-				
-			p{
+			a {
+				text-decoration: none;
 				color: var(--green-main);
+				color: hsl(167, 100, 26);
+
+				h3 {
+					color: var(--main-text-color);
+					color: rgb(130, 130, 130);
+					font-size: var(--h3-font-size);
+				}
 			}
 		}
 </style>
