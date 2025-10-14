@@ -23,16 +23,18 @@
 <style>
 	li{
 		background-color: var(--item-main-background-color);
-		background-color: #dedede;
+		background-color: #F6F5F5;
     	display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		justify-items: center;
 		place-items: center;
-		width: 80%;
-		height: 100%;
 		text-align: center;
+		padding: 1.50rem;
+		box-sizing: border-box;
+		border: 2px solid hsl(47, 100%, 44%);
+		border-radius: 1rem;
 
 			a {
 				text-decoration: none;
@@ -43,6 +45,7 @@
 					color: var(--main-text-color);
 					color: rgb(130, 130, 130);
 					font-size: var(--h3-font-size);
+					max-width: 13rem;
 				}
 			}
 		}
