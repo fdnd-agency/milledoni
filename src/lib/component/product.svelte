@@ -52,6 +52,14 @@
 			}
 		}
 
+		li:hover {
+			scale: 1.02;
+		}
+
+		input:hover {
+			scale: 1.2;
+		}
+
 		a {
 			font-family: "Parkisans";
 		}
