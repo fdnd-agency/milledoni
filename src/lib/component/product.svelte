@@ -9,14 +9,8 @@
 		Bekijk product
 	</a>
 	<form action="post" method="get" class="like-and-safe-form">
-        <div class="like-form">
             <input type="button" name="like" id="likeBtn"/>
             <label for="like">like</label>
-        </div>
-        <div class="safe-form">
-            <input type="button" name="safe" id="safeBtn"/>
-            <label for="safe">safe</label>
-        </div>
     </form>
 </li>
 
@@ -25,14 +19,17 @@
 		background-color: var(--item-main-background-color);
 		background-color: #F6F5F5;
     	display: flex;
+		gap: 1rem;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		justify-items: center;
 		place-items: center;
-		text-align: center;
+		text-align: left;
 		border: 2px solid hsl(47, 100%, 44%);
 		border-radius: 1rem;
+		padding: 1.50rem;
+        box-sizing: border-box;
 
 			a {
 				text-decoration: none;
@@ -41,8 +38,6 @@
 				color: hsl(167, 100%, 26%);
 				width: 100%;
 				height: 100%;
-				padding: 1.50rem;
-				box-sizing: border-box;
 
 				img {
 					border-radius: 1rem;
@@ -66,26 +61,12 @@
 		}
 
 		form {
-            display: flex;
-			width: 100%;
-			padding: 1.50rem;
-			padding-top: 0;
-			box-sizing: border-box;
-			gap: 1rem;
-        }
-
-		.like-form, .safe-form {
-			width: 45%;
-			height: 2rem;
-			border: 2px solid hsl(167, 100%, 26%);
 			color: hsl(167, 100%, 26%);
-			justify-items: center;
-			align-items: center;
-			display: flex;
-			gap: 10px;
-			padding: 1rem;
-			box-sizing: border-box;
-			border-radius: 0.5rem;
+    		justify-items: start;
+    		align-items: center;
+    		display: flex;
+    		gap: 10px;
+			width: 100%;
 		}
 
 		input {
