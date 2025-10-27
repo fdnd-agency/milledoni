@@ -36,8 +36,8 @@
 			div {
 				text-decoration: none;
 				color: var(--green-main);
-				color: hsl(167, 100%, 26%);
-				color: hsl(167, 100%, 26%);
+				color: hsl(167, 100%, 25%);
+				color: hsl(167, 100%, 25%);
 				width: 100%;
 				height: 100%;
 			}
@@ -45,10 +45,11 @@
 			a {
 				font-family: "Parkisans";
 				text-decoration: none;
-				color: hsl(167, 100%, 26%);
+				color: hsl(167, 100%, 25%);
 				display: flex;
 				align-items: center;
 				gap: 2px;
+				font-weight: bold;
 			}
 
 			a:hover {
