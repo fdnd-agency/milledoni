@@ -20,7 +20,6 @@
 <style>
 	/* Styling and inner placement for each card */
 	li{
-		background-color: var(--item-main-background-color);
 		background-color: #F6F5F5;
     	display: flex;
 		gap: 1rem;
@@ -35,24 +34,15 @@
 		padding: 1.50rem;
         box-sizing: border-box;
 
-			div {
-				text-decoration: none;
-				color: var(--green-main);
-				color: hsl(167, 100%, 25%);
-				color: hsl(167, 100%, 25%);
-				width: 100%;
-				height: 100%;
-			}
-
 			/* Placement of the 'bekijk product' link */
 			a {
 				font-family: "Parkisans";
+				font-weight: bold;
 				text-decoration: none;
-				color: hsl(167, 100%, 25%);
 				display: flex;
 				align-items: center;
 				gap: 2px;
-				font-weight: bold;
+				color: hsl(167, 100%, 25%);
 			}
 
 			/* Increases the size of the element while hovering */
@@ -67,11 +57,10 @@
 
 			/* Styling of the product title */
 			h3 {
-				color: var(--main-text-color);
-				color: #212121;
-				font-size: var(--h3-font-size);
+				font-size: 1.2rem, 3vw, 2rem;
 				max-width: 13rem;
 				height: 2.5rem;
+				color: #212121;
 			}
 
 			/* rounding the corners of the img */
@@ -86,9 +75,9 @@
 
 			/* Placement like button */
 			form {
+				display: flex;
 				justify-items: start;
 				align-items: center;
-				display: flex;
 				gap: 5px;
 				width: 100%;
 			}
@@ -100,10 +89,10 @@
 
 			/* Like button */
 			button {
-				background-color: #00000000;
-				border: none;
-				padding: 0;
 				display: grid;
+				padding: 0;
+				border: none;
+				background-color: #00000000;
 			}
 
 			/* Increases the size of the element while hovering */
