@@ -38,6 +38,7 @@
 		border-radius: 1rem;
 		padding: 1.50rem;
         box-sizing: border-box;
+		width: 16rem;
 
 			/* Placement of the 'bekijk product' link */
 			a {
