@@ -2,6 +2,7 @@
     let { product } = $props()
 </script>
 
+<!-- HTML structure for each card -->
 <li>
 	<div>
 		<a tabindex="-1" href="/"><img loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
@@ -17,6 +18,7 @@
 </li>
 
 <style>
+	/* Styling and inner placement for each card */
 	li{
 		background-color: var(--item-main-background-color);
 		background-color: #F6F5F5;
@@ -42,6 +44,7 @@
 				height: 100%;
 			}
 
+			/* Placement of the 'bekijk product' link */
 			a {
 				font-family: "Parkisans";
 				text-decoration: none;
@@ -52,14 +55,17 @@
 				font-weight: bold;
 			}
 
+			/* Increases the size of the element while hovering */
 			a:hover {
 				font-size: 1.1rem;
 			}
 
+			/* Added an height so all the elements stay in place while hovering, which causes the element to increase */
 			.bekijk-product-btn {
 				height: 1.5rem;
 			}
 
+			/* Styling of the product title */
 			h3 {
 				color: var(--main-text-color);
 				color: #212121;
@@ -68,14 +74,17 @@
 				height: 2.5rem;
 			}
 
+			/* rounding the corners of the img */
 			img {
 				border-radius: 1rem;
 			}
 
+			/* Increases the size of the element while hovering */
 			img:hover {
 				scale: 1.02;
 			}
 
+			/* Placement like button */
 			form {
 				justify-items: start;
 				align-items: center;
@@ -84,10 +93,12 @@
 				width: 100%;
 			}
 
+			/* While hovering letting the user know it's clickable */
 			form, button {
 				cursor: pointer;
 			}
 
+			/* Like button */
 			button {
 				background-color: #00000000;
 				border: none;
@@ -95,6 +106,7 @@
 				display: grid;
 			}
 
+			/* Increases the size of the element while hovering */
 			button:hover {
 				scale: 1.1;
 			}
