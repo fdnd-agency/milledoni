@@ -11,9 +11,9 @@
 		</a>
 	</div>
 	<form action="post" method="get">
-		<button type="submit"><img src="/images/heart-icon.svg" alt="" width="30" height="30" /></button>
-		<label for="like">like</label>
-    </form>
+        <button id="likeBtn" type="submit"><img src="/images/heart-icon.svg" alt="" width="30" height="30" /></button>
+        <label for="likeBtn">like</label>
+ 	</form>
 </li>
 
 <style>
