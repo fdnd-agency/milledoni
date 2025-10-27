@@ -72,6 +72,7 @@
 			color: hsl(167, 100%, 26%);
 			display: flex;
 			align-items: center;
+			gap: 2px;
 		}
 
 		form, input, label {
