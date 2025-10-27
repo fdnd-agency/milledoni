@@ -50,6 +50,7 @@
 					color: #212121;
 					font-size: var(--h3-font-size);
 					max-width: 13rem;
+					height: 2.5rem;
 				}
 			}
 		}
