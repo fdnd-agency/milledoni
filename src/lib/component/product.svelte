@@ -63,8 +63,8 @@
 			font-size: 1.02rem;
 		}
 
-		input:hover {
-			scale: 1.2;
+		button:hover {
+			scale: 1.1;
 		}
 
 		a {
@@ -76,7 +76,7 @@
 			gap: 2px;
 		}
 
-		form, input, label {
+		form, button, label {
 			cursor: pointer;
 		}
 
@@ -86,11 +86,6 @@
     		display: flex;
 			gap: 5px;
 			width: 100%;
-		}
-
-		input {
-			background-color: hsl(167, 100%, 26%);
-			border: none;
 		}
 
 		button {
