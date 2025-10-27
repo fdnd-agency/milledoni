@@ -4,12 +4,14 @@
 
 <li>
 	<div>
-		<a href="/"><img loading="lazy" src="{product.image}" alt="test" width="200px" height="200px"></a>
+		<a href="/"><img loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
 		<h3>{product.name}</h3>
-		<a href="/">Bekijk products</a>
+		<a href="/">Bekijk products 
+			<img src="/images/right-arrow.svg" alt="" width="14" height="14" />
+		</a>
 	</div>
 	<form action="post" method="get" class="like-and-safe-form">
-            <input type="button" name="like" id="likeBtn"/>
+            <button type="submit"><img src="/images/heart-icon.svg" alt="" width="30" height="30" /></button>
             <label for="like">like</label>
     </form>
 </li>
@@ -59,7 +61,7 @@
 		a:hover {
 			font-size: 1.02rem;
 		}
-		
+
 		input:hover {
 			scale: 1.2;
 		}
@@ -68,6 +70,8 @@
 			font-family: "Parkisans";
 			text-decoration: none;
 			color: hsl(167, 100%, 26%);
+			display: flex;
+			align-items: center;
 		}
 
 		form, input, label {
@@ -75,16 +79,22 @@
 		}
 
 		form {
-			color: hsl(167, 100%, 26%);
     		justify-items: start;
     		align-items: center;
     		display: flex;
-    		gap: 10px;
+			gap: 5px;
 			width: 100%;
 		}
 
 		input {
 			background-color: hsl(167, 100%, 26%);
 			border: none;
+		}
+
+		button {
+			background-color: #00000000;
+			border: none;
+			padding: 0;
+			display: grid;
 		}
 </style>
