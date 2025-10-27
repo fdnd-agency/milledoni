@@ -4,7 +4,7 @@
 
 <li>
 	<div>
-		<a href="/"><img loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
+		<a tabindex="-1" href="/"><img loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
 		<h3>{product.name}</h3>
 		<a class="bekijk-product-btn" href="/">Bekijk product
 			<img loading="lazy" src="/images/right-arrow.svg" alt="" width="14" height="14" />
