@@ -3,11 +3,11 @@
 </script>
 
 <li>
-	<a href="/">
-		<img loading="lazy" src="{product.image}" alt="test" width="200px" height="200px">
+	<div>
+		<a href="/"><img loading="lazy" src="{product.image}" alt="test" width="200px" height="200px"></a>
 		<h3>{product.name}</h3>
-		Bekijk product
-	</a>
+		<a href="/">Bekijk products</a>
+	</div>
 	<form action="post" method="get" class="like-and-safe-form">
             <input type="button" name="like" id="likeBtn"/>
             <label for="like">like</label>
@@ -31,7 +31,7 @@
 		padding: 1.50rem;
         box-sizing: border-box;
 
-			a {
+			div {
 				text-decoration: none;
 				color: var(--green-main);
 				color: hsl(167, 100%, 26%);
@@ -52,16 +52,22 @@
 			}
 		}
 
-		li:hover {
+		img:hover {
 			scale: 1.02;
 		}
 
+		a:hover {
+			font-size: 1.02rem;
+		}
+		
 		input:hover {
 			scale: 1.2;
 		}
 
 		a {
 			font-family: "Parkisans";
+			text-decoration: none;
+			color: hsl(167, 100%, 26%);
 		}
 
 		form, input, label {
