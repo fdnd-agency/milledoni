@@ -64,21 +64,24 @@
     justify-content: center;
 
     margin: auto;
-
-    width: 60%;
-
+    width: 90%;
     position: relative;
 
     background-color: #20a687;
     border-radius: 15px;
 
     z-index: 2;
+    padding: 1em;
 
-    padding: 3em;
+    @media screen and (min-width: 1030px){
+        width: 60%;
+        padding: 3em;
+      }
+    
 
     form {
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: column wrap;
       justify-content: space-evenly;
         
       width: 100%;
@@ -99,6 +102,10 @@
 
       margin: auto;
 
+      @media screen and (min-width: 1030px){
+        flex-direction: row;
+      }
+
       fieldset {
         display: flex;
         flex-direction: column;
@@ -117,17 +124,17 @@
 
       select {
         font-family: inherit;
-        width: fit-content;
+        width: 100%;
 
         border-radius: 5px;
         border: 2px solid lightgray;
         color: #1d1d1b;
         padding: 5px;
 
-        option {
+        /* option {
           &::checked {
           }
-        }
+        } */
       }
     }
   }

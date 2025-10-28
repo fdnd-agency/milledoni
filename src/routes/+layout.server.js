@@ -7,7 +7,7 @@ export async function load() {
   const productResponse = await productData.json();
   const products = productResponse.data;
 
-  const allTags = products.map( //maybe needs flatmap to prevent double arrays?
+  const allTags = products.flatMap( // with map you get verry ongs arrays for some reason. flatmap puts each item seperatly
     (product) =>
       product.tags
         ? product.tags
