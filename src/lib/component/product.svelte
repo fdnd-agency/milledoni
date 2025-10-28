@@ -23,7 +23,6 @@
 </li>
 
 <style>
-	/* Styling and inner placement for each card */
 	li{
 		background-color: var(--background-cards-color);
     	display: flex;
@@ -40,7 +39,7 @@
         box-sizing: border-box;
 		width: 16rem;
 
-			/* Placement of the 'bekijk product' link */
+			/* Link: bekijk product */
 			a {
 				text-decoration: none;
 				display: flex;
@@ -49,34 +48,29 @@
 				color: var(--green-main);
 			}
 
-			/* Increases the size of the element while hovering */
 			a:hover {
 				font-size: 1.1rem;
 			}
 
-			/* Added an height so all the elements stay in place while hovering, which causes the element to increase */
 			.bekijk-product-btn {
 				height: 1.5rem;
 			}
 
-			/* Styling of the product title */
 			h3 {
 				font-size: clamp(--h3-font-size);
 				height: 2.5rem;
 				color: var(--main-text-color);
 			}
 
-			/* rounding the corners of the img */
 			img {
 				border-radius: var(--border-radius-m);
 			}
 
-			/* Increases the size of the element while hovering */
 			img:hover {
 				scale: 1.02;
 			}
 
-			/* Placement like button */
+			/* Like button */
 			form {
 				display: flex;
 				justify-items: start;
@@ -85,12 +79,10 @@
 				width: 100%;
 			}
 
-			/* While hovering letting the user know it's clickable */
 			form, button {
 				cursor: pointer;
 			}
 
-			/* Like button */
 			button {
 				display: grid;
 				padding: 0;
@@ -98,7 +90,6 @@
 				background: none;
 			}
 
-			/* Increases the size of the element while hovering */
 			button:hover {
 				scale: 1.1;
 			}
