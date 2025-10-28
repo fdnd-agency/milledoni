@@ -7,7 +7,8 @@
     /* colors */
     --main-text-color: hsl(0 0 13);
     --background-color: hsl(0 0 100);
-    
+
+    --background-cards-color: hsl(0 5 96);
     --background-icon-color: hsl(0 0 89);
     --item-main-background-color: hsl(0 0 75);
     --chat-text-color: hsl(0 0 61);
@@ -38,7 +39,7 @@
     
     --green-secondary: hsl(164 53 55);
     --green-main-hover: hsl(166 68 39);
-    --green-main: hsl(167 100 26);
+    --green-main: hsl(167 100 25);
     --green-dark: hsl(164 100 19);
     --green-deep: hsl(159 100 13);    
 

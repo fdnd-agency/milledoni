@@ -25,7 +25,7 @@
 <style>
 	/* Styling and inner placement for each card */
 	li{
-		background-color: #F6F5F5;
+		background-color: var(--background-cards-color);
     	display: flex;
 		gap: 1rem;
 		flex-direction: column;
@@ -34,7 +34,7 @@
 		justify-items: center;
 		place-items: center;
 		text-align: left;
-		border: 2px solid hsl(47, 100%, 44%);
+		border: 2px solid var(--accent-color-main);
 		border-radius: 1rem;
 		padding: 1.50rem;
         box-sizing: border-box;
@@ -48,7 +48,7 @@
 				display: flex;
 				align-items: center;
 				gap: 2px;
-				color: hsl(167, 100%, 25%);
+				color: var(--green-main);
 			}
 
 			/* Increases the size of the element while hovering */
@@ -63,10 +63,9 @@
 
 			/* Styling of the product title */
 			h3 {
-				font-size: 1.2rem, 3vw, 2rem;
-				max-width: 13rem;
+				font-size: clamp(--h3-font-size);
 				height: 2.5rem;
-				color: #212121;
+				color: var(--main-text-color);
 			}
 
 			/* rounding the corners of the img */
@@ -98,7 +97,7 @@
 				display: grid;
 				padding: 0;
 				border: none;
-				background-color: #00000000;
+				background: none;
 			}
 
 			/* Increases the size of the element while hovering */
