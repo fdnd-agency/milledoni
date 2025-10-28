@@ -48,6 +48,10 @@
     --h2-font-size: clamp(1.5rem, 4vw, 3rem);
     --h3-font-size: clamp(1.2rem, 3vw, 2rem);
 
+    /* border-radius */
+    --border-radius-s: 0.5rem;
+    --border-radius-m: 1rem;
+
     .filter{
         background-color: var(--item-main-background-color);
         width: max-content;
@@ -88,4 +92,12 @@ body[data-theme="green"] {
 
 h1, h2, h3, p, a, button, label, input {
     font-family: "Parkisans";
+}
+
+h1, h2, h3 {
+    font-weight: medium;
+}
+
+a {
+    font-weight: bold;
 }

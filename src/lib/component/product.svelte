@@ -35,15 +35,13 @@
 		place-items: center;
 		text-align: left;
 		border: 2px solid var(--accent-color-main);
-		border-radius: 1rem;
+		border-radius: var(--border-radius-m);
 		padding: 1.50rem;
         box-sizing: border-box;
 		width: 16rem;
 
 			/* Placement of the 'bekijk product' link */
 			a {
-				font-family: "Parkisans";
-				font-weight: bold;
 				text-decoration: none;
 				display: flex;
 				align-items: center;
@@ -70,7 +68,7 @@
 
 			/* rounding the corners of the img */
 			img {
-				border-radius: 1rem;
+				border-radius: var(--border-radius-m);
 			}
 
 			/* Increases the size of the element while hovering */
