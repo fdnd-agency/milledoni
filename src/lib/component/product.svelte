@@ -79,10 +79,6 @@
 				width: 100%;
 			}
 
-			form, button {
-				cursor: pointer;
-			}
-
 			button {
 				display: grid;
 				padding: 0;
