@@ -23,85 +23,69 @@
 </li>
 
 <style>
-	/* Styling and inner placement for each card */
 	li{
-		background-color: #F6F5F5;
+		background-color: var(--background-cards-color);
     	display: flex;
-		gap: 1rem;
+		gap: var(--gap-m);
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		justify-items: center;
 		place-items: center;
 		text-align: left;
-		border: 2px solid hsl(47, 100%, 44%);
-		border-radius: 1rem;
+		border: 2px solid var(--accent-color-main);
+		border-radius: var(--border-radius-m);
 		padding: 1.50rem;
         box-sizing: border-box;
 		width: 16rem;
 
-			/* Placement of the 'bekijk product' link */
+			/* Link: bekijk product */
 			a {
-				font-family: "Parkisans";
-				font-weight: bold;
 				text-decoration: none;
 				display: flex;
 				align-items: center;
-				gap: 2px;
-				color: hsl(167, 100%, 25%);
+				gap: var(--gap-s);
+				color: var(--green-main);
 			}
 
-			/* Increases the size of the element while hovering */
 			a:hover {
 				font-size: 1.1rem;
 			}
 
-			/* Added an height so all the elements stay in place while hovering, which causes the element to increase */
 			.bekijk-product-btn {
 				height: 1.5rem;
 			}
 
-			/* Styling of the product title */
 			h3 {
-				font-size: 1.2rem, 3vw, 2rem;
-				max-width: 13rem;
+				font-size: clamp(--h3-font-size);
 				height: 2.5rem;
-				color: #212121;
+				color: var(--main-text-color);
 			}
 
-			/* rounding the corners of the img */
 			img {
-				border-radius: 1rem;
+				border-radius: var(--border-radius-m);
 			}
 
-			/* Increases the size of the element while hovering */
 			img:hover {
 				scale: 1.02;
 			}
 
-			/* Placement like button */
+			/* Like button */
 			form {
 				display: flex;
 				justify-items: start;
 				align-items: center;
-				gap: 5px;
+				gap: var(--gap-s);
 				width: 100%;
 			}
 
-			/* While hovering letting the user know it's clickable */
-			form, button {
-				cursor: pointer;
-			}
-
-			/* Like button */
 			button {
 				display: grid;
 				padding: 0;
 				border: none;
-				background-color: #00000000;
+				background: none;
 			}
 
-			/* Increases the size of the element while hovering */
 			button:hover {
 				scale: 1.1;
 			}
