@@ -6,7 +6,7 @@
 
     const products = data.product
     
-    
+
 </script>
 
 <h1>dit is een test</h1>
@@ -23,5 +23,7 @@
         display: flex;
         flex-flow: row wrap;
         gap: 2em;
+        padding: 0;
+        justify-content: center;
     }
 </style>
