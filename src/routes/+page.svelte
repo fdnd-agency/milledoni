@@ -83,7 +83,9 @@
       display: flex;
       flex-flow: column wrap;
       justify-content: space-evenly;
-        
+      
+      gap: 1.5em;
+
       width: 100%;
       height: 80%;
       margin: auto;
