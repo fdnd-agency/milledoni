@@ -27,7 +27,7 @@
 	li{
 		background-color: var(--background-cards-color);
     	display: flex;
-		gap: 1rem;
+		gap: var(--gap-m);
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
@@ -45,7 +45,7 @@
 				text-decoration: none;
 				display: flex;
 				align-items: center;
-				gap: 2px;
+				gap: var(--gap-s);
 				color: var(--green-main);
 			}
 
@@ -81,7 +81,7 @@
 				display: flex;
 				justify-items: start;
 				align-items: center;
-				gap: 5px;
+				gap: var(--gap-s);
 				width: 100%;
 			}
 

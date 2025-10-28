@@ -52,6 +52,10 @@
     --border-radius-s: 0.5rem;
     --border-radius-m: 1rem;
 
+    /* gap */
+    --gap-s: 5px;
+    --gap-m: 1rem;
+
     .filter{
         background-color: var(--item-main-background-color);
         width: max-content;
