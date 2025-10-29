@@ -31,8 +31,6 @@
         <input type="submit">
     </form>
 
-    <button>Open filters</button>
-
     <p>1.000+ producten</p>
 </section>
 
