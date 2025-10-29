@@ -84,7 +84,7 @@
 
         h1{
             font-size: var(--h1-font-size);
-            margin-top: 3em;
+            /* margin-top: 3em; */
 
             span{
                 color: var(--accent-color-main);
