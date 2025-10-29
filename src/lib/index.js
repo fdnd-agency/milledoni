@@ -2,3 +2,4 @@
 
 
 export {  default as Product } from './component/product.svelte'
+export {  default as Filter } from './component/Filter.svelte'
