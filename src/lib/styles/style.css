@@ -6,7 +6,7 @@
 :root{
     /* colors */
     --main-text-color: hsl(0 0 13);
-    --background-color: hsl(0 0 100);
+    --background-color: hsl(0 0 100);    
 
     --background-cards-color: hsl(0 5 96);
     --background-icon-color: hsl(0 0 89);
