@@ -22,11 +22,13 @@
         
     <form action="">
         <input type="search" placeholder="search a gift for a dreamer" >
-        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="25.9241" cy="26.062" r="25.1206" fill="#212121"/>
             <path d="M23.7073 16.9805C27.4993 16.9805 30.5735 20.0547 30.5735 23.8467C30.5734 27.6386 27.4992 30.7128 23.7073 30.7129C19.9153 30.7129 16.8411 27.6387 16.8411 23.8467C16.8411 20.0546 19.9152 16.9805 23.7073 16.9805Z" stroke="white" stroke-width="4"/>
             <path d="M28.8789 29.7578L36.2673 37.1462" stroke="white" stroke-width="4"/>
-            </svg>            
+            </svg>             -->
+        <svg width="50" height="50" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000000"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.48 4h4l.5.5v2.03h.52l.5.5V8l-.5.5h-.52v3l-.5.5H9.36l-2.5 2.76L6 14.4V12H3.5l-.5-.64V8.5h-.5L2 8v-.97l.5-.5H3V4.36L3.53 4h4V2.86A1 1 0 0 1 7 2a1 1 0 0 1 2 0 1 1 0 0 1-.52.83V4zM12 8V5H4v5.86l2.5.14H7v2.19l1.8-2.04.35-.15H12V8zm-2.12.51a2.71 2.71 0 0 1-1.37.74v-.01a2.71 2.71 0 0 1-2.42-.74l-.7.71c.34.34.745.608 1.19.79.45.188.932.286 1.42.29a3.7 3.7 0 0 0 2.58-1.07l-.7-.71zM6.49 6.5h-1v1h1v-1zm3 0h1v1h-1v-1z"/></svg>
+        <input type="submit">
     </form>
 
     <button>Open filters</button>
@@ -92,9 +94,11 @@
         }
 
         form{
-            display: flex;
+            display: grid;
+            row-gap: .5em;
+            grid-template-columns: 4fr 1fr;
+            grid-template-rows: 1fr 1fr;
             border-radius: 3em;
-            background: linear-gradient(45deg, red, purple, gold, blue);
             padding: .15em;
             width: 18em;
 
@@ -102,14 +106,35 @@
                 width: 2.5em;
                 margin-left: -3em;
                 pointer-events: none;
+                grid-column: 3;
+                grid-row: 1;
             }
         }
 
-        input{
+        input:first-of-type{
             border: none;
-            border-radius: 3em;
             padding-left: 1.5em;
             width: 100%;
+            border: 2px solid transparent;
+            border-radius: 3em;
+            background: linear-gradient(white, white) padding-box, 
+            linear-gradient(45deg, red, purple, gold, blue);
+            grid-column: 1/-1;
+            grid-row: 1;
+        }
+
+        input:nth-of-type(2){
+            grid-column: span 2;
+            /* max-width: 50%; */
+            justify-self: center;
+            padding-inline: 2em;
+            border-radius: 3em;
+        }
+
+        input[type="search"]::-webkit-search-cancel-button {
+            position: relative;
+            right: 4px; /* Verplaats het kruisje iets naar links */
+            transform: translateX(-3.5em);
         }
 
         button{
