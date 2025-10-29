@@ -20,3 +20,7 @@ Guidelines branch
 - Each branch should be created from the dev or another branch, but never the main
 - Each branch should be connected to an issue (when having an issue open, you can click on 'create a branch' beneath 'development')
 - When the branch is no longer in use, it should be deleted to avoid non-functioning branches
+
+### DoR / DoD
+![82F9126F-1767-4411-9C83-484A68B19C93_4_5005_c](https://github.com/user-attachments/assets/f54ed396-5dcf-4466-9a4d-3be13c9b2b23)
+
