@@ -40,3 +40,16 @@ You can preview the production build with `npm run preview`.
 
 ## Introduction
 We received the challenge to design and develop the Milledoni platform based on their new design. Our main focus was to renew and improve the website with better accessibility, responsiveness, and creative ideas to enhance the overall user experience.
+
+
+## Homepage design
+We redesigned the Milledoni homepage to give it a more creative look and to move away from the typical webshop appearance, which Milledoni specifically wanted to avoid. The design follows their brand identity, with the layout taking inspiration from the Pinterest platform. It was created for both mobile and desktop to ensure full responsiveness.
+
+One of the main challenges was finding a good layout balance between the product section and the AI chat, especially on mobile devices.
+
+Homepage Elements
+- Header: Logo, account link, and a button to open the menu
+- AI Chat: Allows users to filter products through an AI conversation
+- Filter: Manual product filtering options
+- Product Cards: Display the available products in a flex layout
+- Footer: Contains additional navigation and contact information
