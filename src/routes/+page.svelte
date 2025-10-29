@@ -116,6 +116,8 @@
             border: none;
             padding-left: 1.5em;
             width: 100%;
+            /* max-width: 80%; */
+            padding-right: 4em;
             border: 2px solid transparent;
             border-radius: 3em;
             background: linear-gradient(white, white) padding-box, 
@@ -139,8 +141,7 @@
 
         input[type="search"]::-webkit-search-cancel-button {
             position: relative;
-            right: 4px; /* Verplaats het kruisje iets naar links */
-            transform: translateX(-3.5em);
+            transform: translateX(.5em);
         }
 
         button{
