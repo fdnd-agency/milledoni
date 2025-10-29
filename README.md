@@ -53,3 +53,15 @@ Homepage Elements
 - Filter: Manual product filtering options
 - Product Cards: Display the available products in a flex layout
 - Footer: Contains additional navigation and contact information
+
+### Header
+The header contains the Milledoni logo, a link to the user account, and a button that opens the menu for navigating to other pages.
+On mobile devices, a smaller version of the logo is used because of the limited screen space.
+
+*Header design on mobile view*
+
+<img height="50" alt="image" src="https://github.com/user-attachments/assets/9cecebc6-7117-4080-89ce-8dd61f5012d4" />
+
+*Header design on desktop view*
+
+<img height="50" alt="image" src="https://github.com/user-attachments/assets/07f34b1e-8a74-4a83-9c13-36de6eda21ce" />
