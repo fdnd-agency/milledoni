@@ -56,9 +56,11 @@
         gap: 1em;
         align-items: center;
         text-align: center;
+        overflow: hidden;
 
         >svg{
             position: absolute;
+            z-index: -1;
 
             &:nth-of-type(1){
                 left: 5em;
