@@ -104,7 +104,7 @@
 
       margin: auto;
 
-      @media screen and (min-width: 1030px){
+      @media screen and (min-width: 1075px){
         flex-direction: row;
       }
 
@@ -131,6 +131,7 @@
         border-radius: 5px;
         border: 2px solid lightgray;
         color: #1d1d1b;
+        background-color: #fff;
         padding: 5px;
 
         /* option {
