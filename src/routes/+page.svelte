@@ -86,6 +86,7 @@
 
         h1{
             font-size: var(--h1-font-size);
+            padding-inline: 1em;
             /* margin-top: 3em; */
 
             span{
