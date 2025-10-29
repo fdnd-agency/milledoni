@@ -1,11 +1,10 @@
 <script>
-  let { data } = $props();
-  import image from "$lib/assets/filter-bg.svg";
+    let { data } = $props()
 
-  //import products component
-  import { Product } from "$lib";
+    //import products component
+    import { Product } from '$lib'
 
-  const products = data.product
+    const products = data.product
     
 
 </script>
@@ -39,63 +38,14 @@
 
 
 <ul>
-  {#each products as product}
-    <Product {product} />
-  {/each}
+    {#each products as product}
+        <Product {product}/>
+    {/each}
 </ul>
 
 <style>
-  .form-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: auto;
-    width: 90%;
-    position: relative;
-
-    background-color: #20a687;
-    border-radius: 15px;
-
-    z-index: 2;
-    padding: 1em;
-
-    @media screen and (min-width: 1030px){
-        width: 60%;
-        padding: 3em;
-      }
-    
-
-    form {
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: space-evenly;
-      
-      gap: 1.5em;
-
-      width: 100%;
-      height: 80%;
-      margin: auto;
-
-      /* relative for z-index */
-      position: relative;
-      z-index: 2;
-
-      padding: 1em;
-      
-      border: 5px solid #20a687;
-      border-radius: 15px;
-
-      background-color: #fff;
-      height: auto;
-
-      margin: auto;
-
-      @media screen and (min-width: 1075px){
-        flex-direction: row;
-      }
-
-      fieldset {
+    ul{
+        list-style: none;
         display: flex;
         flex-flow: row wrap;
         gap: 2em;
@@ -217,26 +167,4 @@
             margin: 0;
         }
     }
-  }
-
-  .svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    border-radius: 15px;
-
-    z-index: 1;
-  }
-
-  ul {
-    list-style: none;
-    display: flex;
-    flex-flow: row wrap;
-    gap: 2em;
-  }
 </style>

@@ -1,28 +1,11 @@
-export async function load() {
-  //get products
-  const productData = await fetch(
-    "https://fdnd-agency.directus.app/items/milledoni_products"
-  );
+// producten ophalen
+export async function load(){
 
-  const productResponse = await productData.json();
-  const products = productResponse.data;
+    const productData = await fetch ('https://fdnd-agency.directus.app/items/milledoni_products')
+    const productResponse = await productData.json()
 
-  const allTags = products.flatMap( // with map you get verry ongs arrays for some reason. flatmap puts each item seperatly
-    (product) =>
-      product.tags
-        ? product.tags
-            .split(",")
-            .map((tag) => tag.replace(/['\s]/g, " ").trim())
-        : [] // removal of qoutes. That will look bad in the html
-  );
+    console.log(productResponse.data[1]) // 1 product terug geven om te kijken of verbinding klopt
 
-  const uniqueTags = [...new Set(allTags)]; //no duplicate  filters with set()
+    return { product: productResponse.data } 
 
-  // console.log(uniqueTags); 
-  //log the tags for debug purpose
-
-  return {
-    product: products,
-    tags: uniqueTags,
-  };
 }
