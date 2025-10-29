@@ -36,3 +36,32 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+
+## Introduction
+We received the challenge to design and develop the Milledoni platform based on their new design. Our main focus was to renew and improve the website with better accessibility, responsiveness, and creative ideas to enhance the overall user experience.
+
+
+## Homepage design
+We redesigned the Milledoni homepage to give it a more creative look and to move away from the typical webshop appearance, which Milledoni specifically wanted to avoid. The design follows their brand identity, with the layout taking inspiration from the Pinterest platform. It was created for both mobile and desktop to ensure full responsiveness.
+
+One of the main challenges was finding a good layout balance between the product section and the AI chat, especially on mobile devices.
+
+Homepage Elements
+- Header: Logo, account link, and a button to open the menu
+- AI Chat: Allows users to filter products through an AI conversation
+- Filter: Manual product filtering options
+- Product Cards: Display the available products in a flex layout
+- Footer: Contains additional navigation and contact information
+
+### Header
+The header contains the Milledoni logo, a link to the user account, and a button that opens the menu for navigating to other pages.
+On mobile devices, a smaller version of the logo is used because of the limited screen space.
+
+*Header design on mobile view*
+
+<img height="50" alt="image" src="https://github.com/user-attachments/assets/9cecebc6-7117-4080-89ce-8dd61f5012d4" />
+
+*Header design on desktop view*
+
+<img height="50" alt="image" src="https://github.com/user-attachments/assets/07f34b1e-8a74-4a83-9c13-36de6eda21ce" />

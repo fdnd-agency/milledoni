@@ -6,8 +6,9 @@
 :root{
     /* colors */
     --main-text-color: hsl(0 0 13);
-    --background-color: hsl(0 0 100);
-    
+    --background-color: hsl(0 0 100);    
+
+    --background-cards-color: hsl(0 5 96);
     --background-icon-color: hsl(0 0 89);
     --item-main-background-color: hsl(0 0 75);
     --chat-text-color: hsl(0 0 61);
@@ -38,7 +39,7 @@
     
     --green-secondary: hsl(164 53 55);
     --green-main-hover: hsl(166 68 39);
-    --green-main: hsl(167 100 26);
+    --green-main: hsl(167 100 25);
     --green-dark: hsl(164 100 19);
     --green-deep: hsl(159 100 13);    
 
@@ -46,6 +47,14 @@
     --h1-font-size: clamp(2rem, 5vw, 4rem);
     --h2-font-size: clamp(1.5rem, 4vw, 3rem);
     --h3-font-size: clamp(1.2rem, 3vw, 2rem);
+
+    /* border-radius */
+    --border-radius-s: 0.5rem;
+    --border-radius-m: 1rem;
+
+    /* gap */
+    --gap-s: 5px;
+    --gap-m: 1rem;
 
     .filter{
         background-color: var(--item-main-background-color);
@@ -83,4 +92,20 @@ body[data-theme="green"] {
     --accent-color-main: var(--green-main);
     --accent-color-dark: var(--green-dark);
     --accent-color-deep: var(--green-deep);
+}
+
+h1, h2, h3, p, a, button, label, input {
+    font-family: "Parkisans";
+}
+
+h1, h2, h3 {
+    font-weight: medium;
+}
+
+a {
+    font-weight: bold;
+}
+
+a, button {
+    cursor: pointer;
 }
