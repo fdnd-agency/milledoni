@@ -98,7 +98,7 @@
             display: grid;
             row-gap: .5em;
             grid-template-columns: 4fr 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: 3fr 2fr;
             border-radius: 3em;
             padding: .15em;
             width: 18em;
@@ -126,10 +126,15 @@
 
         input:nth-of-type(2){
             grid-column: span 2;
-            /* max-width: 50%; */
             justify-self: center;
             padding-inline: 2em;
             border-radius: 3em;
+            border: none;
+            background-color: var(--item-main-background-color);
+            &:hover{
+                background-color: var(--background-icon-color);
+            }
+            
         }
 
         input[type="search"]::-webkit-search-cancel-button {
