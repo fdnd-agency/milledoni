@@ -65,3 +65,29 @@ On mobile devices, a smaller version of the logo is used because of the limited 
 *Header design on desktop view*
 
 <img height="50" alt="image" src="https://github.com/user-attachments/assets/07f34b1e-8a74-4a83-9c13-36de6eda21ce" />
+
+### Product Cards
+
+The products are displayed in cards on the homepage. Each card shows a large image, the product name below it, and a link to the product detail page. Users can also like a product by clicking the like button.
+
+*Individual card*
+
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/4f32765f-944f-49e6-8185-606ae9c6ca33" />
+
+Regarding the clickable area: we considered making the entire card clickable, but since each card also has a like button, we decided that only the product image and the “Bekijk product” link lead to the detail page. This prevents the like button and the link from interfering with each other.
+
+*Clickable area*
+
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/cff8c1a0-3e4b-4b7b-8c00-48643cab8d35" />
+
+To make the cards appear more fun and creative, we decided to use an asymmetrical layout.
+
+*Asymmetrical layout*
+
+<img height="200" alt="image" src="https://github.com/user-attachments/assets/29bea58f-3c37-4c17-ac19-750f4acd9f61" />
+
+Since there are over 1,000 products, we divided the cards into categories for a better user experience.
+
+*Divided into categories*
+
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/7bd2d0c7-2c93-4806-ac3e-e6232ad0704b" />
