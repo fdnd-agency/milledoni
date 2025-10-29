@@ -96,7 +96,7 @@
 
         form{
             display: grid;
-            row-gap: .5em;
+            row-gap: 1em;
             grid-template-columns: 4fr 1fr;
             grid-template-rows: 3fr 2fr;
             border-radius: 3em;
@@ -145,6 +145,7 @@
         }
 
         button{
+            margin-top: 1em;
             border-radius: 3em;
             border: none;
             background-color: var(--green-main-hover);
