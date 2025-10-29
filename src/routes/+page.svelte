@@ -123,7 +123,7 @@
 
             &:hover{
                 background-color: var(--green-secondary);
-                color: var(--background-icon-color);
+                /* color: var(--background-icon-color); */
             }
         }
 
