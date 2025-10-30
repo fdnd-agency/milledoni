@@ -7,7 +7,7 @@
 
 
 <!-- <button>Filters</button> -->
-<label for="filter-select">Enable/Disable</label>
+<!-- <label for="filter-select">Enable/Disable</label> -->
 <input class="button" type="checkbox" id="filter-toggle" >
 
 <div class="form-wrapper">
