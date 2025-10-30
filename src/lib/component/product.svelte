@@ -93,14 +93,20 @@
 		}
 
 		@media (min-width: 848px) {
-			/* Masonry outline */
+			/* Masonry out of 3 outline */
 			li:nth-child(3n + 2) {
   				margin-top: 2rem;
 			}
         }
 
 		@media (min-width: 1136px) {
-			/* Masonry outline */
+
+			/* Masonry out of 3 outline deactivate */
+			li:nth-child(3n + 2) {
+  				margin-top: 0;
+			}
+
+			/* Masonry even outline */
 			li:nth-child(even) {
             	margin-top: 2rem;
         	}
