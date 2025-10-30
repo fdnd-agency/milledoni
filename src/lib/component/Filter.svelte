@@ -51,7 +51,7 @@
     align-items: center;
     justify-content: center;
 
-    margin: auto;
+    margin: 3em auto;
     width: 90%;
     position: relative;
 
