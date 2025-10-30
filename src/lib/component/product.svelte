@@ -38,6 +38,7 @@
 		padding: 1.50rem;
         box-sizing: border-box;
 		width: 16rem;
+		height: 100%;
 
 			/* Link: bekijk product */
 			a {
@@ -90,4 +91,9 @@
 				scale: 1.1;
 			}
 		}
+
+		/* Masonry outline */
+		li:nth-child(even) {
+            margin-top: 2rem;
+        }
 </style>
