@@ -64,13 +64,19 @@
 
 <Filter {tags} />
 
+<main>
   <ul>
     {#each products as product}
       <Product {product} />
     {/each}
   </ul>
+</main>
 
 <style>
+  main {
+    display: grid;
+    justify-content: center;
+  }
 
   ul {
     list-style: none;
@@ -80,6 +86,7 @@
     gap: 2em;
     max-width: 80rem;
     padding: 0;
+    margin-top: 4rem;
   }
 
   .filters {
