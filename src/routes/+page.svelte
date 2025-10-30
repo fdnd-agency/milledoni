@@ -64,20 +64,22 @@
 
 <Filter {tags} />
 
-<ul>
-  {#each products as product}
-    <Product {product} />
-  {/each}
-</ul>
+  <ul>
+    {#each products as product}
+      <Product {product} />
+    {/each}
+  </ul>
 
 <style>
-    
+
   ul {
     list-style: none;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     gap: 2em;
+    max-width: 80rem;
+    padding: 0;
   }
 
   .filters {

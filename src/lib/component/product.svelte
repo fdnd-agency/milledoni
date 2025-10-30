@@ -38,7 +38,7 @@
 		padding: 1.50rem;
         box-sizing: border-box;
 		width: 16rem;
-		height: 100%;
+		height: 26rem;
 
 			/* Link: bekijk product */
 			a {
@@ -92,8 +92,17 @@
 			}
 		}
 
-		/* Masonry outline */
-		li:nth-child(even) {
-            margin-top: 2rem;
+		@media (min-width: 848px) {
+			/* Masonry outline */
+			li:nth-child(3n + 2) {
+  				margin-top: 2rem;
+			}
+        }
+
+		@media (min-width: 1136px) {
+			/* Masonry outline */
+			li:nth-child(even) {
+            	margin-top: 2rem;
+        	}
         }
 </style>
