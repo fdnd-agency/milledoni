@@ -5,6 +5,11 @@
 
 </script>
 
+
+<!-- <button>Filters</button> -->
+<label for="filter-select">Enable/Disable</label>
+<input class="button" type="checkbox" id="filter-toggle" >
+
 <div class="form-wrapper">
 
   <form>
@@ -46,17 +51,42 @@
 
 
 <style>
+
+  button, .button {
+      margin-top: 1em;
+      border-radius: 3em;
+      padding: 3em 1em;
+      border: none;
+      background-color: var(--green-main-hover);
+      padding-block: 1em;
+      padding-inline: 3em;
+      cursor: pointer;
+      color: var(--background-color);
+
+      &:hover {
+        background-color: var(--green-secondary);
+        /* color: var(--background-icon-color); */
+      }
+    }
+
+    .button:checked ~ .form-wrapper{
+      opacity: 0;
+    }
+
   .form-wrapper {
+    opacity: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    margin: 3em auto;
+    margin:  0 3em 3em 3em ;
     width: 90%;
     position: relative;
 
     background-color: #20a687;
     border-radius: 15px;
+
+    transition: all 0.2s linear;
 
     z-index: 2;
     padding: 1em;

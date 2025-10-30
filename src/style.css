@@ -92,3 +92,7 @@ body[data-theme="green"] {
     --accent-color-dark: var(--green-dark);
     --accent-color-deep: var(--green-deep);
 }
+
+option, select{
+    font-family: inherit;
+}

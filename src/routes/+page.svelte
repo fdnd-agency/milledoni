@@ -11,7 +11,7 @@
   const tags = data.tags;
 </script>
 
-<section class="filters">
+<section class="intro">
   <h1>i'm looking for a gift for... <br /><span>my uncle</span></h1>
 
   <svg width="349" height="408" viewBox="0 0 349 408" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.04" d="M62.8525 317.739C71.3364 317.107 80.0484 319.389 87.0376 324.93C94.1263 330.551 98.8025 339.015 99.9958 349.511C102.073 367.786 100.382 383.563 92.6174 394.423C84.1186 406.309 70.4719 409.647 55.6279 407.293C41.2098 405.007 32.7039 395.014 28.56 384.607C24.5696 374.586 24.0842 363.155 25.9691 354.272C29.4793 332.038 45.7003 319.017 62.8525 317.739ZM74.5864 340.357C71.9004 338.228 68.2931 337.145 64.3465 337.439C56.716 338.008 47.7032 343.888 45.6303 357.523L45.5817 357.842L45.5116 358.159C44.323 363.553 44.6212 371.127 47.101 377.355C49.4767 383.321 53.2629 386.911 58.7774 387.786C68.8491 389.383 73.6405 386.794 76.3539 382.999C79.8014 378.177 82.0966 368.517 80.1876 351.724C79.528 345.922 77.1729 342.408 74.5864 340.357ZM130.909 223.133L123.575 299.745H82.1186V279.988H105.444L111.066 221.267L130.909 223.133ZM215.7 229.321L211.65 248.665L185.239 243.232L189.289 223.888L215.7 229.321ZM68.6027 201.411L56.7656 217.306L35.8362 201.995L47.6732 186.099L68.6027 201.411ZM349 72.7017L213.955 167.533L202.432 151.413L337.476 56.582L349 72.7017ZM233.367 43.5406L170.081 135.408L153.619 124.268L216.905 32.4005L233.367 43.5406ZM132.464 34.0955L105.554 116.579L86.5889 110.5L113.498 28.0161L132.464 34.0955ZM36.1691 112.118L16.4446 114.96L0 2.84193L19.7245 0L36.1691 112.118Z" fill="black"/></svg>
@@ -22,6 +22,8 @@
     <input type="image" src="{robotimg}" border="0" alt="Submit"  width="36" height="36" />
   </form>
 
+
+  
   <Filter {tags} />
 
   <p>1.000+ producten</p>
@@ -34,7 +36,8 @@
 </ul>
 
 <style>
-  ul {
+ 
+ ul {
     list-style: none;
     display: flex;
     flex-flow: row wrap;
@@ -42,7 +45,9 @@
     gap: 2em;
   }
 
-  .filters {
+
+
+  .intro {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -129,7 +134,7 @@
       height: auto;
 
       border-radius: 50%;
-      border: 2px solid #000; /*  cant find some of the colors from the stylesheet?? */
+      border: 2px solid #000; /*  can't find some of the colors from the stylesheet?? */
     }
 
     input[type="search"]::-webkit-search-cancel-button {
@@ -137,25 +142,12 @@
       transform: translateX(0.5em);
     }
 
-    button {
-      margin-top: 1em;
-      border-radius: 3em;
-      border: none;
-      background-color: var(--green-main-hover);
-      padding-block: 1em;
-      padding-inline: 3em;
-      cursor: pointer;
-      color: var(--background-color);
-
-      &:hover {
-        background-color: var(--green-secondary);
-        /* color: var(--background-icon-color); */
-      }
-    }
-
     p {
       color: var(--chat-text-color);
       margin: 0;
     }
   }
+
+
+   
 </style>
