@@ -92,7 +92,7 @@
 			}
 		}
 
-		@media (min-width: 848px) {
+		@media (min-width: 880px) {
 			/* Masonry out of 3 outline */
 			li:nth-child(3n + 2) {
   				margin-top: 2rem;

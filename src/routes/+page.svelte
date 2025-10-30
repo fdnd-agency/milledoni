@@ -87,6 +87,11 @@
     max-width: 80rem;
     padding: 0;
     margin-top: 4rem;
+    padding-inline: 1rem;
+
+    @media (min-width: 912px) {
+            padding-inline: 2rem;
+        }
   }
 
   .filters {
