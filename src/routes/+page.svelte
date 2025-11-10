@@ -22,8 +22,6 @@
     <input type="image" src="{robotimg}" border="0" alt="Submit"  width="36" height="36" />
   </form>
 
-
-  
   <Filter {tags} />
 
   <p>1.000+ producten</p>

@@ -1,19 +1,18 @@
 <script>
   let { tags } = $props();
-  
-  import image from "$lib/assets/filter-bg.svg";
 
+  import image from "$lib/assets/filter-bg.svg";
 </script>
 
+<!-- using css :checked to open/close the filters -->
 
-<!-- <button>Filters</button> -->
-<!-- <label for="filter-select">Enable/Disable</label> -->
-<input class="button" type="checkbox" id="filter-toggle" >
+
+  <input class="checker" type="checkbox" id="filter-toggle" />
+
+<label class="button" for="filter-toggle">Filter</label>
 
 <div class="form-wrapper">
-
   <form>
-
     <fieldset>
       <label for="tag-select">De persoon</label>
       <select id="tag-select">
@@ -23,6 +22,24 @@
         {/each}
       </select>
     </fieldset>
+    
+    <fieldset>
+      <label for="tag-select">De persoon</label>
+      <select id="tag-select">
+        <option value="">Alle tags</option>
+        {#each tags as tag}
+          <option value={tag}>{tag}</option>
+        {/each}
+      </select>
+    </fieldset>
+
+    <!-- <details>
+      {#each tags as tag}
+        <summary>
+          <option value={tag}>{tag}</option>
+        </summary>
+      {/each}
+    </details> -->
 
     <fieldset>
       <label for="tag-select">Deze persoon is</label>
@@ -43,65 +60,76 @@
         {/each}
       </select>
     </fieldset>
-
   </form>
 
   <img class="svg" src={image} alt="" />
 </div>
 
-
 <style>
+  button,
+  .button {
+    margin-top: 1em;
+    border-radius: 3em;
+    padding: 3em 1em;
+    border: none;
+    background-color: var(--green-main-hover);
+    padding-block: 1em;
+    padding-inline: 3em;
+    cursor: pointer;
+    color: var(--background-color);
 
-  button, .button {
-      margin-top: 1em;
-      border-radius: 3em;
-      padding: 3em 1em;
-      border: none;
-      background-color: var(--green-main-hover);
-      padding-block: 1em;
-      padding-inline: 3em;
-      cursor: pointer;
-      color: var(--background-color);
-
-      &:hover {
-        background-color: var(--green-secondary);
-        /* color: var(--background-icon-color); */
-      }
+    &:hover {
+      background-color: var(--green-secondary);
+      /* color: var(--background-icon-color); */
     }
+  }
 
-    .button:checked ~ .form-wrapper{
+  input[type="checkbox"]{
+    display: none;
+  }
+
+  .checker:checked ~ .form-wrapper {
+    margin: 0;
+    padding: 0;
+    height: 0;
+    opacity: 0;
+
+    form {
       opacity: 0;
+      height: 0;
     }
+  }
 
   .form-wrapper {
     opacity: 1;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    margin:  0 3em 3em 3em ;
+    margin: 0 3em 3em 3em;
     width: 90%;
     position: relative;
 
     background-color: #20a687;
     border-radius: 15px;
 
-    transition: all 0.2s linear;
+    transition: all 0.3s ease-out;
 
     z-index: 2;
     padding: 1em;
 
-    @media screen and (min-width: 1030px){
-        width: 60%;
-        padding: 3em;
-      }
-    
+    @media screen and (min-width: 1030px) {
+      width: 60%;
+      padding: 3em;
+    }
 
     form {
+      opacity: 1;
       display: flex;
       flex-flow: column wrap;
       justify-content: space-evenly;
-      
+
       gap: 1.5em;
 
       width: 100%;
@@ -113,7 +141,7 @@
       z-index: 2;
 
       padding: 1em;
-      
+
       border: 5px solid #20a687;
       border-radius: 15px;
 
@@ -122,7 +150,7 @@
 
       margin: auto;
 
-      @media screen and (min-width: 1075px){
+      @media screen and (min-width: 1075px) {
         flex-direction: row;
       }
 
@@ -173,6 +201,4 @@
 
     z-index: 1;
   }
-
-  
 </style>
