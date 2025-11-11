@@ -4,14 +4,12 @@
   import image from "$lib/assets/filter-bg.svg";
 </script>
 
-<!-- using css :checked to open/close the filters -->
-
 <div class="toggle-filter button">
   <input class="checker" type="checkbox" id="filter-toggle" value="Filter" />
   <label for="filter-toggle">Filter</label>
 </div>
 
-<div class="form-wrapper">  
+<div class="form-wrapper">
   <form>
     <fieldset>
       <label for="tag-select">De persoon</label>
@@ -21,6 +19,19 @@
           <option value={tag}>{tag}</option>
         {/each}
       </select>
+    </fieldset>
+
+    <!--  using details to open or close filter options  -->
+    <fieldset>
+      <details>
+        <summary>De persoon</summary>
+        <select id="tag-select">
+          <option value="">Alle tags</option>
+          {#each tags as tag}
+            <option value={tag}>{tag}</option>
+          {/each}
+        </select>
+      </details>
     </fieldset>
 
     <fieldset>
@@ -76,9 +87,23 @@
     }
   }
 
+  .toggle-filter {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   input[type="checkbox"] {
     appearance: none;
     border: none;
+    position: absolute;
+    inset: 0; 
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    margin: 0;
   }
 
   .toggle-filter:has(.checker:checked) + .form-wrapper {
@@ -124,7 +149,6 @@
       justify-content: space-evenly;
 
       gap: 1.5em;
-
       width: 100%;
       height: 80%;
       margin: auto;
@@ -161,6 +185,35 @@
       label {
         color: #20a687;
         font-weight: bold;
+      }
+
+      details {
+        width: max-content;
+      }
+
+      details summary {
+        list-style: none;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5em 0;
+      }
+
+      details summary::marker {
+        display: none;
+      }
+
+      details summary::after {
+        content: "▶";
+        transition: transform 0.2s ease;
+        font-size: 0.9em;
+        margin-left: 1em;
+      }
+
+      details[open] summary::after {
+        transform: rotate(90deg);
       }
 
       select {
