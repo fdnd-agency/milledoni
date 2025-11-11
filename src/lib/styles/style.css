@@ -137,6 +137,11 @@ a {
     font-weight: var(--font-weight-bold);
 }
 
+/* Hover */
+a, button {
+    cursor: var(--cursor-hover);
+} 
+
 
 
 /* :root{
