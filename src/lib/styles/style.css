@@ -1,6 +1,37 @@
 @font-face {
     font-family: "Parkisans";
-    src: url(fonts/Parkinsans-Medium.ttf);
+    src: url("/fonts/Parkinsans-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Parkisans";
+    src: url("/fonts/Parkinsans-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Parkisans";
+    src: url("/fonts/Parkinsans-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Parkisans";
+    src: url("/fonts/Parkinsans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Parkisans";
+    src: url("/fonts/Parkinsans-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Parkisans";
+    src: url("/fonts/Parkinsans-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
 }
 
 :root {
@@ -121,9 +152,9 @@ body[data-theme="christmas"] {
 }
 
 /* Fonts */
-h1, h2, h3, p, a, button, label, input {
+html, body {
     font-family: var(--font-family);
-}
+  }
 
 h1, h2, h3 {
     font-weight: var(--font-weight-medium);
