@@ -3,8 +3,128 @@
     src: url(fonts/Parkinsans-Medium.ttf);
 }
 
-:root{
-    /* colors */
+:root {
+    /* Fonts */
+    --font-family: 'Parkisans', serif;
+
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 800;
+
+    --h1-font-size: clamp(2rem, 5vw, 4rem);
+    --h2-font-size: clamp(1.5rem, 4vw, 3rem);
+    --h3-font-size: clamp(1.2rem, 3vw, 2rem);
+
+    --text-font-size-s: clamp(1rem, 2vw, 1.5rem);
+    --text-font-size-m: clamp(1.25rem, 2.5vw, 1.75rem);
+    --text-font-size-l: clamp(1.5rem, 2.5vw, 2rem);
+
+    --text-align-header:  center;
+    --text-align-main:  left;
+    --text-align-footer:  left;
+
+    /* Colors */
+    --text-color: hsl(0 0 13); 
+    --text-color-chat: hsl(0 0 61);
+
+    --neutral-color-background: hsl(0 0 100);
+    --neutral-color-background-cards: hsl(0 5 96);
+    --neutral-color-background-icons: hsl(0 0 89);
+    
+    --primary-color-light: hsl(57 100 72);
+    --primary-color-hover: hsl(46 100 64);
+    --primary-color: hsl(47 100 44);
+    --primary-color-dark: hsl(45 100 37);
+    --primary-color-deep: hsl(37 100 24); 
+
+    --accent-color-light: hsl(164 53 55);
+    --accent-color-hover: hsl(166 68 39);
+    --accent-color: hsl(167 100 25);
+    --accent-color-dark: hsl(164 100 19);
+    --accent-color-deep: hsl(159 100 13);  
+
+    /* Color themes */
+    /* change --accent-color-... into one of these */
+    --valentine-color-light: hsl(335 97 85);
+    --valentine-color-hover: hsl(326 58 56);
+    --valentine-color: hsl(323 63 41);
+    --valentine-color-dark: hsl(320 100 26);
+    --valentine-color-deep: hsl(324 100 19);
+    
+    --christmas-color-light: hsl(6 67 55);
+    --christmas-color-hover: hsl(4 70 41);
+    --christmas-color: hsl(0 100 27);
+    --christmas-color-dark: hsl(0 100 20);
+    --christmas-color-deep: hsl(0 100 13);
+
+    /* Align */
+    --align-items-header: center;
+    --align-items-main: center;
+    --align-items-footer: center;
+
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-s: 1rem;
+    --spacing-m: 2rem; 
+    --spacing-l: 5.25rem; 
+    --spacing-xl: 13rem; 
+
+    /* Box model */
+    --inner-spacing: border-box;
+
+    /* Roundings */
+    --rounding-s: 0.5rem;
+    --rounding-m: 1rem;   
+    --rounding-l: 2rem; 
+    --rounding-circle: 50%; 
+
+    /* Border */
+    --border-s: 1px;
+    --border-m: 2px;   
+    --border-l: 5px;   
+
+    /* Mouse */
+    --cursor-hover: pointer;
+
+    /* Animations */
+    --animation-duration-fast: 150ms;
+    --animation-duration-medium: 300ms;
+    --animation-duration-slow: 500ms;
+    --animation-ease: ease-in-out;
+}
+
+/* Color theme valentine */
+body[data-theme="valentine"] {
+    --accent-color-light: var(--valentine-color-light);
+    --accent-color-hover: var(--valentine-color-hover);
+    --accent-color: var(--valentine-color);
+    --accent-color-dark: var(--valentine-color-dark);
+    --accent-color-deep: var(--valentine-color-deep); 
+}
+  
+/* Color theme christmas */
+body[data-theme="christmas"] {
+    --accent-color-light: var(--christmas-color-light);
+    --accent-color-hover: var(--christmas-color-hover);
+    --accent-color: var(--christmas-color);
+    --accent-color-dark: var(--christmas-color-dark);
+    --accent-color-deep: var(--christmas-color-deep); 
+}
+
+/* Tab */
+:focus{
+    outline: .15em solid var(--primary-color-hover);
+    outline-offset: .15em;
+}
+
+
+
+
+
+/* :root{
     --main-text-color: hsl(0 0 13);
     --background-color: hsl(0 0 100);    
 
@@ -23,8 +143,6 @@
     
     --product-filter-color: hsl(220 49 51);
     
-    /* theme accent colors */
-    /* change --accent-color-... into one of these */
     --valentine-secondary: hsl(335 97 85);
     --valentine-main-hover: hsl(326 58 56);
     --valentine-main: hsl(323 63 41);
@@ -43,16 +161,13 @@
     --green-dark: hsl(164 100 19);
     --green-deep: hsl(159 100 13);    
 
-    /* font sizes */
     --h1-font-size: clamp(2rem, 5vw, 4rem);
     --h2-font-size: clamp(1.5rem, 4vw, 3rem);
     --h3-font-size: clamp(1.2rem, 3vw, 2rem);
 
-    /* border-radius */
     --border-radius-s: 0.5rem;
     --border-radius-m: 1rem;
 
-    /* gap */
     --gap-s: 5px;
     --gap-m: 1rem;
 
@@ -68,9 +183,9 @@
         outline: .15em solid var(--accent-color-main-hover);
         outline-offset: .15em;
     }
-}
+} */
 
-body[data-theme="valentine"] {
+/* body[data-theme="valentine"] {
     --accent-color-secondary: var(--valentine-secondary);
     --accent-color-main-hover: var(--valentine-main-hover);
     --accent-color-main: var(--valentine-main);
@@ -108,4 +223,4 @@ a {
 
 a, button {
     cursor: pointer;
-}
+} */
