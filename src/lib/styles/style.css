@@ -120,7 +120,22 @@ body[data-theme="christmas"] {
     outline-offset: .15em;
 }
 
+/* Fonts */
+h1, h2, h3, p, a, button, label, input {
+    font-family: var(--font-family);
+}
 
+h1, h2, h3 {
+    font-weight: var(--font-weight-medium);
+}
+
+p {
+    font-weight: var(--font-weight-regular);
+}
+
+a {
+    font-weight: var(--font-weight-bold);
+}
 
 
 
