@@ -22,9 +22,9 @@
     --text-font-size-m: clamp(1.25rem, 2.5vw, 1.75rem);
     --text-font-size-l: clamp(1.5rem, 2.5vw, 2rem);
 
-    --text-align-header:  center;
-    --text-align-main:  left;
-    --text-align-footer:  left;
+    --text-align-header: center;
+    --text-align-main: left;
+    --text-align-footer: left;
 
     /* Colors */
     --text-color: hsl(0 0 13); 
@@ -68,7 +68,7 @@
     /* Spacing */
     --spacing-xs: 5px;
     --spacing-s: 1rem;
-    --spacing-m: 2rem; 
+    --spacing-m: 1.5rem; 
     --spacing-l: 5.25rem; 
     --spacing-xl: 13rem; 
 

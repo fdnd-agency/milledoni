@@ -24,19 +24,19 @@
 
 <style>
 	li{
-		background-color: var(--background-cards-color);
+		background-color: var(--neutral-color-background-cards);
     	display: flex;
-		gap: var(--gap-m);
+		gap: var(--spacing-xs);
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		justify-items: center;
 		place-items: center;
-		text-align: left;
-		border: 2px solid var(--accent-color-main);
-		border-radius: var(--border-radius-m);
-		padding: 1.50rem;
-        box-sizing: border-box;
+		text-align: var(--text-align-main);
+		border: 2px solid var(--primary-color);
+		border-radius: var(--rounding-m);
+		padding: var(--spacing-m);
+        box-sizing: var(--inner-spacing);
 		width: 16rem;
 		height: 26rem;
 
@@ -44,9 +44,9 @@
 			a {
 				text-decoration: none;
 				display: flex;
-				align-items: center;
-				gap: var(--gap-s);
-				color: var(--green-main);
+				align-items: var(--align-items-main);
+				gap: var(--spacing-xs);
+				color: var(--accent-color);
 			}
 
 			a:hover {
@@ -59,12 +59,12 @@
 
 			h3 {
 				font-size: clamp(--h3-font-size);
-				height: 2.5rem;
-				color: var(--main-text-color);
+				height: 4rem;
+				color: var(--text-color);
 			}
 
 			img {
-				border-radius: var(--border-radius-m);
+				border-radius: var(--rounding-m);
 			}
 
 			img:hover {
@@ -75,8 +75,8 @@
 			form {
 				display: flex;
 				justify-items: start;
-				align-items: center;
-				gap: var(--gap-s);
+				align-items: var(--align-items-main);
+				gap: var(--spacing-xs);
 				width: 100%;
 			}
 
