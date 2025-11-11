@@ -172,9 +172,9 @@
       padding-inline: 2em;
       border-radius: 3em;
       border: none;
-      background-color: var(--item-main-background-color);
+      background-color: var(--accent-color);
       &:hover {
-        background-color: var(--background-icon-color);
+        background-color: var(--accent-color-hover);
       }
     }
 
@@ -187,20 +187,20 @@
       margin-top: 1em;
       border-radius: 3em;
       border: none;
-      background-color: var(--green-main-hover);
+      background-color: var(--accent-color);
       padding-block: 1em;
       padding-inline: 3em;
       cursor: pointer;
-      color: var(--background-color);
+      color: var(--text-color-button);
 
       &:hover {
-        background-color: var(--green-secondary);
+        background-color: var(--accent-color-light);
         /* color: var(--background-icon-color); */
       }
     }
 
     p {
-      color: var(--chat-text-color);
+      color: var(--text-color-chat);
       margin: 0;
     }
   }

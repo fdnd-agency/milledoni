@@ -60,6 +60,7 @@
     /* Colors */
     --text-color: hsl(0 0 13); 
     --text-color-chat: hsl(0 0 61);
+    --text-color-button: hsl(0 0 100);
 
     --neutral-color-background: hsl(0 0 100);
     --neutral-color-background-cards: hsl(0 5 96);
