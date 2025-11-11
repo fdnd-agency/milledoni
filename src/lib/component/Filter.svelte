@@ -6,12 +6,12 @@
 
 <!-- using css :checked to open/close the filters -->
 
+<div class="toggle-filter button">
+  <input class="checker" type="checkbox" id="filter-toggle" value="Filter" />
+  <label for="filter-toggle">Filter</label>
+</div>
 
-  <input class="checker" type="checkbox" id="filter-toggle" />
-
-<label class="button" for="filter-toggle">Filter</label>
-
-<div class="form-wrapper">
+<div class="form-wrapper">  
   <form>
     <fieldset>
       <label for="tag-select">De persoon</label>
@@ -22,7 +22,7 @@
         {/each}
       </select>
     </fieldset>
-    
+
     <fieldset>
       <label for="tag-select">De persoon</label>
       <select id="tag-select">
@@ -32,14 +32,6 @@
         {/each}
       </select>
     </fieldset>
-
-    <!-- <details>
-      {#each tags as tag}
-        <summary>
-          <option value={tag}>{tag}</option>
-        </summary>
-      {/each}
-    </details> -->
 
     <fieldset>
       <label for="tag-select">Deze persoon is</label>
@@ -84,11 +76,12 @@
     }
   }
 
-  input[type="checkbox"]{
-    display: none;
+  input[type="checkbox"] {
+    appearance: none;
+    border: none;
   }
 
-  .checker:checked ~ .form-wrapper {
+  .toggle-filter:has(.checker:checked) + .form-wrapper {
     margin: 0;
     padding: 0;
     height: 0;
