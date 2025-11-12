@@ -11,7 +11,7 @@
 </script>
 
 <section class="filters">
-  <h1>i'm looking for a gift for... <br /><span>my uncle</span></h1>
+  <h1>I'm looking for a gift for... <br /><span>my uncle</span></h1>
 
   <svg
     width="349"
@@ -129,7 +129,7 @@
       /* margin-top: 3em; */
 
       span {
-        color: var(--accent-color-main);
+        color: var(--primary-color);
       }
     }
 
