@@ -19,11 +19,15 @@
           <option value={tag}>{tag}</option>
         {/each}
       </select>
+
+      <select name="" id="tag slect">
+        <option value="">Test</option>
+      </select>
     </fieldset>
 
     <!--  using details to open or close filter options  -->
     <fieldset>
-      <details>
+      <details open>
         <summary>De persoon</summary>
         <select id="tag-select">
           <option value="">Alle tags</option>
@@ -42,6 +46,18 @@
           <option value={tag}>{tag}</option>
         {/each}
       </select>
+
+      <select name="" id="tag slect">
+        <option value="">Test</option>
+      </select>
+
+      <select name="" id="tag slect">
+        <option value="">Test</option>
+      </select>
+
+      <select name="" id="tag slect">
+        <option value="">Test</option>
+      </select>
     </fieldset>
 
     <fieldset>
@@ -52,15 +68,9 @@
           <option value={tag}>{tag}</option>
         {/each}
       </select>
-    </fieldset>
 
-    <fieldset>
-      <label for="tag-select">Stijl & voorkeuren</label>
-      <select id="tag-select">
-        <option value="">Alle tags</option>
-        {#each tags as tag}
-          <option value={tag}>{tag}</option>
-        {/each}
+      <select name="" id="tag slect">
+        <option value="">Test</option>
       </select>
     </fieldset>
   </form>
@@ -69,7 +79,6 @@
 </div>
 
 <style>
-  button,
   .button {
     margin-top: 1em;
     border-radius: 3em;
@@ -95,18 +104,21 @@
   }
 
   input[type="checkbox"] {
+    opacity: 0;
     appearance: none;
     border: none;
     position: absolute;
-    inset: 0; 
+
+    inset: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
+
     cursor: pointer;
     margin: 0;
   }
 
   .toggle-filter:has(.checker:checked) + .form-wrapper {
+    display: none;
     margin: 0;
     padding: 0;
     height: 0;
@@ -119,27 +131,25 @@
   }
 
   .form-wrapper {
-    opacity: 1;
-    height: auto;
     display: flex;
+    opacity: 1;
     align-items: center;
     justify-content: center;
 
-    margin: 0 3em 3em 3em;
     width: 90%;
+    height: auto;
     position: relative;
 
     background-color: #20a687;
     border-radius: 15px;
 
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out allow-discrete;
 
     z-index: 2;
-    padding: 1em;
 
     @media screen and (min-width: 1030px) {
       width: 60%;
-      padding: 3em;
+      padding: 2em;
     }
 
     form {
@@ -150,7 +160,7 @@
 
       gap: 1.5em;
       width: 100%;
-      height: 80%;
+      height: 100%;
       margin: auto;
 
       /* relative for z-index */
@@ -158,14 +168,9 @@
       z-index: 2;
 
       padding: 1em;
-
       border: 5px solid #20a687;
       border-radius: 15px;
-
       background-color: #fff;
-      height: auto;
-
-      margin: auto;
 
       @media screen and (min-width: 1075px) {
         flex-direction: row;
@@ -175,45 +180,30 @@
         display: flex;
         flex-direction: column;
 
+        width: 20%;
         gap: 0.5em;
-
         border: none;
         padding: 0;
         margin: 0;
       }
 
+      @supports selector(::details-content) {
+        details[open]::details-content {
+          padding: 1rem;
+          background-color: rebeccapurple;
+          display: none;
+        }
+
+        @media (min-width: 60em) {
+          details[open]::details-content {
+            display: block;
+          }
+        }
+      }
+
       label {
         color: #20a687;
         font-weight: bold;
-      }
-
-      details {
-        width: max-content;
-      }
-
-      details summary {
-        list-style: none;
-        cursor: pointer;
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5em 0;
-      }
-
-      details summary::marker {
-        display: none;
-      }
-
-      details summary::after {
-        content: "▶";
-        transition: transform 0.2s ease;
-        font-size: 0.9em;
-        margin-left: 1em;
-      }
-
-      details[open] summary::after {
-        transform: rotate(90deg);
       }
 
       select {
@@ -225,11 +215,6 @@
         color: #1d1d1b;
         background-color: #fff;
         padding: 5px;
-
-        /* option {
-          &::checked {
-          }
-        } */
       }
     }
   }
@@ -238,13 +223,10 @@
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
     object-fit: cover;
-
     border-radius: 15px;
-
     z-index: 1;
   }
 </style>
