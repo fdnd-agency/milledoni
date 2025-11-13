@@ -66,6 +66,30 @@ On mobile devices, a smaller version of the logo is used because of the limited 
 
 <img height="50" alt="image" src="https://github.com/user-attachments/assets/07f34b1e-8a74-4a83-9c13-36de6eda21ce" />
 
+### Manual filter
+
+Some people still prefer using manual filtering instead of chatting with AI, that’s why we use both. The background of the filter looks like wrapping paper, since Milledoni is all about presents, we thought it would be a fitting design choice.
+
+The filter layout differs between mobile and desktop due to the available screen space.
+
+Mobile:
+On mobile, the filter is already unfolded when entering the homepage. By clicking on one of the three categories, the filter unfolds further so you can select different options.
+
+*Mobile interaction*
+
+<img height="200" alt="image" src="https://github.com/user-attachments/assets/38708b56-51a0-429d-a5d2-0b3e7e851861" />
+
+Desktop:
+On desktop, the filter starts folded. By clicking on the “Filter” button, it unfolds and lets you select options per category.
+Since there’s more room on desktop, you can skip one extra click compared to mobile.
+
+*Desktop interaction*
+
+<img height="80" height="67" alt="image" src="https://github.com/user-attachments/assets/f7db4f69-06b3-4de4-b153-fd11b02c20f7" />
+<br>
+<img height="200" alt="image" src="https://github.com/user-attachments/assets/8d96518c-875c-4fa3-aff3-a4ab2352f550" />
+
+
 ### Product Cards
 
 The products are displayed in cards on the homepage. Each card shows a large image, the product name below it, and a link to the product detail page. Users can also like a product by clicking the like button.
