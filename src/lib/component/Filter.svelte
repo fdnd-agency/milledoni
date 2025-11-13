@@ -1,26 +1,27 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount } from "svelte";
   let { tags } = $props();
   import image from "$lib/assets/filter-bg.svg";
 
   onMount(() => {
-    const detailsElements = document.querySelectorAll('details'); // get details
+    const detailsElements = document.querySelectorAll("details"); // get details
 
     const toggleDetails = () => {
-      detailsElements.forEach(detail => {
-        if (window.innerWidth >= 960) { // set width on which the open attribute will be changed
-          detail.setAttribute('open', ''); 
+      detailsElements.forEach((detail) => {
+        if (window.innerWidth >= 960) {
+          // set width on which the open attribute will be changed
+          detail.setAttribute("open", "");
         } else {
-          detail.removeAttribute('open');  // close details standard
+          detail.removeAttribute("open"); // close details standard
         }
       });
     };
     toggleDetails();
 
-    window.addEventListener('resize', toggleDetails);
+    window.addEventListener("resize", toggleDetails);
 
     return () => {
-      window.removeEventListener('resize', toggleDetails);
+      window.removeEventListener("resize", toggleDetails);
     };
   });
 </script>
@@ -32,7 +33,6 @@
 
 <div class="form-wrapper">
   <form>
-
     <fieldset>
       <details open>
         <summary>De persoon</summary>
@@ -51,19 +51,7 @@
 
     <fieldset>
       <details open>
-        <summary>De persoon</summary>
-        <select id="tag-select">
-          <option value="">Alle tags</option>
-          {#each tags as tag}
-            <option value={tag}>{tag}</option>
-          {/each}
-        </select>
-      </details>
-    </fieldset>
-
-    <fieldset>
-      <details open>
-        <summary>De persoon</summary>
+        <summary>Deze persoon is</summary>
         <select id="tag-select">
           <option value="">Alle tags</option>
           {#each tags as tag}
@@ -78,29 +66,32 @@
         <select name="" id="tag slect">
           <option value="">Test</option>
         </select>
+      </details>
+    </fieldset>
+
+    <fieldset>
+      <details open>
+        <summary>Stijl & voorkeuren</summary>
+        <select id="tag-select">
+          <option value="">Alle tags</option>
+          {#each tags as tag}
+            <option value={tag}>{tag}</option>
+          {/each}
+        </select>
+
+        <select name="" id="tag slect">
+          <option value="">Test</option>
+        </select>
+
+        <select name="" id="tag slect">
+          <option value="">Test</option>
+        </select>
 
         <select name="" id="tag slect">
           <option value="">Test</option>
         </select>
       </details>
     </fieldset>
-
-    <fieldset>
-      <details open>
-        <summary>De persoon</summary>
-          <select id="tag-select">
-            <option value="">Alle tags</option>
-            {#each tags as tag}
-              <option value={tag}>{tag}</option>
-            {/each}
-          </select>
-
-          <select name="" id="tag slect">
-            <option value="">Test</option>
-          </select>
-      </details>
-    </fieldset>
-
   </form>
 
   <img class="svg" src={image} alt="" />
@@ -168,7 +159,6 @@
     justify-content: center;
 
     width: 90%;
-    height: auto;
     position: relative;
     padding: 1em;
 
@@ -183,72 +173,74 @@
       width: 60%;
       padding: 2em;
     }
+  }
 
-    form {
-      opacity: 1;
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: space-evenly;
+  form {
+    opacity: 1;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
 
-      gap: 1.5em;
-      width: 100%;
-      height: 100%;
-      margin: auto;
+    gap: 1.5em;
+    width: 100%;
+    height: 100%;
+    margin: auto;
 
-      /* relative for z-index */
-      position: relative;
-      z-index: 2;
+    /* relative for z-index */
+    position: relative;
+    z-index: 2;
 
-      padding: 1em;
-      border: 5px solid #20a687;
-      border-radius: 15px;
-      background-color: #fff;
+    padding: 1em;
+    border: 5px solid #20a687;
+    border-radius: 15px;
+    background-color: #fff;
 
-      @media screen and (min-width: 1075px) {
-        flex-direction: row;
-      }
-
-      fieldset {
-        display: flex;
-        flex-direction: column;
-
-        width: 100%;
-        gap: 0.5em;
-        border: none;
-        padding: 0;
-        margin: 0;
-
-        @media (min-width:1250px){
-          width: 20%;
-        }
-      }
-
-
-
-      /* This will be styled in general style.css */
-      details {
-        font-family: "Parkisans";
-      }
-
-      summary {
-        color: #20a687;
-        font-family: "Parkisans";
-        font-weight: bold;
-      }
-
-      select {
-        font-family: inherit;
-        width: 100%;
-        margin: 0.3rem 0;
-        border-radius: 5px;
-        border: 2px solid lightgray;
-        color: #1d1d1b;
-        background-color: #fff;
-        padding: 5px;
-      }
-
-      
+    @media screen and (min-width: 1075px) {
+      flex-direction: row;
     }
+  }
+
+  fieldset {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1 1 0;
+    gap: 0.5em;
+    padding: 0 0 1em 0;
+    margin: 0;
+
+    border: none;
+    border-bottom: 2px solid #20a687;
+
+    @media (min-width: 1075px) {
+      border: none;
+    }
+  }
+
+  /* This will be styled in general style.css */
+  details {
+    font-family: "Parkisans";
+  }
+
+  summary {
+    color: #20a687;
+    font-family: "Parkisans";
+    font-weight: bold;
+  }
+
+  summary:first-of-type {
+    list-style-type: none;
+  }
+
+  select {
+    font-family: inherit;
+    width: 100%;
+    margin: 0.3rem 0;
+    border-radius: 5px;
+    border: 2px solid lightgray;
+    color: #1d1d1b;
+    background-color: #fff;
+    padding: 5px;
   }
 
   .svg {
