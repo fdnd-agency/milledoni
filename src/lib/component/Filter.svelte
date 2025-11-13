@@ -26,7 +26,7 @@
   });
 </script>
 
-<div class="toggle-filter button">
+<div class="toggle-filter filter-button">
   <input class="checker" type="checkbox" id="filter-toggle" value="Filter" />
   <label for="filter-toggle">Filter</label>
 </div>
@@ -101,7 +101,7 @@
   /* This CSS doesn't yet include variables since it is based of older dev branch -> will be included very soon!! */
 
   /* adding this to general css */
-  .button {
+  .filter-button {
     margin-top: 1em;
     border-radius: 3em;
     padding: 3em 1em;
