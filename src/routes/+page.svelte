@@ -27,7 +27,6 @@
   <p>1.000+ producten</p>
 </section>
 
-<Filter {tags} />
 
 <main>
   <ul>
