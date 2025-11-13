@@ -4,7 +4,6 @@
 
 <!-- HTML structure for each card -->
 <li>
-
 	<div>
 		<a tabindex="-1" href="/"><img loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
 		<h3>{product.name}</h3>
@@ -21,7 +20,6 @@
 		</button>
 		<label for="likeBtn">like</label>
 	</form>
-	
 </li>
 
 <style>
