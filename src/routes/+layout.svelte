@@ -1,6 +1,7 @@
 <script>
 	import favicon from '$lib/assets/favicon.svg';
 	import Header from '$lib/component/Header.svelte';
+	import Footer from '$lib/component/Footer.svelte';
 	import '$lib/styles/style.css';
 
 	let { children } = $props();
@@ -13,3 +14,5 @@
 <Header />
 
 {@render children?.()}
+
+<Footer />

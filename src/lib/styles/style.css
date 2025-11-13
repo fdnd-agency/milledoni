@@ -34,6 +34,10 @@
     font-weight: 800;
 }
 
+body{
+    margin: 0;
+}
+
 :root {
     /* Fonts */
     --font-family: 'Parkisans', serif;
