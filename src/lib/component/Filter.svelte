@@ -8,7 +8,7 @@
 
     const toggleDetails = () => {
       detailsElements.forEach((detail) => {
-        if (window.innerWidth >= 960) {
+        if (window.innerWidth >= 970) {
           // set width on which the open attribute will be changed
           detail.setAttribute("open", "");
         } else {
@@ -175,7 +175,7 @@
 
     z-index: 2;
 
-    @media screen and (min-width: 1030px) {
+    @media screen and (min-width: 900px) {
       width: 60%;
       padding: 2em;
     }
@@ -201,7 +201,7 @@
     border-radius: 15px;
     background-color: #fff;
 
-    @media screen and (min-width: 1075px) {
+    @media screen and (min-width: 970px) {
       flex-direction: row;
     }
   }
@@ -218,7 +218,7 @@
     border: none;
     border-bottom: 2px solid #20a687;
 
-    @media (min-width: 1075px) {
+    @media (min-width: 970px) {
       border: none;
     }
   }
