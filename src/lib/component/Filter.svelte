@@ -139,6 +139,12 @@
     margin: 0;
   }
 
+  /*quick fix wilol soolve later in general styling*/
+   input[type="checkbox"]:focus + label {
+    outline: 2px solid #ff0; 
+    outline-offset: 2px;
+  }
+
   .toggle-filter:has(.checker:checked) + .form-wrapper {
     display: none;
     margin: 0;
@@ -228,9 +234,20 @@
     font-weight: bold;
   }
 
-  summary:first-of-type {
+  /* will look into this further */
+
+  /* summary:first-of-type {
     list-style-type: none;
   }
+
+  details summary::after {
+    content: "▾"; 
+    transition: transform 0.2s ease;
+  }
+
+  details[open] summary::after {
+    transform: rotate(180deg);
+  } */
 
   select {
     font-family: inherit;
