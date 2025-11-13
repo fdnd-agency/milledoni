@@ -1,7 +1,28 @@
 <script>
+  import { onMount } from 'svelte';
   let { tags } = $props();
-
   import image from "$lib/assets/filter-bg.svg";
+
+  onMount(() => {
+    const detailsElements = document.querySelectorAll('details'); // get details
+
+    const toggleDetails = () => {
+      detailsElements.forEach(detail => {
+        if (window.innerWidth >= 960) { // set width on which the open attribute will be changed
+          detail.setAttribute('open', ''); 
+        } else {
+          detail.removeAttribute('open');  // close details standard
+        }
+      });
+    };
+    toggleDetails();
+
+    window.addEventListener('resize', toggleDetails);
+
+    return () => {
+      window.removeEventListener('resize', toggleDetails);
+    };
+  });
 </script>
 
 <div class="toggle-filter button">
@@ -11,21 +32,23 @@
 
 <div class="form-wrapper">
   <form>
-    <fieldset>
-      <label for="tag-select">De persoon</label>
-      <select id="tag-select">
-        <option value="">Alle tags</option>
-        {#each tags as tag}
-          <option value={tag}>{tag}</option>
-        {/each}
-      </select>
 
-      <select name="" id="tag slect">
-        <option value="">Test</option>
-      </select>
+    <fieldset>
+      <details open>
+        <summary>De persoon</summary>
+        <select id="tag-select">
+          <option value="">Alle tags</option>
+          {#each tags as tag}
+            <option value={tag}>{tag}</option>
+          {/each}
+        </select>
+
+        <select name="" id="tag slect">
+          <option value="">Test</option>
+        </select>
+      </details>
     </fieldset>
 
-    <!--  using details to open or close filter options  -->
     <fieldset>
       <details open>
         <summary>De persoon</summary>
@@ -39,46 +62,54 @@
     </fieldset>
 
     <fieldset>
-      <label for="tag-select">De persoon</label>
-      <select id="tag-select">
-        <option value="">Alle tags</option>
-        {#each tags as tag}
-          <option value={tag}>{tag}</option>
-        {/each}
-      </select>
+      <details open>
+        <summary>De persoon</summary>
+        <select id="tag-select">
+          <option value="">Alle tags</option>
+          {#each tags as tag}
+            <option value={tag}>{tag}</option>
+          {/each}
+        </select>
 
-      <select name="" id="tag slect">
-        <option value="">Test</option>
-      </select>
+        <select name="" id="tag slect">
+          <option value="">Test</option>
+        </select>
 
-      <select name="" id="tag slect">
-        <option value="">Test</option>
-      </select>
+        <select name="" id="tag slect">
+          <option value="">Test</option>
+        </select>
 
-      <select name="" id="tag slect">
-        <option value="">Test</option>
-      </select>
+        <select name="" id="tag slect">
+          <option value="">Test</option>
+        </select>
+      </details>
     </fieldset>
 
     <fieldset>
-      <label for="tag-select">Deze persoon is</label>
-      <select id="tag-select">
-        <option value="">Alle tags</option>
-        {#each tags as tag}
-          <option value={tag}>{tag}</option>
-        {/each}
-      </select>
+      <details open>
+        <summary>De persoon</summary>
+          <select id="tag-select">
+            <option value="">Alle tags</option>
+            {#each tags as tag}
+              <option value={tag}>{tag}</option>
+            {/each}
+          </select>
 
-      <select name="" id="tag slect">
-        <option value="">Test</option>
-      </select>
+          <select name="" id="tag slect">
+            <option value="">Test</option>
+          </select>
+      </details>
     </fieldset>
+
   </form>
 
   <img class="svg" src={image} alt="" />
 </div>
 
 <style>
+  /* This CSS doesn't yet include variables since it is based of older dev branch -> will be included very soon!! */
+
+  /* adding this to general css */
   .button {
     margin-top: 1em;
     border-radius: 3em;
@@ -139,6 +170,7 @@
     width: 90%;
     height: auto;
     position: relative;
+    padding: 1em;
 
     background-color: #20a687;
     border-radius: 15px;
@@ -180,42 +212,42 @@
         display: flex;
         flex-direction: column;
 
-        width: 20%;
+        width: 100%;
         gap: 0.5em;
         border: none;
         padding: 0;
         margin: 0;
-      }
 
-      @supports selector(::details-content) {
-        details[open]::details-content {
-          padding: 1rem;
-          background-color: rebeccapurple;
-          display: none;
-        }
-
-        @media (min-width: 60em) {
-          details[open]::details-content {
-            display: block;
-          }
+        @media (min-width:1250px){
+          width: 20%;
         }
       }
 
-      label {
+
+
+      /* This will be styled in general style.css */
+      details {
+        font-family: "Parkisans";
+      }
+
+      summary {
         color: #20a687;
+        font-family: "Parkisans";
         font-weight: bold;
       }
 
       select {
         font-family: inherit;
         width: 100%;
-
+        margin: 0.3rem 0;
         border-radius: 5px;
         border: 2px solid lightgray;
         color: #1d1d1b;
         background-color: #fff;
         padding: 5px;
       }
+
+      
     }
   }
 
