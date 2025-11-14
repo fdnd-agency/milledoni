@@ -1,11 +1,11 @@
 <footer>
-    <section>
+    <!-- <section>
         <h3>Regali nella tua casella di posta!</h3>
         <p>La tua ispirazione per i regali del mese</p>
         <form>
             <input type="email">
         </form>
-    </section>
+    </section> -->
 
     <div>
         <svg class="logo" width="320" height="84" viewBox="0 0 320 84" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -121,12 +121,10 @@
         display: flex;
         flex-direction: column;
         margin-top: 4em;
-        /* align-items: center; */
-        /* justify-content: center; */
         background-color: var(--text-color);
         color: var(--text-color-button);
 
-        >section:first-of-type{
+        /* >section:first-of-type{
             background-color: var(--primary-color);
             display: grid;
             grid-template-rows: 1fr 1fr 1fr;
@@ -164,7 +162,7 @@
             width: 90%;
             margin: 0;
         }
-        }
+        } */
 
 
 
