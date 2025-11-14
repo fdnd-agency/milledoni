@@ -244,6 +244,11 @@
     }
 
     .footer-social{
+        svg{
+           width: 3em;
+           height: 3em;
+           padding: .2em;
+        }
         @media(min-width:1300px){
             grid-row: 2;
             justify-self: end;
