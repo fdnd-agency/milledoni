@@ -260,6 +260,16 @@
         div{
             display: grid;
             grid-template-columns: 1fr 5fr;
+
+            @media(min-width:620px){
+                grid-template-columns: 1fr 7fr;
+            }
+            @media(min-width:800px){
+                grid-template-columns: 1fr 9fr;
+            }
+            @media(min-width:1100px){
+                grid-template-columns: 1fr 14fr;
+            }
         }
 
         svg{
