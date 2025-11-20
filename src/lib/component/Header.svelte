@@ -6,8 +6,6 @@
 <header>
     <nav>
         <Logo />
-
-        <div>
             <a href="/" aria-label="jouw profiel">
                 <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_386_24314)">
@@ -51,8 +49,7 @@
                     </filter>
                     </defs>
                 </svg>
-            </a>
-        </div>            
+            </a>          
     </nav>
     <!-- <svg width="91" height="50" viewBox="0 0 91 50" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M42.8622 49.6698C41.6654 44.0922 34.4746 42.0855 28.1343 40.3155C25.9241 39.6981 23.8361 39.1115 22.0893 38.3963C14.9189 35.4686 6.79103 32.1498 2.22803 24.1848C-0.746072 18.9932 -0.740975 12.2631 2.23313 7.04566C4.91695 2.34796 9.4494 -0.271026 14.812 0.0222594C24.6458 0.516213 32.5649 9.07808 39.0122 26.1915C40.7946 30.9252 42.4701 35.7464 43.9877 40.5162C44.2525 41.3446 44.6599 42.2553 45.0775 43.1969C45.9331 45.1264 46.8141 47.1279 46.9618 49.0575L42.8571 49.6646L42.8622 49.6698ZM14.0633 4.20543C9.35773 4.20543 6.89288 7.30293 5.83871 9.15011C3.58776 13.0863 3.58267 18.1648 5.82853 22.0804C9.67856 28.8002 16.7828 31.697 23.6528 34.5064C25.1755 35.129 27.1514 35.6795 29.2445 36.2661C32.5547 37.1871 36.2418 38.2213 39.4094 39.8679C38.0802 35.803 36.6441 31.7176 35.1316 27.6888C29.3362 12.2991 22.624 4.6222 14.6082 4.21572L14.0684 4.20028L14.0633 4.20543Z" fill="#E0B000"/>
@@ -61,53 +58,14 @@
 </header>
 
 <style>
-    header{
+    header {
         position: relative;
         border-bottom: 3px solid #e0b000;
         box-sizing: var(--inner-spacing);
         padding: var(--spacing-xs) var(--spacing-m) var(--spacing-xs) var(--spacing-m);
     }
 
-    nav{
+    nav {
         display: flex;
-        gap: 1em;
-        justify-content: space-between;
-    }
-
-    nav > svg{
-        align-self: end;
-        margin-bottom: -.3em;
-        @media(min-width: 340px){
-            margin-bottom: -.1em;
-        }
-    }
-
-    a{
-        svg{
-            width: 3em;
-            @media(min-width: 820px){
-            width: 4em;
-        }
-        }
-    }
-
-    nav > a:first-of-type{
-        margin-top: -.5em;
-        margin-left: 1em;
-        width: 7.26rem;
-
-        @media(min-width: 820px){
-            display: none;
-        }
-    }
-
-    div{
-        display: flex;
-        @media(min-width: 820px){
-            align-self: center;
-            margin-top: .5em;
-            width: 21.56rem;
-            justify-content: end;
-        }
     }
 </style>
