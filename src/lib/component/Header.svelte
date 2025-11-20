@@ -1,4 +1,12 @@
+<script>
+    //import products component
+    import { Logo } from "$lib";
+</script>
+
 <header>
+
+    <Logo />
+    
     <nav>
         <a href="/" aria-label="home">
             <svg width="69" height="87" viewBox="0 0 69 87" fill="none" xmlns="http://www.w3.org/2000/svg">
