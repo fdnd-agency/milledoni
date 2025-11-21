@@ -2,36 +2,43 @@
   font-family: "Parkisans";
   src: url("/fonts/Parkinsans-Light.ttf") format("truetype");
   font-weight: 300;
+  font-display: swap;
 }
+
 
 @font-face {
   font-family: "Parkisans";
   src: url("/fonts/Parkinsans-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Parkisans";
   src: url("/fonts/Parkinsans-Medium.ttf") format("truetype");
   font-weight: 500;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Parkisans";
   src: url("/fonts/Parkinsans-SemiBold.ttf") format("truetype");
   font-weight: 600;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Parkisans";
   src: url("/fonts/Parkinsans-Bold.ttf") format("truetype");
   font-weight: 700;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Parkisans";
   src: url("/fonts/Parkinsans-ExtraBold.ttf") format("truetype");
   font-weight: 800;
+  font-display: swap;
 }
 
 :root {
@@ -45,10 +52,9 @@
   --font-weight-bold: 700;
   --font-weight-extra-bold: 800;
 
-
   /* headings */
   --h1-font-size: clamp(2rem, 5vw, 4.0625rem);
-  --h2-font-size: clamp(1.5rem, 4vw, 2.5625);
+  --h2-font-size: clamp(1.5rem, 4vw, 2.5625rem);
   --h3-font-size: clamp(1.2rem, 3vw, 1.6rem);
 
   --h1-line-height: 1.1;
@@ -170,7 +176,6 @@ body,
 select,
 option {
   font-family: var(--font-family);
-  font-display: swap;
 }
 
 h1,
@@ -212,14 +217,17 @@ select {
 }
 
 
-/* increase line-height on dark color schemes */
 @media (prefers-color-scheme: dark) {
   :root {
+
+    /* increase line-height on dark color schemes */
     --text-line-height: 1.7;
 
     --h1-line-height: 1.2;
     --h2-line-height: 1.2;
     --h3-line-height: 1.2;
     --h4-line-height: 1.2;
+
+    /*darkmode colors?*/
   }
 }
