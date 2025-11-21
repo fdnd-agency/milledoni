@@ -58,8 +58,6 @@
 			}
 
 			h3 {
-				font-size: clamp(--h3-font-size);
-				height: 4rem;
 				color: var(--text-color);
 			}
 
