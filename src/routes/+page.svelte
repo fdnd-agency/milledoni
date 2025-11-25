@@ -84,8 +84,9 @@
       }
 
       &:nth-of-type(2) {
-        right: 5em;
+        right: 0;
         bottom: 50vh;
+        scale: 0.6;
 
         @media (min-width: 1050px){
           bottom: 5em;
