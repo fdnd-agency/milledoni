@@ -3,5 +3,6 @@
 
 export {  default as Header } from './component/Header.svelte'
 export {  default as Logo } from './component/Logo.svelte'
+export {  default as AccountLink } from './component/AccountLink.svelte'
 export {  default as Product } from './component/product.svelte'
 export {  default as Filter } from './component/Filter.svelte'
