@@ -10,17 +10,35 @@
 </div>
 
 <style>
+    .account-container {
+        container-type: inline-size;
+        width: 100%;
+    }
+
     a {
-        background-color: var(--accent-color);
-        width: 4rem;
-        height: 4rem;
-        border-radius: var(--rounding-circle);
-        display: grid;
-        align-items: center;
+
+        display: inline-flex;
     }
 
     .symbol-account {
-        display: grid;
+        display: flex;
         align-items: center;
+        border-radius: var(--rounding-circle);
+        color: white;
+        background-color: var(--accent-color);
+        padding-right: none;
+    }
+
+    @container (width > 350px) {
+
+        .symbol-account::after {
+            content: "account";
+        }
+
+        .symbol-account {
+            border-radius: var(--rounding-l);
+            padding-left: 1rem;
+            padding-right: 2rem;
+        }
     }
 </style>
