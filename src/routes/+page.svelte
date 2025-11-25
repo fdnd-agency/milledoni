@@ -3,7 +3,7 @@
   import image from "$lib/assets/filter-bg.svg";
   import robotimg from "$lib/assets/chatbot.svg"
 
-  //import products component
+ 
   import { Product } from "$lib";
   import { Filter } from "$lib";
 
@@ -57,8 +57,8 @@
     padding-inline: 1rem;
 
     @media (min-width: 912px) {
-            padding-inline: 2rem;
-        }
+      padding-inline: 2rem;
+    }
   }
 
   .filters {
@@ -71,21 +71,21 @@
     overflow: hidden;
 
     > svg {
-      position: absolute;
+      position: fixed;
       z-index: -1;
 
       &:nth-of-type(1) {
-        left: 5em;
-        top: 2em;
+        left: 3em;
+        top: 5vh;
       }
 
       &:nth-of-type(2) {
-        right: 5em;
-        bottom: 0;
-        display: none;
+        right: 3em;
+        bottom: 5vh;
+        opacity: 0;
 
-        @media (min-width: 650px) {
-          display: block;
+        @media (min-width: 950px) {
+          opacity: 1;
         }
       }
     }
@@ -109,9 +109,8 @@
       padding: 0.15em;
       width: 18em;
 
-      svg {
+      input[type="image"] {
         width: 2.5em;
-        margin-left: -3em;
         pointer-events: none;
         grid-column: 3;
         grid-row: 1;
