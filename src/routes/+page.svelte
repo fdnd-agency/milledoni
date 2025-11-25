@@ -76,7 +76,7 @@
 
       &:nth-of-type(1) {
         left: 3em;
-        top: 10vh;
+        top: 15vh;
       }
 
       &:nth-of-type(2) {
