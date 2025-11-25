@@ -29,6 +29,8 @@
 
 
 <main>
+  
+  <h2>Producten</h2>
   <ul>
     {#each products as product}
       <Product {product} />
@@ -40,6 +42,8 @@
   main {
     display: grid;
     justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   ul {
@@ -50,7 +54,6 @@
     gap: 2em;
     max-width: 80rem;
     padding: 0;
-    margin-top: 4rem;
     padding-inline: 1rem;
 
     @media (min-width: 912px) {

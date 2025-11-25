@@ -139,9 +139,9 @@
     margin: 0;
   }
 
-  /*quick fix wilol soolve later in general styling*/
+  /*if its not broken, don't fix it!!*/
    input[type="checkbox"]:focus + label {
-    outline: 2px solid #ff0; 
+    outline: 2px solid var(--primary-color-hover); 
     outline-offset: 2px;
   }
 
@@ -149,6 +149,7 @@
     display: none;
     margin: 0;
     padding: 0;
+    height: 0;
     height: 0;
     opacity: 0;
 
