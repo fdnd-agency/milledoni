@@ -1,5 +1,4 @@
 <script>
-	
 	import { Header } from '$lib';
 	import favicon from '$lib/assets/favicon.svg';
 	import '$lib/styles/style.css';

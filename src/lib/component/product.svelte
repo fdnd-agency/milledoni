@@ -39,6 +39,7 @@
         box-sizing: var(--inner-spacing);
 		width: 16rem;
 		height: 26rem;
+		overflow: hidden;
 
 			/* Link: bekijk product */
 			a {
@@ -59,8 +60,8 @@
 
 			h3 {
 				font-size: clamp(--h3-font-size);
-				height: 4rem;
 				color: var(--text-color);
+				text-overflow: ellipsis;
 			}
 
 			img {

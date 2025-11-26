@@ -1,6 +1,6 @@
 <script>
-  import { onMount } from "svelte";
   let { tags } = $props();
+  import { onMount } from "svelte";
   import image from "$lib/assets/filter-bg.svg";
 
   onMount(() => {
@@ -26,7 +26,7 @@
   });
 </script>
 
-<div class="toggle-filter filter-button">
+<div class="toggle-filter button">
   <input class="checker" type="checkbox" id="filter-toggle" value="Filter" />
   <label for="filter-toggle">Filter</label>
 </div>
@@ -101,22 +101,6 @@
   /* This CSS doesn't yet include variables since it is based of older dev branch -> will be included very soon!! */
 
   /* adding this to general css */
-  .filter-button {
-    margin-top: 1em;
-    border-radius: 3em;
-    padding: 3em 1em;
-    border: none;
-    background-color: var(--green-main-hover);
-    padding-block: 1em;
-    padding-inline: 3em;
-    cursor: pointer;
-    color: var(--background-color);
-
-    &:hover {
-      background-color: var(--green-secondary);
-      /* color: var(--background-icon-color); */
-    }
-  }
 
   .toggle-filter {
     position: relative;
@@ -139,9 +123,9 @@
     margin: 0;
   }
 
-  /*quick fix wilol soolve later in general styling*/
+  /*if its not broken, don't fix it!!*/
    input[type="checkbox"]:focus + label {
-    outline: 2px solid #ff0; 
+    outline: 2px solid var(--primary-color-hover); 
     outline-offset: 2px;
   }
 
@@ -149,6 +133,7 @@
     display: none;
     margin: 0;
     padding: 0;
+    height: 0;
     height: 0;
     opacity: 0;
 
@@ -270,4 +255,5 @@
     border-radius: 15px;
     z-index: 1;
   }
+
 </style>
