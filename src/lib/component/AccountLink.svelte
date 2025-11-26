@@ -25,7 +25,7 @@
     .symbol-account {
         display: flex;
         align-items: center;
-        gap: 0.8rem;
+        gap: 0.6rem;
         border-radius: var(--rounding-circle);
         color: white;
         background-color: var(--accent-color);
@@ -42,6 +42,11 @@
         .symbol-account {
             border-radius: var(--rounding-l);
             padding: var(--spacing-s) var(--spacing-m) var(--spacing-s) var(--spacing-m);
+        }
+
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
         }
     }
 </style>
