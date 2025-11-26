@@ -27,8 +27,8 @@
         align-items: center;
         gap: 0.6rem;
         border-radius: var(--rounding-circle);
-        color: white;
-        background-color: var(--accent-color);
+        color: var(--text-color-button);
+        background-color: var(--neutral-color-background-icons);
         padding: var(--spacing-s);
     }
 
