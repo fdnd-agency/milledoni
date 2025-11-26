@@ -23,10 +23,11 @@
     .symbol-account {
         display: flex;
         align-items: center;
+        gap: 0.5rem;
         border-radius: var(--rounding-circle);
         color: white;
         background-color: var(--accent-color);
-        padding-right: none;
+        padding: var(--spacing-s) var(--spacing-m) var(--spacing-s) var(--spacing-m);
     }
 
     @container (width > 350px) {
@@ -37,8 +38,6 @@
 
         .symbol-account {
             border-radius: var(--rounding-l);
-            padding-left: 1rem;
-            padding-right: 2rem;
         }
     }
 </style>
