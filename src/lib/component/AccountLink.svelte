@@ -14,6 +14,7 @@
     .account-container {
         container-type: inline-size;
         width: 100%;
+        text-align: right;
     }
 
     a {
