@@ -45,7 +45,7 @@
     --font-weight-bold: 700;
     --font-weight-extra-bold: 800;
 
-    --h1-font-size: clamp(2.5rem, 5vw, 4rem);
+    --h1-font-size: clamp(2.1rem, 5vw, 4rem);
     --h2-font-size: clamp(2rem, 4vw, 2.8rem);
     --h3-font-size: clamp(1.2rem, 3vw, 1.3em);
 
@@ -186,3 +186,19 @@ a {
 a, button, input, select {
     cursor: var(--cursor-hover);
 }
+
+.button {
+      margin-top: 1em;
+      border-radius: 3em;
+      border: none;
+      background-color: var(--accent-color);
+      padding-block: 1em;
+      padding-inline: 3em;
+      cursor: pointer;
+      color: var(--text-color-button);
+
+      &:hover {
+        background-color: var(--accent-color-light);
+        /* color: var(--background-icon-color); */
+      }
+    }
