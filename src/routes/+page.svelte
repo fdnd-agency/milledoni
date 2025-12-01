@@ -3,7 +3,7 @@
   import image from "$lib/assets/filter-bg.svg";
   import robotimg from "$lib/assets/chatbot.svg"
 
-  //import products component
+ 
   import { Product } from "$lib";
   import { Filter } from "$lib";
 
@@ -29,6 +29,8 @@
 
 
 <main>
+  
+  <h2>Producten</h2>
   <ul>
     {#each products as product}
       <Product {product} />
@@ -40,6 +42,8 @@
   main {
     display: grid;
     justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   ul {
@@ -50,12 +54,11 @@
     gap: 2em;
     max-width: 80rem;
     padding: 0;
-    margin-top: 4rem;
     padding-inline: 1rem;
 
     @media (min-width: 912px) {
-            padding-inline: 2rem;
-        }
+      padding-inline: 2rem;
+    }
   }
 
   .filters {
@@ -125,8 +128,9 @@
       /* max-width: 80%; */
       border: 2px solid transparent;
       border-radius: 3em;
+      color: var(--text-color);
       background:
-        linear-gradient(white, white) padding-box,
+        linear-gradient(var(--neutral-color-background-cards)) padding-box,
         linear-gradient(45deg, red, purple, gold, blue);
     }
 

@@ -59,7 +59,6 @@
 			}
 
 			h3 {
-				font-size: clamp(--h3-font-size);
 				color: var(--text-color);
 				text-overflow: ellipsis;
 			}
@@ -112,4 +111,11 @@
             	margin-top: 2rem;
         	}
         }
+
+		@media (prefers-color-scheme: dark){
+			svg{
+				fill: var(--text-color);
+			}
+		}
+
 </style>
