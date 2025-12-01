@@ -163,19 +163,15 @@
     opacity: 1;
     align-items: center;
     justify-content: center;
-
     width: 90%;
     position: relative;
     padding: 1em;
-
-    background-color: #20a687;
+    background-color: var(--accent-color);
     border-radius: 15px;
-
     transition: all 0.3s ease-out allow-discrete;
-
     z-index: 2;
 
-    @media screen and (min-width: 900px) {
+  @media screen and (min-width: 900px) {
       width: 60%;
       padding: 2em;
     }
@@ -197,9 +193,9 @@
     z-index: 2;
 
     padding: 1em;
-    border: 5px solid #20a687;
+    border: 5px solid var(--accent-color);
     border-radius: 15px;
-    background-color: #fff;
+    background-color: var(--neutral-color-background-cards);
 
     @media screen and (min-width: 970px) {
       flex-direction: row;

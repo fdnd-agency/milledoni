@@ -125,8 +125,9 @@
       padding-right: 4em;
       border: 2px solid transparent;
       border-radius: 3em;
+      color: var(--text-color);
       background:
-        linear-gradient(white, white) padding-box,
+        linear-gradient(var(--neutral-color-background-cards)) padding-box,
         linear-gradient(45deg, red, purple, gold, blue);
       grid-column: 1/-1;
       grid-row: 1;

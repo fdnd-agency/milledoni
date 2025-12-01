@@ -5,7 +5,6 @@
   font-display: swap;
 }
 
-
 @font-face {
   font-family: "Parkisans";
   src: url("/fonts/Parkinsans-Regular.ttf") format("truetype");
@@ -80,6 +79,11 @@
   --text-color-chat: hsl(0 0 61);
   --text-color-button: hsl(0 0 100);
 
+  /* for svg */
+  --img-color-light: hsl(0, 0%, 13%);
+  --img-color-dark: hsl(0, 0%, 93%);
+
+  /* standard colors */
   --neutral-color-background: hsl(0 0 100);
   --neutral-color-background-cards: hsl(0 5 96);
   --neutral-color-background-icons: hsl(0 0 89);
@@ -178,9 +182,9 @@ option {
   font-family: var(--font-family);
 }
 
-body{
-    box-sizing: border-box;
-    background-color: var(--neutral-color-background);
+body {
+  box-sizing: border-box;
+  background-color: var(--neutral-color-background);
 }
 
 h1,
@@ -189,8 +193,12 @@ h3 {
   font-weight: var(--font-weight-medium);
 }
 
-h1,h2,h3,h4,p{
-    color: var(--text-color);
+h1,
+h2,
+h3,
+h4,
+p {
+  color: var(--text-color);
 }
 
 h1 {
@@ -225,10 +233,8 @@ select {
   cursor: var(--cursor-hover);
 }
 
-
 @media (prefers-color-scheme: dark) {
   :root {
-
     /* increase line-height on dark color schemes */
     --text-line-height: 1.7;
 
@@ -238,24 +244,19 @@ select {
     --h4-line-height: 1.2;
 
     /*darkmode colors*/
-    --text-color: hsl(0, 0%, 95%); 
+    --text-color: hsl(0, 0%, 95%);
     --text-color-chat: hsl(0 0 61);
     --text-color-button: hsl(0 0 100);
+
+    --img-color-light: hsl(0, 0%, 13%);
+    --img-color-dark: hsl(0, 0%, 93%);
 
     --neutral-color-background: hsl(0, 0%, 10%);
     --neutral-color-background-cards: hsl(0, 0%, 13%);
     --neutral-color-background-icons: hsl(0 0 89);
-    
-    --primary-color-light: hsl(57 100 72);
-    --primary-color-hover: hsl(46 100 64);
-    --primary-color: hsl(47 100 44);
-    --primary-color-dark: hsl(45 100 37);
-    --primary-color-deep: hsl(37 100 24); 
+  }
 
-    --accent-color-light: hsl(164 53 55);
-    --accent-color-hover: hsl(166 68 39);
-    --accent-color: hsl(167 100 25);
-    --accent-color-dark: hsl(164 100 19);
-    --accent-color-deep: hsl(159 100 13);  
+  body {
+    color: var(--text-color);
   }
 }

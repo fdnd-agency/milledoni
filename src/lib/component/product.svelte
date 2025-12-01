@@ -109,4 +109,11 @@
             	margin-top: 2rem;
         	}
         }
+
+		@media (prefers-color-scheme: dark){
+			svg{
+				fill: var(--text-color);
+			}
+		}
+
 </style>
