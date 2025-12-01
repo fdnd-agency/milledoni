@@ -178,10 +178,19 @@ option {
   font-family: var(--font-family);
 }
 
+body{
+    box-sizing: border-box;
+    background-color: var(--neutral-color-background);
+}
+
 h1,
 h2,
 h3 {
   font-weight: var(--font-weight-medium);
+}
+
+h1,h2,h3,h4,p{
+    color: var(--text-color);
 }
 
 h1 {
@@ -228,6 +237,25 @@ select {
     --h3-line-height: 1.2;
     --h4-line-height: 1.2;
 
-    /*darkmode colors?*/
+    /*darkmode colors*/
+    --text-color: hsl(0, 0%, 95%); 
+    --text-color-chat: hsl(0 0 61);
+    --text-color-button: hsl(0 0 100);
+
+    --neutral-color-background: hsl(0, 0%, 10%);
+    --neutral-color-background-cards: hsl(0, 0%, 13%);
+    --neutral-color-background-icons: hsl(0 0 89);
+    
+    --primary-color-light: hsl(57 100 72);
+    --primary-color-hover: hsl(46 100 64);
+    --primary-color: hsl(47 100 44);
+    --primary-color-dark: hsl(45 100 37);
+    --primary-color-deep: hsl(37 100 24); 
+
+    --accent-color-light: hsl(164 53 55);
+    --accent-color-hover: hsl(166 68 39);
+    --accent-color: hsl(167 100 25);
+    --accent-color-dark: hsl(164 100 19);
+    --accent-color-deep: hsl(159 100 13);  
   }
 }
