@@ -244,7 +244,7 @@ select {
     --h4-line-height: 1.2;
 
     /*darkmode colors*/
-    --text-color: hsl(0, 0%, 95%);
+    --text-color: hsl(0, 0%, 93%); 
     --text-color-chat: hsl(0 0 61);
     --text-color-button: hsl(0 0 100);
 
