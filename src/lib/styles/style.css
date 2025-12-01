@@ -260,3 +260,22 @@ select {
     color: var(--text-color);
   }
 }
+a, button, input, select {
+    cursor: var(--cursor-hover);
+}
+
+.button {
+      margin-top: 1em;
+      border-radius: 3em;
+      border: none;
+      background-color: var(--accent-color);
+      padding-block: 1em;
+      padding-inline: 3em;
+      cursor: pointer;
+      color: var(--text-color-button);
+
+      &:hover {
+        background-color: var(--accent-color-light);
+        /* color: var(--background-icon-color); */
+      }
+    }
