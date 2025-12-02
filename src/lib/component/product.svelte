@@ -5,7 +5,7 @@
 <!-- HTML structure for each card -->
 <li>
 	<div>
-		<a tabindex="-1" href="/"><img loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
+		<a tabindex="-1" href="/"><img class="product-img" loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
 		<h3>{product.name}</h3>
 		<a class="bekijk-product-btn" href="/">Bekijk product
 			<img loading="lazy" src="/images/right-arrow.svg" alt="" width="14" height="14" />
@@ -29,9 +29,7 @@
 		gap: var(--spacing-xs);
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
-		justify-items: center;
-		place-items: center;
+		place-items: baseline;
 		text-align: var(--text-align-main);
 		border: 2px solid var(--primary-color);
 		border-radius: var(--rounding-m);
@@ -70,13 +68,16 @@
 				scale: 1.02;
 			}
 
+			div {
+				width: 100%;
+			}
+
 			/* Like button */
 			form {
 				display: flex;
 				justify-items: start;
 				align-items: var(--align-items-main);
 				gap: var(--spacing-xs);
-				width: 100%;
 			}
 
 			button {
@@ -112,5 +113,10 @@
 				fill: var(--text-color);
 			}
 		}
+
+		.product-img {
+				width: 100%;
+				object-fit: cover;
+			}
 
 </style>
