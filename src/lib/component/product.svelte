@@ -92,25 +92,21 @@
 			}
 		}
 
-		@media (min-width: 880px) {
-			/* Masonry out of 3 outline */
+		/* @media (min-width: 880px) {
 			li:nth-child(3n + 2) {
   				margin-top: 2rem;
 			}
         }
 
 		@media (min-width: 1136px) {
-
-			/* Masonry out of 3 outline deactivate */
 			li:nth-child(3n + 2) {
   				margin-top: 0;
 			}
 
-			/* Masonry even outline */
 			li:nth-child(even) {
             	margin-top: 2rem;
         	}
-        }
+        } */
 
 		@media (prefers-color-scheme: dark){
 			svg{
