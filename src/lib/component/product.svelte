@@ -57,7 +57,11 @@
 
 			h3 {
 				color: var(--text-color);
+				display: -webkit-box;
+  				-webkit-line-clamp: 2;
+  				-webkit-box-orient: vertical; 
 				text-overflow: ellipsis;
+				overflow: hidden;
 			}
 
 			img {
