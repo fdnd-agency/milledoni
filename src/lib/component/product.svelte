@@ -2,7 +2,6 @@
     let { product } = $props()
 </script>
 
-<!-- HTML structure for each card -->
 <li>
 	<a tabindex="-1" href="/"><img class="product-img" loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
 	<h3>{product.name}</h3>
@@ -22,11 +21,10 @@
 
 <style>
 	li{
-		background-color: var(--neutral-color-background-cards);
-    	display: flex;
-		gap: var(--spacing-xs);
+		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		background-color: var(--neutral-color-background-cards);
+		gap: var(--spacing-xs);
 		place-items: baseline;
 		text-align: var(--text-align-main);
 		border: 2px solid var(--primary-color);
@@ -35,18 +33,22 @@
         box-sizing: var(--inner-spacing);
 		overflow: hidden;
 
-			/* Link: bekijk product */
 			a {
-				text-decoration: none;
 				display: flex;
 				align-items: var(--align-items-main);
 				gap: var(--spacing-xs);
-				color: var(--accent-color);
 				width: 100%;
+				text-decoration: none;
+				color: var(--accent-color);
 			}
 
 			a:hover {
 				font-size: 1.1rem;
+			}
+
+			.product-img {
+				width: 100%;
+				object-fit: cover;
 			}
 
 			.bekijk-product-btn {
@@ -115,10 +117,4 @@
 				fill: var(--text-color);
 			}
 		}
-
-		.product-img {
-				width: 100%;
-				object-fit: cover;
-			}
-
 </style>

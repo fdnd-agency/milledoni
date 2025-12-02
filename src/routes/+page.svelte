@@ -47,14 +47,13 @@
   }
 
   ul {
-    width: 100vw;
-    list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-m);
+    width: 100vw;
+    list-style: none;
     box-sizing: border-box;
     padding: var(--spacing-m);
-    justify-content: center;
   }
 
   .filters {
@@ -161,7 +160,6 @@
         /* color: var(--background-icon-color); */
       }
     }
-
 
     p {
       color: var(--text-color-chat);
