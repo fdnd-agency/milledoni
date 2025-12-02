@@ -37,7 +37,6 @@
 		border-radius: var(--rounding-m);
 		padding: var(--spacing-m);
         box-sizing: var(--inner-spacing);
-		width: 16rem;
 		height: 26rem;
 		overflow: hidden;
 

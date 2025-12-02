@@ -51,7 +51,7 @@
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    gap: var(--spacing-m);
     box-sizing: border-box;
     padding: var(--spacing-m);
     justify-content: center;
