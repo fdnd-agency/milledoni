@@ -4,13 +4,11 @@
 
 <!-- HTML structure for each card -->
 <li>
-	<div>
-		<a tabindex="-1" href="/"><img class="product-img" loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
-		<h3>{product.name}</h3>
-		<a class="bekijk-product-btn" href="/">Bekijk product
-			<img loading="lazy" src="/images/right-arrow.svg" alt="" width="14" height="14" />
-		</a>
-	</div>
+	<a tabindex="-1" href="/"><img class="product-img" loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
+	<h3>{product.name}</h3>
+	<a class="bekijk-product-btn" href="/">Bekijk product
+		<img loading="lazy" src="/images/right-arrow.svg" alt="" width="14" height="14" />
+	</a>
 	<form action="/" method="post">
 		<button id="likeBtn" type="submit" aria-label="Like">
 		  <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#212121">
@@ -35,7 +33,6 @@
 		border-radius: var(--rounding-m);
 		padding: var(--spacing-m);
         box-sizing: var(--inner-spacing);
-		height: 26rem;
 		overflow: hidden;
 
 			/* Link: bekijk product */
@@ -45,6 +42,7 @@
 				align-items: var(--align-items-main);
 				gap: var(--spacing-xs);
 				color: var(--accent-color);
+				width: 100%;
 			}
 
 			a:hover {
@@ -56,12 +54,16 @@
 			}
 
 			h3 {
+				hyphens: auto;
+				width:100%;
+				height: 2.3em;
 				color: var(--text-color);
 				display: -webkit-box;
   				-webkit-line-clamp: 2;
   				-webkit-box-orient: vertical; 
 				text-overflow: ellipsis;
 				overflow: hidden;
+  				word-wrap: break-word;
 			}
 
 			img {
@@ -70,10 +72,6 @@
 
 			img:hover {
 				scale: 1.02;
-			}
-
-			div {
-				width: 100%;
 			}
 
 			/* Like button */
