@@ -24,10 +24,11 @@
         margin:0;
         height: 100%;
         width: 100%;
-        background-color: rgb(190, 190, 190);
+        background-color: hsla(0, 0%, 0%, 0.400);
         position: fixed;
         background-size: cover;
         background-position: center;
+        background-blend-mode: overlay; 
     }
 
     .clock {
