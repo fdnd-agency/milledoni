@@ -8,10 +8,9 @@
     import background from '$lib/assets/gear-background.jpg';
 </script>
 
-<main>
+<main style="background-image: url({background})">
     <!-- Center item: clock -->
     <img alt="pendulum clock" class="clock" width="300px" height="300px" src={clock} />
-
     <!-- Gear items -->
     <img class="gear1" width="280px" height="280px" src={gear1} />
     <img class="gear2" width="200px" height="200px" src={gear2} />
@@ -27,6 +26,8 @@
         width: 100%;
         background-color: rgb(190, 190, 190);
         position: fixed;
+        background-size: cover;
+        background-position: center;
     }
 
     .clock {
