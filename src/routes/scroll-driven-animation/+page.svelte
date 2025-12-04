@@ -45,40 +45,42 @@
 
     .gear1 {
         position: fixed;
-        right: -6rem;
-        top:15vh;
+        right: -26%;
+        top: 15%;
     }
 
     .gear2 {
         position: fixed;
         left: 50%;
         transform: translate(-50%);
-        bottom: -6rem;
+        bottom: -10%;
     }
 
     .gear3 {
         position: fixed;
-        top: -6rem;
-        left: -4rem;
+        top: -6%;
+        left: -24%;
     }
 
     .gear4 {
         position: fixed;
-        bottom: 30%;
-        left: -4rem;
+        top: 60%;
+        left: 40%;
+        transform: translate(-60%, -40%);
     }
 
     .gear5 {
         position: fixed;
-        bottom: -3rem;
-        right: 1rem;
+        left: 60%;
+        transform: translate(-40%);
+        bottom: -6%;
     }
 
     .steam1 {
         position: fixed;
         z-index: 1000;
-        bottom: -3rem;
-        left: -10rem;
+        bottom: -3%;
+        left: -50%;
         opacity: 55%;
     }
 
@@ -86,7 +88,7 @@
         position: fixed;
         z-index: 1000;
         top: 0;
-        right: -10rem;
+        right: -70%;
         opacity: 55%;
     }
 </style>
