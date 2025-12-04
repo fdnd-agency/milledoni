@@ -7,6 +7,17 @@
     import gear3 from '$lib/assets/gear3.png';
     import gear4 from '$lib/assets/gear4.png';
     import gear5 from '$lib/assets/gear5.png';
+
+    import { gsap } from "gsap";
+    import { onMount } from 'svelte';
+
+    // Animations
+    onMount(() => {
+        gsap.to(".gear1", {
+            duration: 3,
+            rotation: 360,
+        });
+    });
 </script>
 
 <main style="background-image: url({background})">
