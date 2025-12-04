@@ -17,28 +17,37 @@
     
     // Animations
     onMount(() => {
-        gsap.to(".gear1", {
-            rotation: 360,
-            scrollTrigger: {
-                trigger: ".scroll-container", 
-                markers: true,    
-                scrub: true,
-                start: "top top",
-                end: "bottom top",
-            }
-        });
-    });
+        const startScrolling = {
+            trigger: ".scroll-container", 
+            markers: true,    
+            scrub: true,
+            start: "top top",
+            end: "bottom top",
+        }
 
-    onMount(() => {
+        gsap.to(".gear1", {
+            rotation: 400,
+            scrollTrigger: startScrolling
+        });
+
         gsap.to(".gear2", {
-            rotation: -360,
-            scrollTrigger: {
-                trigger: ".scroll-container", 
-                markers: true,    
-                scrub: true,
-                start: "top top",
-                end: "bottom top",
-            }
+            rotation: -100,
+            scrollTrigger: startScrolling
+        });
+
+        gsap.to(".gear3", {
+            rotation: 180,
+            scrollTrigger: startScrolling
+        });
+
+        gsap.to(".gear4", {
+            rotation: -320,
+            scrollTrigger: startScrolling
+        });
+
+        gsap.to(".gear5", {
+            rotation: 1000,
+            scrollTrigger: startScrolling
         });
     });
 </script>
