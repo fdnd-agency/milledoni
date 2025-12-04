@@ -18,8 +18,10 @@
     <img class="gear3" width="260px" height="260px" src={gear3} />
     <img class="gear4" width="180px" height="180px" src={gear4} />
     <img class="gear5" width="120px" height="120px" src={gear5} />
+
     <!-- Steam items -->
-    <img class="steam" width="120px" height="120px" src={steam} />
+    <img class="steam1" width="495px" height="248px" src={steam} />
+    <img class="steam2" width="495px" height="248px" src={steam} />
 </main>
 
 <style>
@@ -70,5 +72,21 @@
         position: fixed;
         bottom: -3rem;
         right: 1rem;
+    }
+
+    .steam1 {
+        position: fixed;
+        z-index: 1000;
+        bottom: -3rem;
+        left: -10rem;
+        opacity: 55%;
+    }
+
+    .steam2 {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        right: -10rem;
+        opacity: 55%;
     }
 </style>
