@@ -41,12 +41,23 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        @media (min-width: 426px) {
+            width: 25rem;
+            height: 25rem;
+        }
     }
 
     .gear1 {
         position: fixed;
-        right: -26%;
+        left: 44%;
         top: 15%;
+
+        @media (min-width: 426px) {
+            width: 20rem;
+            height: 20rem;
+            left: 50%;
+        }
     }
 
     .gear2 {
@@ -54,12 +65,23 @@
         left: 50%;
         transform: translate(-50%);
         bottom: -10%;
+
+        @media (min-width: 426px) {
+            width: 15rem;
+            height: 15rem;
+        }
     }
 
     .gear3 {
         position: fixed;
         top: -6%;
         left: -24%;
+
+        @media (min-width: 426px) {
+            width: 20rem;
+            height: 20rem;
+            left: -14%;
+        }
     }
 
     .gear4 {
@@ -67,6 +89,13 @@
         top: 60%;
         left: 40%;
         transform: translate(-60%, -40%);
+
+        @media (min-width: 426px) {
+            width: 15rem;
+            height: 15rem;
+            left: 30%;
+            transform: translate(-70%, -40%);
+        }
     }
 
     .gear5 {
@@ -74,6 +103,11 @@
         left: 60%;
         transform: translate(-40%);
         bottom: -6%;
+
+        @media (min-width: 426px) {
+            width: 8rem;
+            height: 8rem;
+        }
     }
 
     .steam1 {
@@ -82,6 +116,11 @@
         bottom: -3%;
         left: -50%;
         opacity: 55%;
+
+        @media (min-width: 426px) {
+            scale: 160%;
+            left: -10%;
+        }
     }
 
     .steam2 {
@@ -90,5 +129,10 @@
         top: 0;
         right: -70%;
         opacity: 55%;
+
+        @media (min-width: 426px) {
+            scale: 160%;
+            right: -40%;
+        }
     }
 </style>
