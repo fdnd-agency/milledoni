@@ -19,14 +19,14 @@
 <style>
     main {
         margin:0;
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
         background-color: rgb(190, 190, 190);
-        z-index: auto;
+        position: fixed;
     }
 
     .clock {
-        position: absolute;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
