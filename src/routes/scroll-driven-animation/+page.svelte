@@ -9,13 +9,23 @@
     import gear5 from '$lib/assets/gear5.png';
 
     import { gsap } from "gsap";
-    import { onMount } from 'svelte';
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+    gsap.registerPlugin(ScrollTrigger);
+
+    import { onMount } from 'svelte';
+    
     // Animations
     onMount(() => {
         gsap.to(".gear1", {
-            duration: 3,
             rotation: 360,
+            scrollTrigger: {
+                trigger: ".scroll-container", 
+                markers: true,    
+                scrub: true,
+                start: "top top",
+                end: "bottom top",
+            }
         });
     });
 </script>
@@ -33,17 +43,25 @@
     <!-- Steam items -->
     <img class="steam1" width="495px" height="248px" src={steam} />
     <img class="steam2" width="495px" height="248px" src={steam} />
+
+    <div class="scroll-container"></div>
 </main>
 
 <style>
+    .scroll-container {
+        height: 400vh;
+        width: 100vw;
+    }
+
     main {
         margin:0;
-        height: 100%;
-        width: 100%;
+        height: 100vh;
+        width: 100vw;
         background-color: hsla(0, 0%, 0%, 0.400);
         position: fixed;
         background-size: cover;
         background-blend-mode: overlay; 
+        z-index: 1;
     }
 
     .clock {
