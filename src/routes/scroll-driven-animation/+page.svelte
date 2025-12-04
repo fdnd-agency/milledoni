@@ -15,6 +15,7 @@
     <!-- Gear items -->
     <img class="gear1" width="280px" height="280px" src={gear1} />
     <img class="gear2" width="200px" height="200px" src={gear2} />
+    <img class="gear3" width="260px" height="260px" src={gear3} />
 </main>
 
 <style>
@@ -44,5 +45,11 @@
         left: 50%;
         transform: translate(-50%);
         bottom: -6rem;
+    }
+
+    .gear3 {
+        position: fixed;
+        top: -6rem;
+        left: -4rem;
     }
 </style>
