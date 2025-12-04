@@ -9,7 +9,11 @@
 </script>
 
 <main>
+    <!-- Center item: clock -->
     <img alt="pendulum clock" class="clock" width="300px" height="300px" src={clock} />
+
+    <!-- Gear items -->
+    <img class="gear1" width="280px" height="280px" src={gear1} />
 </main>
 
 <style>
@@ -26,5 +30,11 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .gear1 {
+        position: fixed;
+        right: -6rem;
+        top:15vh;
     }
 </style>
