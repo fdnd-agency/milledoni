@@ -28,6 +28,19 @@
             }
         });
     });
+
+    onMount(() => {
+        gsap.to(".gear2", {
+            rotation: -360,
+            scrollTrigger: {
+                trigger: ".scroll-container", 
+                markers: true,    
+                scrub: true,
+                start: "top top",
+                end: "bottom top",
+            }
+        });
+    });
 </script>
 
 <main style="background-image: url({background})">
