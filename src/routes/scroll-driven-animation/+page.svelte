@@ -42,9 +42,16 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
+        /* tablet */
         @media (min-width: 426px) {
             width: 25rem;
             height: 25rem;
+        }
+
+        /* laptop small */
+        @media (min-width: 769px) {
+            width: 30rem;
+            height: 30rem;
         }
     }
 
@@ -53,10 +60,19 @@
         left: 44%;
         top: 15%;
 
+        /* tablet */
         @media (min-width: 426px) {
             width: 20rem;
             height: 20rem;
             left: 50%;
+        }
+
+        /* laptop small */
+        @media (min-width: 769px) {
+            width: 25rem;
+            height: 25rem;
+            left: 50%;
+            top: 5%;
         }
     }
 
@@ -66,9 +82,16 @@
         transform: translate(-50%);
         bottom: -10%;
 
+        /* tablet */
         @media (min-width: 426px) {
             width: 15rem;
             height: 15rem;
+        }
+
+        /* laptop small */
+        @media (min-width: 769px) {
+            width: 18rem;
+            height: 18rem;
         }
     }
 
@@ -77,10 +100,18 @@
         top: -6%;
         left: -24%;
 
+        /* tablet */
         @media (min-width: 426px) {
+            width: 18rem;
+            height: 18rem;
+            left: -14%;
+        }
+
+        /* laptop small */
+        @media (min-width: 769px) {
+            left: -7%;
             width: 20rem;
             height: 20rem;
-            left: -14%;
         }
     }
 
@@ -90,11 +121,20 @@
         left: 40%;
         transform: translate(-60%, -40%);
 
+        /* tablet */
         @media (min-width: 426px) {
             width: 15rem;
             height: 15rem;
             left: 30%;
             transform: translate(-70%, -40%);
+        }
+
+        /* laptop small */
+        @media (min-width: 769px) {
+            width: 17rem;
+            height: 17rem;
+            left: 35%;
+            transform: translate(-65%, -40%);
         }
     }
 
@@ -104,9 +144,16 @@
         transform: translate(-40%);
         bottom: -6%;
 
+        /* tablet */
         @media (min-width: 426px) {
             width: 8rem;
             height: 8rem;
+        }
+
+        /* laptop small */
+        @media (min-width: 769px) {
+            width: 10rem;
+            height: 10rem;
         }
     }
 
@@ -117,9 +164,15 @@
         left: -50%;
         opacity: 55%;
 
+        /* tablet */
         @media (min-width: 426px) {
             scale: 160%;
             left: -10%;
+        }
+
+        /* laptop small */
+        @media (min-width: 769px) {
+            scale: 200%;
         }
     }
 
@@ -130,9 +183,15 @@
         right: -70%;
         opacity: 55%;
 
+        /* tablet */
         @media (min-width: 426px) {
             scale: 160%;
             right: -40%;
+        }
+
+        /* laptop small */
+        @media (min-width: 769px) {
+            scale: 200%;
         }
     }
 </style>
