@@ -17,6 +17,7 @@
     <img class="gear2" width="200px" height="200px" src={gear2} />
     <img class="gear3" width="260px" height="260px" src={gear3} />
     <img class="gear4" width="180px" height="180px" src={gear4} />
+    <img class="gear5" width="120px" height="120px" src={gear5} />
 </main>
 
 <style>
@@ -58,5 +59,11 @@
         position: fixed;
         bottom: 30%;
         left: -4rem;
+    }
+
+    .gear5 {
+        position: fixed;
+        bottom: -3rem;
+        right: 1rem;
     }
 </style>
