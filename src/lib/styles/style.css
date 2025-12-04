@@ -185,6 +185,7 @@ option {
 body {
   box-sizing: border-box;
   background-color: var(--neutral-color-background);
+  margin:0;
 }
 
 h1,
