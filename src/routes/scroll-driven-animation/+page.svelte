@@ -20,7 +20,7 @@
         const startScrolling = {
             trigger: ".scroll-container", 
             markers: true,    
-            scrub: true,
+            scrub: 0.5,
             start: "top top",
             end: "bottom top",
         }
@@ -47,6 +47,16 @@
 
         gsap.to(".gear5", {
             rotation: 1000,
+            scrollTrigger: startScrolling
+        });
+
+        gsap.to(".steam1", {
+            xPercent: 400,
+            scrollTrigger: startScrolling
+        });
+
+        gsap.to(".steam2", {
+            xPercent: -400,
             scrollTrigger: startScrolling
         });
     });
