@@ -32,7 +32,6 @@
         background-color: hsla(0, 0%, 0%, 0.400);
         position: fixed;
         background-size: cover;
-        background-position: center;
         background-blend-mode: overlay; 
     }
 
@@ -52,6 +51,12 @@
         @media (min-width: 769px) {
             width: 30rem;
             height: 30rem;
+        }
+
+        /* laptop medium */
+        @media (min-width: 1025px) {
+            width: 40rem;
+            height: 40rem;
         }
     }
 
@@ -74,6 +79,12 @@
             left: 50%;
             top: 5%;
         }
+
+        /* laptop medium */
+        @media (min-width: 1025px) {
+            width: 30rem;
+            height: 30rem;
+        }
     }
 
     .gear2 {
@@ -88,10 +99,20 @@
             height: 15rem;
         }
 
-        /* laptop small */
+        /* laptop medium */
         @media (min-width: 769px) {
-            width: 18rem;
-            height: 18rem;
+            width: 16rem;
+            height: 16rem;
+            /* bottom: -25%; */
+            left: 60%;
+            transform: translate(-40%);
+        }
+
+        /* laptop small */
+        @media (min-width: 1025px) {
+            width: 20rem;
+            height: 20rem;
+            bottom: -15%;
         }
     }
 
@@ -112,6 +133,14 @@
             left: -7%;
             width: 20rem;
             height: 20rem;
+        }
+
+        /* laptop medium */
+        @media (min-width: 1025px) {
+            width: 32rem;
+            height: 32rem;
+            top: -10%;
+            left: -14%;
         }
     }
 
@@ -136,6 +165,12 @@
             left: 35%;
             transform: translate(-65%, -40%);
         }
+
+        /* laptop medium */
+        @media (min-width: 1025px) {
+            width: 20rem;
+            height: 20rem;
+        }
     }
 
     .gear5 {
@@ -154,6 +189,14 @@
         @media (min-width: 769px) {
             width: 10rem;
             height: 10rem;
+            left: 70%;
+        }
+
+        /* laptop medium */
+        @media (min-width: 1025px) {
+            width: 14rem;
+            height: 14rem;
+            bottom: -10%;
         }
     }
 
@@ -174,6 +217,12 @@
         @media (min-width: 769px) {
             scale: 200%;
         }
+
+        /* laptop medium */
+        @media (min-width: 1025px) {
+            scale: 250%;
+            left: -10%;
+        }
     }
 
     .steam2 {
@@ -186,12 +235,18 @@
         /* tablet */
         @media (min-width: 426px) {
             scale: 160%;
-            right: -40%;
+            right: -60%;
         }
 
         /* laptop small */
         @media (min-width: 769px) {
             scale: 200%;
+        }
+
+        /* laptop medium */
+        @media (min-width: 1025px) {
+            scale: 250%;
+            right: -10%;
         }
     }
 </style>
