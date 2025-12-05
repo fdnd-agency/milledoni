@@ -1,176 +1,310 @@
 <script>
-  let { data } = $props();
-  import image from "$lib/assets/filter-bg.svg";
-  import robotimg from "$lib/assets/chatbot.svg"
+  import { onMount } from "svelte";
+  import gsap from "gsap";
 
- 
-  import { Product } from "$lib";
-  import { Filter } from "$lib";
+  import cityimg from "$lib/assets/nightcity.png";
 
-  const products = data.product;
-  const tags = data.tags;
+  // timelines
+  let glitch;
+  let border;
+
+  let content;
+  let svgPath;
+  let svgElement;
+
+  onMount(() => {
+    const pathLength = svgPath.getTotalLength();
+    svgPath.style.strokeDasharray = pathLength;
+    svgPath.style.strokeDashoffset = pathLength;
+
+    glitch = gsap.timeline({ paused: true });
+
+    glitch
+      .to(
+        content,
+        {
+          duration: 0.1,
+          opacity: 0.7,
+          x: -5,
+          filter: "saturate(200%)",
+        },
+        0
+      )
+      .to(
+        content,
+        {
+          duration: 0.1,
+          x: 5,
+          filter: "hue-rotate(90deg)",
+        },
+        0.05
+      )
+
+      //https://gsap.com/docs/v3/GSAP/UtilityMethods/random()/
+      .to(
+        content,
+        {
+          duration: 0.15,
+          x: () => gsap.utils.random(-20, 20),
+          y: () => gsap.utils.random(-20, 20),
+          repeat: 5,
+          ease: "rough({strength:2, points:20, template:none})",
+        },
+        0.1
+      )
+
+      // content uitknippen voor glitch animatie
+      .to(content, { duration: 0.1, clipPath: "inset(0 0 50% 0)" }, 0.15)
+      .to(content, { duration: 0.1, clipPath: "inset(50% 0 0 0)" }, 0.25)
+
+      .to(
+        content,
+        {
+          height: 0,
+          duration: 0.25,
+          opacity: 0,
+          filter: "none",
+          ease: "power3.out",
+        },
+        0.4
+      );
+
+    border = gsap.timeline({ paused: true });
+
+    border
+      .to(svgPath, {
+        strokeDashoffset: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.inOut",
+      })
+
+      .to(svgPath, {
+        scale: 1.5,
+        stroke: "#c5003c",
+        transformOrigin: "center center",
+        duration: 0.5,
+        ease: "power2.inOut",
+      })
+
+      .to(svgPath, {
+        scale: 1.5,
+        stroke: "#f3e600",
+        duration: 0.4,
+        ease: "power3.inOut",
+      })
+
+      .to(svgPath, {
+        scale: 1,
+        stroke: "#55ead4",
+        duration: 0.5,
+        ease: "power3.inOut",
+      })
+
+      .to(svgPath, {
+        scale: 1.5,
+        stroke: "#f3e600",
+        opacity: 0,
+        duration: 0.2,
+        ease: "power2.inOut",
+      });
+  });
+
+  function cyberAnimation() {
+    glitch.restart();
+
+    //https://gsap.com/docs/v3/GSAP/Timeline/vars/#onComplete
+    //animatie afspelen als eerste is voltooid
+    glitch.eventCallback("onComplete", () => {
+      border.restart();
+    });
+  }
 </script>
 
-<section class="filters">
-  <h1>I'm looking for a gift for... <br /><span>my uncle</span></h1>
-
-  <svg width="349" height="408" viewBox="0 0 349 408" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.04" d="M62.8525 317.739C71.3364 317.107 80.0484 319.389 87.0376 324.93C94.1263 330.551 98.8025 339.015 99.9958 349.511C102.073 367.786 100.382 383.563 92.6174 394.423C84.1186 406.309 70.4719 409.647 55.6279 407.293C41.2098 405.007 32.7039 395.014 28.56 384.607C24.5696 374.586 24.0842 363.155 25.9691 354.272C29.4793 332.038 45.7003 319.017 62.8525 317.739ZM74.5864 340.357C71.9004 338.228 68.2931 337.145 64.3465 337.439C56.716 338.008 47.7032 343.888 45.6303 357.523L45.5817 357.842L45.5116 358.159C44.323 363.553 44.6212 371.127 47.101 377.355C49.4767 383.321 53.2629 386.911 58.7774 387.786C68.8491 389.383 73.6405 386.794 76.3539 382.999C79.8014 378.177 82.0966 368.517 80.1876 351.724C79.528 345.922 77.1729 342.408 74.5864 340.357ZM130.909 223.133L123.575 299.745H82.1186V279.988H105.444L111.066 221.267L130.909 223.133ZM215.7 229.321L211.65 248.665L185.239 243.232L189.289 223.888L215.7 229.321ZM68.6027 201.411L56.7656 217.306L35.8362 201.995L47.6732 186.099L68.6027 201.411ZM349 72.7017L213.955 167.533L202.432 151.413L337.476 56.582L349 72.7017ZM233.367 43.5406L170.081 135.408L153.619 124.268L216.905 32.4005L233.367 43.5406ZM132.464 34.0955L105.554 116.579L86.5889 110.5L113.498 28.0161L132.464 34.0955ZM36.1691 112.118L16.4446 114.96L0 2.84193L19.7245 0L36.1691 112.118Z" fill="black"/></svg>
-  <svg width="213" height="250" viewBox="0 0 213 250" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.04" d="M174.64 194.693C169.462 194.306 164.145 195.704 159.88 199.099C155.553 202.543 152.699 207.73 151.971 214.161C150.703 225.359 151.735 235.026 156.474 241.681C161.661 248.964 169.99 251.009 179.049 249.567C187.849 248.166 193.04 242.043 195.569 235.666C198.005 229.525 198.301 222.522 197.151 217.078C195.008 203.455 185.108 195.476 174.64 194.693ZM167.479 208.552C169.118 207.248 171.32 206.584 173.728 206.764C178.385 207.113 183.886 210.716 185.151 219.07L185.181 219.266L185.224 219.46C185.949 222.765 185.767 227.406 184.254 231.222C182.804 234.878 180.493 237.078 177.127 237.614C170.98 238.592 168.056 237.006 166.4 234.681C164.296 231.726 162.895 225.807 164.06 215.517C164.463 211.962 165.9 209.809 167.479 208.552ZM133.104 136.724L137.581 183.667H162.882V171.561H148.646L145.215 135.581L133.104 136.724ZM81.3547 140.516L83.827 152.368L99.946 149.039L97.4737 137.187L81.3547 140.516ZM171.131 123.413L178.355 133.153L191.129 123.772L183.904 114.031L171.131 123.413ZM-1.52588e-05 44.5476L82.4198 102.655L89.4529 92.7778L7.03305 34.6704L-1.52588e-05 44.5476ZM70.5723 26.6793L109.197 82.9709L119.244 76.1449L80.6194 19.8533L70.5723 26.6793ZM132.156 20.8918L148.579 71.4332L160.153 67.7081L143.73 17.1667L132.156 20.8918ZM190.925 68.7L202.964 70.4413L213 1.74138L200.962 0L190.925 68.7Z" fill="black"/></svg>
-
-  <form action="">
-      <input type="search" name="chatbot"  placeholder="search a gift for a dreamer" />
-      <input type="image" src="{robotimg}" border="0" alt="Submit"  width="36" height="36" />
-  </form>
-
-  <Filter {tags} />
-
-  <p>1.000+ producten</p>
-</section>
-
-
-<main>
-  
-  <h2>Producten</h2>
+<nav>
   <ul>
-    {#each products as product}
-      <Product {product} />
-    {/each}
+    <!--  op klik/enter de animaties afspelen-->
+    <li class="skiplink">
+      <a href="#skip-to" type="button" on:click={cyberAnimation}
+        >Skip to content</a
+      >
+    </li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/">Details</a></li>
+    <li><a href="/">About</a></li>
+    <li><a href="/">Test</a></li>
   </ul>
+</nav>
+
+<p>
+  Een skiplink animatie. refresh om de content weer in te laden en te animeren
+</p>
+
+<main id="content">
+  <!-- content weg glitchen -->
+  <div class="glitch" bind:this={content}>
+    <img src={cityimg} alt="night city skyline" />
+    <div>
+      <h1>Cyberpunk theme</h1>
+      <p>
+        l Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, vel
+        exercitationem sit tempora commodi repudiandae fugiat esse adipisci
+        sequi nemo, omnis voluptatibus dolorem ullam perspiciatis consequuntur
+        deserunt eius expedita odit!
+        <!-- was te lui voor een nieuwe p -->
+        <br />
+        <br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aspernatur
+        quibusdam fuga temporibus ipsa id facilis cupiditate sed, asperiores repudiandae.
+      </p>
+    </div>
+  </div>
+
+  <!-- SVG stays visible -->
+  <svg
+    id="skip-to"
+    bind:this={svgElement}
+    width="320"
+    height="55"
+    viewBox="0 0 960 168"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M0 0V83.2435L18 110V167.5H960V26.5L937 0H0Z" fill="#880425" />
+
+    <path
+      bind:this={svgPath}
+      d="M0 0V83.2435L18 110V167.5H960V26.5L937 0H0Z"
+      fill="none"
+      stroke-width="4"
+      stroke="#55ead4"
+      opacity="0"
+    />
+
+    <!-- https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text -->
+    <text
+      x="50%"
+      y="50%"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      fill="yellow"
+      font-size="48"
+    >
+      MAIN CONTENT
+    </text>
+  </svg>
+
+  <article class="main-content">
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio maxime,
+      adipisci magnam animi dolor eveniet facere esse totam laborum beatae,
+      accusantium magni enim, velit excepturi minus laboriosam ipsum. Fuga,
+      iure.
+    </p>
+
+    <!-- waarom wdurrt dit zo lang -->
+    <button on:click={window.location.reload()}>Refresh Page</button>
+    <p><i>refresh kan ff duren :/</i></p>
+ 
+
+  </article>
 </main>
 
 <style>
-  main {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+  nav {
+    width: 100%;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #000;
 
-  ul {
-    list-style: none;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 2em;
-    max-width: 80rem;
-    padding: 0;
-    padding-inline: 1rem;
-
-    @media (min-width: 912px) {
-      padding-inline: 2rem;
-    }
-  }
-
-  .filters {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
-
-    > svg {
-      position: fixed;
-      z-index: -1;
-
-      &:nth-of-type(1) {
-        left: 5em;
-        top: 15em;
-        display: none;
-
-        @media (min-width: 1050px) {
-          display: block;
-        }
-      }
-
-      &:nth-of-type(2) {
-        right: 0;
-        bottom: 50vh;
-        scale: 0.6;
-
-        /*max width for easier styling*/
-        @media (max-width:650px){
-          display: none;
-        }
-
-        @media (min-width: 1050px){
-          bottom: 5em;
-        }
-        
-      }
-    }
-
-    h1 {
-      font-size: var(--h1-font-size);
-      padding-inline: 1em;
-      /* margin-top: 3em; */
-
-      span {
-        color: var(--primary-color);
-      }
-    }
-
-    form {
+    ul {
       position: relative;
-      row-gap: 1em;
-      grid-template-columns: 4fr 1fr;
-      grid-template-rows: 3fr 2fr;
-      border-radius: 3em;
-      width: clamp(15em, 80vw, 20em);
-    }
+      padding: 1em 0;
+      display: flex;
+      justify-content: space-around;
+      background-color: transparent;
+      list-style: none;
+      border: #c5003c 3px solid;
 
-    input:first-of-type {
-      border: none;
+      li {
+        a {
+          text-decoration: none;
+          color: #f3e600;
+          font-weight: 500;
+        }
+      }
 
-      padding:1.5em 1em 1.5em 2em;
-      width: 100%;
-      /* max-width: 80%; */
-      border: 2px solid transparent;
-      border-radius: 3em;
-      color: var(--text-color);
-      background:
-        linear-gradient(var(--neutral-color-background-cards)) padding-box,
-        linear-gradient(45deg, red, purple, gold, blue);
-    }
+      .skiplink a {
+        position: absolute;
+        left: 5vw;
+        top: 10;
+        transform: translateY(-500px);
+        transition: all 0.3s ease-out;
 
-    input:nth-of-type(2) {
-      position: absolute;
-      top: 0.5em;
-      right: 1.5em;
-      border-radius: 3em;
-      padding: 0.2em;
-      border: 2px solid var(--accent-color);
-      &:hover {
-        background-color: var(--accent-color-hover);
+        &:focus {
+          transform: translateY(0px);
+        }
       }
     }
+  }
 
-    input[type="search"]::-webkit-search-cancel-button {
-      opacity: 0;
+  h1 {
+    font-size: 35px;
+    color: #f3e600;
+    text-transform: uppercase;
+  }
+
+  main {
+    width: 80vw;
+    margin: 10vh auto;
+
+    .glitch {
+      width: 100%;
+
+      height: 100vh;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 3em;
+      margin: 10vh 0;
+    }
+
+    img {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      background-position: 50% 50%;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+    }
+  }
+
+  svg {
+    display: block;
+    margin-top: 2rem;
+  }
+
+  .main-content {
+    margin: 1em 0;
+    background-color: #880425;
+    padding: 1em 3em;
+
+    p {
+      color: #f3e600;
     }
 
     button {
-      margin-top: 1em;
-      border-radius: 3em;
+      background-color: #000;
+      color: #f3e600;
       border: none;
-      background-color: var(--accent-color);
-      padding-block: 1em;
-      padding-inline: 3em;
-      cursor: pointer;
-      color: var(--text-color-button);
-
-      &:hover {
-        background-color: var(--accent-color-light);
-        /* color: var(--background-icon-color); */
-      }
-    }
-
-
-    p {
-      color: var(--text-color-chat);
-      margin: 0;
+      padding: 1em 2em;
     }
   }
-  
 </style>
