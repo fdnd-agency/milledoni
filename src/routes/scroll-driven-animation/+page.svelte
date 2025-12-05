@@ -267,21 +267,22 @@
         bottom: -3%;
         left: -50%;
         opacity: 55%;
+        scale: 160%;
 
         /* tablet */
         @media (min-width: 426px) {
-            scale: 160%;
+            scale: 200%;
             left: -10%;
         }
 
         /* laptop small */
         @media (min-width: 769px) {
-            scale: 200%;
+            scale: 250%;
         }
 
         /* laptop medium */
         @media (min-width: 1025px) {
-            scale: 250%;
+            scale: 300%;
             left: -10%;
         }
     }
@@ -292,21 +293,22 @@
         top: 0;
         right: -70%;
         opacity: 55%;
+        scale: 160%;
 
         /* tablet */
         @media (min-width: 426px) {
-            scale: 160%;
+            scale: 200%;
             right: -60%;
         }
 
         /* laptop small */
         @media (min-width: 769px) {
-            scale: 200%;
+            scale: 250%;
         }
 
         /* laptop medium */
         @media (min-width: 1025px) {
-            scale: 250%;
+            scale: 300%;
             right: -10%;
         }
     }
