@@ -37,7 +37,7 @@
           x: 5,
           filter: "hue-rotate(90deg)",
         },
-        0.05
+        0.3
       )
 
       //https://gsap.com/docs/v3/GSAP/UtilityMethods/random()/
@@ -47,15 +47,27 @@
           duration: 0.15,
           x: () => gsap.utils.random(-20, 20),
           y: () => gsap.utils.random(-20, 20),
-          repeat: 5,
+          repeat: 10,
           ease: "rough({strength:2, points:20, template:none})",
         },
-        0.1
+        0.55
+      )
+
+      .to(
+        content,
+        {
+          duration: 0.15,
+          x: () => gsap.utils.random(-40, 40),
+          y: () => gsap.utils.random(-40, 40),
+          repeat: 5,
+          ease: "rough({strength:1, points:30, template:none})",
+        },
+        0.7
       )
 
       // content uitknippen voor glitch animatie
-      .to(content, { duration: 0.1, clipPath: "inset(0 0 50% 0)" }, 0.15)
-      .to(content, { duration: 0.1, clipPath: "inset(50% 0 0 0)" }, 0.25)
+      .to(content, { duration: 0.1, clipPath: "inset(0 0 50% 0)" }, 0.7)
+      .to(content, { duration: 0.1, clipPath: "inset(50% 0 0 0)" }, 0.75)
 
       .to(
         content,
@@ -66,7 +78,7 @@
           filter: "none",
           ease: "power3.out",
         },
-        0.4
+        1
       );
 
     border = gsap.timeline({ paused: true });
@@ -125,9 +137,7 @@
   <ul>
     <!--  op klik/enter de animaties afspelen-->
     <li class="skiplink">
-      <a href="#skip-to" type="button" on:click={cyberAnimation}
-        >Skip to content</a
-      >
+      <a href="#skipto" type="button" on:click={cyberAnimation}>Skip to content</a>
     </li>
     <li><a href="/">Home</a></li>
     <li><a href="/">Details</a></li>
@@ -138,6 +148,8 @@
 
 <p>
   Een skiplink animatie. refresh om de content weer in te laden en te animeren
+  <br/>
+  Skip link bevind zich in de nav als eerste item  
 </p>
 
 <main id="content">
@@ -193,6 +205,8 @@
       MAIN CONTENT
     </text>
   </svg>
+
+  
 
   <article class="main-content">
     <p>
@@ -305,6 +319,10 @@
       color: #f3e600;
       border: none;
       padding: 1em 2em;
+    }
+    
+    i{
+      color: #55ead4;
     }
   }
 </style>
