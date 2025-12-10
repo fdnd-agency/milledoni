@@ -59,7 +59,6 @@
 			h3 {
 				hyphens: auto;
 				width:100%;
-				height: 2.3em;
 				color: var(--text-color);
 				display: -webkit-box;
   				-webkit-line-clamp: 2;
