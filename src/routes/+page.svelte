@@ -64,18 +64,13 @@
   }
 
   ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-m);
+    width: 100vw;
     list-style: none;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 2em;
-    max-width: 80rem;
-    padding: 0;
-    padding-inline: 1rem;
-
-    @media (min-width: 912px) {
-      padding-inline: 2rem;
-    }
+    box-sizing: border-box;
+    padding: var(--spacing-m);
   }
 
   .filters {
