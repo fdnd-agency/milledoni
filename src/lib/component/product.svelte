@@ -20,9 +20,10 @@
 </li>
 
 <style>
-	li{
-		display: flex;
-		flex-direction: column;
+	li {
+		display: grid;
+		grid-template-rows: subgrid;
+		grid-row: span 4;
 		background-color: var(--neutral-color-background-cards);
 		gap: var(--spacing-xs);
 		place-items: baseline;
