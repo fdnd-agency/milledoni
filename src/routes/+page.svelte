@@ -20,7 +20,23 @@
     <input type="search" name="chatbot" placeholder="search a gift for a dreamer"/>
     
     <button type="submit" aria-label="zoeken">
-      <svg  height="30" width="30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="4.45 10.37 27.42 23.5"><path d="M31.8711 10.3711L4.45264 16.3711L14.4526 21.8711L16.9526 33.8711L31.8711 10.3711Z" fill=""></path><path d="M20.5 17.998L13 20.998L15 23.998L20.5 17.998Z" fill="#C2C2C2"></path></svg>
+  <svg
+  width="25"
+  height="25"
+  viewBox="0 0 26 26"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+>
+  <path d="M25 13L6 4L9 13L6 22L25 13Z" fill="white"/>
+  <mask id="m" maskUnits="userSpaceOnUse" width="26" height="26">
+    <path d="M25 13L6 4L9 13L6 22L25 13Z" fill="white"/>
+  </mask>
+  <g mask="url(#m)">
+    <path d="M13 13.3L6.5 11L7 13L6.5 15L13 13.3Z" fill="#C2C2C2"/>
+  </g>
+</svg>
+
+
     </button>
   </form>
 
@@ -146,7 +162,7 @@
       background-color: var(--chat-color-background);
       position: absolute;
       top: 50%;
-      right: 5%;
+      right: 4%;
       transform: translateY(-50%);
       border-radius: 10em;
       padding: 0.4em;
@@ -162,6 +178,8 @@
       }
 
       svg {
+        
+         /* transform: rotate(-45deg); */
         fill: var(--chat-color-icon);
 
         path{
