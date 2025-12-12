@@ -7,12 +7,11 @@
 
 <main id="content">
   <h1>Holographic carousel</h1>
-  <p>Met gebruik van css scrollbuttons, acnhor positioning en sibling count</p>
+  <p>Met gebruik van css scrollbuttons, acnhor positioning, scroll-marker-group en sibling count</p>
 
   <div class="slider">
     <article style="background-image: url({holo_bg})">
       <div class="glass">
-        '
         <!-- super lazy fix voor flexbox  op mobiel -->
         <br />
         <img src={holo_star} alt="nog niks" />
@@ -26,7 +25,7 @@
 
     <article style="background-image: url({holo_bg})">
       <div class="glass">
-        <!-- super lazy fix voor flexbox  op mobiel -->
+        <!-- super lazy fix voor flexbox op mobiel -->
         <br />
 
         <img src={holo_star} alt="nog niks" />
@@ -96,28 +95,51 @@
     display: flex;
     overflow-x: auto;
     margin: 10vh 0;
-    gap: 3vw;
+    gap: 5vw;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     anchor-name: --holocarousel;
     padding-right: 5vw;
     position: relative;
+
+    scroll-marker-group: after;
+
+    &::scroll-marker-group {
+      display: flex;
+      gap: 10px;
+
+      position: absolute;
+      position-anchor: --holocarousel;
+
+      justify-self: anchor-center;
+      bottom: 5vh;
+    }
+
+    ::scroll-marker:target-current{
+      background-color: black;
+    }
   }
 
   article {
     height: 60vh;
     flex: 0 1 25em;
-    margin: 0 auto;
     border-radius: 0.5em;
     padding: 1em;
 
-    background-size: calc(250% + sibling-index() * 20%)
-      calc(250% + sibling-index() * 20%);
+    background-size: calc(250% + sibling-index() * 20%)calc(250% + sibling-index() * 20%);
     animation: moveBg linear infinite alternate;
     animation-duration: calc(15s + sibling-index() * 1.5s);
 
     scroll-snap-align: start;
     scroll-snap-stop: always;
+
+    &::scroll-marker {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border: 1px solid #000;
+      border-radius: 50%;
+    }
 
     .glass {
       display: flex;
@@ -168,9 +190,10 @@
   .slider::scroll-button(*) {
     position: absolute;
     content: "<";
-    border: none;
-    background-color: #111112;
-    color: #fff;
+    border: 1px solid black;
+    background: -webkit-linear-gradient(#a381f3, #ffffff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 2rem;
     height: 30px;
     width: 30px;
@@ -206,6 +229,8 @@
   .slider::scroll-button(block-end) {
     display: none;
   }
+
+
 
   /* had ff geen tijd voor andere oplossing.... */
   @media (min-width: 480px) {
