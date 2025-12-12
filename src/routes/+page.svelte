@@ -7,7 +7,10 @@
 
 <main id="content">
   <h1>Holographic carousel</h1>
-  <p>Met gebruik van css scrollbuttons, acnhor positioning, scroll-marker-group en sibling count</p>
+  <p>
+    Met gebruik van css scrollbuttons, acnhor positioning, scroll-marker-group
+    en sibling count
+  </p>
 
   <div class="slider">
     <article style="background-image: url({holo_bg})">
@@ -26,6 +29,48 @@
     <article style="background-image: url({holo_bg})">
       <div class="glass">
         <!-- super lazy fix voor flexbox op mobiel -->
+        <br />
+
+        <img src={holo_star} alt="nog niks" />
+
+        <div class="description">
+          <h3>Holo ster</h3>
+          <p>een mooie holograpische ster</p>
+        </div>
+      </div>
+    </article>
+
+    <article style="background-image: url({holo_bg})">
+      <div class="glass">
+        <!-- super lazy fix voor flexbox  op mobiel -->
+        <br />
+
+        <img src={holo_star} alt="nog niks" />
+
+        <div class="description">
+          <h3>Holo ster</h3>
+          <p>een mooie holograpische ster</p>
+        </div>
+      </div>
+    </article>
+
+    <article style="background-image: url({holo_bg})">
+      <div class="glass">
+        <!-- super lazy fix voor flexbox  op mobiel -->
+        <br />
+
+        <img src={holo_star} alt="nog niks" />
+
+        <div class="description">
+          <h3>Holo ster</h3>
+          <p>een mooie holograpische ster</p>
+        </div>
+      </div>
+    </article>
+
+    <article style="background-image: url({holo_bg})">
+      <div class="glass">
+        <!-- super lazy fix voor flexbox  op mobiel -->
         <br />
 
         <img src={holo_star} alt="nog niks" />
@@ -99,7 +144,7 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     anchor-name: --holocarousel;
-    padding-right: 5vw;
+    padding-right: 8vw;
     position: relative;
 
     scroll-marker-group: after;
@@ -115,13 +160,13 @@
       bottom: 5vh;
     }
 
-    ::scroll-marker:target-current{
-      background-color: black;
+    ::scroll-marker:target-current {
+      opacity: 1;
     }
   }
 
   article {
-    height: 60vh;
+    height: 35em;
     flex: 0 1 25em;
     border-radius: 0.5em;
     padding: 1em;
@@ -137,7 +182,8 @@
       content: "";
       width: 20px;
       height: 20px;
-      border: 1px solid #000;
+      background: linear-gradient(#a381f3, #6a94ea);
+      opacity: 0.3;
       border-radius: 50%;
     }
 
@@ -173,11 +219,6 @@
       border-radius: 0.5em;
       background-color: rgba(255, 255, 255, 0.485);
 
-      h3 {
-      }
-
-      p {
-      }
     }
   }
 
@@ -190,8 +231,8 @@
   .slider::scroll-button(*) {
     position: absolute;
     content: "<";
-    border: 1px solid black;
-    background: -webkit-linear-gradient(#a381f3, #ffffff);
+    border: 2px solid black;
+    background: linear-gradient(#a381f3, #627fb3);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2rem;
@@ -213,7 +254,6 @@
   .slider::scroll-button(right) {
     content: ">";
     position-area: right center;
-    right: 0;
   }
 
   .slider::scroll-button(*):disabled {
@@ -229,8 +269,6 @@
   .slider::scroll-button(block-end) {
     display: none;
   }
-
-
 
   /* had ff geen tijd voor andere oplossing.... */
   @media (min-width: 480px) {
