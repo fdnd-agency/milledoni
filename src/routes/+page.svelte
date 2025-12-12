@@ -12,6 +12,9 @@
   <div class="slider">
     <article style="background-image: url({holo_bg})">
       <div class="glass">
+        '
+        <!-- super lazy fix voor flexbox  op mobiel -->
+        <br />
         <img src={holo_star} alt="nog niks" />
 
         <div class="description">
@@ -23,6 +26,9 @@
 
     <article style="background-image: url({holo_bg})">
       <div class="glass">
+        <!-- super lazy fix voor flexbox  op mobiel -->
+        <br />
+
         <img src={holo_star} alt="nog niks" />
 
         <div class="description">
@@ -34,6 +40,9 @@
 
     <article style="background-image: url({holo_bg})">
       <div class="glass">
+        <!-- super lazy fix voor flexbox  op mobiel -->
+        <br />
+
         <img src={holo_star} alt="nog niks" />
 
         <div class="description">
@@ -45,6 +54,9 @@
 
     <article style="background-image: url({holo_bg})">
       <div class="glass">
+        <!-- super lazy fix voor flexbox  op mobiel -->
+        <br />
+
         <img src={holo_star} alt="nog niks" />
 
         <div class="description">
@@ -56,6 +68,9 @@
 
     <article style="background-image: url({holo_bg})">
       <div class="glass">
+        <!-- super lazy fix voor flexbox  op mobiel -->
+        <br />
+
         <img src={holo_star} alt="nog niks" />
 
         <div class="description">
@@ -91,7 +106,7 @@
 
   article {
     height: 60vh;
-    flex: 0 0 25em;
+    flex: 0 1 25em;
     margin: 0 auto;
     border-radius: 0.5em;
     padding: 1em;
@@ -120,8 +135,12 @@
     img {
       margin: 0 auto;
       width: auto;
-      height: 70%;
+      height: 50%;
       transform: scale(0.8);
+
+      @media (min-width: 480px) {
+        height: 70%;
+      }
     }
 
     .description {
@@ -143,7 +162,6 @@
   .slider::-webkit-scrollbar {
     opacity: 0.1;
   }
-
 
   /* scroll buttons */
   /* tijdelijk onderaan voor beter overzicht */
@@ -189,7 +207,12 @@
     display: none;
   }
 
-  
+  /* had ff geen tijd voor andere oplossing.... */
+  @media (min-width: 480px) {
+    br {
+      display: none;
+    }
+  }
 
   @keyframes moveBg {
     0% {
