@@ -48,4 +48,11 @@
             height: 1.5rem;
         }
     }
+
+    @container (width > 450px) {
+
+        .symbol-account::after {
+            content: "Mijn Account";
+        }
+    }
 </style>
