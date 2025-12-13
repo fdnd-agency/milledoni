@@ -35,8 +35,7 @@
     @container (width > 350px) {
 
         .symbol-account::after {
-            content: "account";
-            text-transform: uppercase;
+            content: "Account";
         }
 
         .symbol-account {
