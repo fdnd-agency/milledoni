@@ -53,7 +53,7 @@
     nav {
         display: flex;
         flex-direction: row;
-        align-items: start;
+        align-items: center;
         height: 4rem;
     }
 </style>
