@@ -44,6 +44,10 @@
         justify-content: space-between;
         box-sizing: var(--inner-spacing);
         padding: var(--spacing-s) var(--spacing-m) var(--spacing-s) var(--spacing-m);
+
+        @media (min-width: 748px) {
+            padding: var(--spacing-s) var(--spacing-l) var(--spacing-s) var(--spacing-l);
+        }
     }
 
     nav {
