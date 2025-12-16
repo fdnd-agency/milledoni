@@ -2,12 +2,14 @@
     //import products component
     import { Logo } from "$lib";
     import { AccountLink } from "$lib";
+    import MenuButton from "./MenuButton.svelte";
 </script>
 
 <header>
     <nav>
         <Logo />
         <AccountLink />
+        <MenuButton />
 
             <!-- <a href="/" aria-label="maak je lijst">
                 <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
