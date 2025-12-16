@@ -20,21 +20,13 @@
     <input type="search" name="chatbot" placeholder="search a gift for a dreamer"/>
     
     <button type="submit" aria-label="zoeken">
-  <svg
-  width="25"
-  height="25"
-  viewBox="0 0 26 26"
-  xmlns="http://www.w3.org/2000/svg"
-  fill="none"
->
-  <path d="M25 13L6 4L9 13L6 22L25 13Z" fill="white"/>
-  <mask id="m" maskUnits="userSpaceOnUse" width="26" height="26">
-    <path d="M25 13L6 4L9 13L6 22L25 13Z" fill="white"/>
-  </mask>
-  <g mask="url(#m)">
-    <path d="M13 13.3L6.5 11L7 13L6.5 15L13 13.3Z" fill="#C2C2C2"/>
-  </g>
+<svg width="30" height="30" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M52.2204 26.0575L17.1218 9.04119L18.4235 21.9835L22.6062 26.1662L18.4247 30.3478L17.1832 43.3462L52.2204 26.0575Z" fill="white"/>
+<path d="M52.2203 26.0584L18.4246 30.3487L22.6062 26.1671L52.2203 26.0584Z" fill="#D4D5D5"/>
+<path d="M52.2177 26.0576L18.4212 21.9842L22.6035 26.1539L52.2177 26.0576Z" fill="#E9E9E9"/>
 </svg>
+
+
 
 
     </button>
@@ -157,10 +149,10 @@
       background-color: var(--chat-color-background);
       position: absolute;
       top: 50%;
-      right: 4%;
+      right: 3%;
       transform: translateY(-50%);
       border-radius: 10em;
-      padding: 0.4em;
+      padding: 0.2em;
       border: 2px solid var(--chat-color-background);
 
       &:hover,
@@ -174,7 +166,7 @@
 
       svg {
         
-         /* transform: rotate(-45deg); */
+         transform: rotate(-45deg);
         fill: var(--chat-color-icon);
 
         path{
