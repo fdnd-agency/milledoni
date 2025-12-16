@@ -86,7 +86,7 @@
   /* standard colors */
   --neutral-color-background: hsl(0 0 100);
   --neutral-color-background-cards: hsl(0 5 96);
-  --neutral-color-background-icons: hsl(0 0 89);
+  --neutral-color-background-icons: hsl(0, 0%, 0%);
 
   --primary-color-light: hsl(57 100 72);
   --primary-color-hover: hsl(46 100 64);
