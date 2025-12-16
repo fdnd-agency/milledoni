@@ -124,7 +124,7 @@
       border-radius: 3em;
       background:
         linear-gradient(var(--neutral-color-background-cards)) padding-box,
-        linear-gradient(45deg, red, purple, gold, blue);
+        linear-gradient(120deg, var(--primary-color) 0%, purple 45%, var(--primary-color) 80%,  blue 100%) border-box;
 
       &::placeholder {
         color: var(--text-color);
