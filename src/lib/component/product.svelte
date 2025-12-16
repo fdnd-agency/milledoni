@@ -2,15 +2,12 @@
     let { product } = $props()
 </script>
 
-<!-- HTML structure for each card -->
 <li>
-	<div>
-		<a tabindex="-1" href="/"><img loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
-		<h3>{product.name}</h3>
-		<a class="bekijk-product-btn" href="/">Bekijk product
-			<img loading="lazy" src="/images/right-arrow.svg" alt="" width="14" height="14" />
-		</a>
-	</div>
+	<a tabindex="-1" href="/"><img class="product-img" loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
+	<h3>{product.name}</h3>
+	<a class="bekijk-product-btn" href="/">Bekijk product
+		<img loading="lazy" src="/images/right-arrow.svg" alt="" width="14" height="14" />
+	</a>
 	<form action="/" method="post">
 		<button id="likeBtn" type="submit" aria-label="Like">
 		  <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#212121">
@@ -23,29 +20,26 @@
 </li>
 
 <style>
-	li{
+	li {
+		display: grid;
+		grid-template-rows: subgrid;
+		grid-row: span 4;
 		background-color: var(--neutral-color-background-cards);
-    	display: flex;
 		gap: var(--spacing-xs);
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		justify-items: center;
-		place-items: center;
+		place-items: baseline;
 		text-align: var(--text-align-main);
 		border: 2px solid var(--primary-color);
 		border-radius: var(--rounding-m);
 		padding: var(--spacing-m);
         box-sizing: var(--inner-spacing);
-		width: 16rem;
-		height: 26rem;
+		overflow: hidden;
 
-			/* Link: bekijk product */
 			a {
-				text-decoration: none;
 				display: flex;
 				align-items: var(--align-items-main);
 				gap: var(--spacing-xs);
+				width: 100%;
+				text-decoration: none;
 				color: var(--accent-color);
 			}
 
@@ -53,14 +47,25 @@
 				font-size: 1.1rem;
 			}
 
+			.product-img {
+				width: 100%;
+				object-fit: cover;
+			}
+
 			.bekijk-product-btn {
 				height: 1.5rem;
 			}
 
 			h3 {
-				font-size: clamp(--h3-font-size);
-				height: 4rem;
+				hyphens: auto;
+				width:100%;
 				color: var(--text-color);
+				display: -webkit-box;
+  				-webkit-line-clamp: 2;
+  				-webkit-box-orient: vertical; 
+				text-overflow: ellipsis;
+				overflow: hidden;
+  				word-wrap: break-word;
 			}
 
 			img {
@@ -77,7 +82,6 @@
 				justify-items: start;
 				align-items: var(--align-items-main);
 				gap: var(--spacing-xs);
-				width: 100%;
 			}
 
 			button {
@@ -92,23 +96,25 @@
 			}
 		}
 
-		@media (min-width: 880px) {
-			/* Masonry out of 3 outline */
+		/* @media (min-width: 880px) {
 			li:nth-child(3n + 2) {
   				margin-top: 2rem;
 			}
         }
 
 		@media (min-width: 1136px) {
-
-			/* Masonry out of 3 outline deactivate */
 			li:nth-child(3n + 2) {
   				margin-top: 0;
 			}
 
-			/* Masonry even outline */
 			li:nth-child(even) {
             	margin-top: 2rem;
         	}
-        }
+        } */
+
+		@media (prefers-color-scheme: dark){
+			svg{
+				fill: var(--text-color);
+			}
+		}
 </style>

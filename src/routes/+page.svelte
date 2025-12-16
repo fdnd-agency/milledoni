@@ -3,7 +3,7 @@
   import image from "$lib/assets/filter-bg.svg";
   import robotimg from "$lib/assets/chatbot.svg"
 
-  //import products component
+ 
   import { Product } from "$lib";
   import { Filter } from "$lib";
 
@@ -18,8 +18,8 @@
   <svg width="213" height="250" viewBox="0 0 213 250" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.04" d="M174.64 194.693C169.462 194.306 164.145 195.704 159.88 199.099C155.553 202.543 152.699 207.73 151.971 214.161C150.703 225.359 151.735 235.026 156.474 241.681C161.661 248.964 169.99 251.009 179.049 249.567C187.849 248.166 193.04 242.043 195.569 235.666C198.005 229.525 198.301 222.522 197.151 217.078C195.008 203.455 185.108 195.476 174.64 194.693ZM167.479 208.552C169.118 207.248 171.32 206.584 173.728 206.764C178.385 207.113 183.886 210.716 185.151 219.07L185.181 219.266L185.224 219.46C185.949 222.765 185.767 227.406 184.254 231.222C182.804 234.878 180.493 237.078 177.127 237.614C170.98 238.592 168.056 237.006 166.4 234.681C164.296 231.726 162.895 225.807 164.06 215.517C164.463 211.962 165.9 209.809 167.479 208.552ZM133.104 136.724L137.581 183.667H162.882V171.561H148.646L145.215 135.581L133.104 136.724ZM81.3547 140.516L83.827 152.368L99.946 149.039L97.4737 137.187L81.3547 140.516ZM171.131 123.413L178.355 133.153L191.129 123.772L183.904 114.031L171.131 123.413ZM-1.52588e-05 44.5476L82.4198 102.655L89.4529 92.7778L7.03305 34.6704L-1.52588e-05 44.5476ZM70.5723 26.6793L109.197 82.9709L119.244 76.1449L80.6194 19.8533L70.5723 26.6793ZM132.156 20.8918L148.579 71.4332L160.153 67.7081L143.73 17.1667L132.156 20.8918ZM190.925 68.7L202.964 70.4413L213 1.74138L200.962 0L190.925 68.7Z" fill="black"/></svg>
 
   <form action="">
-    <input type="search" placeholder="search a gift for a dreamer" />
-    <input type="image" src="{robotimg}" border="0" alt="Submit"  width="36" height="36" />
+      <input type="search" name="chatbot"  placeholder="search a gift for a dreamer" />
+      <input type="image" src="{robotimg}" border="0" alt="Submit"  width="36" height="36" />
   </form>
 
   <Filter {tags} />
@@ -29,6 +29,8 @@
 
 
 <main>
+  
+  <h2>Producten</h2>
   <ul>
     {#each products as product}
       <Product {product} />
@@ -40,22 +42,18 @@
   main {
     display: grid;
     justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-m);
+    width: 100vw;
     list-style: none;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 2em;
-    max-width: 80rem;
-    padding: 0;
-    margin-top: 4rem;
-    padding-inline: 1rem;
-
-    @media (min-width: 912px) {
-            padding-inline: 2rem;
-        }
+    box-sizing: border-box;
+    padding: var(--spacing-m);
   }
 
   .filters {
@@ -68,22 +66,33 @@
     overflow: hidden;
 
     > svg {
-      position: absolute;
+      position: fixed;
       z-index: -1;
 
       &:nth-of-type(1) {
         left: 5em;
-        top: 2em;
+        top: 15em;
+        display: none;
+
+        @media (min-width: 1050px) {
+          display: block;
+        }
       }
 
       &:nth-of-type(2) {
-        right: 5em;
-        bottom: 0;
-        display: none;
+        right: 0;
+        bottom: 50vh;
+        scale: 0.6;
 
-        @media (min-width: 650px) {
-          display: block;
+        /*max width for easier styling*/
+        @media (max-width:650px){
+          display: none;
         }
+
+        @media (min-width: 1050px){
+          bottom: 5em;
+        }
+        
       }
     }
 
@@ -98,53 +107,42 @@
     }
 
     form {
-      display: grid;
+      position: relative;
       row-gap: 1em;
       grid-template-columns: 4fr 1fr;
       grid-template-rows: 3fr 2fr;
       border-radius: 3em;
-      padding: 0.15em;
-      width: 18em;
-
-      svg {
-        width: 2.5em;
-        margin-left: -3em;
-        pointer-events: none;
-        grid-column: 3;
-        grid-row: 1;
-      }
+      width: clamp(15em, 80vw, 20em);
     }
 
     input:first-of-type {
       border: none;
-      padding-left: 1.5em;
+
+      padding:1.5em 1em 1.5em 2em;
       width: 100%;
       /* max-width: 80%; */
-      padding-right: 4em;
       border: 2px solid transparent;
       border-radius: 3em;
+      color: var(--text-color);
       background:
-        linear-gradient(white, white) padding-box,
+        linear-gradient(var(--neutral-color-background-cards)) padding-box,
         linear-gradient(45deg, red, purple, gold, blue);
-      grid-column: 1/-1;
-      grid-row: 1;
     }
 
     input:nth-of-type(2) {
-      grid-column: span 2;
-      justify-self: center;
-      padding-inline: 2em;
+      position: absolute;
+      top: 0.5em;
+      right: 1.5em;
       border-radius: 3em;
-      border: none;
-      background-color: var(--accent-color);
+      padding: 0.2em;
+      border: 2px solid var(--accent-color);
       &:hover {
         background-color: var(--accent-color-hover);
       }
     }
 
     input[type="search"]::-webkit-search-cancel-button {
-      position: relative;
-      transform: translateX(0.5em);
+      opacity: 0;
     }
 
     button {
@@ -168,4 +166,5 @@
       margin: 0;
     }
   }
+  
 </style>
