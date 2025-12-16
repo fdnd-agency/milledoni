@@ -150,9 +150,10 @@
       &:hover,
       &:focus {
         background-color: transparent;
-        svg {
-          vertical-align: middle;
-          fill: var(--chat-color-background);
+
+        svg,path {
+          fill: transparent;
+          stroke: var(--chat-color-background);
         }
       }
 
