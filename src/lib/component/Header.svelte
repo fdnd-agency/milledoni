@@ -43,12 +43,13 @@
         border-bottom: 3px solid #e0b000;
         justify-content: space-between;
         box-sizing: var(--inner-spacing);
-        padding: var(--spacing-xs) var(--spacing-m) var(--spacing-xs) var(--spacing-m);
+        padding: var(--spacing-s) var(--spacing-m) var(--spacing-s) var(--spacing-m);
     }
 
     nav {
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: start;
+        height: 4rem;
     }
 </style>

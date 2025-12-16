@@ -6,10 +6,10 @@
 <div class="logo-container">
     <a href="/" class="logo-link">
         <div class="symbol-logo">
-            <img class="svg" src={symbolLogo} alt="home" />
+            <img src={symbolLogo} alt="home" />
         </div> 
         <div class="wordmark">
-            <img class="svg" src={wordmarkLogo} alt="home" />
+            <img src={wordmarkLogo} alt="home" />
         </div>             
     </a>
 </div>
@@ -30,6 +30,10 @@
 
     .wordmark {
         display: none;
+    }
+
+    img {
+        height: 3.5rem;
     }
     
     @container (width > 350px) {

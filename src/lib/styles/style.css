@@ -98,7 +98,7 @@
     --align-items-footer: center;
 
     /* Spacing */
-    --spacing-xs: 5px;
+    --spacing-xs: 0.5rem;
     --spacing-s: 1rem;
     --spacing-m: 1.5rem; 
     --spacing-l: 5.25rem; 
@@ -150,6 +150,10 @@ body[data-theme="christmas"] {
 :focus{
     outline: .15em solid var(--primary-color-hover);
     outline-offset: .15em;
+}
+
+body {
+    margin: 0;
 }
 
 /* Fonts */
