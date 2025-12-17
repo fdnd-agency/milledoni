@@ -17,4 +17,8 @@
     img{
         background-color: black;
     }
+
+    summary::marker {
+        content: url("/src/lib/assets/menu-icon.svg") / "menu";
+    }
   </style>
