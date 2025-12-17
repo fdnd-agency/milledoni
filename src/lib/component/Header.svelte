@@ -41,15 +41,14 @@
 
 <style>
     header {
-        position: relative;
-        border-bottom: 3px solid #e0b000;
+        z-index: 200;
+        position: sticky;
+        background-color: var(--neutral-color-background);
+        top: 0;
+        border-bottom: 3px solid var(--primary-color);
         justify-content: space-between;
         box-sizing: var(--inner-spacing);
         padding: var(--spacing-s) var(--spacing-m) var(--spacing-s) var(--spacing-m);
-
-        @media (min-width: 748px) {
-            padding: var(--spacing-s) var(--spacing-l) var(--spacing-s) var(--spacing-l);
-        }
     }
 
     nav {
