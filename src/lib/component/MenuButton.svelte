@@ -55,6 +55,14 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: aquamarine;
+        background-color: var(--accent-color);
+        justify-content: center;
+    }
+
+    a {
+        padding: var(--spacing-m);
+        color: var(--text-color-button);
+        text-decoration: none;
+        text-align: center;
     }
   </style>
