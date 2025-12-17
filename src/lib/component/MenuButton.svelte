@@ -15,10 +15,21 @@
 
   <style>
     img{
-        background-color: black;
+        margin: auto;
     }
 
     summary::marker {
         content: url("/src/lib/assets/menu-icon.svg") / "menu";
+    }
+
+    summary {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        border-radius: var(--rounding-circle);
+        color: var(--text-color-button);
+        background-color: var(--accent-color);
+        height: 4rem;
+        width: 4rem;
     }
   </style>
