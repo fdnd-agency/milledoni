@@ -14,6 +14,20 @@
 </details>
 
   <style>
+
+    details {
+        z-index: 50;
+    }
+
+    summary {
+        position: relative;
+        z-index: 200;
+    }
+
+    nav {
+        z-index: 100;
+    }
+
     img{
         margin: auto;
     }
@@ -31,5 +45,16 @@
         background-color: var(--accent-color);
         height: 4rem;
         width: 4rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: aquamarine;
     }
   </style>
