@@ -3,18 +3,6 @@
     let open = false;
 </script>
 
-<!-- <nav role="navigation">
-    <div id="menuToggle"> 
-      <input name="toggle" type="checkbox" />
-      <label for="toggle">menu
-      </label>
-      <ul id="menu">
-        <a href="#"><li>Home</li></a>
-        <a href="#"><li>About</li></a>
-        <a href="#"><li>Spotters</li></a>
-      </ul>
-    </div>
-  </nav> -->
 <nav>
     <label for="menu-toggle"><img src={icon} alt="account" /></label>
     <input type="checkbox" id="menu-toggle"/>
@@ -24,25 +12,6 @@
         <li><a href="#">Spotters</a></li>
     </ul>
 </nav>
-
-<!-- <details>
-    <summary>
-        <img src={icon} alt="account" />
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        border-radius: var(--rounding-circle);
-        color: var(--text-color-button);
-        background-color: var(--accent-color);
-        height: 4rem;
-        width: 4rem;
-    </summary>
-    <nav>
-            <a href="">home</a>
-            <a href="">about</a>
-            <a href="">spotters</a>
-    </nav>
-</details> -->
 
   <style>
 
