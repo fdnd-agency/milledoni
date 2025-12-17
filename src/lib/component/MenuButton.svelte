@@ -3,8 +3,24 @@
     let open = false;
 </script>
 
+<nav role="navigation">
+    <div id="menuToggle"> 
+      <!-- hidden checkbox is used as click reciever, so you can use the :checked selector on it. -->
+      <input name="toggle" type="checkbox" />
+      <label for="toggle">
+        <img src={icon} alt="menu" />
+      </label>
+      <!-- the menu that will slide in from the left -->
+      <ul id="menu">
+        <a href="#"><li>Home</li></a>
+        <a href="#"><li>About</li></a>
+        <a href="#"><li>Spotters</li></a>
+      </ul>
+    </div>
+  </nav>
 
-<details>
+
+<!-- <details>
     <summary>
         <img src={icon} alt="account" />
     </summary>
@@ -13,11 +29,13 @@
             <a href="">about</a>
             <a href="">spotters</a>
     </nav>
-</details>
+</details> -->
 
   <style>
 
-    details {
+    /* details {
+        container-type: inline-size;
+        width: 100%;
         z-index: 50;
     }
 
@@ -93,5 +111,5 @@
             width: 1.5rem;
             height: 1.5rem;
         }
-}
+} */
   </style>
