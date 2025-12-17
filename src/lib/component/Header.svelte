@@ -57,5 +57,6 @@
         flex-direction: row;
         align-items: center;
         height: 4rem;
+        gap: var(--spacing-s);
     }
 </style>
