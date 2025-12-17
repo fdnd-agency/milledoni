@@ -64,5 +64,6 @@
         color: var(--text-color-button);
         text-decoration: none;
         text-align: center;
+        font-size: var(--text-font-size-l);
     }
   </style>
