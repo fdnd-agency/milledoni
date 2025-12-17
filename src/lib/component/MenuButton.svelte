@@ -74,7 +74,7 @@
     }
 
     #menu-toggle:checked + #menu {
-        max-width: 100vh;
+        max-width: 100vw;
     }
 
     ul {
@@ -89,6 +89,7 @@
         overflow: hidden;
         max-width: 0;
         padding: 0;
+        margin: 0;
         -webkit-transition: all 0.3s ease;
         width: 100vw;
         height: 100vh;
