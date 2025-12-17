@@ -17,7 +17,7 @@
 <style>
     .logo-container {
         container-type: inline-size;
-        width: 100%;
+        width: 50%;
     }
 
     .logo-link {

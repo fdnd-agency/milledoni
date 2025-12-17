@@ -48,7 +48,7 @@
 
     nav {
         container-type: inline-size;
-        width: 100%;
+        width: 25%;
         z-index: 50;
     }
 
@@ -89,7 +89,6 @@
         overflow: hidden;
         max-width: 0;
         padding: 0;
-        margin: 0 auto;
         -webkit-transition: all 0.3s ease;
         width: 100vw;
         height: 100vh;

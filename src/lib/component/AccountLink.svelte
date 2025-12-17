@@ -13,7 +13,7 @@
 <style>
     .account-container {
         container-type: inline-size;
-        width: 100%;
+        width: 25%;
         text-align: right;
     }
 
