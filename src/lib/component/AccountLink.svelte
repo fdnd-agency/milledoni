@@ -45,6 +45,8 @@
 
         .symbol-account {
             border-radius: var(--rounding-l);
+            width: auto;
+            height: auto;
             padding: var(--spacing-s) var(--spacing-m) var(--spacing-s) var(--spacing-m);
         }
 
