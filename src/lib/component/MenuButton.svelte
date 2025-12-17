@@ -74,7 +74,7 @@
     }
 
     #menu-toggle:checked + #menu {
-        max-height: 100vh;
+        max-width: 100vh;
     }
 
     ul {
@@ -82,12 +82,12 @@
         flex-direction: column;
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         background-color: var(--accent-color);
         justify-content: center;
         z-index: 100;
         overflow: hidden;
-        max-height: 0;
+        max-width: 0;
         padding: 0;
         margin: 0 auto;
         -webkit-transition: all 0.3s ease;
