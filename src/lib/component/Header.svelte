@@ -10,28 +10,6 @@
         <Logo />
         <AccountLink />
         <MenuButton />
-
-            <!-- <a href="/" aria-label="maak je lijst">
-                <svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_d_386_24318)">
-                    <circle cx="40.3147" cy="38.6848" r="32.3147" fill="#20A687"/>
-                    <circle cx="40.3147" cy="38.6848" r="32.0647" stroke="#C9C9C9" stroke-width="0.5"/>
-                    </g>
-                    <path d="M21.9395 25.3799H44.0519M21.9395 34.2506H57.4222M21.9395 43.1213H51.2513M21.9395 51.992H57.4222" stroke="white" stroke-width="4"/>
-                    <defs>
-                    <filter id="filter0_d_386_24318" x="0" y="0.370117" width="80.6294" height="80.6289" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                    <feOffset dy="2"/>
-                    <feGaussianBlur stdDeviation="4"/>
-                    <feComposite in2="hardAlpha" operator="out"/>
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_386_24318"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_386_24318" result="shape"/>
-                    </filter>
-                    </defs>
-                </svg>
-            </a>           -->
     </nav>
     <!-- <svg width="91" height="50" viewBox="0 0 91 50" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M42.8622 49.6698C41.6654 44.0922 34.4746 42.0855 28.1343 40.3155C25.9241 39.6981 23.8361 39.1115 22.0893 38.3963C14.9189 35.4686 6.79103 32.1498 2.22803 24.1848C-0.746072 18.9932 -0.740975 12.2631 2.23313 7.04566C4.91695 2.34796 9.4494 -0.271026 14.812 0.0222594C24.6458 0.516213 32.5649 9.07808 39.0122 26.1915C40.7946 30.9252 42.4701 35.7464 43.9877 40.5162C44.2525 41.3446 44.6599 42.2553 45.0775 43.1969C45.9331 45.1264 46.8141 47.1279 46.9618 49.0575L42.8571 49.6646L42.8622 49.6698ZM14.0633 4.20543C9.35773 4.20543 6.89288 7.30293 5.83871 9.15011C3.58776 13.0863 3.58267 18.1648 5.82853 22.0804C9.67856 28.8002 16.7828 31.697 23.6528 34.5064C25.1755 35.129 27.1514 35.6795 29.2445 36.2661C32.5547 37.1871 36.2418 38.2213 39.4094 39.8679C38.0802 35.803 36.6441 31.7176 35.1316 27.6888C29.3362 12.2991 22.624 4.6222 14.6082 4.21572L14.0684 4.20028L14.0633 4.20543Z" fill="#E0B000"/>
