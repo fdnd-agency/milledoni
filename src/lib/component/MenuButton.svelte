@@ -76,4 +76,25 @@
         text-align: center;
         font-size: var(--text-font-size-l);
     }
+
+    @container (width > 350px) {
+
+    label::after {
+        content: "Menu";
+    }
+
+    label {
+        display: inline-flex;
+        border-radius: var(--rounding-l);
+        width: auto;
+        height: auto;
+        padding: var(--spacing-s) var(--spacing-m) var(--spacing-s) var(--spacing-m);
+    }
+
+    img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+    
   </style>
