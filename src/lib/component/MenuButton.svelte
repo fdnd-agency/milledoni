@@ -3,26 +3,39 @@
     let open = false;
 </script>
 
-<nav role="navigation">
+<!-- <nav role="navigation">
     <div id="menuToggle"> 
-      <!-- hidden checkbox is used as click reciever, so you can use the :checked selector on it. -->
       <input name="toggle" type="checkbox" />
-      <label for="toggle">
-        <img src={icon} alt="menu" />
+      <label for="toggle">menu
       </label>
-      <!-- the menu that will slide in from the left -->
       <ul id="menu">
         <a href="#"><li>Home</li></a>
         <a href="#"><li>About</li></a>
         <a href="#"><li>Spotters</li></a>
       </ul>
     </div>
-  </nav>
-
+  </nav> -->
+<nav>
+    <label for="menu-toggle"><img src={icon} alt="account" /></label>
+    <input type="checkbox" id="menu-toggle"/>
+    <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Spotters</a></li>
+    </ul>
+</nav>
 
 <!-- <details>
     <summary>
         <img src={icon} alt="account" />
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        border-radius: var(--rounding-circle);
+        color: var(--text-color-button);
+        background-color: var(--accent-color);
+        height: 4rem;
+        width: 4rem;
     </summary>
     <nav>
             <a href="">home</a>
@@ -32,6 +45,47 @@
 </details> -->
 
   <style>
+
+    nav {
+        container-type: inline-size;
+        width: 100%;
+        z-index: 50;
+    }
+
+    label {
+        position: relative;
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        border-radius: var(--rounding-circle);
+        color: var(--text-color-button);
+        background-color: var(--accent-color);
+        height: 4rem;
+        width: 4rem;
+    }
+
+    img{
+        margin: auto;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    #menu {
+        background-color: var(--accent-color);
+        width: 780px;
+        overflow: hidden;
+        max-height: 0;
+        padding: 0;
+        margin: 0 auto;
+        -webkit-transition: all 0.3s ease;
+    }
+
+    #menu-toggle:checked + #menu {
+        max-height: 100px;
+    }
 
     /* details {
         container-type: inline-size;
