@@ -50,8 +50,8 @@
   ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-m);
-    width: 100vw;
+     gap: 5rem 1rem;
+    width: 90vw;
     list-style: none;
     box-sizing: border-box;
     /* padding: var(--spacing-m); */
@@ -155,9 +155,10 @@
       &:hover,
       &:focus {
         background-color: transparent;
-        svg {
-          vertical-align: middle;
-          fill: var(--chat-color-background);
+
+        svg,path {
+          fill: transparent;
+          stroke: var(--chat-color-background);
         }
       }
 
