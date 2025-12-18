@@ -54,7 +54,12 @@
     width: 100vw;
     list-style: none;
     box-sizing: border-box;
-    padding: var(--spacing-m);
+    /* padding: var(--spacing-m); */
+    padding: var(--spacing-s) var(--spacing-m) var(--spacing-s) var(--spacing-m);
+
+        @media (min-width: 600px) {
+            padding: var(--spacing-s) var(--spacing-l) var(--spacing-s) var(--spacing-l);
+        }
   }
 
   .filters {

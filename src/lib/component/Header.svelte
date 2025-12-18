@@ -30,7 +30,7 @@
         box-sizing: var(--inner-spacing);
         padding: var(--spacing-s) var(--spacing-m) var(--spacing-s) var(--spacing-m);
 
-        @media (min-width: 768px) {
+        @media (min-width: 600px) {
             padding: var(--spacing-s) var(--spacing-l) var(--spacing-s) var(--spacing-l);
         }
     }
