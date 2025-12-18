@@ -27,7 +27,7 @@
 </script>
 
 <div class="toggle-filter button">
-  <input class="checker" type="checkbox" id="filter-toggle" value="Filter" />
+  <input class="checker" type="checkbox" id="filter-toggle" value="Filter" checked/>
   <label for="filter-toggle">Filter</label>
 </div>
 
