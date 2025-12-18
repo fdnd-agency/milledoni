@@ -13,13 +13,17 @@
 <style>
     .account-container {
         container-type: inline-size;
-        width: 100%;
+        width: 50%;
         text-align: right;
     }
 
     a {
         display: inline-flex;
         text-decoration: none;
+    }
+    
+    img {
+        margin: auto;
     }
 
     .symbol-account {
@@ -29,10 +33,11 @@
         border-radius: var(--rounding-circle);
         color: var(--text-color-button);
         background-color: var(--neutral-color-background-icons);
-        padding: var(--spacing-s);
+        height: 4rem;
+        width: 4rem;
     }
 
-    @container (width > 350px) {
+    @container (width > 150px) {
 
         .symbol-account::after {
             content: "Account";
@@ -40,6 +45,8 @@
 
         .symbol-account {
             border-radius: var(--rounding-l);
+            width: auto;
+            height: auto;
             padding: var(--spacing-s) var(--spacing-m) var(--spacing-s) var(--spacing-m);
         }
 
@@ -49,7 +56,7 @@
         }
     }
 
-    @container (width > 450px) {
+    @container (width > 200px) {
 
         .symbol-account::after {
             content: "Mijn Account";

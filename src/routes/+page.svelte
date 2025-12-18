@@ -54,18 +54,12 @@
     width: 90vw;
     list-style: none;
     box-sizing: border-box;
-    padding: var(--spacing-m);
-    container-type: inline-size;
-  }
+    /* padding: var(--spacing-m); */
+    padding: var(--spacing-s) var(--spacing-m) var(--spacing-s) var(--spacing-m);
 
-  /* this fixes the problem of li not working with nested css  */
-  ul > :global(li):nth-child(odd) {
-    transform: translateY(0rem);
-     
-
-    @container (width > 1000px) {
-      transform: translateY(2rem);
-    }
+        @media (min-width: 600px) {
+            padding: var(--spacing-s) var(--spacing-l) var(--spacing-s) var(--spacing-l);
+        }
   }
 
   .filters {
