@@ -17,8 +17,9 @@
 
     nav {
         container-type: inline-size;
-        width: 25%;
+        width: 50%;
         z-index: 50;
+        text-align: right;
     }
 
     label {
@@ -77,7 +78,7 @@
         font-size: var(--text-font-size-l);
     }
 
-    @container (width > 350px) {
+    @container (width > 150px) {
 
     label::after {
         content: "Menu";

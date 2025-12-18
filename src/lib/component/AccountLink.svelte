@@ -13,7 +13,7 @@
 <style>
     .account-container {
         container-type: inline-size;
-        width: 25%;
+        width: 50%;
         text-align: right;
     }
 
@@ -37,7 +37,7 @@
         width: 4rem;
     }
 
-    @container (width > 350px) {
+    @container (width > 150px) {
 
         .symbol-account::after {
             content: "Account";
@@ -56,7 +56,7 @@
         }
     }
 
-    @container (width > 450px) {
+    @container (width > 200px) {
 
         .symbol-account::after {
             content: "Mijn Account";
