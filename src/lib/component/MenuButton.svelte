@@ -16,8 +16,6 @@
   <style>
 
     nav {
-        container-type: inline-size;
-        width: 50%;
         z-index: 50;
         text-align: right;
     }
@@ -78,9 +76,8 @@
         font-size: var(--text-font-size-l);
     }
 
-    @container (width > 150px) {
-
-    label::after {
+    @media (min-width: 768px) {
+        label::after {
         content: "Menu";
     }
 
@@ -96,6 +93,5 @@
         width: 1.5rem;
         height: 1.5rem;
     }
-}
-    
+    }
   </style>

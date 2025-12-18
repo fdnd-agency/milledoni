@@ -47,15 +47,9 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: var(--spacing-xs);
+        gap: var(--spacing-s);
         container-type: inline-size;
         width: 50%;
-    }
-
-    @media (min-width: 650px) {
-        div {
-            width: 40%;
-            text-align: right;
-        } 
+        justify-content: end;
     }
 </style>
