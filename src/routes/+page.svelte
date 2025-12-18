@@ -50,11 +50,22 @@
   ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-m);
-    width: 100vw;
+     gap: 5rem 1rem;
+    width: 90vw;
     list-style: none;
     box-sizing: border-box;
     padding: var(--spacing-m);
+    container-type: inline-size;
+  }
+
+  /* this fixes the problem of li not working with nested css  */
+  ul > :global(li):nth-child(odd) {
+    transform: translateY(0rem);
+     
+
+    @container (width > 1000px) {
+      transform: translateY(2rem);
+    }
   }
 
   .filters {
