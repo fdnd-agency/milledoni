@@ -49,7 +49,7 @@
         }
 
         @media (min-width: 1024px) {
-            max-width: 50vw;
+            max-width: 40vw;
         }
     }
 
@@ -58,7 +58,7 @@
         flex-direction: column;
         position: fixed;
         top: 0;
-        left: 0;
+        right: 0;
         background-color: var(--accent-color);
         justify-content: center;
         z-index: 100;
