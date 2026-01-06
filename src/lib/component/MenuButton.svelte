@@ -4,7 +4,7 @@
 </script>
 
 <nav>
-    <label for="menu-toggle"><img src={icon} alt="account" /></label>
+    <label for="menu-toggle"><img src={icon} alt="menu" /></label>
     <input type="checkbox" id="menu-toggle"/>
     <ul id="menu">
         <li><a href="#">Home</a></li>
