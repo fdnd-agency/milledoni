@@ -7,6 +7,7 @@
   const product = data.product;
   const cleanTags = data.cleanTags;
 </script>
+<a href="/">Terug naar home</a>
 
 <h1>{product.name}</h1>
 <span>€{product.amount}</span>
