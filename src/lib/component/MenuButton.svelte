@@ -43,6 +43,14 @@
 
     #menu-toggle:checked + #menu {
         max-width: 100vw;
+
+        @media (min-width: 768px) {
+            max-width: 50vw;
+        }
+
+        @media (min-width: 1024px) {
+            max-width: 50vw;
+        }
     }
 
     ul {
