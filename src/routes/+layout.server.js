@@ -18,9 +18,6 @@ export async function load() {
 
   const uniqueTags = [...new Set(allTags)]; //no duplicate  filters with set()
 
-  // console.log(uniqueTags); 
-  //log the tags for debug purpose
-
   return {
     product: products,
     tags: uniqueTags,

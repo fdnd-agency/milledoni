@@ -5,14 +5,26 @@
   import { Filter } from "$lib";
 
   const product = data.product;
-  const tags = data.tags;
+  const cleanTags = data.cleanTags;
 </script>
 
 <h1>{product.name}</h1>
-<span>{product.amount}</span>
-<p>{product.description}</p>
-<p>{product.tags}</p>
-<span>{product.spotter}</span>
+<span>€{product.amount}</span>
 
-<h2>Vind je kado</h2>
-<p>{product.tags}</p>
+<main>
+  <p>{product.description}</p>
+  <p>{product.tags}</p>
+  <span>{product.spotter}</span>
+
+  <h2>Vind je kado</h2>
+  <ul>
+  {#each cleanTags as tag}
+    <li>{tag}</li>
+  {/each}
+  </ul>
+
+</main>
+
+<style>
+
+</style>
