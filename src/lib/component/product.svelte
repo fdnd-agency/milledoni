@@ -3,11 +3,11 @@
 </script>
 
 <li>
-	<a tabindex="-1" href="/"><img class="product-img" loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
+	<a tabindex="-1"  href={`/${product.slug}`}><img class="product-img" loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
 	<h3>{product.name}</h3>
 
 	<div>
-		<a class="bekijk-product-btn" href="/">Bekijk product
+		<a class="bekijk-product-btn" href={`/${product.slug}`}>Bekijk product
 			<img loading="lazy" src="/images/right-arrow.svg" alt="" width="14" height="14" />
 		</a>
 
