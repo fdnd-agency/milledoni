@@ -230,7 +230,8 @@ p {
   line-height: var(--text-line-height);
 }
 
-a {
+a, 
+i {
     font-weight: var(--font-weight-regular);
 }
 
