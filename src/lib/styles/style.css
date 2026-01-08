@@ -243,6 +243,10 @@ select {
   cursor: var(--cursor-hover);
 }
 
+button:hover {
+  background-color: var(--accent-color-hover);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     /* increase line-height on dark color schemes */
