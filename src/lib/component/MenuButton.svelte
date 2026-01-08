@@ -115,12 +115,20 @@
         z-index: 100;
         list-style: none;
         padding-top: 4rem;
-        width: 50vw;
+        width: 100vw;
         height: 100vh;
         overflow: hidden;
         padding: 0;
         margin: 0;
         -webkit-transition: all 0.3s ease;
+
+        @media (min-width: 768px) {
+            max-width: 50vw;
+        }
+
+        @media (min-width: 1024px) {
+            max-width: 40vw;
+        }
     }
 
     li {
