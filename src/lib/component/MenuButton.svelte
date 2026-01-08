@@ -1,4 +1,26 @@
 <script>
+    // Run code only in the browser after Server-Side Rendering, when the component mounts
+    import { onMount } from 'svelte';
+
+    // Execute this code after the component is mounted and hydrated in the DOM
+    onMount(() => {
+
+        // Check if the Font Loading API is supported by the browser
+        if (document.fonts) {
+            document.fonts
+
+                // Ask the browser to ensure the font is available (waits for load or cache)
+                .load('1em "Material Icons"')
+
+                // Add a class to the document once the font is successfully available
+                .then((fonts) => {
+                    if (fonts.length > 0) {
+                        document.documentElement.classList.add('icons-loaded');
+                    }
+                });
+        }
+});
+
 	let showMenu = 'translateX(100%)'
 	let crossIcon = 'none'
 	let hamburgerIcon = 'block'
@@ -41,8 +63,12 @@
     .material-icons {
         font-family: 'Material Icons';
         font-style: normal;
-        font-size: 2rem;
+        font-size: 1rem;
     }
+
+    :global(.icons-loaded) .material-icons {
+	font-size: 2rem; /* juiste icoon-grootte */
+}
 
     nav {
         z-index: 50;
