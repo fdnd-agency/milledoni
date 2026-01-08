@@ -19,7 +19,7 @@
                     }
                 });
         }
-});
+    });
 
 	let showMenu = 'translateX(100%)'
 	let crossIcon = 'none'
@@ -40,7 +40,7 @@
 </script>
 
 <nav>
-    <ul class="menu" style="--show-menu: {showMenu}">
+    <ul style="--show-menu: {showMenu}">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Spotters</a></li>
@@ -53,56 +53,12 @@
 
 <style>
 
-    @font-face {
-        font-family: 'Material Icons';
-        font-style: normal;
-        font-weight: 400;
-        src: url(https://fonts.gstatic.com/s/materialicons/v145/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
-    }
-
-    .material-icons {
-        font-family: 'Material Icons';
-        font-style: normal;
-        font-size: 1rem;
-    }
-
-    :global(.icons-loaded) .material-icons {
-	font-size: 2rem; /* juiste icoon-grootte */
-}
-
     nav {
         z-index: 50;
         text-align: right;
     }
 
-    button {
-        display: grid;
-        position: relative;
-        z-index: 200;
-        align-items: center;
-        gap: 0.6rem;
-        border-radius: var(--rounding-circle);
-        color: var(--text-color-button);
-        background-color: var(--accent-color);
-        height: 4rem;
-        width: 4rem;
-        border: none;
-    }
-
-    .hamburger {
-        z-index: 100;
-        cursor: pointer;
-    }
-    
-    .hamburger-icon {
-        display: var(--hamburger-icon);
-    }
-
-    .cross-icon {
-        display: var(--cross-icon);
-    }
-
-    .menu {
+    ul {
         display: flex;
         flex-direction: column;
         position: fixed;
@@ -142,5 +98,38 @@
         text-decoration: none;
         text-align: center;
         font-size: var(--text-font-size-l);
+    }
+
+    button {
+        display: grid;
+        position: relative;
+        z-index: 200;
+        align-items: center;
+        gap: 0.6rem;
+        border-radius: var(--rounding-circle);
+        color: var(--text-color-button);
+        background-color: var(--accent-color);
+        height: 4rem;
+        width: 4rem;
+        border: none;
+    }
+    
+    .material-icons {
+        font-family: 'Material Icons';
+        font-style: normal;
+        font-size: 1rem;
+    }
+    
+    .hamburger-icon {
+        display: var(--hamburger-icon);
+    }
+
+    .cross-icon {
+        display: var(--cross-icon);
+    }
+
+    /* Add class when font has loaded */
+    :global(.icons-loaded) .material-icons {
+    	font-size: 2rem;
     }
 </style>
