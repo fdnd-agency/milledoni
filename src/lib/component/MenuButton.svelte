@@ -40,15 +40,15 @@
 </script>
 
 <nav>
+    <button class="hamburger" on:click={toggleMenu}>
+        <i class="hamburger-icon material-icons" style="--hamburger-icon: {hamburgerIcon}">menu</i>
+        <i class="cross-icon material-icons" style="--cross-icon: {crossIcon}">close</i>
+    </button>
     <ul style="--show-menu: {showMenu}">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Spotters</a></li>
     </ul>
-    <button class="hamburger" on:click={toggleMenu}>
-        <i class="hamburger-icon material-icons" style="--hamburger-icon: {hamburgerIcon}">menu</i>
-        <i class="cross-icon material-icons" style="--cross-icon: {crossIcon}">close</i>
-    </button>
 </nav>
 
 <style>
