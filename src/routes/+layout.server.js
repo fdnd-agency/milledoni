@@ -1,7 +1,9 @@
-export async function load({ url }) {
+export async function load({ url, depends }) {  // ← Add 'depends' here
+  // This is CRITICAL - tells SvelteKit to re-run when URL search params change
+  depends('url:search');  // ← ADD THIS LINE
 
-// for now filter will work on /page
-// || 1 so that you will always start at the firstpage. Starting on the homepage with no page url will otherwise result in null
+  // for now filter will work on /page
+  // || 1 so that you will always start at the firstpage. Starting on the homepage with no page url will otherwise result in null
   const page = Number(url.searchParams.get("page")) || 1;
 
   // number of products shown on the page
@@ -31,7 +33,7 @@ export async function load({ url }) {
       : []
   );
 
-  // this removes duplicate tagsfrom being shown in the html
+  // this removes duplicate tags from being shown in the html
   // The spread operator is used to grab all excisting tags and remove the duplicate ones
   const uniqueTags = [...new Set(allTags)];
 

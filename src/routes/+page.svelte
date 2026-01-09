@@ -1,13 +1,14 @@
 <script>
   let { data } = $props();
+
+  import { goto } from '$app/navigation';
+
   import image from "$lib/assets/filter-bg.svg";
   import robotimg from "$lib/assets/chatbot.svg";
 
   import { Product } from "$lib";
   import { Filter } from "$lib";
 
-  const products = data.product;
-  const tags = data.tags;
 </script>
 
 <section class="filters">
@@ -24,7 +25,7 @@
     </button>
   </form>
 
-  <Filter {tags} />
+  <Filter tags={data.tags} />
 
   <p>1.000+ producten</p>
 </section>
@@ -33,10 +34,20 @@
   <h2>Producten</h2>
 
   <ul>
-    {#each products as product}
+    {#each data.product as product}
       <Product {product} />
     {/each}
   </ul>
+
+  <!-- i have yet to find out how to split the products in pages for dynamic pagination -->
+  <nav>
+    <ul>  
+      <li><button onclick={() => goto('/?page=1')}>1</button></li>
+      <li><button onclick={() => goto('/?page=2')}>2</button></li>
+      <li><button onclick={() => goto('/?page=3')}>3</button></li>
+    </ul>
+  </nav>
+
 </main>
 
 <style>
