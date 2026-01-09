@@ -1,6 +1,4 @@
-export async function load({ url, depends }) {  // ← Add 'depends' here
-  // This is CRITICAL - tells SvelteKit to re-run when URL search params change
-  depends('url:search');  // ← ADD THIS LINE
+export async function load({ url }) {  
 
   // for now filter will work on /page
   // || 1 so that you will always start at the firstpage. Starting on the homepage with no page url will otherwise result in null
