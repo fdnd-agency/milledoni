@@ -179,8 +179,13 @@ body[data-theme="christmas"] {
   outline-offset: 0.15em;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 /* Fonts */
