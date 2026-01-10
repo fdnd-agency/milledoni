@@ -6,7 +6,9 @@
 
   const product = data.product;
   const cleanTags = data.cleanTags;
+  const likes = data.likes;
 </script>
+
 <a href="/">Terug naar home</a>
 
 <h1>{product.name}</h1>
