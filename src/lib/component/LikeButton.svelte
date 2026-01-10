@@ -5,9 +5,7 @@
 	export let likes = [];
 	export let productId;
 
-	const liked = likes.find(
-		(like) => like.product === productId
-	);
+	const liked = likes.find(like => like.product === productId);
 </script>
 
 {#if liked}
@@ -17,7 +15,7 @@
 {:else}
 	<form method="POST">
 		<input type="hidden" name="productId" value={productId} />
-		<button formaction="?/like">
+		<button type="submit" formaction="?/like">
             <img src={heartEmpty} alt="like" />
         </button>
 	</form>
