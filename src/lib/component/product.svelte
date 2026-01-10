@@ -1,17 +1,17 @@
 <script>
-    let { product } = $props()
-	import { LikeButton } from "$lib";
+    let { product, likes } = $props();
+	import LikeButton from "$lib/component/LikeButton.svelte";
 </script>
 
 <li>
-	<a tabindex="-1"  href={`/${product.slug}`}><img class="product-img" loading="lazy" src="{product.image}" alt="test" width="200" height="200"></a>
+	<a tabindex="-1"  href={`/${product.slug}`}><img class="product-img" loading="lazy" src={product.image} alt="test" width="200" height="200"></a>
 	<h3>{product.name}</h3>
 
 	<div>
 		<a class="bekijk-product-btn" href={`/${product.slug}`}>Bekijk product
 			<img loading="lazy" src="/images/right-arrow.svg" alt="" width="14" height="14" />
 		</a>
-		<LikeButton />
+		<LikeButton productId={product.id} likes={likes}/>
 	</div>
 </li>
 
