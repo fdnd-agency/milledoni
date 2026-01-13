@@ -15,29 +15,21 @@ export async function load({ url }) {
   //offset -> items i do not want to shown
   //limit -> items i do want to show
 
-  const productData = await fetch(
-    `https://fdnd-agency.directus.app/items/milledoni_products?limit=${limit}&offset=${offset}&sort=-id&meta=total_count,filter_count`
-  );
+ const productData = await fetch(
+  `https://fdnd-agency.directus.app/items/milledoni_products?limit=${limit}&offset=${offset}&sort=-id&meta=total_count`
+);
 
-  const productRes = await productData.json()
-  const products = productRes.data
 
-  // no clue how this works. thought it was supposed to show all entries (products)
-  // const totalCount = productResponse.meta.total_count;
-  // console.log(totalCount)
+  const productRes = await productData.json();
+  const products = productRes.data;
+  console.log(productRes)
 
-  // function to dived all products in pages //
-  const allProducts = await fetch(
-    "https://fdnd-agency.directus.app/items/milledoni_products"
-  );
+  // no clue how total_count in directus works. thought it was supposed to show all entries (products)
+  const totalProducts = productRes.meta.total_count;
+  const totalPages = Math.ceil(totalProducts / limit);
 
-  const allProductsRes = await allProducts.json()
-  const productCount = allProductsRes.data
-  console.log('number of products:', productCount.length)
-
-  const divideProduct = Math.ceil(productCount.length / limit)
-  console.log('number op pages', divideProduct)
-
+  console.log("total products:", totalProducts);
+  console.log("number of pages:", totalPages);
 
   //  Clean tags for HTML  //
 
