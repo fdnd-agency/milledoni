@@ -247,9 +247,9 @@ select {
   cursor: var(--cursor-hover);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
+
   :root {
-    /* increase line-height on dark color schemes */
     --text-line-height: 1.7;
 
     --h1-line-height: 1.2;
@@ -257,7 +257,6 @@ select {
     --h3-line-height: 1.2;
     --h4-line-height: 1.2;
 
-    /*darkmode colors*/
     --text-color: hsl(0, 0%, 93%);
     --text-color-chat: hsl(0 0 61);
     --text-color-button: hsl(0 0 100);
@@ -276,7 +275,8 @@ select {
   body {
     color: var(--text-color);
   }
-}
+} */
+ 
 a,
 button,
 input,

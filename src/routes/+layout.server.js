@@ -1,8 +1,9 @@
-export async function load({ url }) {  
-
+export async function load({ url }) {
   // for now filter will work on /page
   // || 1 so that you will always start at the firstpage. Starting on the homepage with no page url will otherwise result in null
-  const page = Number(url.searchParams.get("page")) || 1;
+  const page = url.searchParams.get("page") || 1;
+
+  console.log(page);
 
   // number of products shown on the page
   const limit = 15;
@@ -15,19 +16,36 @@ export async function load({ url }) {
   //limit -> items i do want to show
 
   const productData = await fetch(
-    `https://fdnd-agency.directus.app/items/milledoni_products?limit=${limit}&offset=${offset}`
+    `https://fdnd-agency.directus.app/items/milledoni_products?limit=${limit}&offset=${offset}&sort=-id&meta=total_count,filter_count`
   );
 
-  const productResponse = await productData.json();
-  const products = productResponse.data
+  const productRes = await productData.json()
+  const products = productRes.data
+
+  // no clue how this works. thought it was supposed to show all entries (products)
+  // const totalCount = productResponse.meta.total_count;
+  // console.log(totalCount)
+
+  // function to dived all products in pages //
+  const allProducts = await fetch(
+    "https://fdnd-agency.directus.app/items/milledoni_products"
+  );
+
+  const allProductsRes = await allProducts.json()
+  const productCount = allProductsRes.data
+  console.log('number of products:', productCount.length)
+
+  const divideProduct = Math.ceil(productCount.length / limit)
+  console.log('number op pages', divideProduct)
+
+
+  //  Clean tags for HTML  //
 
   // with map you get very longs arrays for some reason. flatmap returns each item seperatly
   const allTags = products.flatMap((product) =>
     product.tags
-  //removal of commas and qoutes for clean text in HTML
-      ? product.tags
-          .split(",")
-          .map((tag) => tag.replace(/['\s]/g, " ").trim())
+      ? //removal of commas and qoutes for clean text in HTML
+        product.tags.split(",").map((tag) => tag.replace(/['\s]/g, " ").trim())
       : []
   );
 
@@ -38,6 +56,6 @@ export async function load({ url }) {
   return {
     product: products,
     tags: uniqueTags,
-    page
+    page,
   };
 }
