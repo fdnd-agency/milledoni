@@ -38,7 +38,7 @@
 
   <ul>
     {#each data.product as product}
-      <Product {product} />
+      <Product {product} load="lazy" />
     {/each}
   </ul>
 
