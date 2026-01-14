@@ -42,15 +42,20 @@
     {/each}
   </ul>
 
-  <!-- i have yet to find out how to split the products in pages for dynamic pagination -->
   <nav>
     <ul>  
-      <li><button onclick={() => goto('/?page=1')}>1</button></li>
-      <li><button onclick={() => goto('/?page=2')}>2</button></li>
-      <li><button onclick={() => goto('/?page=3')}>3</button></li>
+      {#each Array.from({ length: data.totalPages }, (_, i) => i + 1) as pageNum}
+        <li>
+          <button 
+            onclick={() => goto(`/?page=${pageNum}`)}
+            class:active={Number(data.page) === pageNum}
+          >
+            {pageNum}
+          </button>
+        </li>
+      {/each}
     </ul>
   </nav>
-
 </main>
 
 <style>
