@@ -10,6 +10,7 @@
   import { Filter } from "$lib";
 
 
+
 </script>
 
 <section class="filters">
@@ -28,7 +29,8 @@
 
   <Filter tags={data.tags} />
 
-  <p>{data.product.length} producten</p>
+  <p>{data.totalProducts} producten</p>
+  
 </section>
 
 <main>

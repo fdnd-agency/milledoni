@@ -24,7 +24,8 @@ export async function load({ url }) {
   const products = productRes.data;
   console.log(productRes)
 
-  // no clue how total_count in directus works. thought it was supposed to show all entries (products)
+ // using total count in directus to retrieve ALL products and dived them in pages
+ // total count is much better for performance then to just fetch all products since the querrys are read in the db itself and not after fetch
   const totalProducts = productRes.meta.total_count;
   const totalPages = Math.ceil(totalProducts / limit);
 
@@ -49,5 +50,7 @@ export async function load({ url }) {
     product: products,
     tags: uniqueTags,
     page,
+    totalProducts,
+    totalPages
   };
 }
