@@ -297,6 +297,7 @@
       .active{
         font-weight: bold;
         color: var(--accent-color );
+        cursor: default;
       }
 
     }
