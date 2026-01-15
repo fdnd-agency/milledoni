@@ -17,3 +17,23 @@
 		<img src={isLiked ? heartFilled : heartEmpty} alt="like" />
 	</button>
 </form>
+
+<style>
+	form {
+		display: flex;
+		justify-items: start;
+		align-items: var(--align-items-main);
+		gap: var(--spacing-xs);
+	}
+
+	button {
+		display: grid;
+		padding: 0;
+		border: none;
+		background: none;
+	}
+
+	button:hover {
+		scale: 1.1;
+	}
+</style>

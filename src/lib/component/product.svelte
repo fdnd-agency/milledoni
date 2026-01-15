@@ -73,25 +73,6 @@
 			img:hover {
 				scale: 1.02;
 			}
-
-			/* Like button */
-			form {
-				display: flex;
-				justify-items: start;
-				align-items: var(--align-items-main);
-				gap: var(--spacing-xs);
-			}
-
-			button {
-				display: grid;
-				padding: 0;
-				border: none;
-				background: none;
-			}
-
-			button:hover {
-				scale: 1.1;
-			}
 		}
 
 		/* @media (min-width: 880px) {
