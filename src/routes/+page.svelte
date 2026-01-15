@@ -43,17 +43,45 @@
   </ul>
 
   <nav>
-    <ul>  
-      {#each Array.from({ length: data.totalPages }, (_, i) => i + 1) as pageNum}
+    <ul class="pagination">
+
+      {#if Number(data.page) > 1}
         <li>
-          <button 
-            onclick={() => goto(`/?page=${pageNum}`)}
-            class:active={Number(data.page) === pageNum}
-          >
-            {pageNum}
+          <button onclick={() => goto('/?page=1')}>1</button>
+          <span>...</span>
+        </li>
+      {/if}
+
+      {#if Number(data.page) > 2}
+        <li>
+          <button onclick={() => goto(`/?page=${Number(data.page) - 1}`)}>
+            {Number(data.page) - 1}
           </button>
         </li>
-      {/each}
+      {/if}
+
+      <li>
+        <button disabled>
+          {data.page}
+        </button>
+      </li>
+
+      {#if Number(data.page) < data.totalPages - 1}
+        <li>
+          <button onclick={() => goto(`/?page=${Number(data.page) + 1}`)}>
+            {Number(data.page) + 1}
+          </button>
+        </li>
+      {/if}
+
+      {#if Number(data.page) < data.totalPages}
+        <li>
+          <span>...</span>
+          <button onclick={() => goto(`/?page=${data.totalPages}`)}>
+            {data.totalPages}
+          </button>
+        </li>
+      {/if}
     </ul>
   </nav>
 </main>
@@ -201,4 +229,28 @@
       margin: 0;
     }
   }
+
+  .pagination{
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+
+    li{
+
+
+      button{
+        border-radius: 5px;
+        border: 1px solid var(--accent-color-deep);
+        background-color: var(--accent-color);
+        color: var(--text-color-button);
+        padding: 0.5em 1em;
+
+        &:hover{
+          background-color: var(--text-color-button);
+          color: var(--accent-color-deep);
+        }
+      }
+    }
+  }
+
 </style>

@@ -3,8 +3,6 @@ export async function load({ url }) {
   // || 1 so that you will always start at the firstpage. Starting on the homepage with no page url will otherwise result in null
   const page = url.searchParams.get("page") || 1;
 
-  console.log(page);
-
   // number of products shown on the page
   const limit = 15;
 
