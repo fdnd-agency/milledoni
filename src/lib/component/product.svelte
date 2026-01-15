@@ -1,6 +1,8 @@
 <script>
-    let { product, likes } = $props();
 	import LikeButton from "$lib/component/LikeButton.svelte";
+
+	export let product;
+	export let likedProductIds = [];
 </script>
 
 <li>
@@ -11,7 +13,7 @@
 		<a class="bekijk-product-btn" href={`/${product.slug}`}>Bekijk product
 			<img loading="lazy" src="/images/right-arrow.svg" alt="" width="14" height="14" />
 		</a>
-		<LikeButton productId={product.id} likes={likes}/>
+		<LikeButton productId={product.id} {likedProductIds} />
 	</div>
 </li>
 
