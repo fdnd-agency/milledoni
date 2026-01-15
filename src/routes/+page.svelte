@@ -1,13 +1,13 @@
 <script>
   let { data } = $props();
+
+  const { products, tags } = data;
+
   import image from "$lib/assets/filter-bg.svg";
   import robotimg from "$lib/assets/chatbot.svg";
 
   import { Product } from "$lib";
   import { Filter } from "$lib";
-
-  const products = data.product;
-  const tags = data.tags;
 </script>
 
 <section class="filters">
@@ -34,7 +34,7 @@
 
   <ul>
     {#each products as product}
-      <Product {product} />
+      <Product {product} likedProductIds={data.likedProductIds} />
     {/each}
   </ul>
 </main>

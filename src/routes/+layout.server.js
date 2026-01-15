@@ -20,7 +20,7 @@ export async function load() {
   const uniqueTags = [...new Set(allTags)]; //no duplicate  filters with set()
 
   return {
-    product: products,
+    products: products,
     tags: uniqueTags,
   };
 }

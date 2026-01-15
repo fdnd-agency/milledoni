@@ -1,22 +1,19 @@
 <script>
+	// Prevents the webpage from doing a page reload after liking
+	import { enhance } from '$app/forms';
 	import heartFilled from "$lib/assets/heart-filled.svg";
 	import heartEmpty from "$lib/assets/heart-empty.svg";
 
-	export let likes = [];
+	export let likedProductIds = [];
 	export let productId;
 
-	const liked = likes.find(like => like.product === productId);
+	// Check whether this product is liked by the user
+	let isLiked = likedProductIds.includes(Number(productId));
 </script>
 
-{#if liked}
-	<button>
-        <img src={heartFilled} alt="liked" />
-    </button>
-{:else}
-	<form method="POST">
-		<input type="hidden" name="productId" value={productId} />
-		<button type="submit" formaction="?/like">
-            <img src={heartEmpty} alt="like" />
-        </button>
-	</form>
-{/if}
+<form method="POST" action="?/like" use:enhance={() => {isLiked = !isLiked;}}>
+	<input type="hidden" name="productId" value={productId} />
+	<button type="submit">
+		<img src={isLiked ? heartFilled : heartEmpty} alt="like" />
+	</button>
+</form>
