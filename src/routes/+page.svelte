@@ -48,9 +48,12 @@
       {#if Number(data.page) > 1}
         <li>
           <button onclick={() => goto('/?page=1')}>1</button>
-          <span>...</span>
         </li>
+
+        <li><span aria-hidden="true">...</span></li>
       {/if}
+
+      
 
       {#if Number(data.page) > 2}
         <li>
@@ -61,8 +64,8 @@
       {/if}
 
       <li>
-        <button disabled>
-          {data.page}
+        <button class="active" disabled>
+          {data.page} 
         </button>
       </li>
 
@@ -74,9 +77,11 @@
         </li>
       {/if}
 
+
       {#if Number(data.page) < data.totalPages}
+        <li><span aria-hidden="true">...</span></li>
+
         <li>
-          <span>...</span>
           <button onclick={() => goto(`/?page=${data.totalPages}`)}>
             {data.totalPages}
           </button>
@@ -237,20 +242,32 @@
 
     li{
 
+      span{
+        font-size: 1.5em;
+        color: var(--accent-color);
+      }
 
       button{
+        padding: 0.5em 1em;
         border-radius: 5px;
-        border: 1px solid var(--accent-color-deep);
+        border: 1px solid;
+        transition: all 0.2s ease-in-out;
+
+        &:not(.active){
         background-color: var(--accent-color);
         color: var(--text-color-button);
-        padding: 0.5em 1em;
+        border-color: var(--accent-color-deep);
+        
 
         &:hover{
           background-color: var(--text-color-button);
           color: var(--accent-color-deep);
+          transform: scale(1.15);
         }
       }
     }
+      }
+      
   }
 
 </style>
