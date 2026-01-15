@@ -291,7 +291,6 @@ select {
   background-color: var(--accent-color);
   padding-block: 1em;
   padding-inline: 3em;
-  cursor: pointer;
   color: var(--text-color-button);
 
   &:hover {

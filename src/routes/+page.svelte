@@ -42,53 +42,73 @@
     {/each}
   </ul>
 
-  <nav>
-    <ul class="pagination">
-
-      {#if Number(data.page) > 1}
-        <li>
-          <button onclick={() => goto('/?page=1')}>1</button>
-        </li>
-
-        <li><span aria-hidden="true">...</span></li>
-      {/if}
-
-      
-
-      {#if Number(data.page) > 2}
-        <li>
-          <button onclick={() => goto(`/?page=${Number(data.page) - 1}`)}>
-            {Number(data.page) - 1}
-          </button>
-        </li>
-      {/if}
-
+<nav>
+  <ul class="pagination">
+  
+    {#if Number(data.page) > 1}
       <li>
-        <button class="active" disabled>
-          {data.page} 
+        <button class="navigate-btn" onclick={() => goto(`/?page=${Number(data.page) - 1}`)} aria-label="Previous page">
+          &lt;
         </button>
       </li>
+    {/if}
 
-      {#if Number(data.page) < data.totalPages - 1}
-        <li>
-          <button onclick={() => goto(`/?page=${Number(data.page) + 1}`)}>
-            {Number(data.page) + 1}
-          </button>
-        </li>
-      {/if}
+    
+    {#if Number(data.page) > 1}
+      <li>
+        <button onclick={() => goto('/?page=1')}>1</button>
+      </li>
+
+      <span aria-hidden="true">...</span>
+    {/if}
 
 
-      {#if Number(data.page) < data.totalPages}
-        <li><span aria-hidden="true">...</span></li>
+    {#if Number(data.page) > 2}
+      <li>
+        <button onclick={() => goto(`/?page=${Number(data.page) - 1}`)}>
+          {Number(data.page) - 1}
+        </button>
+      </li>
+    {/if}
 
-        <li>
-          <button onclick={() => goto(`/?page=${data.totalPages}`)}>
-            {data.totalPages}
-          </button>
-        </li>
-      {/if}
-    </ul>
-  </nav>
+
+    <li>
+      <button class="active" disabled>
+        {data.page} 
+      </button>
+    </li>
+
+
+    {#if Number(data.page) < data.totalPages - 1}
+      <li>
+        <button onclick={() => goto(`/?page=${Number(data.page) + 1}`)}>
+          {Number(data.page) + 1}
+        </button>
+      </li>
+    {/if}
+
+
+    {#if Number(data.page) < data.totalPages}
+      <span aria-hidden="true">...</span>
+
+      <li>
+        <button onclick={() => goto(`/?page=${data.totalPages}`)}>
+          {data.totalPages}
+        </button>
+      </li>
+    {/if}
+
+
+    {#if Number(data.page) < data.totalPages}
+      <li>
+        <button class="navigate-btn" onclick={() => goto(`/?page=${Number(data.page) + 1}`)} aria-label="Next page">
+          &gt;
+        </button>
+      </li>
+    {/if}
+  </ul>
+</nav>
+
 </main>
 
 <style>
@@ -237,36 +257,49 @@
 
   .pagination{
     display: flex;
-    gap: 0.5em;
+    gap: 1.5em;
     justify-content: center;
 
-    li{
+    &:not(li){
+      align-items: end;
+    }
 
+    li{
       span{
         font-size: 1.5em;
-        color: var(--accent-color);
+        cursor: inherit;
+      }
+
+      .navigate-btn{
+        padding: 0.5em 1em;
+        border: 1px solid var(--text-color);
+        border-radius: 5px;
+
+        &:hover{
+          background-color: var(--neutral-color-background-cards);
+        }
+        
       }
 
       button{
-        padding: 0.5em 1em;
-        border-radius: 5px;
-        border: 1px solid;
+        padding: 0.5em;
+        border: none;
         transition: all 0.2s ease-in-out;
+        background-color: transparent;
 
-        &:not(.active){
-        background-color: var(--accent-color);
-        color: var(--text-color-button);
-        border-color: var(--accent-color-deep);
-        
 
-        &:hover{
-          background-color: var(--text-color-button);
-          color: var(--accent-color-deep);
+        &:hover:not(.active){
           transform: scale(1.15);
         }
+      
       }
+
+      .active{
+        font-weight: bold;
+        color: var(--accent-color );
+      }
+
     }
-      }
       
   }
 
