@@ -1,8 +1,8 @@
 <script>
 	// Prevents the webpage from doing a page reload after liking
 	import { enhance } from '$app/forms';
-	import heartFilled from "$lib/assets/heart-filled.svg";
-	import heartEmpty from "$lib/assets/heart-empty.svg";
+	import heartFilled from "$lib/assets/liked-icon.svg";
+	import heartEmpty from "$lib/assets/unliked-icon.svg";
 
 	export let likedProductIds = [];
 	export let productId;
