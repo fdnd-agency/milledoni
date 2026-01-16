@@ -66,6 +66,12 @@
   				word-wrap: break-word;
 			}
 
+			div {
+				display: flex;
+				flex-direction: column;
+				gap: var(--spacing-s);
+			}
+
 			img {
 				border-radius: var(--rounding-m);
 			}
