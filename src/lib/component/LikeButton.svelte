@@ -1,8 +1,8 @@
 <script>
 	// Prevents the webpage from doing a page reload after liking
 	import { enhance } from '$app/forms';
-	import heartFilled from "$lib/assets/liked-icon.svg";
-	import heartEmpty from "$lib/assets/unliked-icon.svg";
+	import LikedIcon from "$lib/assets/liked-icon.svg";
+	import UnlikedIcon from "$lib/assets/unliked-icon.svg";
 
 	export let likedProductIds = [];
 	export let productId;
@@ -14,7 +14,7 @@
 <form method="POST" action="?/like" use:enhance={() => {isLiked = !isLiked;}}>
 	<input type="hidden" name="productId" value={productId} />
 	<button type="submit">
-		<img src={isLiked ? heartFilled : heartEmpty} alt="like" />
+		<img src={isLiked ? LikedIcon : UnlikedIcon} alt="like" />
 	</button>
 </form>
 
