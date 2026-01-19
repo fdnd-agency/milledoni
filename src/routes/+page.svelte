@@ -1,13 +1,16 @@
 <script>
   let { data } = $props();
+
+  import { goto } from '$app/navigation';
+
   import image from "$lib/assets/filter-bg.svg";
   import robotimg from "$lib/assets/chatbot.svg";
 
   import { Product } from "$lib";
   import { Filter } from "$lib";
 
-  const products = data.product;
-  const tags = data.tags;
+
+
 </script>
 
 <section class="filters">
@@ -24,19 +27,88 @@
     </button>
   </form>
 
-  <Filter {tags} />
+  <Filter tags={data.tags} />
 
-  <p>1.000+ producten</p>
+  <p>{data.totalProducts} producten</p>
+  
 </section>
 
 <main>
   <h2>Producten</h2>
 
   <ul>
-    {#each products as product}
-      <Product {product} />
+    {#each data.product as product}
+      <Product {product} load="lazy" />
     {/each}
   </ul>
+
+<nav>
+  <ul class="pagination">
+  
+    {#if Number(data.page) > 1}
+      <li>
+        <button class="navigate-btn" onclick={() => goto(`/?page=${Number(data.page) - 1}`)} aria-label="Previous page">
+          &lt;
+        </button>
+      </li>
+    {/if}
+
+    
+    {#if Number(data.page) > 1}
+      <li>
+        <button onclick={() => goto('/?page=1')}>1</button>
+      </li>
+
+      <span aria-hidden="true">...</span>
+    {/if}
+
+
+    {#if Number(data.page) > 2}
+      <li>
+        <button onclick={() => goto(`/?page=${Number(data.page) - 1}`)}>
+          {Number(data.page) - 1}
+        </button>
+      </li>
+    {/if}
+
+
+    <li>
+      <button class="active" disabled>
+        {data.page} 
+      </button>
+    </li>
+
+
+    {#if Number(data.page) < data.totalPages - 1}
+      <li>
+        <button onclick={() => goto(`/?page=${Number(data.page) + 1}`)}>
+          {Number(data.page) + 1}
+        </button>
+      </li>
+    {/if}
+
+
+    {#if Number(data.page) < data.totalPages}
+      <span aria-hidden="true">...</span>
+
+      <li>
+        <button onclick={() => goto(`/?page=${data.totalPages}`)}>
+          {data.totalPages}
+        </button>
+      </li>
+    {/if}
+
+
+    {#if Number(data.page) < data.totalPages}
+      <li>
+        <button class="navigate-btn" onclick={() => goto(`/?page=${Number(data.page) + 1}`)} aria-label="Next page">
+          &gt;
+        </button>
+      </li>
+    {/if}
+  </ul>
+</nav>
+
 </main>
 
 <style>
@@ -182,4 +254,54 @@
       margin: 0;
     }
   }
+
+  .pagination{
+    display: flex;
+    gap: 1.5em;
+    justify-content: center;
+
+    &:not(li){
+      align-items: end;
+    }
+
+    li{
+      span{
+        font-size: 1.5em;
+        cursor: inherit;
+      }
+
+      .navigate-btn{
+        padding: 0.5em 1em;
+        border: 1px solid var(--text-color);
+        border-radius: 5px;
+
+        &:hover{
+          background-color: var(--neutral-color-background-cards);
+        }
+        
+      }
+
+      button{
+        padding: 0.5em;
+        border: none;
+        transition: all 0.2s ease-in-out;
+        background-color: transparent;
+
+
+        &:hover:not(.active){
+          transform: scale(1.15);
+        }
+      
+      }
+
+      .active{
+        font-weight: bold;
+        color: var(--accent-color );
+        cursor: default;
+      }
+
+    }
+      
+  }
+
 </style>
