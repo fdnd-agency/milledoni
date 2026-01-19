@@ -5,12 +5,12 @@
 
 <div class="logo-container">
     <a href="/" class="logo-link">
-        <div class="symbol-logo">
+        <span class="symbol-logo">
             <img src={symbolLogo} alt="home" />
-        </div> 
-        <div class="wordmark">
+        </span> 
+        <span class="wordmark">
             <img src={wordmarkLogo} alt="home" />
-        </div>             
+        </span>             
     </a>
 </div>
 
