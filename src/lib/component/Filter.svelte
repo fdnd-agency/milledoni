@@ -107,118 +107,116 @@
   
 
   :global{
+    .form-wrapper {
+      display: none;
+      opacity: 0;
+     
+      width: 90%;
+      position: relative;
+      padding: 1em;
+      background-color: var(--accent-color);
+      border-radius: 15px;
+      transition: opacity .3s ease, display .3s ease allow-discrete;
+      z-index: 2;
+  
+      @media screen and (min-width: 900px) {
+        width: 60%;
+        padding: 2em;
+      }
+  
+      &.open{
+        opacity: 1;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+  
+    }
+  
+    @starting-style{
+      .form-wrapper.open{
+        opacity: 0; 
+      }
+    }
+  
+      /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style */
+
+  
+    .form-wrapper form {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-evenly;
+  
+      gap: 1.5em;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+  
+      /* relative for z-index */
+      position: relative;
+      z-index: 2;
+  
+      padding: 1em;
+      border: 5px solid var(--accent-color);
+      border-radius: 15px;
+      background-color: var(--neutral-color-background-cards);
+  
+      @media screen and (min-width: 970px) {
+        flex-direction: row;
+      }
+    }
+  
+    fieldset {
+      display: flex;
+      flex-direction: column;
+  
+      flex: 1 1 0;
+      gap: 0.5em;
+      padding: 0 0 1em 0;
+      margin: 0;
+  
+      border: none;
+      border-bottom: 2px solid #20a687;
+  
+      @media (min-width: 970px) {
+        border: none;
+      }
+    }
+  
+    /* This will be styled in general style.css */
+    details {
+      font-family: "Parkisans";
+    }
+  
+    summary {
+      color: #20a687;
+      font-family: "Parkisans";
+      font-weight: bold;
+    }
+  
+    select {
+      font-family: inherit;
+      width: 100%;
+      margin: 0.3rem 0;
+      border-radius: 5px;
+      border: 2px solid lightgray;
+      color: #1d1d1b;
+      background-color: #fff;
+      padding: 5px;
+    }
+  
+    .svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      z-index: 1;
+    }
     
   }
 
-  .form-wrapper {
-    display: none;
-    opacity: 0;
-   
-    width: 90%;
-    position: relative;
-    padding: 1em;
-    background-color: var(--accent-color);
-    border-radius: 15px;
-    transition: opacity .3s ease, display .3s ease allow-discrete;
-    z-index: 2;
-
-    @media screen and (min-width: 900px) {
-      width: 60%;
-      padding: 2em;
-    }
-
-    &.open{
-      opacity: 1;
-      
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-  }
-
-  @starting-style{
-    .form-wrapper.open{
-      opacity: 0; 
-    }
-  }
-
-    /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style */
-
-
-  
-
-  form {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-evenly;
-
-    gap: 1.5em;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-
-    /* relative for z-index */
-    position: relative;
-    z-index: 2;
-
-    padding: 1em;
-    border: 5px solid var(--accent-color);
-    border-radius: 15px;
-    background-color: var(--neutral-color-background-cards);
-
-    @media screen and (min-width: 970px) {
-      flex-direction: row;
-    }
-  }
-
-  fieldset {
-    display: flex;
-    flex-direction: column;
-
-    flex: 1 1 0;
-    gap: 0.5em;
-    padding: 0 0 1em 0;
-    margin: 0;
-
-    border: none;
-    border-bottom: 2px solid #20a687;
-
-    @media (min-width: 970px) {
-      border: none;
-    }
-  }
-
-  /* This will be styled in general style.css */
-  details {
-    font-family: "Parkisans";
-  }
-
-  summary {
-    color: #20a687;
-    font-family: "Parkisans";
-    font-weight: bold;
-  }
-
-  select {
-    font-family: inherit;
-    width: 100%;
-    margin: 0.3rem 0;
-    border-radius: 5px;
-    border: 2px solid lightgray;
-    color: #1d1d1b;
-    background-color: #fff;
-    padding: 5px;
-  }
-
-  .svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
-    z-index: 1;
-  }
 </style>
