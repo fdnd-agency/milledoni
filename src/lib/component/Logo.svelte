@@ -18,31 +18,31 @@
     div {
         container-type: inline-size;
         width: 50%;
-    }
 
-    a {
-        display: inline-flex;
-    }
-    
-    .symbol-logo {
-        display: block;
-    }
+        & a {
+            display: inline-flex;
 
-    .wordmark-logo {
-        display: none;
-    }
+            & .symbol-logo {
+                display: block;
+            }
 
-    img {
-        height: 3.5rem;
-    }
-    
-    @container (width > 350px) {
-        .symbol-logo {
-            display: none;
+            & .wordmark-logo {
+                display: none;
+            }
+
+            @container (width > 350px) {
+                .symbol-logo {
+                    display: none;
+                }
+        
+                .wordmark-logo {
+                    display: block;
+                }
+            }
+
+            & img {
+                height: 3.5rem;
+            }
+            }
         }
-    
-        .wordmark-logo {
-            display: block;
-        }
-    }
     </style>
