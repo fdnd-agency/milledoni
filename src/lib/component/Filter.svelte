@@ -4,7 +4,13 @@
   import image from "$lib/assets/filter-bg.svg";
 
   onMount(() => {
+    const filterButton = document.querySelector(".filter-button");
     const detailsElements = document.querySelectorAll("details"); // get details
+    const form = document.querySelector(".form-wrapper")
+
+    filterButton.addEventListener("click", () => {
+      form.classList.toggle("open");
+    });
 
     const toggleDetails = () => {
       detailsElements.forEach((detail) => {
@@ -26,10 +32,7 @@
   });
 </script>
 
-<div class="toggle-filter button">
-  <input class="checker" type="checkbox" id="filter-toggle" value="Filter" checked/>
-  <label for="filter-toggle">Filter</label>
-</div>
+<button class="button filter-button">Filter</button>
 
 <div class="form-wrapper">
   <form>
@@ -98,72 +101,54 @@
 </div>
 
 <style>
-  /* This CSS doesn't yet include variables since it is based of older dev branch -> will be included very soon!! */
+ /* https://dev.to/kevinbism/css-animation-with-display-none-4pan */
 
   /* adding this to general css */
+  
 
-  .toggle-filter {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  input[type="checkbox"] {
-    opacity: 0;
-    appearance: none;
-    border: none;
-    position: absolute;
-
-    inset: 0;
-    width: 100%;
-    height: 100%;
-
-    cursor: pointer;
-    margin: 0;
-  }
-
-  /*if its not broken, don't fix it!!*/
-   input[type="checkbox"]:focus + label {
-    outline: 2px solid var(--primary-color-hover); 
-    outline-offset: 2px;
-  }
-
-  .toggle-filter:has(.checker:checked) + .form-wrapper {
-    display: none;
-    margin: 0;
-    padding: 0;
-    height: 0;
-    height: 0;
-    opacity: 0;
-
-    form {
-      opacity: 0;
-      height: 0;
-    }
+  :global{
+    
   }
 
   .form-wrapper {
-    display: flex;
-    opacity: 1;
-    align-items: center;
-    justify-content: center;
+    display: none;
+    opacity: 0;
+   
     width: 90%;
     position: relative;
     padding: 1em;
     background-color: var(--accent-color);
     border-radius: 15px;
-    transition: all 0.3s ease-out allow-discrete;
+    transition: opacity .3s ease, display .3s ease allow-discrete;
     z-index: 2;
 
-  @media screen and (min-width: 900px) {
+    @media screen and (min-width: 900px) {
       width: 60%;
       padding: 2em;
     }
+
+    &.open{
+      opacity: 1;
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
   }
 
+  @starting-style{
+    .form-wrapper.open{
+      opacity: 0; 
+    }
+  }
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style */
+
+
+  
+
   form {
-    opacity: 1;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-evenly;
@@ -215,21 +200,6 @@
     font-weight: bold;
   }
 
-  /* will look into this further */
-
-  /* summary:first-of-type {
-    list-style-type: none;
-  }
-
-  details summary::after {
-    content: "▾"; 
-    transition: transform 0.2s ease;
-  }
-
-  details[open] summary::after {
-    transform: rotate(180deg);
-  } */
-
   select {
     font-family: inherit;
     width: 100%;
@@ -251,5 +221,4 @@
     border-radius: 15px;
     z-index: 1;
   }
-
 </style>
