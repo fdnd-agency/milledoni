@@ -8,6 +8,10 @@
     const detailsElements = document.querySelectorAll("details"); // get details
     const form = document.querySelector(".form-wrapper")
 
+    // standard form close when js is supported/enabled
+
+    form.classList.add("enhance")
+
     filterButton.addEventListener("click", () => {
       form.classList.toggle("open");
     });
@@ -101,15 +105,12 @@
 </div>
 
 <style>
- /* https://dev.to/kevinbism/css-animation-with-display-none-4pan */
-
-  /* adding this to general css */
-  
+ /* https://dev.to/kevinbism/css-animation-with-display-none-4pan */  
 
   :global{
     .form-wrapper {
       display: none;
-      opacity: 0;
+      opacity: 1;
      
       width: 90%;
       position: relative;
@@ -139,6 +140,9 @@
         opacity: 0; 
       }
     }
+  
+  }
+  
   
       /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style */
 
@@ -177,7 +181,7 @@
       margin: 0;
   
       border: none;
-      border-bottom: 2px solid #20a687;
+      border-bottom: 2px solid var(--accent-color);
   
       @media (min-width: 970px) {
         border: none;
@@ -190,7 +194,7 @@
     }
   
     summary {
-      color: #20a687;
+      color: var(--accent-color);
       font-family: "Parkisans";
       font-weight: bold;
     }
@@ -200,9 +204,9 @@
       width: 100%;
       margin: 0.3rem 0;
       border-radius: 5px;
-      border: 2px solid lightgray;
-      color: #1d1d1b;
-      background-color: #fff;
+      border: 2px solid var(--neutral-color-background-cards);
+      color: var(--text-color);
+      background-color: var(--neutral-color-background);
       padding: 5px;
     }
   
@@ -217,6 +221,6 @@
       z-index: 1;
     }
     
-  }
+  
 
 </style>
