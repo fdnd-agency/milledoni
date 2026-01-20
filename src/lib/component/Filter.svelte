@@ -11,10 +11,13 @@
     // enhachment to close filter by standard when js is enabled
     form.classList.remove("initial-hidden");
 
+    // open filter on click 
     filterButton.addEventListener("click", () => {
       form.classList.toggle("open");
     });
 
+
+    // details closed on mobile
     const toggleDetails = () => {
       detailsElements.forEach((detail) => {
         if (window.innerWidth >= 970) {
@@ -117,7 +120,7 @@
       justify-content: center;
       opacity: 1;
 
-      width: 90%;
+      width: 85%;
       position: relative;
       padding: 1em;
       background-color: var(--accent-color);
@@ -193,10 +196,6 @@
     }
   }
 
-  details {
-    font-family: "Parkisans";
-  }
-
   summary {
     color: var(--accent-color);
     font-family: "Parkisans";
@@ -224,4 +223,5 @@
     border-radius: 15px;
     z-index: 1;
   }
+
 </style>
