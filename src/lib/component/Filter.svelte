@@ -114,6 +114,16 @@
 
 <style>
   :global {
+    /* Hide filter button by default (no JS) */
+    .filter-button {
+      display: none;
+    }
+
+    /* Show filter button only when JS is enabled */
+    .js-enabled .filter-button {
+      display: block;
+    }
+
     .form-wrapper {
       display: flex;
       align-items: center;
