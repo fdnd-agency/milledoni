@@ -4,15 +4,26 @@
   import image from "$lib/assets/filter-bg.svg";
 
   onMount(() => {
-    const detailsElements = document.querySelectorAll("details"); // get details
+    const filterButton = document.querySelector(".filter-button");
+    const detailsElements = document.querySelectorAll("details");
+    const form = document.querySelector(".form-wrapper");
 
+    // enhachment to close filter by standard when js is enabled
+    form.classList.remove("initial-hidden");
+
+    // open filter on click 
+    filterButton.addEventListener("click", () => {
+      form.classList.toggle("open");
+    });
+
+
+    // details closed on mobile
     const toggleDetails = () => {
       detailsElements.forEach((detail) => {
         if (window.innerWidth >= 970) {
-          // set width on which the open attribute will be changed
           detail.setAttribute("open", "");
         } else {
-          detail.removeAttribute("open"); // close details standard
+          detail.removeAttribute("open");
         }
       });
     };
@@ -26,12 +37,16 @@
   });
 </script>
 
-<div class="toggle-filter button">
-  <input class="checker" type="checkbox" id="filter-toggle" value="Filter" checked/>
-  <label for="filter-toggle">Filter</label>
-</div>
+<svelte:head>
+  <script>
+    // prevents cls by turning the filter of on loading before css loads in
+    document.documentElement.classList.add("js-enabled");
+  </script>
+</svelte:head>
 
-<div class="form-wrapper">
+<button class="button filter-button">Filter</button>
+
+<div class="form-wrapper initial-hidden">
   <form>
     <fieldset>
       <details open>
@@ -43,7 +58,7 @@
           {/each}
         </select>
 
-        <select name="" id="tag slect">
+        <select name="">
           <option value="">Test</option>
         </select>
       </details>
@@ -52,18 +67,18 @@
     <fieldset>
       <details open>
         <summary>Deze persoon is</summary>
-        <select id="tag-select">
+        <select>
           <option value="">Alle tags</option>
           {#each tags as tag}
             <option value={tag}>{tag}</option>
           {/each}
         </select>
 
-        <select name="" id="tag slect">
+        <select name="">
           <option value="">Test</option>
         </select>
 
-        <select name="" id="tag slect">
+        <select name="" >
           <option value="">Test</option>
         </select>
       </details>
@@ -72,22 +87,22 @@
     <fieldset>
       <details open>
         <summary>Stijl & voorkeuren</summary>
-        <select id="tag-select">
+        <select>
           <option value="">Alle tags</option>
           {#each tags as tag}
             <option value={tag}>{tag}</option>
           {/each}
         </select>
 
-        <select name="" id="tag slect">
+        <select name="" >
           <option value="">Test</option>
         </select>
 
-        <select name="" id="tag slect">
+        <select name="" >
           <option value="">Test</option>
         </select>
 
-        <select name="" id="tag slect">
+        <select name="">
           <option value="">Test</option>
         </select>
       </details>
@@ -98,72 +113,60 @@
 </div>
 
 <style>
-  /* This CSS doesn't yet include variables since it is based of older dev branch -> will be included very soon!! */
+  :global {
+    /* Hide filter button by default (no JS) */
+    .filter-button {
+      display: none;
+    }
 
-  /* adding this to general css */
+    /* Show filter button only when JS is enabled */
+    .js-enabled .filter-button {
+      display: block;
+    }
 
-  .toggle-filter {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
+    .form-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
 
-  input[type="checkbox"] {
-    opacity: 0;
-    appearance: none;
-    border: none;
-    position: absolute;
+      width: 85%;
+      position: relative;
+      padding: 1em;
+      background-color: var(--accent-color);
+      border-radius: 15px;
+      z-index: 2;
 
-    inset: 0;
-    width: 100%;
-    height: 100%;
+      @media screen and (min-width: 900px) {
+        width: 60%;
+        padding: 2em;
+      }
+    }
+    
+    .js-enabled .form-wrapper.initial-hidden {
+      display: none;
+    }
 
-    cursor: pointer;
-    margin: 0;
-  }
+    .js-enabled .form-wrapper:not(.initial-hidden) {
+      display: none;
+      transition:opacity 0.3s ease, display 0.3s ease allow-discrete;
+    }
 
-  /*if its not broken, don't fix it!!*/
-   input[type="checkbox"]:focus + label {
-    outline: 2px solid var(--primary-color-hover); 
-    outline-offset: 2px;
-  }
+    .js-enabled .form-wrapper.open {
+      opacity: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  .toggle-filter:has(.checker:checked) + .form-wrapper {
-    display: none;
-    margin: 0;
-    padding: 0;
-    height: 0;
-    height: 0;
-    opacity: 0;
-
-    form {
-      opacity: 0;
-      height: 0;
+    @starting-style {
+      .js-enabled .form-wrapper.open {
+        opacity: 0;
+      }
     }
   }
 
-  .form-wrapper {
-    display: flex;
-    opacity: 1;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    position: relative;
-    padding: 1em;
-    background-color: var(--accent-color);
-    border-radius: 15px;
-    transition: all 0.3s ease-out allow-discrete;
-    z-index: 2;
-
-  @media screen and (min-width: 900px) {
-      width: 60%;
-      padding: 2em;
-    }
-  }
-
-  form {
-    opacity: 1;
+  .form-wrapper form {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-evenly;
@@ -173,7 +176,6 @@
     height: 100%;
     margin: auto;
 
-    /* relative for z-index */
     position: relative;
     z-index: 2;
 
@@ -197,47 +199,27 @@
     margin: 0;
 
     border: none;
-    border-bottom: 2px solid #20a687;
+    border-bottom: 2px solid var(--accent-color);
 
     @media (min-width: 970px) {
       border: none;
     }
   }
 
-  /* This will be styled in general style.css */
-  details {
-    font-family: "Parkisans";
-  }
-
   summary {
-    color: #20a687;
+    color: var(--accent-color);
     font-family: "Parkisans";
     font-weight: bold;
   }
-
-  /* will look into this further */
-
-  /* summary:first-of-type {
-    list-style-type: none;
-  }
-
-  details summary::after {
-    content: "▾"; 
-    transition: transform 0.2s ease;
-  }
-
-  details[open] summary::after {
-    transform: rotate(180deg);
-  } */
 
   select {
     font-family: inherit;
     width: 100%;
     margin: 0.3rem 0;
     border-radius: 5px;
-    border: 2px solid lightgray;
-    color: #1d1d1b;
-    background-color: #fff;
+    border: 2px solid var(--neutral-color-background-cards);
+    color: var(--text-color);
+    background-color: var(--neutral-color-background);
     padding: 5px;
   }
 
