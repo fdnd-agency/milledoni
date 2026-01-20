@@ -40,26 +40,25 @@ export const actions = {
 	like: async ({ request, fetch }) => {
 		const data = await request.formData();
 		const productId = data.get('productId');
-
 		const userId = 6; // temporary hardcoded id
 
-		// Build a filtered URL to check if the user already liked this product (limit to 1 result)
-		const toggleLikeUrl = createUrl(
-			'milledoni_users_milledoni_products',
-			{
+		try {
+			// Build a filtered URL to check if the user already liked this product (limit to 1 result)
+			const toggleLikeUrl = createUrl('milledoni_users_milledoni_products', {
 				'filter[milledoni_users_id][id][_eq]': userId,
 				'filter[milledoni_products_id][id][_eq]': productId,
 				limit: 1,
+			});
+			const existingLikeResponse = await fetch(toggleLikeUrl);
+			const existingLike = await existingLikeResponse.json();
+
+			if (existingLike.data.length > 0) {
+				console.log('[LIKE] Already exists for product', productId);
+				return { success: true, alreadyLiked: true };
 			}
-		);
 
-		const existingLikeResponse = await fetch(toggleLikeUrl);
-		const existingLike = await existingLikeResponse.json();
-
-		// Create a like by adding the product id to the array with all liked products connected to the user id  
-		await fetch(
-			'https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products',
-			{
+			// Create a like by adding the product id to the array with all liked products connected to the user id  
+			await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
@@ -68,6 +67,59 @@ export const actions = {
 				})
 			});
 
-		return { success: true };
+			console.log('[LIKE] Created for product', productId);
+			return { success: true };
+		} 
+		
+		catch (error) {
+			console.error('Error:', error);
+			return { success: false, error: error.message };
+		}
+	},
+
+	unlike: async ({ request, fetch }) => {
+		const data = await request.formData();
+		const productId = data.get('productId');
+		const userId = 6;
+
+		try {
+			// Build a filtered URL to check if the user already liked this product (limit to 1 result)
+			const toggleLikeUrl = createUrl('milledoni_users_milledoni_products', {
+				'filter[milledoni_users_id][_eq]': userId,
+				'filter[milledoni_products_id][_eq]': productId,
+				limit: 1
+			});
+
+			const response = await fetch(toggleLikeUrl);
+			const result = await response.json();
+
+			// If the like excists, delete it
+			if (result.data.length > 0) {
+				// GET the liked products id 
+				const likeId = result.data[0].id;
+				
+				console.log('The liked id has been found:', likeId);
+
+				// Delete the liked product id
+				const deleteUrl = `https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/${likeId}`;
+				
+				await fetch(deleteUrl, {
+					method: 'DELETE'
+				});
+
+				console.log('[UNLIKE] The like has succesfully been removed from the product', productId);
+				return { success: true };
+
+				} 
+			else {
+				console.log('Like has not been found');
+				return { success: false, message: 'Like has not been found' };
+			}
+		}
+		
+		catch (error) {
+			console.error('Error: could not remove like:', error);
+			return { success: false, error: error.message };
+		}
 	}
 };
