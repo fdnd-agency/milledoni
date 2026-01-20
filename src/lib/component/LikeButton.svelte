@@ -4,11 +4,11 @@
 	import LikedIcon from "$lib/assets/liked-icon.svg";
 	import UnlikedIcon from "$lib/assets/unliked-icon.svg";
 
-	export let likedProductIds = [];
-	export let productId;
+	let { likedProductIds = [], productId } = $props();
 
+	// Rerun this line of code once interacted
 	// Check whether this product is liked by the user
-	let isLiked = likedProductIds.includes(Number(productId));
+	let isLiked = $derived(likedProductIds.includes(Number(productId)));
 </script>
 
 {#if isLiked}
