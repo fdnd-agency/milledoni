@@ -11,12 +11,21 @@
 	let isLiked = likedProductIds.includes(Number(productId));
 </script>
 
-<form method="POST" action="?/like" use:enhance={() => {isLiked = !isLiked;}}>
-	<input type="hidden" name="productId" value={productId} />
-	<button type="submit">
-		<img src={isLiked ? LikedIcon : UnlikedIcon} alt="like" />
-	</button>
-</form>
+{#if isLiked}
+	<form method="POST" action="?/unlike" use:enhance>
+		<input type="hidden" name="productId" value={productId} />
+		<button type="submit">
+			<img src={LikedIcon} alt="unlike" />
+		</button>
+	</form>
+{:else}
+	<form method="POST" action="?/like" use:enhance>
+		<input type="hidden" name="productId" value={productId} />
+		<button type="submit">
+			<img src={UnlikedIcon} alt="like" />
+		</button>
+	</form>
+{/if}
 
 <style>
 	form {
