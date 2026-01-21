@@ -79,11 +79,7 @@
         -webkit-transition: all 0.3s ease;
 
         @media (min-width: 768px) {
-            max-width: 50vw;
-        }
-
-        @media (min-width: 1024px) {
-            max-width: 40vw;
+            max-width: 25vw;
         }
     }
 
