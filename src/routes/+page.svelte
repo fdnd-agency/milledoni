@@ -2,15 +2,13 @@
   let { data } = $props();
 
   import { goto } from '$app/navigation';
+  const { products, tags } = data;
 
   import image from "$lib/assets/filter-bg.svg";
   import robotimg from "$lib/assets/chatbot.svg";
 
   import { Product } from "$lib";
   import { Filter } from "$lib";
-
-
-
 </script>
 
 <section class="filters">
@@ -37,8 +35,8 @@
   <h2>Producten</h2>
 
   <ul>
-    {#each data.product as product}
-      <Product {product} load="lazy" />
+    {#each products as product}
+      <Product {product} likedProductIds={data.likedProductIds} />
     {/each}
   </ul>
 

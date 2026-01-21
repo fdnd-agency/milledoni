@@ -192,7 +192,8 @@ body {
 html,
 body,
 select,
-option {
+option,
+button {
   font-family: var(--font-family);
 }
 

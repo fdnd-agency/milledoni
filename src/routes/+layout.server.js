@@ -45,7 +45,7 @@ export async function load({ url }) {
   const uniqueTags = [...new Set(allTags)];
 
   return {
-    product: products,
+    products: products,
     tags: uniqueTags,
     page,
     totalProducts,
