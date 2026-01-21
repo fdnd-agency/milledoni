@@ -1,4 +1,5 @@
 <script>
+	// product renaming causes merge conflicts
 	import LikeButton from "$lib/component/LikeButton.svelte";
 
 	export let product;
