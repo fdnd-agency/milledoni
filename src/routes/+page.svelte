@@ -2,7 +2,6 @@
   let { data } = $props();
 
   import { goto } from '$app/navigation';
-  const { products, tags } = data;
 
   import image from "$lib/assets/filter-bg.svg";
   import robotimg from "$lib/assets/chatbot.svg";
@@ -35,7 +34,7 @@
   <h2>Producten</h2>
 
   <ul>
-    {#each products as product}
+    {#each data.products as product}
       <Product {product} likedProductIds={data.likedProductIds} />
     {/each}
   </ul>
