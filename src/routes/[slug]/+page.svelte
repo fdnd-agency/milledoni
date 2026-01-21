@@ -4,6 +4,9 @@
   import { Product } from "$lib";
   import { Filter } from "$lib";
   import { onMount } from "svelte";
+
+  import cheeseImg from "$lib/assets/kaas.jpg";
+  import starImg from "$lib/assets/star.jpg";
   
   const product = data.product;
   const cleanTags = data.cleanTags;
@@ -13,13 +16,12 @@
     const smallImg = document.querySelectorAll(".display-img");
 
     smallImg.forEach(function (smallImages) {
-      smallImages.addEventListener("change", showbigImg);
+      smallImages.addEventListener("click", showbigImg);
     });
 
     function showbigImg(event) {
-      const mainImg = this.smallImg;
-
-      mainImg.alt = smallImg.alt;
+      mainImg.src = this.src;
+      mainImg.alt = this.alt;
     }
   });
 </script>
@@ -29,8 +31,8 @@
     <img class="main-img" src={product.image} alt="test" />
     <div class="carousel">
       <img class="display-img" src={product.image} alt="test122112" />
-      <img class="display-img" src={product.image} alt="test2" />
-      <img class="display-img" src={product.image} alt="test3" />
+      <img class="display-img" src={cheeseImg} alt="test2" />
+      <img class="display-img" src={starImg} alt="test3" />
     </div>
   </aside>
 
@@ -107,6 +109,7 @@
       aspect-ratio: 1/1;
       object-fit: cover;
       background-position: 50% 50%;
+      cursor: pointer;
     }
   }
 
