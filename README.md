@@ -42,6 +42,14 @@ You can preview the production build with `npm run preview`.
 We received the challenge to design and develop the Milledoni platform based on their new design. Our main focus was to renew and improve the website with better accessibility, responsiveness, and creative ideas to enhance the overall user experience.
 
 
+## Stylesheet
+We have recreated the stylesheet to get a clearer view of Milledoni’s brand identity before starting the design phase. We added more colors and improved the typography by using consistent white space.
+
+<img width="344" height="708" alt="image" src="https://github.com/user-attachments/assets/12e931d0-14ae-46c2-934d-2cad3a13dd35" />
+
+
+
+
 ## Homepage design
 We redesigned the Milledoni homepage to give it a more creative look and to move away from the typical webshop appearance, which Milledoni specifically wanted to avoid. The design follows their brand identity, with the layout taking inspiration from the Pinterest platform. It was created for both mobile and desktop to ensure full responsiveness.
 
@@ -53,6 +61,7 @@ Homepage Elements
 - Filter: Manual product filtering options
 - Product Cards: Display the available products in a flex layout
 - Footer: Contains additional navigation and contact information
+
 
 ### Header
 The header contains the Milledoni logo, a link to the user account, and a button that opens the menu for navigating to other pages.
