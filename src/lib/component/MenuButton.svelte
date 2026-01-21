@@ -78,8 +78,12 @@
         margin: 0;
         -webkit-transition: all 0.3s ease;
 
+        @media (min-width: 425px) {
+            max-width: 50vw;
+        }
+
         @media (min-width: 768px) {
-            max-width: 25vw;
+            max-width: 35vw;
         }
     }
 
