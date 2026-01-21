@@ -45,6 +45,7 @@
 <nav>
   <ul class="pagination">
   
+    <!-- different buttons and numbers for pagination -->
     {#if Number(data.page) > 1}
       <li>
         <button class="navigate-btn" onclick={() => goto(`/?page=${Number(data.page) - 1}`)} aria-label="Previous page">
