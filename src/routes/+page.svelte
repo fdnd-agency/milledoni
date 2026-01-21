@@ -174,7 +174,7 @@
     h1 {
       font-size: var(--h1-font-size);
       padding-inline: 1em;
-      /* margin-top: 3em; */
+      margin-top: var(--spacing-l);
 
       span {
         color: var(--primary-color);
