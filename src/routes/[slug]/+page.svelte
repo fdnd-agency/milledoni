@@ -27,7 +27,7 @@
 
 <div class="product-wrapper">
   <aside>
-    <img class="main-img" src={mainImageSrc} alt={mainImageAlt} />
+    <img class="main-img desktop-only" src={mainImageSrc} alt={mainImageAlt} />
     <div class="carousel">
       {#each productImages as image}
         <button onclick={() => changeImage(image)}>
@@ -72,6 +72,10 @@
   }
 
   section {
+    width: 90%;
+    @media (min-width:990px) {
+      width: 60%;
+    }
     h1 {
       margin: 0;
     }
@@ -83,14 +87,16 @@
 
   aside {
     display: flex;
-    flex-direction: row-reverse;
-    height: 55vh;
-    width: 40%;
+    flex-direction: column;
+    width: 90%;
     gap: 1em;
 
     @media (min-width:990px) {
       position: sticky;
       top: 15vh;
+      flex-flow: row-reverse;
+      width: 40%;
+      height: 55vh;
     }
  
     .main-img {
@@ -99,20 +105,42 @@
       object-fit: cover;
       background-position: 50% 50%;
     }
+
+    .desktop-only {
+      display: none;
+
+      @media (min-width:990px) {
+        display: block;
+      }
+    }
   }
 
   .carousel {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     gap: 1em;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    @media (min-width:990px) {
+      flex-direction: column;
+      overflow-x: visible;
+      scroll-snap-type: none;
+    }
+
+
 
     button {
-      height: 31%;
+      flex-shrink: 0;
+      width: 80%;
       padding: 0;
       border: 2px solid transparent;
       background: none;
       cursor: pointer;
+      scroll-snap-align: center;
+
+      @media (min-width:990px) {
+        height: 30%;
+        width: auto;
+      }
     }
 
     img {
@@ -124,10 +152,4 @@
       display: block;
     }
   }
-
-  section {
-    width: 60%;
-  }
-
- 
 </style>
