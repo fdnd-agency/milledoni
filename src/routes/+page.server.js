@@ -1,10 +1,3 @@
- // Helper function to create a Directus API URL with filters
- function createUrl(endpoint, params = {}) {
-	const url = new URL(endpoint, 'https://fdnd-agency.directus.app/items/'); // Create the base url
-	url.search = new URLSearchParams(params); // Add the query parameters (filtering to get specific data)
-	return url; // Return the complete URL with endpoint and query parameters combined
-}
-
 // Load all liked products for the current user
 export async function load({ fetch }) {
 	const userId = 6; // temporary hardcoded id
@@ -114,3 +107,10 @@ export const actions = {
 		}
 	}
 };
+
+ // Helper function to create a Directus API URL with filters
+ function createUrl(endpoint, params = {}) {
+	const url = new URL(endpoint, 'https://fdnd-agency.directus.app/items/'); // Create the base url
+	url.search = new URLSearchParams(params); // Add the query parameters (filtering to get specific data)
+	return url; // Return the complete URL with endpoint and query parameters combined
+}
