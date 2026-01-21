@@ -3,46 +3,46 @@
     import wordmarkLogo from "$lib/assets/milledoni-wordmark-logo.svg";
 </script>
 
-<div class="logo-container">
-    <a href="/" class="logo-link">
-        <div class="symbol-logo">
+<div>
+    <a href="/">
+        <span class="symbol-logo">
             <img src={symbolLogo} alt="home" />
-        </div> 
-        <div class="wordmark">
+        </span> 
+        <span class="wordmark-logo">
             <img src={wordmarkLogo} alt="home" />
-        </div>             
+        </span>             
     </a>
 </div>
 
 <style>
-    .logo-container {
+    div {
         container-type: inline-size;
         width: 50%;
-    }
 
-    .logo-link {
-        display: inline-flex;
-    }
-    
-    .symbol-logo {
-        display: block;
-    }
+        & a {
+            display: inline-flex;
 
-    .wordmark {
-        display: none;
-    }
+            & .symbol-logo {
+                display: block;
+            }
 
-    img {
-        height: 3.5rem;
-    }
-    
-    @container (width > 350px) {
-        .symbol-logo {
-            display: none;
+            & .wordmark-logo {
+                display: none;
+            }
+
+            @container (width > 350px) {
+                .symbol-logo {
+                    display: none;
+                }
+        
+                .wordmark-logo {
+                    display: block;
+                }
+            }
+
+            & img {
+                height: 3.5rem;
+            }
+            }
         }
-    
-        .wordmark {
-            display: block;
-        }
-    }
     </style>

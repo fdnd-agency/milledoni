@@ -186,15 +186,21 @@ body[data-theme="christmas"] {
   outline-offset: 0.15em;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 /* Fonts */
 html,
 body,
 select,
-option {
+option,
+button {
   font-family: var(--font-family);
 }
 
@@ -250,13 +256,14 @@ select {
   cursor: var(--cursor-hover);
 }
 
+
 button:hover {
   background-color: var(--accent-color-hover);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
+
   :root {
-    /* increase line-height on dark color schemes */
     --text-line-height: 1.7;
 
     --h1-line-height: 1.2;
@@ -264,7 +271,6 @@ button:hover {
     --h3-line-height: 1.2;
     --h4-line-height: 1.2;
 
-    /*darkmode colors*/
     --text-color: hsl(0, 0%, 93%);
     --text-color-chat: hsl(0 0 61);
     --text-color-button: hsl(0 0 100);
@@ -283,7 +289,8 @@ button:hover {
   body {
     color: var(--text-color);
   }
-}
+} */
+ 
 a,
 button,
 input,
@@ -298,7 +305,6 @@ select {
   background-color: var(--accent-color);
   padding-block: 1em;
   padding-inline: 3em;
-  cursor: pointer;
   color: var(--text-color-button);
 
   &:hover {

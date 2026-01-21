@@ -2,7 +2,7 @@
     //import products component
     import { Logo } from "$lib";
     import { AccountLink } from "$lib";
-    import MenuButton from "./MenuButton.svelte";
+    import { MenuButton } from "$lib";
 </script>
 
 <header>
