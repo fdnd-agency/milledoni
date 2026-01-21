@@ -15,14 +15,14 @@
 	<form method="POST" action="?/unlike" use:enhance>
 		<input type="hidden" name="productId" value={productId} />
 		<button type="submit">
-			<img src={LikedIcon} alt="unlike" />
+			<img src={LikedIcon} alt="unlike" />Unlike
 		</button>
 	</form>
 {:else}
 	<form method="POST" action="?/like" use:enhance>
 		<input type="hidden" name="productId" value={productId} />
 		<button type="submit">
-			<img src={UnlikedIcon} alt="like" />
+			<img src={UnlikedIcon} alt="like" />Like
 		</button>
 	</form>
 {/if}
@@ -36,10 +36,13 @@
 	}
 
 	button {
-		display: grid;
-		padding: 0;
-		border: none;
-		background: none;
+		display: flex;
+    	align-items: center;
+    	padding: 0;
+    	gap: var(--spacing-xs);
+		font-size: 1rem;
+    	border: none;
+    	background: none;
 	}
 
 	button:hover {
