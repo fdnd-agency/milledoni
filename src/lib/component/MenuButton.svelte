@@ -100,6 +100,10 @@
         font-size: var(--text-font-size-l);
     }
 
+    a:hover {
+        opacity: 0.5;
+    }
+
     button {
         display: grid;
         position: relative;
