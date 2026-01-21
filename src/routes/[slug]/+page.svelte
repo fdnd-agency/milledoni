@@ -3,7 +3,6 @@
 
   import { Product } from "$lib";
   import { Filter } from "$lib";
-  import { onMount } from "svelte";
 
   import cheeseImg from "$lib/assets/kaas.jpg";
   import starImg from "$lib/assets/star.jpg";
@@ -11,28 +10,30 @@
   const product = data.product;
   const cleanTags = data.cleanTags;
 
-  onMount(() => {
-    const mainImg = document.querySelector(".main-img");
-    const smallImg = document.querySelectorAll(".display-img");
+  const productImages = [
+    { src: product.image, alt: `${product.name} - hoofdafbeelding` },
+    { src: cheeseImg, alt: `${product.name} - detail weergave` },
+    { src: starImg, alt: `${product.name} - alternatieve weergave` }
+  ];
 
-    smallImg.forEach(function (smallImages) {
-      smallImages.addEventListener("click", showbigImg);
-    });
+  let mainImageSrc = $state(productImages[0].src);
+  let mainImageAlt = $state(productImages[0].alt);
 
-    function showbigImg(event) {
-      mainImg.src = this.src;
-      mainImg.alt = this.alt;
-    }
-  });
+  function changeImage(image) {
+    mainImageSrc = image.src;
+    mainImageAlt = image.alt;
+  }
 </script>
 
 <div class="product-wrapper">
   <aside>
-    <img class="main-img" src={product.image} alt="test" />
+    <img class="main-img" src={mainImageSrc} alt={mainImageAlt} />
     <div class="carousel">
-      <img class="display-img" src={product.image} alt="test122112" />
-      <img class="display-img" src={cheeseImg} alt="test2" />
-      <img class="display-img" src={starImg} alt="test3" />
+      {#each productImages as image}
+        <button onclick={() => changeImage(image)}>
+          <img class="display-img" src={image.src} alt={image.alt} />
+        </button>
+      {/each}
     </div>
   </aside>
 
@@ -42,15 +43,16 @@
 
     <main>
       <p>{product.description}</p>
-      <p>{product.tags}</p>
-      <span>{product.spotter}</span>
+
+      <p><b>Tags:</b> {cleanTags.join(", ")}</p>
+
+      {#if product.spotter}
+      <p><b>Gespot door:</b> <span>{product.spotter}</span></p>
+      {/if}
+      
 
       <h2>Vind je kado</h2>
-      <ul>
-        {#each cleanTags as tag}
-          <li>{tag}</li>
-        {/each}
-      </ul>
+
     </main>
   </section>
 </div>
@@ -75,7 +77,7 @@
     }
   }
 
-  aside,section{
+  aside, section {
     margin: 0 auto;
   }
 
@@ -83,6 +85,7 @@
     display: flex;
     flex-direction: row-reverse;
     height: 55vh;
+    width: 40%;
     gap: 1em;
 
     @media (min-width:990px) {
@@ -104,16 +107,27 @@
     justify-content: space-between;
     gap: 1em;
 
-    img {
+    button {
       height: 31%;
+      padding: 0;
+      border: 2px solid transparent;
+      background: none;
+      cursor: pointer;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
       aspect-ratio: 1/1;
       object-fit: cover;
       background-position: 50% 50%;
-      cursor: pointer;
+      display: block;
     }
   }
 
   section {
-    width: 70%;
+    width: 60%;
   }
+
+ 
 </style>
