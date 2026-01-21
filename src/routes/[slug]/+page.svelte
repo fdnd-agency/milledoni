@@ -17,7 +17,7 @@
     });
 
     function showbigImg(event) {
-      const smallImg = this.nextElementSibling;
+      const mainImg = this.smallImg;
 
       mainImg.alt = smallImg.alt;
     }
@@ -28,9 +28,9 @@
   <aside>
     <img class="main-img" src={product.image} alt="test" />
     <div class="carousel">
-      <img class="display-img" src={product.image} alt="test" />
-      <img class="display-img" src={product.image} alt="test" />
-      <img class="display-img" src={product.image} alt="test" />
+      <img class="display-img" src={product.image} alt="test122112" />
+      <img class="display-img" src={product.image} alt="test2" />
+      <img class="display-img" src={product.image} alt="test3" />
     </div>
   </aside>
 
@@ -59,8 +59,12 @@
     margin: 5vh auto;
     display: flex;
     justify-content: center;
-    flex-flow: row nowrap;
+    flex-direction: column;
     gap: 3em;
+
+    @media (min-width:990px) {
+      flex-direction: row;
+    }
   }
 
   section {
@@ -69,17 +73,24 @@
     }
   }
 
+  aside,section{
+    margin: 0 auto;
+  }
+
   aside {
     display: flex;
     flex-direction: row-reverse;
-    position: sticky;
     height: 55vh;
-    gap: 2em;
-    top: 15vh;
+    gap: 1em;
 
+    @media (min-width:990px) {
+      position: sticky;
+      top: 15vh;
+    }
+ 
     .main-img {
       height: 100%;
-      aspect-ratio: 7/10;
+      aspect-ratio: 8/10;
       object-fit: cover;
       background-position: 50% 50%;
     }
