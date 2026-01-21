@@ -1,14 +1,11 @@
 <script>
-	// Prevents the webpage from doing a page reload after liking
-	import { enhance } from '$app/forms';
+	import { enhance } from '$app/forms'; // Prevents the webpage from reloading after interacting with the form
 	import LikedIcon from "$lib/assets/liked-icon.svg";
 	import UnlikedIcon from "$lib/assets/unliked-icon.svg";
 
-	let { likedProductIds = [], productId } = $props();
+	let { likedProductIds = [], productId } = $props(); // Get liked product IDs array and current product ID from parent component
 
-	// Rerun this line of code once interacted
-	// Check whether this product is liked by the user
-	let isLiked = $derived(likedProductIds.includes(Number(productId)));
+	let isLiked = $derived(likedProductIds.includes(Number(productId))); // Rerun which productId's take part inside the array of liked product id's without refreshing the page
 </script>
 
 {#if isLiked}

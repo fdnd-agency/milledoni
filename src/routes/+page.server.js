@@ -1,19 +1,14 @@
-// Helper function to create a Directus API URL with filters
-function createUrl(endpoint, params = {}) {
-	// Create the base url
-	const url = new URL(endpoint, 'https://fdnd-agency.directus.app/items/');
-	// Add the query parameters (filtering to get specific data)
-	url.search = new URLSearchParams(params);
-	// Return the complete URL with endpoint and query parameters combined
-	return url;
+ // Helper function to create a Directus API URL with filters
+ function createUrl(endpoint, params = {}) {
+	const url = new URL(endpoint, 'https://fdnd-agency.directus.app/items/'); // Create the base url
+	url.search = new URLSearchParams(params); // Add the query parameters (filtering to get specific data)
+	return url; // Return the complete URL with endpoint and query parameters combined
 }
 
 // Load all liked products for the current user
 export async function load({ fetch }) {
 	const userId = 6; // temporary hardcoded id
-
-	// Build the URL with filters to get liked products for the user
-	const likedProductsUrl = createUrl(
+	const likedProductsUrl = createUrl( // Create the URL with the liked products filtered
 		'milledoni_users_milledoni_products',
 		{
 			'filter[milledoni_users_id][id][_eq]': userId,
@@ -24,7 +19,7 @@ export async function load({ fetch }) {
 	const res = await fetch(likedProductsUrl);
 	const json = await res.json();
 
-	// Get the product ID's of all liked products and combine them into a single array e.g. [1692, 1695, 1699]
+	// Get the product ID's of all liked products and combine them into a single array for example [1692, 1695, 1699]
 	const likedProductIds = json.data.map(
 		item => item.milledoni_products_id
 	);
@@ -34,8 +29,6 @@ export async function load({ fetch }) {
 	};
 }
 
-// ACTION - handle liking a product
-// Checks if the current user has already liked this product
 export const actions = {
 	like: async ({ request, fetch }) => {
 		const data = await request.formData();
@@ -80,7 +73,7 @@ export const actions = {
 	unlike: async ({ request, fetch }) => {
 		const data = await request.formData();
 		const productId = data.get('productId');
-		const userId = 6;
+		const userId = 6; // temporary hardcoded id
 
 		try {
 			// Build a filtered URL to check if the user already liked this product (limit to 1 result)
@@ -95,13 +88,11 @@ export const actions = {
 
 			// If the like excists, delete it
 			if (result.data.length > 0) {
-				// GET the liked products id 
-				const likeId = result.data[0].id;
+				const likeId = result.data[0].id; // GET the liked products id 
 				
 				console.log('The liked id has been found:', likeId);
 
-				// Delete the liked product id
-				const deleteUrl = `https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/${likeId}`;
+				const deleteUrl = `https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/${likeId}`; // Delete the liked product id
 				
 				await fetch(deleteUrl, {
 					method: 'DELETE'
