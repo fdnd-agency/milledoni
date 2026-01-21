@@ -101,7 +101,8 @@
     }
 
     a:hover {
-        opacity: 0.5;
+        font-size: 2rem;
+        transition: all 0.2s;
     }
 
     button {
