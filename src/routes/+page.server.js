@@ -1,27 +1,3 @@
-// Load all liked products for the current user
-export async function load({ fetch }) {
-	const userId = 6; // temporary hardcoded id
-	const likedProductsUrl = createUrl( // Create the URL with the liked products filtered
-		'milledoni_users_milledoni_products',
-		{
-			'filter[milledoni_users_id][id][_eq]': userId,
-			'fields[]': 'milledoni_products_id'
-		}
-	);
-
-	const res = await fetch(likedProductsUrl);
-	const json = await res.json();
-
-	// Get the product ID's of all liked products and combine them into a single array for example [1692, 1695, 1699]
-	const likedProductIds = json.data.map(
-		item => item.milledoni_products_id
-	);
-
-	return {
-		likedProductIds
-	};
-}
-
 export const actions = {
 	like: async ({ request, fetch }) => {
 		const data = await request.formData();
@@ -113,4 +89,28 @@ export const actions = {
 	const url = new URL(endpoint, 'https://fdnd-agency.directus.app/items/'); // Create the base url
 	url.search = new URLSearchParams(params); // Add the query parameters (filtering to get specific data)
 	return url; // Return the complete URL with endpoint and query parameters combined
+}
+
+// Load all liked products for the current user
+export async function load({ fetch }) {
+	const userId = 6; // temporary hardcoded id
+	const likedProductsUrl = createUrl( // Create the URL with the liked products filtered
+		'milledoni_users_milledoni_products',
+		{
+			'filter[milledoni_users_id][id][_eq]': userId,
+			'fields[]': 'milledoni_products_id'
+		}
+	);
+
+	const res = await fetch(likedProductsUrl);
+	const json = await res.json();
+
+	// Get the product ID's of all liked products and combine them into a single array for example [1692, 1695, 1699]
+	const likedProductIds = json.data.map(
+		item => item.milledoni_products_id
+	);
+
+	return {
+		likedProductIds
+	};
 }
