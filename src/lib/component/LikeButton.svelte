@@ -40,6 +40,7 @@
 		font-size: 1rem;
     	border: none;
     	background: none;
+		color: var(--text-color);
 	}
 
 	button:hover {
