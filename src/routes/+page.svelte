@@ -8,9 +8,6 @@
 
   import { Product } from "$lib";
   import { Filter } from "$lib";
-
-
-
 </script>
 
 <section class="filters">
@@ -37,14 +34,15 @@
   <h2>Producten</h2>
 
   <ul>
-    {#each data.product as product}
-      <Product {product} load="lazy" />
+    {#each data.products as product}
+      <Product {product} likedProductIds={data.likedProductIds} />
     {/each}
   </ul>
 
 <nav>
   <ul class="pagination">
   
+    <!-- different buttons and numbers for pagination -->
     {#if Number(data.page) > 1}
       <li>
         <button class="navigate-btn" onclick={() => goto(`/?page=${Number(data.page) - 1}`)} aria-label="Previous page">
@@ -176,7 +174,7 @@
     h1 {
       font-size: var(--h1-font-size);
       padding-inline: 1em;
-      /* margin-top: 3em; */
+      margin-top: var(--spacing-l);
 
       span {
         color: var(--primary-color);
