@@ -97,6 +97,7 @@
     width: 90%;
     gap: 1em;
 
+
     @media (min-width:990px) {
       position: sticky;
       top: 15vh;
@@ -142,6 +143,10 @@
       cursor: pointer;
       scroll-snap-align: center;
 
+      @media (min-width:600px) {
+        width: 60%;
+      }
+
       @media (min-width:990px) {
         height: 30%;
         width: auto;
@@ -155,6 +160,7 @@
       object-fit: cover;
       background-position: 50% 50%;
       display: block;
+
     }
   }
 </style>
