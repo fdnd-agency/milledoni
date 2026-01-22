@@ -6,14 +6,14 @@
 
   import cheeseImg from "$lib/assets/kaas.jpg";
   import starImg from "$lib/assets/star.jpg";
-  
+
   const product = data.product;
   const cleanTags = data.cleanTags;
 
   const productImages = [
     { src: product.image, alt: `${product.name} - hoofdafbeelding` },
     { src: cheeseImg, alt: `${product.name} - detail weergave` },
-    { src: starImg, alt: `${product.name} - alternatieve weergave` }
+    { src: starImg, alt: `${product.name} - alternatieve weergave` },
   ];
 
   let mainImageSrc = $state(productImages[0].src);
@@ -47,13 +47,18 @@
       <p><b>Tags:</b> {cleanTags.join(", ")}</p>
 
       {#if product.spotter}
-      <p><b>Gespot door:</b> <span class="spotter-name">{product.spotter}</span></p>
+        <p>
+          <b>Gespot door:</b>
+          <span class="spotter-name">{product.spotter}</span>
+        </p>
       {/if}
-      
 
       <h2>Vind je kado</h2>
-      <a href="{product.url}">{product.shop_name} &gt;</a>
-
+      {#if product.shop_name}
+        <a href={product.url}>{product.shop_name} &gt;</a>
+        {:else}
+        <p>Geen winkels gevonden!</p>
+      {/if}
     </main>
   </section>
 </div>
@@ -67,27 +72,28 @@
     flex-direction: column;
     gap: 3em;
 
-    @media (min-width:990px) {
+    @media (min-width: 990px) {
       flex-direction: row;
     }
   }
 
   section {
     width: 90%;
-    @media (min-width:990px) {
+    @media (min-width: 990px) {
       width: 60%;
     }
     h1 {
       margin-top: 0;
     }
 
-    .price{
+    .price {
       font-weight: bold;
       font-size: 120%;
     }
   }
 
-  aside, section {
+  aside,
+  section {
     margin: 0 auto;
   }
 
@@ -97,15 +103,14 @@
     width: 90%;
     gap: 1em;
 
-
-    @media (min-width:990px) {
+    @media (min-width: 990px) {
       position: sticky;
       top: 15vh;
       flex-flow: row-reverse;
       width: 40%;
       height: 55vh;
     }
- 
+
     .main-img {
       height: 100%;
       aspect-ratio: 8/10;
@@ -116,7 +121,7 @@
     .desktop-only {
       display: none;
 
-      @media (min-width:990px) {
+      @media (min-width: 990px) {
         display: block;
       }
     }
@@ -128,7 +133,7 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
 
-    @media (min-width:990px) {
+    @media (min-width: 990px) {
       flex-direction: column;
       overflow-x: visible;
       scroll-snap-type: none;
@@ -143,11 +148,11 @@
       cursor: pointer;
       scroll-snap-align: center;
 
-      @media (min-width:600px) {
+      @media (min-width: 600px) {
         width: 60%;
       }
 
-      @media (min-width:990px) {
+      @media (min-width: 990px) {
         height: 30%;
         width: auto;
       }
@@ -160,7 +165,6 @@
       object-fit: cover;
       background-position: 50% 50%;
       display: block;
-
     }
   }
 </style>
