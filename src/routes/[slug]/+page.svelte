@@ -39,7 +39,7 @@
 
   <section>
     <h1>{product.name}</h1>
-    <span>€{product.amount}</span>
+    <span class="price">€{product.amount}</span>
 
     <main>
       <p>{product.description}</p>
@@ -47,11 +47,12 @@
       <p><b>Tags:</b> {cleanTags.join(", ")}</p>
 
       {#if product.spotter}
-      <p><b>Gespot door:</b> <span>{product.spotter}</span></p>
+      <p><b>Gespot door:</b> <span class="spotter-name">{product.spotter}</span></p>
       {/if}
       
 
       <h2>Vind je kado</h2>
+      <a href="{product.url}">{product.shop_name} &gt;</a>
 
     </main>
   </section>
@@ -77,7 +78,12 @@
       width: 60%;
     }
     h1 {
-      margin: 0;
+      margin-top: 0;
+    }
+
+    .price{
+      font-weight: bold;
+      font-size: 120%;
     }
   }
 
@@ -120,13 +126,12 @@
     gap: 1em;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+
     @media (min-width:990px) {
       flex-direction: column;
       overflow-x: visible;
       scroll-snap-type: none;
     }
-
-
 
     button {
       flex-shrink: 0;
