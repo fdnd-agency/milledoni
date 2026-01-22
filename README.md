@@ -1,4 +1,10 @@
-# sv
+
+
+
+## <img width="25" alt="logo of Milledoni" src="https://github.com/user-attachments/assets/b42b13fa-0858-4347-b87c-3dae25ce2794" /> : About Milledoni
+Milledoni was founded ten years ago. The platform focuses on offering products and services in the gift sector. What sets Milledoni apart is its personal approach: users are actively helped in finding a suitable and personalized gift through an AI chat feature. 
+
+## sv
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
