@@ -40,6 +40,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v145/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
+}
+
 :root {
   /* Fonts */
   --font-family: "Parkisans", serif;
@@ -192,7 +199,8 @@ body {
 html,
 body,
 select,
-option {
+option,
+button {
   font-family: var(--font-family);
 }
 
@@ -235,7 +243,8 @@ p {
   line-height: var(--text-line-height);
 }
 
-a {
+a, 
+i {
     font-weight: var(--font-weight-regular);
 }
 
@@ -245,6 +254,11 @@ button,
 input,
 select {
   cursor: var(--cursor-hover);
+}
+
+
+button:hover {
+  background-color: var(--accent-color-hover);
 }
 
 /* @media (prefers-color-scheme: dark) {
