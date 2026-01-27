@@ -119,31 +119,45 @@ The account link adapts to 3 different states:
 
 <img height="400" alt="Mobile menu" src="https://github.com/user-attachments/assets/e341597b-f46d-4058-9de4-557f0eecbdb4" /> <img height="400" alt="Desktop menu" src="https://github.com/user-attachments/assets/c91dcfa4-d39e-41a8-bbab-79de72c7b0ec" />
 
-### Product Cards
 
-The products are displayed in cards on the homepage. Each card shows a large image, the product name below it, and a link to the product detail page. Users can also like a product by clicking the like button.
+### Products
 
-*Individual card*
+Products are displayed on the homepage using the `Product.svelte` component. Each product card contains:
+- Product image
+- Title
+- Link to the detail page
+- Like button
 
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/4f32765f-944f-49e6-8185-606ae9c6ca33" />
+#### Responsive Grid Layout
 
-Regarding the clickable area: we considered making the entire card clickable, but since each card also has a like button, we decided that only the product image and the “Bekijk product” link lead to the detail page. This prevents the like button and the link from interfering with each other.
+The product grid uses CSS Grid with `minmax()` to create a flexible, responsive layout. Cards automatically adjust to fill available space, adding more columns as the viewport widens.
 
-*Clickable area*
+```css
+ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5rem 1rem;
+}
+```
 
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/cff8c1a0-3e4b-4b7b-8c00-48643cab8d35" />
+This way, the cards nake optimal use of space across all device sizes without relying on fixed breakpoints.
 
-To make the cards appear more fun and creative, we decided to use an asymmetrical layout.
+#### Clickable Area Design Decision
 
-*Asymmetrical layout*
+While we considered making the entire card clickable for convenience, we decided against this approach. Since each card contains both a like button and a product link, making the entire card clickable would create conflicting interactions. Instead, only the product image and the "Bekijk product" link navigate to the detail page, ensuring the like button functions independently without interference.
 
-<img height="200" alt="image" src="https://github.com/user-attachments/assets/29bea58f-3c37-4c17-ac19-750f4acd9f61" />
+**Mobile**
 
-Since there are over 1,000 products, we divided the cards into categories for a better user experience.
+<img height="400" alt="Product grid on mobile - single column" src="https://github.com/user-attachments/assets/086d235c-a91c-49e4-8b9c-4b298cf18932" />
 
-*Divided into categories*
+**Tablet**
 
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/7bd2d0c7-2c93-4806-ac3e-e6232ad0704b" />
+<img height="400" alt="Product grid on tablet - two columns" src="https://github.com/user-attachments/assets/c6944a19-98d7-4458-92f5-574fd952093b" />
+
+**Desktop**
+
+<img height="400" alt="Product grid on desktop - multiple columns" src="https://github.com/user-attachments/assets/bacd2157-67f7-46e0-b908-12edc36b2aae" />
+
 
 
 ## Homepage 
