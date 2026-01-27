@@ -7,7 +7,6 @@
     - [Building](#building)
 - [Features & Components](#features--components)
 	- [Header](#header)
-   	- [AI Chat](#ai-chat)
     - [Products](#products)
     - [Filter system](#filter-system)
     - [Like interaction](#like-interaction)
@@ -16,6 +15,7 @@
 - [Design system](#design-system)
 	- [Brand identity](#brand-identity)
    	- [Redesign](#redesign)
+  	- [AI Chat](#ai-chat)
     - [Custom Properties](#custom-properties)
 - [Contributing](#contributing) 
 - [License](#license)
@@ -113,10 +113,6 @@ The account link adapts to 3 different states:
 **Mobile & desktop view:**
 
 <img height="400" alt="Mobile menu" src="https://github.com/user-attachments/assets/e341597b-f46d-4058-9de4-557f0eecbdb4" /> <img height="400" alt="Desktop menu" src="https://github.com/user-attachments/assets/c91dcfa4-d39e-41a8-bbab-79de72c7b0ec" />
-
-
-### AI chat
-<-- Documentation about the AI chat -->
 
 
 ### Products
@@ -458,6 +454,27 @@ Homepage Elements
 - Footer: Contains additional navigation and contact information
 
 <-- Add pictures before and after -->
+
+### AI Chat design
+
+The AI chat is a core feature of Milledoni. An existing design was available, but it only worked on desktop. The challenge was to make the chat responsive while ensuring products remain visible at all times, even during conversations.
+
+#### Design Process
+
+We created multiple design variations to experiment with different approaches. The final design addresses the key requirements:
+
+**Key Features:**
+- **Persistent positioning:** The chat button stays fixed at the bottom of the screen, accessible while scrolling
+- **Non-intrusive overlay:** When active, the chat doesn't cover the entire screen, allowing users to see products in the background
+- **Header optimization:** The header disappears when the chat is active to create more space
+- **Live product count:** A counter shows the number of filtered results, updating the users when they interact with the chat
+- **Active filters display:** Selected filters appear above the chat (below the result count) with the option to remove them
+- **Easy dismissal:** A close button allows users to quickly return to browsing
+
+<img width="632" alt="AI chat responsive design" src="https://github.com/user-attachments/assets/17cccee5-b7d9-4a01-8693-59801c6c0938" />
+
+**Status:** Design phase - not yet implemented in code.
+
 
 ### Custom Properties
 
