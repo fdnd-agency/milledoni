@@ -115,13 +115,9 @@ The account link adapts to 3 different states:
 
 #### Navigation Menu
 
-**Mobile view:**
+**Mobile & desktop view:**
 
-<img width="317" alt="Mobile menu" src="https://github.com/user-attachments/assets/e341597b-f46d-4058-9de4-557f0eecbdb4" />
-
-**Desktop view:**
-
-<img width="1440" alt="Desktop menu" src="https://github.com/user-attachments/assets/c91dcfa4-d39e-41a8-bbab-79de72c7b0ec" />
+<img height="400" alt="Mobile menu" src="https://github.com/user-attachments/assets/e341597b-f46d-4058-9de4-557f0eecbdb4" /> <img height="400" alt="Desktop menu" src="https://github.com/user-attachments/assets/c91dcfa4-d39e-41a8-bbab-79de72c7b0ec" />
 
 ### Product Cards
 
