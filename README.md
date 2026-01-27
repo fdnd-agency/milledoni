@@ -1,10 +1,27 @@
-
-
 ## Table of contents
-- [About Milledoni](#about-milledoni)
-- [Creating a project](#creating-a-project)
 - [Introduction](#introduction)
-- [Stylesheet](#stylesheet)
+- [About Milledoni](#about-milledoni)
+- [Getting started](#sv)
+	- [Creating a project](#creating-a-project)
+   	- [Developing](#developing)
+    - [Building](#building)
+- [Features & Components](#features--components)
+	- [Header](#header)
+   	- [AI Chat](#ai-chat)
+    - [Products](#products)
+    - [Filter system](#filter-system)
+    - [Like interaction](#like-interaction)
+    - [Detail Page](#building)
+    - [Pagination](#building)
+- [Design system](#design-system)
+	- [Brand identity](#brand-identity)
+   	- [Redesign](#redesign)
+    - [Custom Properties](#custom-properties)
+- [Contributing](#contributing) 
+- [License](#license)
+
+## Introduction
+We received the challenge to design and develop the Milledoni platform based on their new design. Our main focus was to renew and improve the website with better accessibility, responsiveness, and creative ideas to enhance the overall user experience.
 
 ## About Milledoni
 Milledoni was founded ten years ago. The platform focuses on offering products and services in the gift sector. What sets Milledoni apart is its personal approach: users are actively helped in finding a suitable and personalized gift through an AI chat feature. 
@@ -13,7 +30,7 @@ Milledoni was founded ten years ago. The platform focuses on offering products a
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## Creating a project
+### Creating a project
 
 If you're seeing this, you've probably already done this step. Congrats!
 
@@ -25,7 +42,7 @@ npx sv create
 npx sv create my-app
 ```
 
-## Developing
+### Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
@@ -36,7 +53,7 @@ npm run dev
 npm run dev -- --open
 ```
 
-## Building
+### Building
 
 To create a production version of your app:
 
@@ -48,29 +65,7 @@ You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
 
-
-## Introduction
-We received the challenge to design and develop the Milledoni platform based on their new design. Our main focus was to renew and improve the website with better accessibility, responsiveness, and creative ideas to enhance the overall user experience.
-
-
-## Stylesheet
-We have recreated the stylesheet to get a clearer view of Milledoni’s brand identity before starting the design phase. We added more colors and improved the typography by using consistent white space.
-
-<img width="344" height="708" alt="image" src="https://github.com/user-attachments/assets/12e931d0-14ae-46c2-934d-2cad3a13dd35" />
-
-
-## Homepage design
-We redesigned the Milledoni homepage to give it a more creative look and to move away from the typical webshop appearance, which Milledoni specifically wanted to avoid. The design follows their brand identity, with the layout taking inspiration from the Pinterest platform. It was created for both mobile and desktop to ensure full responsiveness.
-
-One of the main challenges was finding a good layout balance between the product section and the AI chat, especially on mobile devices.
-
-Homepage Elements
-- Header: Logo, account link, and a button to open the menu
-- AI Chat: Allows users to filter products through an AI conversation
-- Filter: Manual product filtering options
-- Product Cards: Display the available products in a flex layout
-- Footer: Contains additional navigation and contact information
-
+## Features & Components
 
 ### Header
 The header is implemented as a reusable component to maintain consistency across multiple pages. It contains Milledoni's logo, an account link, and a navigation menu with links to pages such as Home, About, and Spotters.
@@ -120,6 +115,10 @@ The account link adapts to 3 different states:
 <img height="400" alt="Mobile menu" src="https://github.com/user-attachments/assets/e341597b-f46d-4058-9de4-557f0eecbdb4" /> <img height="400" alt="Desktop menu" src="https://github.com/user-attachments/assets/c91dcfa4-d39e-41a8-bbab-79de72c7b0ec" />
 
 
+### AI chat
+<-- Documentation about the AI chat -->
+
+
 ### Products
 
 Products are displayed on the homepage using the `Product.svelte` component. Each product card contains:
@@ -158,7 +157,29 @@ While we considered making the entire card clickable for convenience, we decided
 
 <img height="400" alt="Product grid on desktop - multiple columns" src="https://github.com/user-attachments/assets/bacd2157-67f7-46e0-b908-12edc36b2aae" />
 
---
+
+### Filter system
+Some people still prefer using manual filtering instead of chatting with AI, that’s why we use both. The background of the filter looks like wrapping paper, since Milledoni is all about presents, we thought it would be a fitting design choice.
+
+The filter layout differs between mobile and desktop due to the available screen space.
+
+Mobile:
+On mobile, the filter is already unfolded when entering the homepage. By clicking on one of the three categories, the filter unfolds further so you can select different options.
+
+*Mobile interaction*
+
+<img height="200" alt="image" src="https://github.com/user-attachments/assets/38708b56-51a0-429d-a5d2-0b3e7e851861" />
+
+Desktop:
+On desktop, the filter starts folded. By clicking on the “Filter” button, it unfolds and lets you select options per category.
+Since there’s more room on desktop, you can skip one extra click compared to mobile.
+
+*Desktop interaction*
+
+<img width="2131" height="687" alt="image" src="https://github.com/user-attachments/assets/0e6418bb-2f15-4ef1-bdfd-3d20ced02ee7" />
+
+Due to incomplete filters in the CMS and a missing structure we decided to build the filter but not making it work. The filter thats currently on the homepagehas been made fully accesible and only misses the filter on tag function.
+
 
 ### Like Interaction
 
@@ -293,31 +314,55 @@ Likes are stored in a table (`milledoni_users_milledoni_products`) that creates 
 - User ID is currently hardcoded (value: 6) and needs to be replaced with unique id's
 - No loading or error states in the UI
 
-## Homepage 
-Our redesinged homepage has made a lot of improvements on accesability, reusability and UX. The new homepage introduces new functions like pagination and a completely new layout.
-Some of the change include the following:
 
-### Filter
-Some people still prefer using manual filtering instead of chatting with AI, that’s why we use both. The background of the filter looks like wrapping paper, since Milledoni is all about presents, we thought it would be a fitting design choice.
+### Detailpage
 
-The filter layout differs between mobile and desktop due to the available screen space.
+Each product has it's own page. In this page extra information is provided about the product like a photogallery and shop function.
 
-Mobile:
-On mobile, the filter is already unfolded when entering the homepage. By clicking on one of the three categories, the filter unfolds further so you can select different options.
-
-*Mobile interaction*
-
-<img height="200" alt="image" src="https://github.com/user-attachments/assets/38708b56-51a0-429d-a5d2-0b3e7e851861" />
+On desktop the image has a small photo gallery next to it while on mobile is it will become a scrollable carousel.
 
 Desktop:
-On desktop, the filter starts folded. By clicking on the “Filter” button, it unfolds and lets you select options per category.
-Since there’s more room on desktop, you can skip one extra click compared to mobile.
 
-*Desktop interaction*
+<img width="2535" height="827" alt="image" src="https://github.com/user-attachments/assets/23244a6b-c8e8-43d0-a3e6-c69dce79acb7" />
 
-<img width="2131" height="687" alt="image" src="https://github.com/user-attachments/assets/0e6418bb-2f15-4ef1-bdfd-3d20ced02ee7" />
 
-Due to incomplete filters in the CMS and a missing structure we decided to build the filter but not making it work. The filter thats currently on the homepagehas been made fully accesible and only misses the filter on tag function.
+
+Mobile:
+
+<img width="678" height="1286" alt="Screenshot 2026-01-22 092053" src="https://github.com/user-attachments/assets/4859dbfe-e0cd-4466-8b6d-2bfeea4f13c0" />
+
+
+The carousel is built using buttons to make the images interactive.
+```HTML
+
+<aside>
+    <img class="main-img" src={mainImageSrc} alt={mainImageAlt} />
+    <div class="carousel">
+      {#each productImages as image}
+        <button onclick={() => changeImage(image)}>
+          <img class="display-img" src={image.src} alt={image.alt} />
+        </button>
+      {/each}
+    </div>
+  </aside>
+
+```
+Since the products only contain a single image for now, we decided to use placeholder images to visualise the interaction. Using state we change the content of the image:
+``` JS
+  const productImages = [
+    { src: product.image, alt: `${product.name} - hoofdafbeelding` },
+    { src: cheeseImg, alt: `${product.name} - detail weergave` },
+    { src: starImg, alt: `${product.name} - alternatieve weergave` }
+  ];
+
+  let mainImageSrc = $state(productImages[0].src);
+  let mainImageAlt = $state(productImages[0].alt);
+
+  function changeImage(image) {
+    mainImageSrc = image.src;
+    mainImageAlt = image.alt;
+  }
+```
 
 ### Pagination
 
@@ -387,54 +432,41 @@ The filter works by chaning the url. So each button will change the url like /?p
 
 ```
 
+## Design system
 
-## Detailpage
+### Brand identity 
+We have recreated the stylesheet to get a clearer view of Milledoni’s brand identity before starting the design phase. We added more colors and improved the typography by using consistent white space.
 
-Each product has it's own page. In this page extra information is provided about the product like a photogallery and shop function.
+<img width="344" height="708" alt="image" src="https://github.com/user-attachments/assets/12e931d0-14ae-46c2-934d-2cad3a13dd35" />
 
-On desktop the image has a small photo gallery next to it while on mobile is it will become a scrollable carousel.
-
-Desktop:
-
-<img width="2535" height="827" alt="image" src="https://github.com/user-attachments/assets/23244a6b-c8e8-43d0-a3e6-c69dce79acb7" />
+<-- Add more about the brand identity -->
 
 
+### Redesign 
+Our redesinged homepage has made a lot of improvements on accesability, reusability and UX. The new homepage introduces new functions like pagination and a completely new layout.
+Some of the change include the following:
 
-Mobile:
+We redesigned the Milledoni homepage to give it a more creative look and to move away from the typical webshop appearance, which Milledoni specifically wanted to avoid. The design follows their brand identity, with the layout taking inspiration from the Pinterest platform. It was created for both mobile and desktop to ensure full responsiveness.
 
-<img width="678" height="1286" alt="Screenshot 2026-01-22 092053" src="https://github.com/user-attachments/assets/4859dbfe-e0cd-4466-8b6d-2bfeea4f13c0" />
+One of the main challenges was finding a good layout balance between the product section and the AI chat, especially on mobile devices.
 
+Homepage Elements
+- Header: Logo, account link, and a button to open the menu
+- AI Chat: Allows users to filter products through an AI conversation
+- Filter: Manual product filtering options
+- Product Cards: Display the available products in a flex layout
+- Footer: Contains additional navigation and contact information
 
-The carousel is built using buttons to make the images interactive.
-```HTML
+<-- Add pictures before and after -->
 
-<aside>
-    <img class="main-img" src={mainImageSrc} alt={mainImageAlt} />
-    <div class="carousel">
-      {#each productImages as image}
-        <button onclick={() => changeImage(image)}>
-          <img class="display-img" src={image.src} alt={image.alt} />
-        </button>
-      {/each}
-    </div>
-  </aside>
+### Custom Properties
 
-```
-Since the products only contain a single image for now, we decided to use placeholder images to visualise the interaction. Using state we change the content of the image:
-``` JS
-  const productImages = [
-    { src: product.image, alt: `${product.name} - hoofdafbeelding` },
-    { src: cheeseImg, alt: `${product.name} - detail weergave` },
-    { src: starImg, alt: `${product.name} - alternatieve weergave` }
-  ];
+<-- Add custom properties -->
 
-  let mainImageSrc = $state(productImages[0].src);
-  let mainImageAlt = $state(productImages[0].alt);
+## Contributing
 
-  function changeImage(image) {
-    mainImageSrc = image.src;
-    mainImageAlt = image.alt;
-  }
-```
+<-- Add contributing -->
 
+## License
 
+<-- Add license -->
