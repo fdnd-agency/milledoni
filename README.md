@@ -446,14 +446,14 @@ We redesigned the Milledoni homepage to give it a more creative look and to move
 
 One of the main challenges was finding a good layout balance between the product section and the AI chat, especially on mobile devices.
 
-Homepage Elements
-- Header: Logo, account link, and a button to open the menu
-- AI Chat: Allows users to filter products through an AI conversation
-- Filter: Manual product filtering options
-- Product Cards: Display the available products in a flex layout
-- Footer: Contains additional navigation and contact information
+*Milledoni's design*
 
-<-- Add pictures before and after -->
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/d3d85b99-4cd3-4680-b6be-5df37f08722a" />
+
+*Our redesign*
+
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/33f9f0a2-433a-4201-aab0-ac34ea98cbb5" /> <img height="400" alt="image" src="https://github.com/user-attachments/assets/9d785fd6-366b-448e-a8b3-3216ff98437b" />
+
 
 ### AI Chat design
 
