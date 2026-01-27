@@ -431,12 +431,9 @@ The filter works by chaning the url. So each button will change the url like /?p
 ## Design system
 
 ### Brand identity 
-We have recreated the stylesheet to get a clearer view of Milledoni’s brand identity before starting the design phase. We added more colors and improved the typography by using consistent white space.
+To get a clearer vie of Milledoni's brand identity, we have redesigned the stylesheet. We have made a few changesto the color scheme. We added more bright colors to grab more attention of the users and make it look more playful since Milledoni is all about inspiring users with present ideas.
 
 <img width="344" height="708" alt="image" src="https://github.com/user-attachments/assets/12e931d0-14ae-46c2-934d-2cad3a13dd35" />
-
-<-- Add more about the brand identity -->
-
 
 ### Redesign 
 Our redesinged homepage has made a lot of improvements on accesability, reusability and UX. The new homepage introduces new functions like pagination and a completely new layout.
