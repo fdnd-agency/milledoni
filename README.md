@@ -1,7 +1,7 @@
 ## Table of contents
 - [Introduction](#introduction)
 - [About Milledoni](#about-milledoni)
-- [Getting started](#sv)
+- [Getting Started with SvelteKit](#getting-started-with-sveltekit)
 	- [Creating a project](#creating-a-project)
    	- [Developing](#developing)
     - [Building](#building)
@@ -26,7 +26,7 @@ We received the challenge to design and develop the Milledoni platform based on 
 ## About Milledoni
 Milledoni was founded ten years ago. The platform focuses on offering products and services in the gift sector. What sets Milledoni apart is its personal approach: users are actively helped in finding a suitable and personalized gift through an AI chat feature. 
 
-## sv
+## Getting Started with SvelteKit
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
