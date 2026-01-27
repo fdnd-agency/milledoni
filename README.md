@@ -73,17 +73,55 @@ Homepage Elements
 
 
 ### Header
-The header contains the Milledoni logo, a link to the user account, and a button that opens the menu for navigating to other pages.
-On mobile devices, a smaller version of the logo is used because of the limited screen space.
+The header is implemented as a reusable component to maintain consistency across multiple pages. It contains Milledoni's logo, an account link, and a navigation menu with links to pages such as Home, About, and Spotters.
 
-*Header design on mobile view*
+#### Responsive Design
 
-<img height="50" alt="image" src="https://github.com/user-attachments/assets/9cecebc6-7117-4080-89ce-8dd61f5012d4" />
+All header components are fully responsive using both **media queries** and **container queries**. I prefer container queries for components because they calculate based on the container's size rather than the viewport, allowing components to adapt based on their available space.
 
-*Header design on desktop view*
+**Media queries** - calculate based on screen size:
+```css
+@media (min-width: 768px) {
+    max-width: 35vw;
+}
+```
 
-<img height="50" alt="image" src="https://github.com/user-attachments/assets/07f34b1e-8a74-4a83-9c13-36de6eda21ce" />
+**Container queries** - calculate based on container size:
+```css
+@container (width > 200px) {
+    .symbol-account::after {
+        content: "Mijn Account";
+    }
+}
+```
 
+#### Component States
+
+**Logo**
+
+The logo has 2 responsive states:
+
+<img width="82" alt="Logo compact" src="https://github.com/user-attachments/assets/3f3a3972-e49e-49b2-bea0-0410bd0d3172" /> <img width="254" alt="Logo expanded" src="https://github.com/user-attachments/assets/2c36b59a-e4f2-4d94-afdb-9db074c3f3d9" />
+
+**Account Link**
+
+The account link adapts to 3 different states:
+
+<img width="77" alt="Account icon only" src="https://github.com/user-attachments/assets/4eb3d528-5cf8-4510-ac1f-49bc2ee4f190" /> <img width="168" alt="Account with text" src="https://github.com/user-attachments/assets/5cf2c2ba-a724-48b8-81d7-3379fe306829" /> <img width="205" alt="Account expanded" src="https://github.com/user-attachments/assets/be16d5c8-0e9d-4289-b478-37db0d1829c4" />
+
+**Menu Button**
+
+<img width="80" alt="Menu button" src="https://github.com/user-attachments/assets/0f7ab46d-60be-4114-96ed-ba90af602cb1" />
+
+#### Navigation Menu
+
+**Mobile view:**
+
+<img width="317" alt="Mobile menu" src="https://github.com/user-attachments/assets/e341597b-f46d-4058-9de4-557f0eecbdb4" />
+
+**Desktop view:**
+
+<img width="1440" alt="Desktop menu" src="https://github.com/user-attachments/assets/c91dcfa4-d39e-41a8-bbab-79de72c7b0ec" />
 
 ### Product Cards
 
