@@ -15,7 +15,7 @@
 - [Design system](#design-system)
 	- [Brand identity](#brand-identity)
    	- [Redesign](#redesign)
-  	- [AI Chat](#ai-chat)
+  	- [AI Chat](#ai-chat-design)
     - [Custom Properties](#custom-properties)
 - [Contributing](#contributing) 
 - [License](#license)
