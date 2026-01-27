@@ -158,7 +158,140 @@ While we considered making the entire card clickable for convenience, we decided
 
 <img height="400" alt="Product grid on desktop - multiple columns" src="https://github.com/user-attachments/assets/bacd2157-67f7-46e0-b908-12edc36b2aae" />
 
+--
 
+### Like Interaction
+
+Users can like and unlike products on Milledoni. This feature is implemented using the `LikeButton.svelte` component and the `+page.server.js` server file.
+
+#### Accessibility
+
+The button states have been tested with a color contrast checker to ensure the contrast ratios are enough for users with visual difficulties.
+
+#### Button States
+
+The like button contains three visual states:
+
+| Default | Hover | Active (Liked) |
+|---------|-------|----------------|
+| <img height="50" alt="Default state" src="https://github.com/user-attachments/assets/bf048ef7-3038-44d7-9096-f2f0f4149b93" /> | <img height="50" alt="Hover state" src="https://github.com/user-attachments/assets/3dd96185-d4c5-4f54-8225-0f986becd488" /> | <img height="50" alt="Active liked state" src="https://github.com/user-attachments/assets/48f7fc09-f93f-42b6-89ce-ab19f7bb6158" /> |
+
+<img height="400" alt="Like button in product context" src="https://github.com/user-attachments/assets/df0dbe8a-d468-43d2-9c1d-7cf3b2e47d9a" />
+
+**Future Improvements:** Additional states should be added for better UX, including loading and error states to provide feedback during API calls.
+
+#### Implementation
+
+**Form-Based Approach**
+
+The like functionality uses progressive enhancement with HTML forms. Two forms handle the like/unlike actions:
+
+```svelte
+{#if isLiked}
+    <form method="POST" action="?/unlike" use:enhance>
+        <input type="hidden" name="productId" value={productId} />
+        <button type="submit">
+            <img src={LikedIcon} alt="unlike" />Unlike
+        </button>
+    </form>
+{:else}
+    <form method="POST" action="?/like" use:enhance>
+        <input type="hidden" name="productId" value={productId} />
+        <button type="submit">
+            <img src={UnlikedIcon} alt="like" />Like
+        </button>
+    </form>
+{/if}
+```
+
+**Server Actions**
+
+**POST Request (Like)**
+
+Creates a new like between the user and product in the database:
+
+```javascript
+like: async ({ request, fetch }) => {
+    const data = await request.formData();
+    const productId = data.get('productId');
+    const userId = 6; // TODO: Replace with authenticated user ID from session
+    
+    try {
+        // Build a filtered URL to check if the user already liked this product (limit to 1 result)
+        const toggleLikeUrl = createUrl('milledoni_users_milledoni_products', {
+            'filter[milledoni_users_id][id][_eq]': userId,
+            'filter[milledoni_products_id][id][_eq]': productId,
+            limit: 1,
+        });
+        
+        const existingLikeResponse = await fetch(toggleLikeUrl);
+        const existingLike = await existingLikeResponse.json();
+        
+        // Create a like by adding the product id to the array with all liked products connected to the user id  
+        await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                milledoni_users_id: userId,
+                milledoni_products_id: Number(productId)
+            })
+        });
+    } catch (error) {
+			console.error('Error:', error);
+			return { success: false, error: error.message };
+    }
+}
+```
+
+**DELETE Request (Unlike)**
+
+Removes the like from the database:
+
+```javascript
+unlike: async ({ request, fetch }) => {
+    const data = await request.formData();
+    const productId = data.get('productId');
+    const userId = 6; // TODO: Replace with authenticated user ID from session
+    
+    try {
+        // Build a filtered URL to check if the user already liked this product (limit to 1 result)
+        const toggleLikeUrl = createUrl('milledoni_users_milledoni_products', {
+            'filter[milledoni_users_id][_eq]': userId,
+            'filter[milledoni_products_id][_eq]': productId,
+            limit: 1
+        });
+        
+        const response = await fetch(toggleLikeUrl);
+        const result = await response.json();
+        
+        // If the like excists, delete it
+        if (result.data.length > 0) {
+            const likeId = result.data[0].id;
+            console.log('Found like ID:', likeId);
+            
+            const deleteUrl = `https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/${likeId}`;
+            
+            await fetch(deleteUrl, {
+                method: 'DELETE'
+            });
+        }
+    } catch (error) {
+			console.error('Error: could not remove like:', error);
+			return { success: false, error: error.message };
+    }
+}
+```
+
+#### Database Structure
+
+Likes are stored in a table (`milledoni_users_milledoni_products`) that creates a bond between users and products. 
+
+**Example:** View all liked products for user ID 6:  
+`https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products?filter[milledoni_users_id][_eq]=6`
+
+**Known Limitations:**
+- User ID is currently hardcoded (value: 6) and needs to be replaced with unique id's
+- No loading or error states in the UI
 
 ## Homepage 
 Our redesinged homepage has made a lot of improvements on accesability, reusability and UX. The new homepage introduces new functions like pagination and a completely new layout.
