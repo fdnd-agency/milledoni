@@ -478,7 +478,140 @@ We created multiple design variations to experiment with different approaches. T
 
 ### Custom Properties
 
-<-- Add custom properties -->
+We implemented CSS custom properties to ensure consistency, maintainability, and scalability across the entire application. The custom properties take care of all design values are defined in one place which makes it easier to make changes across the entire application. It also prevents inconsistencies from hardcoded values in components. 
+
+#### Implementation
+
+All custom properties are defined in `src/lib/styles/style.css` and imported globally through `+layout.svelte`:
+```javascript
+import '$lib/styles/style.css';
+```
+
+This ensures all components have access to the custom properties.
+
+
+#### Naming Convention
+
+We follow a **semantic naming convention** that describes the purpose rather than the value:
+
+Correct: `--primary-color-hover` (describes when to use it)
+
+Incorrect: `--yellow-lighter` (describes what it is)
+
+This way we'll only have to change the color values and prevent renaming the variables. 
+
+
+#### Responsive Typography
+
+Headers use the `clamp()` function for responsive sizing without media queries:
+
+```css
+--h1-font-size: clamp(2rem, 5vw, 4.0625rem);
+```
+
+This creates typography that starts at a minimum of 2rem on a small screen and can scale up to the max of 4.0625rem taking 5vw as middle point. 
+
+
+#### Organization
+
+Our custom properties are organized into logical categories:
+
+**Typography**
+
+```css
+/* Fonts */
+  --font-family: "Parkisans", serif;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+
+  /* headings */
+  --h1-font-size: clamp(2rem, 5vw, 4.0625rem);
+  --h2-font-size: clamp(1.5rem, 4vw, 2.5625rem);
+  --h3-font-size: clamp(1.2rem, 3vw, 1.6rem);
+
+  --h1-line-height: 1.1;
+  --h2-line-height: 1.1;
+  --h3-line-height: 1.1;
+  --h4-line-height: 1.1;
+
+  /* normal text */
+
+  --text-font-size-s: clamp(1rem, 2vw, 1.5rem);
+  --text-font-size-m: clamp(1.25rem, 2.5vw, 1.75rem);
+  --text-font-size-l: clamp(1.5rem, 2.5vw, 2rem);
+
+  --text-line-height: 1.5;
+
+```
+**Colors**
+
+```css
+/* standard colors */
+  --neutral-color-background: hsl(0 0 100);
+  --neutral-color-background-menu: hsl(0 5 96);
+  --neutral-color-background-cards: hsl(0 5 96);
+  --neutral-color-background-icons: hsl(0, 0%, 0%);
+
+  --primary-color-light: hsl(57 100 72);
+  --primary-color-hover: hsl(46 100 64);
+  --primary-color: hsl(47 100 44);
+  --primary-color-dark: hsl(45 100 37);
+  --primary-color-deep: hsl(37 100 24);
+
+  --accent-color-light: hsl(164 53 55);
+  --accent-color-hover: hsl(166 68 39);
+  --accent-color: hsl(167 100 25);
+  --accent-color-dark: hsl(164 100 19);
+  --accent-color-deep: hsl(159 100 13);
+
+  /* Color themes */
+  /* change --accent-color-... into one of these */
+  --valentine-color-light: hsl(335 97 85);
+  --valentine-color-hover: hsl(326 58 56);
+  --valentine-color: hsl(323 63 41);
+  --valentine-color-dark: hsl(320 100 26);
+  --valentine-color-deep: hsl(324 100 19);
+
+  --christmas-color-light: hsl(6 67 55);
+  --christmas-color-hover: hsl(4 70 41);
+  --christmas-color: hsl(0 100 27);
+  --christmas-color-dark: hsl(0 100 20);
+  --christmas-color-deep: hsl(0 100 13);
+```
+
+**Dark mode**
+```css
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --text-line-height: 1.7;
+
+    --h1-line-height: 1.2;
+    --h2-line-height: 1.2;
+    --h3-line-height: 1.2;
+    --h4-line-height: 1.2;
+
+    --text-color: hsl(0, 0%, 93%);
+    --text-color-chat: hsl(0 0 61);
+    --text-color-button: hsl(0 0 100);
+
+    --img-color-light: hsl(0, 0%, 13%);
+    --img-color-dark: hsl(0, 0%, 93%);
+
+    --chat-color-background: var(--primary-color);
+    --chat-color-icon: var(--text-color);
+
+    --neutral-color-background: hsl(0, 0%, 10%);
+    --neutral-color-background-cards: hsl(0, 0%, 13%);
+    --neutral-color-background-icons: hsl(0 0 89);
+  }
+```
+
 
 ## Contributing
 
