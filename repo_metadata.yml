@@ -5,3 +5,18 @@ years: [1]
 main_link: "https://milledoni.agency.fdnd.nl/"
 dev_link: "https://milledoni.dev.fdnd.nl/"
 tech_stack: ["SvelteKit", "Directus"]
+team:
+  - name: 'Angel'
+    github: 'Angelaaliyah12'
+  - name: 'Sven'
+    github: 'Svenvandijk22'
+  - name: 'Khitam'
+    github: 'khiettt'
+  - name: 'Maarten'
+    github: 'MaartentePoele'
+  - name: 'Kurollos'
+    github: 'Kurollos'
+  - name: 'Luka'
+    github: '...'
+  - name: 'Ahlam'
+    github: 'ahlamad'
